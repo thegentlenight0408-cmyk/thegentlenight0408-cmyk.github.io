@@ -50,7 +50,7 @@
   .q-text { font-size: 20px; line-height: 1.6; margin-bottom: 8px; color: var(--text); min-height: 60px; }
   .q-sub { font-size: 13px; color: var(--muted); letter-spacing: 1px; margin-bottom: 28px; }
   .options { display: flex; flex-direction: column; gap: 12px; }
-  .opt-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 16px 20px; text-align: left; font-family: inherit; font-size: 15px; line-height: 1.5; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
+  .opt-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 14px 12px; text-align: left; font-family: inherit; font-size: 13px; line-height: 1.4; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
   .opt-btn:hover { background: var(--surface2); border-color: var(--accent); }
   .opt-btn.selected { background: var(--accent); border-color: var(--accent); color: #fff; }
 
@@ -266,7 +266,7 @@ const QUESTIONS = [
   { text: '在什麼時刻，會讓你意識到——你想要了？', sub: 'When do you realize you want it?', opts: [
     { label: '看到、想到一個情色的畫面，身體產生反應', scores: {破界者:2} },
     { label: '看到對方因為我動情的反應，會覺得很想要', scores: {掌權人:2} },
-    { label: '想到自己變成另一個人，做平時不做的事就很有感覺', scores: {戲中人:2} },
+    { label: '想到變成另一個人，去做平時不敢做的事', scores: {戲中人:2} },
     { label: '突然就來感覺了，也說不清楚具體怎麼回事', scores: {面具大師:2} },
     { label: '原本沒事卻忽然想要，那個感覺變化的時刻', scores: {慢熱派:2} }
   ]},
@@ -279,13 +279,13 @@ const QUESTIONS = [
   ]},
   { text: '一個人自慰時，你更喜歡做的準備是', sub: 'Alone, you would rather...', opts: [
     { label: '幻想一個平時絕對禁忌，甚至完全不現實的畫面', scores: {破界者:2} },
-    { label: '想像一個畫面，都按照我的意願，對方完全聽我的', scores: {掌權人:2} },
-    { label: '把房間環境布置好，蠟燭香氛、燈光音樂影片等等', scores: {儀式專家:2} },
+    { label: '想像一個畫面，對方完全按我的意願行動', scores: {掌權人:2} },
+    { label: '布置房間氛圍：蠟燭香氛、燈光音樂', scores: {儀式專家:2} },
     { label: '不固定／不確定，我喜歡嘗試不一樣的方式', scores: {面具大師:2} },
-    { label: '想像有人看著我／對著鏡子看自己，這讓我更有感覺', scores: {觀察者:2} }
+    { label: '想像被人看著，或對著鏡子看自己', scores: {觀察者:2} }
   ]},
   { text: '最讓你上癮的狀態是', sub: 'The state that gets you most', opts: [
-    { label: '一個對的畫面、一個對的觸感，身體一下就有反應', scores: {感官師:2} },
+    { label: '對的畫面、對的觸感，身體馬上有反應', scores: {感官師:2} },
     { label: '整個房間只剩兩人的呼吸，空氣都緊繃起來', scores: {引力家:2} },
     { label: '進入角色之後，連說話語氣都不一樣了', scores: {戲中人:2} },
     { label: '在主導和順從之間反覆拉扯', scores: {Switch:2} },
@@ -293,15 +293,15 @@ const QUESTIONS = [
   ]},
   { text: '讓你著迷的性愛小細節是', sub: 'The detail that captivates you', opts: [
     { label: '看到對方因我而變得呼吸急促、回應我、渴望我', scores: {掌權人:2} },
-    { label: '整個空間特別美好，光線、聲音、味道一切都剛剛好', scores: {儀式專家:2} },
-    { label: '一個短暫的停留，知道要發生什麼但還沒有的那一刻', scores: {曖昧大師:2} },
+    { label: '整個空間的光線、聲音、味道都剛剛好', scores: {儀式專家:2} },
+    { label: '知道要發生但還沒發生，那個停留的瞬間', scores: {曖昧大師:2} },
     { label: '投向我的目光，帶著我喜歡的感覺注視著彼此', scores: {觀察者:2} },
-    { label: '把自己的意識和身體全然交給對方，大腦空白', scores: {臣服者:2} }
+    { label: '把意識和身體全然交給對方，大腦空白', scores: {臣服者:2} }
   ]},
   { text: '對你來說，性愛最大的樂趣是', sub: 'Your greatest pleasure in sex', opts: [
     { label: '做一些日常禁忌的事，已經偷偷幻想很多回了', scores: {破界者:2} },
     { label: '享受兩個人互動時，慢慢勾起的情欲氛圍', scores: {引力家:2} },
-    { label: '在角色裡說平時說不出口的話，做平時做不出來的事', scores: {戲中人:2} },
+    { label: '在角色裡說不出口的話，做不出來的事', scores: {戲中人:2} },
     { label: '新姿勢、新場景、新玩具——永遠有下一種可能', scores: {面具大師:2} },
     { label: '從完全無感到色慾薰心，這種轉變的過程', scores: {慢熱派:2} }
   ]},
@@ -313,11 +313,11 @@ const QUESTIONS = [
     { label: '一種能閉上眼什麼都不用想的信任感', scores: {臣服者:2} }
   ]},
   { text: '性愛中，你在什麼時刻感受最真實？', sub: 'When do you feel most truly yourself?', opts: [
-    { label: '我做不該做的事時最像我，喜歡掙脫束縛後的自己', scores: {破界者:2} },
+    { label: '做不該做的事時最像我，喜歡掙脫束縛', scores: {破界者:2} },
     { label: '我能說停就停想做就做，喜歡擁有掌控權', scores: {掌權人:2} },
-    { label: '我在扮演某個角色的時候，喜歡透過角色探索自己另一面', scores: {戲中人:2} },
-    { label: '我拒絕性愛的固有規則，喜歡每次都可以略有不同', scores: {面具大師:2} },
-    { label: '我被注視或注視他人的時候，喜歡被看見／看見的感覺', scores: {觀察者:2} }
+    { label: '扮演角色時，喜歡探索自己的另一面', scores: {戲中人:2} },
+    { label: '拒絕固定規則，喜歡每次都略有不同', scores: {面具大師:2} },
+    { label: '被注視或注視他人，喜歡被看見的感覺', scores: {觀察者:2} }
   ]},
   { text: '最讓你享受的性愛節奏是', sub: 'The pace that gets you most', opts: [
     { label: '全程緩慢，品味每一種感官刺激', scores: {感官師:2} },

@@ -230,6 +230,17 @@
     <div class="type-detail" id="type-detail"></div>
   </div>
 
+  <!-- PREVIEW MODAL -->
+  <div id="preview-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;padding:20px;">
+    <div style="background:#f7f0e8;border-radius:12px;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;padding:28px 24px;position:relative;">
+      <button onclick="closePreview()" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#2a1f1a;">×</button>
+      <div style="text-align:center;margin-bottom:8px;font-size:17px;font-weight:600;color:#2a1f1a;font-family:Georgia,serif;">這是你的人格卡</div>
+      <div style="text-align:center;font-size:12px;color:#9a7a50;margin-bottom:18px;letter-spacing:2px;">— 長按保存 · 轉發分享 —</div>
+      <img id="preview-img" src="" style="width:100%;border-radius:6px;display:block;" />
+      <button id="modal-download-btn" onclick="triggerDownload()" style="margin-top:18px;width:100%;padding:14px;background:#b54030;color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;font-family:Georgia,serif;">下載圖片</button>
+    </div>
+  </div>
+
   <!-- SHARE CARD -->
   <div id="share-card">
     <div class="sc-brand">Sexual Personality Index</div>
@@ -266,14 +277,14 @@ const QUESTIONS = [
     { label: '身體貼合糾纏，激烈的互動喘息', scores: {Switch:2} },
     { label: '閉上眼，任由對方主導你的身體', scores: {臣服者:2} }
   ]},
-  { text: '一個人 solo play 時，你更喜歡做的準備是', sub: 'Alone, you would rather...', opts: [
+  { text: '一個人自慰時，你更喜歡做的準備是', sub: 'Alone, you would rather...', opts: [
     { label: '幻想一個平時絕對禁忌，甚至完全不現實的畫面', scores: {破界者:2} },
     { label: '想像一個畫面，都按照我的意願，對方完全聽我的', scores: {掌權人:2} },
     { label: '把房間環境布置好，蠟燭香氛、燈光音樂影片等等', scores: {儀式專家:2} },
     { label: '不固定／不確定，我喜歡嘗試不一樣的方式', scores: {面具大師:2} },
     { label: '想像有人看著我／對著鏡子看自己，這讓我更有感覺', scores: {觀察者:2} }
   ]},
-  { text: '最讓你上頭的狀態是', sub: 'The state that gets you most', opts: [
+  { text: '最讓你上癮的狀態是', sub: 'The state that gets you most', opts: [
     { label: '一個對的畫面、一個對的觸感，身體一下就有反應', scores: {感官師:2} },
     { label: '整個房間只剩兩人的呼吸，空氣都緊繃起來', scores: {引力家:2} },
     { label: '進入角色之後，連說話語氣都不一樣了', scores: {戲中人:2} },
@@ -706,6 +717,9 @@ function backFromTypes() {
   else showScreen('start-screen');
 }
 
+let pendingDownloadUrl = '';
+let pendingDownloadName = '';
+
 function downloadResult() {
   const btn = document.getElementById('download-btn');
   btn.disabled = true;
@@ -715,26 +729,39 @@ function downloadResult() {
   document.getElementById('sc-name').textContent = type.name;
   document.getElementById('sc-name-en').textContent = type.nameSub;
   document.getElementById('sc-quote').textContent = type.quote;
-  buildRadar(scores, 'sc-radar-svg');
-  const sorted=Object.entries(scores).sort((a,b)=>b[1]-a[1]);
-  const sc3=document.getElementById('sc-top3');
-  sc3.innerHTML='';
-  sorted.slice(0,3).forEach(([dim,val],idx)=>{
-    sc3.innerHTML+=`<div class="sc-top3-item"><div class="sc-top3-rank">${idx+1}</div><div class="sc-top3-dim">${dim}</div><div class="sc-top3-score">${val} 分</div></div>`;
+  const scPcts = buildRadar(scores, 'sc-radar-svg');
+  const sorted = Object.entries(scores).sort((a,b) => b[1]-a[1]);
+  const sc3 = document.getElementById('sc-top3');
+  sc3.innerHTML = '';
+  sorted.slice(0,3).forEach(([dim],idx) => {
+    sc3.innerHTML += `<div class="sc-top3-item"><div class="sc-top3-rank">${idx+1}</div><div class="sc-top3-dim">${dim}</div><div class="sc-top3-score">${scPcts[dim].toFixed(1)}</div></div>`;
   });
   const card = document.getElementById('share-card');
   card.style.left = '-9999px';
   html2canvas(card, {backgroundColor:'#f7f0e8', scale:2, useCORS:true, logging:false}).then(canvas => {
-    const link = document.createElement('a');
-    link.download = `result-${type.code}.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+    pendingDownloadUrl = canvas.toDataURL('image/png');
+    pendingDownloadName = `result-${type.code}.png`;
+    document.getElementById('preview-img').src = pendingDownloadUrl;
+    const modal = document.getElementById('preview-modal');
+    modal.style.display = 'flex';
     btn.disabled = false;
     btn.textContent = '下載結果圖片';
   }).catch(() => {
     btn.disabled = false;
     btn.textContent = '下載結果圖片';
   });
+}
+
+function closePreview() {
+  document.getElementById('preview-modal').style.display = 'none';
+}
+
+function triggerDownload() {
+  if (!pendingDownloadUrl) return;
+  const link = document.createElement('a');
+  link.download = pendingDownloadName;
+  link.href = pendingDownloadUrl;
+  link.click();
 }
 
 function restart() {

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mafiana · 性愛人格測驗</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --surface2: #1f1f1f;
+    --accent: #c8a97e;
+    --accent2: #e8c99e;
+    --text: #e8e4dc;
+    --muted: #888;
+    --border: #2a2a2a;
+    --red: #c0392b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', 'Noto Serif TC', serif;
+    min-height: 100vh;
+    line-height: 1.8;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* HEADER */
+  .site-header {
+    text-align: center;
+    padding: 32px 0 48px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .logo {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .tagline {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+  }
+
+  /* SCREEN: INTRO */
+  #screen-intro { display: block; }
+  #screen-quiz  { display: none; }
+  #screen-result{ display: none; }
+
+  .intro-headline {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+
+  .intro-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .intro-meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .intro-meta span {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .intro-meta span::before {
+    content: '—';
+    color: var(--accent);
+  }
+
+  .intro-desc {
+    font-size: 15px;
+    color: #aaa;
+    margin-bottom: 32px;
+    border-left: 2px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  .scholars {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .scholars strong {
+    display: block;
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .age-warning {
+    background: #1a0a0a;
+    border: 1px solid #3a1a1a;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #c97070;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  .privacy-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* SCREEN: QUIZ */
+  .progress-bar {
+    height: 2px;
+    background: var(--border);
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.4s ease;
+  }
+
+  .progress-text {
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  .question-block {
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .question-number {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .question-text {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .option {
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    text-align: left;
+    transition: all 0.15s;
+    line-height: 1.6;
+  }
+
+  .option:hover {
+    border-color: var(--accent);
+    background: var(--surface2);
+  }
+
+  .option.selected {
+    border-color: var(--accent);
+    background: var(--surface2);
+    color: var(--accent2);
+  }
+
+  .option-letter {
+    display: inline-block;
+    width: 20px;
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* SCREEN: RESULT */
+  .result-header {
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  .result-type-code {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .result-type-name {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: normal;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .result-type-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .result-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .result-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+
+  .result-card h3 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .result-card p {
+    font-size: 15px;
+    color: #bbb;
+    line-height: 1.9;
+  }
+
+  .dimension-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .dimension-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+  }
+
+  .dimension-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .dimension-value {
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .dimension-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .dimension-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 1s ease 0.5s;
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    line-height: 2;
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  @media (max-width: 480px) {
+    .dimension-grid { grid-template-columns: 1fr; }
+    .intro-meta { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Mafiana</div>
+    <div class="tagline">性愛人格測驗 · 繁體中文版</div>
+  </header>
+
+  <!-- SCREEN: INTRO -->
+  <div id="screen-intro">
+    <h1 class="intro-headline">
+      12 道題，測出你的<br><em>性愛人格</em>
+    </h1>
+
+    <div class="intro-meta">
+      <span>12 道題目</span>
+      <span>約 4 分鐘</span>
+      <span>僅限 18 歲以上</span>
+    </div>
+
+    <p class="intro-desc">
+      根據你當下的直覺作答，而非過去的經驗。<br>
+      選擇最接近你內心感受的選項，不需要「正確答案」。
+    </p>
+
+    <div class="scholars">
+      <strong>學術啟發來源</strong>
+      Bataille 的越界理論・Nagoski 的性反應模型・Foucault 的性史研究・
+      Baumeister 的慾望非對稱性・Fisher 的依附系統・Morin 的情色方程式・
+      以及其他五位當代性學研究者
+    </div>
+
+    <div class="age-warning">
+      ⚠ 未滿 18 歲請離開 · 本測驗涉及成人主題 · 僅供自我認識之用
+    </div>
+
+    <p class="privacy-note">你的答案不會被儲存，也不會傳送至任何伺服器。</p>
+
+    <button class="btn-primary" onclick="startQuiz()">開始測驗</button>
+  </div>
+
+  <!-- SCREEN: QUIZ -->
+  <div id="screen-quiz">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-text" id="progress-text">0 / 12</div>
+
+    <div class="question-block" id="question-block">
+      <!-- 動態插入 -->
+    </div>
+  </div>
+
+  <!-- SCREEN: RESULT -->
+  <div id="screen-result">
+    <div class="result-header">
+      <div class="result-type-code" id="res-code"></div>
+      <h2 class="result-type-name" id="res-name"></h2>
+      <div class="result-subtitle" id="res-subtitle"></div>
+    </div>
+
+    <div class="result-card">
+      <h3>核心描述</h3>
+      <p id="res-desc"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>你的優勢</h3>
+      <p id="res-strength"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>你的盲點</h3>
+      <p id="res-shadow"></p>
+    </div>
+
+    <div class="dimension-grid" id="dimension-grid">
+      <!-- 動態插入 -->
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-secondary" onclick="restartQuiz()">重新測驗</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Mafiana · 性愛人格測驗<br>
+      本測驗僅供個人探索，不構成任何醫療或心理診斷建議<br>
+      <a href="https://mafiana.org" target="_blank">mafiana.org</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+const questions = [
+  {
+    text: "在一段新的親密關係裡，你比較容易出現哪種感受？",
+    options: [
+      { text: "興奮，但也帶著一種難以名狀的不安全感", scores: { E:2, D:0, F:1, T:1 } },
+      { text: "好奇，我想慢慢地了解對方，不想太快", scores: { E:0, D:1, F:0, T:0 } },
+      { text: "強烈的佔有慾，想立刻確認彼此的位置", scores: { E:1, D:2, F:0, T:1 } },
+      { text: "輕鬆，關係就是享受，不需要太多定義", scores: { E:1, D:0, F:2, T:0 } }
+    ]
+  },
+  {
+    text: "如果你能選擇，你比較想要哪種親密體驗？",
+    options: [
+      { text: "強度極高、讓人忘記自己的存在感", scores: { E:2, D:1, F:0, T:2 } },
+      { text: "緩慢的、充滿眼神接觸和細節的", scores: { E:1, D:0, F:0, T:0 } },
+      { text: "我主導，對方完全順從", scores: { E:0, D:2, F:1, T:1 } },
+      { text: "完全交出控制，讓對方決定一切", scores: { E:1, D:0, F:2, T:1 } }
+    ]
+  },
+  {
+    text: "「禁忌」對你來說意味著什麼？",
+    options: [
+      { text: "誘惑——被禁止的事情往往更吸引我", scores: { E:1, D:1, F:1, T:2 } },
+      { text: "保護——界線讓我感到安全", scores: { E:0, D:0, F:0, T:0 } },
+      { text: "挑戰——我想測試自己和對方的極限", scores: { E:1, D:2, F:1, T:1 } },
+      { text: "無所謂——禁忌是社會建構的，不影響我", scores: { E:2, D:0, F:2, T:1 } }
+    ]
+  },
+  {
+    text: "在性方面，你更享受哪種角色？",
+    options: [
+      { text: "主導者——我喜歡設定節奏和方向", scores: { E:0, D:2, F:1, T:0 } },
+      { text: "順從者——我喜歡被帶領、被照顧", scores: { E:1, D:0, F:1, T:0 } },
+      { text: "平等的——我們輪流，沒有固定角色", scores: { E:1, D:1, F:2, T:0 } },
+      { text: "觀察者——我很享受「看」這件事本身", scores: { E:2, D:0, F:1, T:2 } }
+    ]
+  },
+  {
+    text: "你對於性幻想的態度是？",
+    options: [
+      { text: "豐富且具體，我的幻想世界很有畫面", scores: { E:2, D:1, F:1, T:1 } },
+      { text: "以情感為主，更多是關係的想像", scores: { E:0, D:0, F:0, T:0 } },
+      { text: "我喜歡幻想有些「不該有」的場景", scores: { E:1, D:1, F:1, T:2 } },
+      { text: "我很少主動幻想，需要現實刺激才有感", scores: { E:0, D:1, F:2, T:0 } }
+    ]
+  },
+  {
+    text: "當感情中出現衝突或張力時，你傾向？",
+    options: [
+      { text: "直接面對，甚至有時候張力本身讓我興奮", scores: { E:1, D:2, F:0, T:1 } },
+      { text: "退後，先消化自己的情緒再說", scores: { E:1, D:0, F:0, T:0 } },
+      { text: "用身體接近來修復關係", scores: { E:2, D:0, F:1, T:0 } },
+      { text: "把張力留著，讓它成為一種動力", scores: { E:1, D:1, F:2, T:2 } }
+    ]
+  },
+  {
+    text: "對你來說，性和情感的連結是？",
+    options: [
+      { text: "強烈相關——沒有情感基礎我很難有真實的慾望", scores: { E:0, D:0, F:0, T:0 } },
+      { text: "可以分開——我可以享受純粹的肉體連結", scores: { E:1, D:1, F:2, T:0 } },
+      { text: "越複雜越好——不確定感反而讓我更有感", scores: { E:2, D:1, F:1, T:2 } },
+      { text: "我從未想過這個問題，可能兩者都有？", scores: { E:1, D:0, F:1, T:0 } }
+    ]
+  },
+  {
+    text: "你最能激發你慾望的是哪種情境？",
+    options: [
+      { text: "明確的掌控感——是我在主導這一切", scores: { E:0, D:2, F:1, T:0 } },
+      { text: "完全的放棄感——我不需要做任何決定", scores: { E:1, D:0, F:2, T:1 } },
+      { text: "強烈的情感共鳴——對方真的「看見」我", scores: { E:2, D:0, F:0, T:0 } },
+      { text: "意外、打破預期——我不知道接下來會發生什麼", scores: { E:1, D:1, F:1, T:2 } }
+    ]
+  },
+  {
+    text: "如果用一個詞形容你對自己性格的感知：",
+    options: [
+      { text: "強烈", scores: { E:2, D:2, F:0, T:1 } },
+      { text: "溫柔", scores: { E:0, D:0, F:0, T:0 } },
+      { text: "複雜", scores: { E:1, D:1, F:1, T:2 } },
+      { text: "自由", scores: { E:1, D:0, F:2, T:0 } }
+    ]
+  },
+  {
+    text: "你覺得「脆弱」在親密關係中的位置是？",
+    options: [
+      { text: "脆弱是親密的核心，我願意被看見", scores: { E:0, D:0, F:0, T:0 } },
+      { text: "脆弱是我最不舒服的狀態，我盡量避免", scores: { E:1, D:2, F:1, T:0 } },
+      { text: "脆弱可以很性感——當對方也這樣對我", scores: { E:2, D:0, F:1, T:1 } },
+      { text: "我分不清楚脆弱和暴露的差別", scores: { E:1, D:1, F:2, T:2 } }
+    ]
+  },
+  {
+    text: "你在什麼情況下最容易「關閉」自己？",
+    options: [
+      { text: "對方過度主動，讓我感到被淹沒", scores: { E:1, D:1, F:0, T:0 } },
+      { text: "關係太穩定、太可預期，失去張力", scores: { E:2, D:1, F:1, T:2 } },
+      { text: "我感到不被尊重或被忽視", scores: { E:0, D:2, F:0, T:0 } },
+      { text: "我自己給自己壓力，太在意表現", scores: { E:1, D:0, F:2, T:0 } }
+    ]
+  },
+  {
+    text: "你希望在性這件事上，最想探索的是？",
+    options: [
+      { text: "更深的情感連結與信任", scores: { E:0, D:0, F:0, T:0 } },
+      { text: "更強烈的身體感知和極限", scores: { E:2, D:1, F:0, T:2 } },
+      { text: "更清楚自己的慾望和需求", scores: { E:1, D:1, F:2, T:0 } },
+      { text: "更能放下控制和表現焦慮", scores: { E:0, D:0, F:1, T:1 } }
+    ]
+  }
+];
+
+const personality_types = {
+  "深淵探索者": {
+    code: "EX-DT",
+    condition: s => s.E >= 6 && s.T >= 6,
+    subtitle: "The Abyss Diver",
+    desc: "你被強度吸引，並在越界的瞬間感受到最真實的自我。情感與性對你而言是同一件事——都是為了到達某種邊界狀態。你不害怕混亂，有時甚至主動製造它。",
+    strength: "高度敏銳的情慾感知，能與伴侶建立極深的心理連結。你的強度讓人印象深刻，也往往令人著迷。",
+    shadow: "你可能在平靜的關係中感到窒息，容易把「平淡」誤讀為「消亡」。學習在穩定中找到細微的刺激，是你的核心功課。",
+    dims: { 情感強度: 90, 越界傾向: 85, 主導慾望: 60, 自由流動: 55 }
+  },
+  "掌控建築師": {
+    code: "DM-CF",
+    condition: s => s.D >= 6 && s.F >= 4,
+    subtitle: "The Sovereign Architect",
+    desc: "你對掌控有深層的需求——不是為了傷害，而是因為只有當你設定規則，你才感到真正的安全和投入。你能在關係中建立強烈的秩序感。",
+    strength: "清晰的邊界意識，能讓伴侶感到被引導和被保護。你知道自己要什麼，這種確定性本身就有吸引力。",
+    shadow: "你的掌控慾可能讓伴侶感到壓迫，即使你沒有惡意。學習讓出空間、允許不確定性進入關係，是你需要練習的。",
+    dims: { 情感強度: 55, 越界傾向: 45, 主導慾望: 92, 自由流動: 70 }
+  },
+  "情感核心": {
+    code: "EM-BC",
+    condition: s => s.E <= 3 && s.D <= 3,
+    subtitle: "The Emotional Core",
+    desc: "你的慾望以情感為根基——沒有真實的連結，身體的感受就無法完整。你需要被真正看見，才能打開自己。這讓你的親密關係往往有罕見的深度。",
+    strength: "你能創造極深的情感親密感，伴侶往往覺得跟你在一起比跟任何人都更有「真實感」。",
+    shadow: "你可能對情感安全感的需求讓你在新關係中行動緩慢，或在被拒絕後受傷更深。學習讓身體帶路，而不總是等情感先到。",
+    dims: { 情感強度: 30, 越界傾向: 25, 主導慾望: 30, 自由流動: 35 }
+  },
+  "自由浪遊者": {
+    code: "FR-WD",
+    condition: s => s.F >= 6,
+    subtitle: "The Free Wanderer",
+    desc: "你把自由視為親密的前提。任何形式的束縛——無論是情感上還是身體上——都會讓你的慾望消失。你在輕盈和不確定中找到最大的興奮。",
+    strength: "你能帶給關係一種新鮮感和無壓力的氛圍，讓伴侶感到被接受，不被期待成為某種特定的樣子。",
+    shadow: "你的自由需求可能讓你迴避真正的脆弱，讓關係維持在表面。當你真的喜歡一個人時，允許自己留下來。",
+    dims: { 情感強度: 50, 越界傾向: 55, 主導慾望: 40, 自由流動: 92 }
+  },
+  "複雜織夢者": {
+    code: "CX-WT",
+    condition: s => s.T >= 4 && s.D >= 4 && s.E >= 4,
+    subtitle: "The Complex Weaver",
+    desc: "你的性格無法被單一軸線概括。你同時渴望掌控與放棄，想要深度連結又害怕被淹沒，被禁忌吸引卻也需要安全感。這種複雜性是你最真實的本質。",
+    strength: "你的多層次特質讓你能與各種類型的人建立連結，並在關係中帶入豐富的心理動態。",
+    shadow: "你的內在矛盾可能讓你和伴侶都感到困惑。學習命名自己當下的需求，而不是讓所有的複雜性同時存在，是你的功課。",
+    dims: { 情感強度: 70, 越界傾向: 68, 主導慾望: 65, 自由流動: 60 }
+  },
+  "感知獵人": {
+    code: "SE-HT",
+    condition: s => true,
+    subtitle: "The Sensory Hunter",
+    desc: "你以身體感知為中心——你活在感覺裡，而非概念裡。你對刺激有高度敏感性，也能從細微的身體語言中讀取豐富的訊息。",
+    strength: "你能讓伴侶感到被充分感知和回應，你的在場本身就是一種強烈的存在。",
+    shadow: "你可能有時忽略情感層次的溝通，讓伴侶覺得你「在場卻不在」。培養言語上的情感表達能讓你的關係更完整。",
+    dims: { 情感強度: 60, 越界傾向: 50, 主導慾望: 55, 自由流動: 65 }
+  }
+};
+
+let scores = { E: 0, D: 0, F: 0, T: 0 };
+let currentQ = 0;
+let answers = new Array(12).fill(null);
+
+function startQuiz() {
+  document.getElementById('screen-intro').style.display = 'none';
+  document.getElementById('screen-quiz').style.display = 'block';
+  currentQ = 0;
+  scores = { E: 0, D: 0, F: 0, T: 0 };
+  answers = new Array(12).fill(null);
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  const pct = Math.round((currentQ / 12) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = currentQ + ' / 12';
+
+  const letters = ['A', 'B', 'C', 'D'];
+  let html = `
+    <div class="question-number">Q ${String(currentQ + 1).padStart(2,'0')} · 12</div>
+    <div class="question-text">${q.text}</div>
+    <div class="options">
+  `;
+  q.options.forEach((opt, i) => {
+    const sel = answers[currentQ] === i ? 'selected' : '';
+    html += `<button class="option ${sel}" onclick="selectOption(${i})">
+      <span class="option-letter">${letters[i]}.</span>${opt.text}
+    </button>`;
+  });
+  html += '</div>';
+  document.getElementById('question-block').innerHTML = html;
+}
+
+function selectOption(idx) {
+  answers[currentQ] = idx;
+  setTimeout(() => {
+    currentQ++;
+    if (currentQ >= 12) {
+      calculateResult();
+    } else {
+      renderQuestion();
+    }
+  }, 200);
+}
+
+function calculateResult() {
+  scores = { E: 0, D: 0, F: 0, T: 0 };
+  answers.forEach((ans, qi) => {
+    if (ans !== null) {
+      const s = questions[qi].options[ans].scores;
+      Object.keys(s).forEach(k => scores[k] += s[k]);
+    }
+  });
+
+  let matched = null;
+  for (const [name, ptype] of Object.entries(personality_types)) {
+    if (name === '感知獵人') continue;
+    if (ptype.condition(scores)) { matched = { name, ...ptype }; break; }
+  }
+  if (!matched) matched = { name: '感知獵人', ...personality_types['感知獵人'] };
+
+  showResult(matched);
+}
+
+function showResult(type) {
+  document.getElementById('screen-quiz').style.display = 'none';
+  document.getElementById('screen-result').style.display = 'block';
+
+  document.getElementById('res-code').textContent = type.code;
+  document.getElementById('res-name').innerHTML = type.name + ' <em>· ' + type.subtitle + '</em>';
+  document.getElementById('res-subtitle').textContent = '你的性愛人格類型';
+  document.getElementById('res-desc').textContent = type.desc;
+  document.getElementById('res-strength').textContent = type.strength;
+  document.getElementById('res-shadow').textContent = type.shadow;
+
+  const dimNames = Object.keys(type.dims);
+  const dimGrid = document.getElementById('dimension-grid');
+  dimGrid.innerHTML = dimNames.map(d => `
+    <div class="dimension-item">
+      <div class="dimension-label">${d}</div>
+      <div class="dimension-value">${type.dims[d]}%</div>
+      <div class="dimension-bar">
+        <div class="dimension-fill" style="width:0%" data-target="${type.dims[d]}"></div>
+      </div>
+    </div>
+  `).join('');
+
+  setTimeout(() => {
+    document.querySelectorAll('.dimension-fill').forEach(el => {
+      el.style.width = el.dataset.target + '%';
+    });
+  }, 100);
+
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-text').textContent = '12 / 12';
+}
+
+function restartQuiz() {
+  document.getElementById('screen-result').style.display = 'none';
+  document.getElementById('screen-intro').style.display = 'block';
+}
+</script>
+</body>
+</html>

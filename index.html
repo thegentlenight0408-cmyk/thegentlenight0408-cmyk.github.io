@@ -6,15 +6,15 @@
 <title>Mafiana · 性愛人格測驗</title>
 <style>
   :root {
-    --bg: #0d0d0d;
-    --surface: #161616;
-    --surface2: #1f1f1f;
-    --accent: #c8a97e;
-    --accent2: #e8c99e;
-    --text: #e8e4dc;
-    --muted: #888;
-    --border: #2a2a2a;
-    --red: #c0392b;
+    --bg: #f7f0e8;
+    --surface: #ede4d8;
+    --surface2: #e3d8c8;
+    --accent: #b54030;
+    --accent2: #8a2f22;
+    --text: #2a1f1a;
+    --muted: #7a6a5a;
+    --border: #d4c4b0;
+    --gold: #9a7a50;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,157 +33,45 @@
     padding: 40px 24px 80px;
   }
 
-  /* HEADER */
   .site-header {
     text-align: center;
-    padding: 32px 0 48px;
+    padding: 40px 0 48px;
     border-bottom: 1px solid var(--border);
     margin-bottom: 48px;
   }
 
   .logo {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .tagline {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 2px;
-  }
-
-  /* SCREEN: INTRO */
-  #screen-intro { display: block; }
-  #screen-quiz  { display: none; }
-  #screen-result{ display: none; }
-
-  .intro-headline {
-    font-size: clamp(28px, 5vw, 42px);
-    font-weight: normal;
-    line-height: 1.4;
-    margin-bottom: 24px;
-    letter-spacing: 1px;
-  }
-
-  .intro-headline em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .intro-meta {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-
-  .intro-meta span {
     font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .intro-meta span::before {
-    content: '—';
-    color: var(--accent);
-  }
-
-  .intro-desc {
-    font-size: 15px;
-    color: #aaa;
-    margin-bottom: 32px;
-    border-left: 2px solid var(--accent);
-    padding-left: 16px;
-  }
-
-  .scholars {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 20px 24px;
-    margin-bottom: 40px;
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 2;
-  }
-
-  .scholars strong {
-    display: block;
-    color: var(--accent);
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+    letter-spacing: 6px;
+    color: var(--gold);
     text-transform: uppercase;
+    margin-bottom: 12px;
   }
 
-  .age-warning {
-    background: #1a0a0a;
-    border: 1px solid #3a1a1a;
-    padding: 12px 16px;
-    font-size: 12px;
-    color: #c97070;
-    margin-bottom: 32px;
-    letter-spacing: 1px;
-  }
-
-  .privacy-note {
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 32px;
-    text-align: center;
-  }
-
-  /* BUTTONS */
-  .btn-primary {
-    display: block;
-    width: 100%;
-    padding: 16px;
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-family: inherit;
-    font-size: 14px;
+  .site-title {
+    font-size: 42px;
+    font-weight: 700;
     letter-spacing: 3px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s;
-    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 10px;
   }
 
-  .btn-primary:hover {
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  .btn-secondary {
-    display: inline-block;
-    padding: 10px 20px;
-    background: transparent;
-    border: 1px solid var(--border);
+  .site-sub {
+    font-size: 14px;
     color: var(--muted);
-    font-family: inherit;
-    font-size: 12px;
     letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.2s;
   }
 
-  .btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
+  /* QUIZ */
+  #quiz-screen { display: block; }
+  #result-screen { display: none; }
 
-  /* SCREEN: QUIZ */
   .progress-bar {
     height: 2px;
     background: var(--border);
     margin-bottom: 40px;
-    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
   }
 
   .progress-fill {
@@ -192,36 +80,20 @@
     transition: width 0.4s ease;
   }
 
-  .progress-text {
-    text-align: right;
+  .q-counter {
     font-size: 11px;
-    color: var(--muted);
-    margin-top: 6px;
-    letter-spacing: 1px;
-  }
-
-  .question-block {
-    animation: fadeIn 0.3s ease;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .question-number {
-    font-size: 11px;
-    color: var(--accent);
     letter-spacing: 3px;
-    margin-bottom: 16px;
+    color: var(--muted);
     text-transform: uppercase;
+    margin-bottom: 16px;
   }
 
-  .question-text {
+  .q-text {
     font-size: 20px;
-    font-weight: normal;
     line-height: 1.6;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
+    color: var(--text);
+    min-height: 80px;
   }
 
   .options {
@@ -230,537 +102,780 @@
     gap: 12px;
   }
 
-  .option {
-    padding: 16px 20px;
-    border: 1px solid var(--border);
+  .opt-btn {
     background: var(--surface);
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 14px;
+    border: 1px solid var(--border);
     color: var(--text);
+    padding: 16px 20px;
     text-align: left;
-    transition: all 0.15s;
-    line-height: 1.6;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
   }
 
-  .option:hover {
-    border-color: var(--accent);
+  .opt-btn:hover {
     background: var(--surface2);
-  }
-
-  .option.selected {
     border-color: var(--accent);
-    background: var(--surface2);
-    color: var(--accent2);
   }
 
-  .option-letter {
-    display: inline-block;
-    width: 20px;
-    color: var(--accent);
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-right: 8px;
-    vertical-align: middle;
+  .opt-btn.selected {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
   }
 
-  /* SCREEN: RESULT */
+  /* RESULT */
   .result-header {
     text-align: center;
-    padding-bottom: 40px;
+    padding: 40px 0;
     border-bottom: 1px solid var(--border);
     margin-bottom: 40px;
   }
 
-  .result-type-code {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: var(--accent);
-    margin-bottom: 12px;
-    text-transform: uppercase;
-  }
-
-  .result-type-name {
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: normal;
-    margin-bottom: 16px;
-    letter-spacing: 2px;
-  }
-
-  .result-type-name em {
+  .type-code {
+    font-size: 80px;
+    font-weight: 900;
     font-style: italic;
+    letter-spacing: -2px;
     color: var(--accent);
-  }
-
-  .result-subtitle {
-    font-size: 14px;
-    color: var(--muted);
-    font-style: italic;
-  }
-
-  .result-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 32px;
-    margin-bottom: 32px;
-  }
-
-  .result-card h3 {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .result-card p {
-    font-size: 15px;
-    color: #bbb;
-    line-height: 1.9;
-  }
-
-  .dimension-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .dimension-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 20px;
-  }
-
-  .dimension-label {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--muted);
-    text-transform: uppercase;
+    line-height: 1;
     margin-bottom: 8px;
   }
 
-  .dimension-value {
-    font-size: 18px;
+  .type-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .type-name-en {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .type-quote {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    margin: 0 auto;
+    max-width: 420px;
+    text-align: left;
+  }
+
+  /* RADAR */
+  .radar-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+  .radar-wrap svg text {
+    font-family: 'Georgia', serif;
+  }
+
+  /* LETTER BREAKDOWN */
+  .letter-section {
+    margin: 40px 0;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .letter-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .letter-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .letter-big {
+    font-size: 48px;
+    font-weight: 900;
+    font-style: italic;
     color: var(--accent);
+    line-height: 1;
+    min-width: 44px;
+  }
+
+  .letter-info { flex: 1; }
+
+  .letter-en {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+
+  .letter-zh {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
     margin-bottom: 6px;
   }
 
-  .dimension-bar {
-    height: 3px;
-    background: var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .dimension-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 2px;
-    transition: width 1s ease 0.5s;
-  }
-
-  .result-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 40px 0 20px;
-    border-top: 1px solid var(--border);
-    margin-top: 60px;
-  }
-
-  footer p {
-    font-size: 11px;
+  .letter-desc {
+    font-size: 14px;
     color: var(--muted);
-    letter-spacing: 1px;
-    line-height: 2;
+    line-height: 1.7;
   }
 
-  footer a {
+  /* ANALYSIS SECTIONS */
+  .analysis-section {
+    margin: 40px 0;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  .analysis-section h3 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .analysis-section p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text);
+  }
+
+  .secondary-type {
+    font-size: 20px;
+    font-weight: 700;
     color: var(--accent);
-    text-decoration: none;
+    margin-bottom: 8px;
+  }
+
+  .compatible-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .compat-tag {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 6px 14px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  /* TOP 3 */
+  .top3-section {
+    margin: 40px 0;
+  }
+
+  .top3-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .top3-rank {
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--accent);
+    min-width: 28px;
+  }
+
+  .top3-dim {
+    font-size: 16px;
+    font-weight: 700;
+    flex: 1;
+  }
+
+  .top3-score {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .restart-btn {
+    display: block;
+    width: 100%;
+    margin-top: 48px;
+    padding: 18px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .restart-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   @media (max-width: 480px) {
-    .dimension-grid { grid-template-columns: 1fr; }
-    .intro-meta { flex-direction: column; gap: 8px; }
+    .type-code { font-size: 56px; }
+    .site-title { font-size: 32px; }
   }
 </style>
 </head>
 <body>
-
 <div class="container">
 
-  <!-- HEADER -->
   <header class="site-header">
-    <div class="logo">Mafiana</div>
-    <div class="tagline">性愛人格測驗 · 繁體中文版</div>
+    <div class="logo">Sexual Personality Index</div>
+    <div class="site-title">MAFIANA</div>
+    <div class="site-sub">找到你在親密關係裡真正的樣子</div>
   </header>
 
-  <!-- SCREEN: INTRO -->
-  <div id="screen-intro">
-    <h1 class="intro-headline">
-      12 道題，測出你的<br><em>性愛人格</em>
-    </h1>
-
-    <div class="intro-meta">
-      <span>12 道題目</span>
-      <span>約 4 分鐘</span>
-      <span>僅限 18 歲以上</span>
-    </div>
-
-    <p class="intro-desc">
-      根據你當下的直覺作答，而非過去的經驗。<br>
-      選擇最接近你內心感受的選項，不需要「正確答案」。
-    </p>
-
-    <div class="scholars">
-      <strong>學術啟發來源</strong>
-      Bataille 的越界理論・Nagoski 的性反應模型・Foucault 的性史研究・
-      Baumeister 的慾望非對稱性・Fisher 的依附系統・Morin 的情色方程式・
-      以及其他五位當代性學研究者
-    </div>
-
-    <div class="age-warning">
-      ⚠ 未滿 18 歲請離開 · 本測驗涉及成人主題 · 僅供自我認識之用
-    </div>
-
-    <p class="privacy-note">你的答案不會被儲存，也不會傳送至任何伺服器。</p>
-
-    <button class="btn-primary" onclick="startQuiz()">開始測驗</button>
+  <!-- QUIZ -->
+  <div id="quiz-screen">
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    <div class="q-counter" id="q-counter">問題 1 / 12</div>
+    <div class="q-text" id="q-text"></div>
+    <div class="options" id="options"></div>
   </div>
 
-  <!-- SCREEN: QUIZ -->
-  <div id="screen-quiz">
-    <div class="progress-bar">
-      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
-    </div>
-    <div class="progress-text" id="progress-text">0 / 12</div>
-
-    <div class="question-block" id="question-block">
-      <!-- 動態插入 -->
-    </div>
-  </div>
-
-  <!-- SCREEN: RESULT -->
-  <div id="screen-result">
+  <!-- RESULT -->
+  <div id="result-screen">
     <div class="result-header">
-      <div class="result-type-code" id="res-code"></div>
-      <h2 class="result-type-name" id="res-name"></h2>
-      <div class="result-subtitle" id="res-subtitle"></div>
+      <div class="type-code" id="r-code"></div>
+      <div class="type-name" id="r-name"></div>
+      <div class="type-name-en" id="r-name-en"></div>
+      <div class="type-quote" id="r-quote"></div>
     </div>
 
-    <div class="result-card">
-      <h3>核心描述</h3>
-      <p id="res-desc"></p>
+    <div class="radar-wrap">
+      <svg id="radar-svg" width="460" height="460" viewBox="0 0 460 460"></svg>
     </div>
 
-    <div class="result-card">
-      <h3>你的優勢</h3>
-      <p id="res-strength"></p>
+    <div class="letter-section">
+      <div class="section-label">你的人格字母</div>
+      <div class="letter-cards" id="r-letters"></div>
     </div>
 
-    <div class="result-card">
-      <h3>你的盲點</h3>
-      <p id="res-shadow"></p>
+    <div class="analysis-section">
+      <h3>人格分析</h3>
+      <p id="r-analysis"></p>
     </div>
 
-    <div class="dimension-grid" id="dimension-grid">
-      <!-- 動態插入 -->
+    <div class="analysis-section">
+      <h3>你的副人格</h3>
+      <div class="secondary-type" id="r-secondary"></div>
+      <p id="r-secondary-desc"></p>
     </div>
 
-    <div class="result-actions">
-      <button class="btn-secondary" onclick="restartQuiz()">重新測驗</button>
+    <div class="analysis-section">
+      <h3>能和你玩得好的人格</h3>
+      <div class="compatible-list" id="r-compatible"></div>
     </div>
+
+    <div class="top3-section">
+      <div class="section-label">你最強的三個維度</div>
+      <div id="r-top3"></div>
+    </div>
+
+    <button class="restart-btn" onclick="restart()">重新測驗</button>
   </div>
-
-  <footer>
-    <p>
-      Mafiana · 性愛人格測驗<br>
-      本測驗僅供個人探索，不構成任何醫療或心理診斷建議<br>
-      <a href="https://mafiana.org" target="_blank">mafiana.org</a>
-    </p>
-  </footer>
 
 </div>
 
 <script>
-const questions = [
+const DIMS = ['破界者','感官師','掌權人','引力家','儀式專家','戲中人','曖昧大師','面具大師','Switch','觀察者','慢熱派','臣服者'];
+
+const QUESTIONS = [
   {
-    text: "在一段新的親密關係裡，你比較容易出現哪種感受？",
-    options: [
-      { text: "興奮，但也帶著一種難以名狀的不安全感", scores: { E:2, D:0, F:1, T:1 } },
-      { text: "好奇，我想慢慢地了解對方，不想太快", scores: { E:0, D:1, F:0, T:0 } },
-      { text: "強烈的佔有慾，想立刻確認彼此的位置", scores: { E:1, D:2, F:0, T:1 } },
-      { text: "輕鬆，關係就是享受，不需要太多定義", scores: { E:1, D:0, F:2, T:0 } }
+    text: '在親密互動中，你更傾向於？',
+    opts: [
+      { label: '主動帶領，決定節奏和方向', scores: {掌權人:2, 引力家:1} },
+      { label: '順著對方，享受被帶著走', scores: {臣服者:2, 慢熱派:1} },
+      { label: '兩者都行，視當下情境決定', scores: {Switch:2, 觀察者:1} },
+      { label: '我喜歡打破預設規則', scores: {破界者:2, 戲中人:1} }
     ]
   },
   {
-    text: "如果你能選擇，你比較想要哪種親密體驗？",
-    options: [
-      { text: "強度極高、讓人忘記自己的存在感", scores: { E:2, D:1, F:0, T:2 } },
-      { text: "緩慢的、充滿眼神接觸和細節的", scores: { E:1, D:0, F:0, T:0 } },
-      { text: "我主導，對方完全順從", scores: { E:0, D:2, F:1, T:1 } },
-      { text: "完全交出控制，讓對方決定一切", scores: { E:1, D:0, F:2, T:1 } }
+    text: '你認為身體感官在親密中有多重要？',
+    opts: [
+      { label: '最重要的事，細節決定一切', scores: {感官師:2, 儀式專家:1} },
+      { label: '重要，但情緒連結更關鍵', scores: {慢熱派:2, 臣服者:1} },
+      { label: '我喜歡探索邊界和新奇感受', scores: {破界者:2, 感官師:1} },
+      { label: '我更注重心理層面的控制感', scores: {掌權人:2, 面具大師:1} }
     ]
   },
   {
-    text: "「禁忌」對你來說意味著什麼？",
-    options: [
-      { text: "誘惑——被禁止的事情往往更吸引我", scores: { E:1, D:1, F:1, T:2 } },
-      { text: "保護——界線讓我感到安全", scores: { E:0, D:0, F:0, T:0 } },
-      { text: "挑戰——我想測試自己和對方的極限", scores: { E:1, D:2, F:1, T:1 } },
-      { text: "無所謂——禁忌是社會建構的，不影響我", scores: { E:2, D:0, F:2, T:1 } }
+    text: '面對陌生的性幻想或行為，你的反應通常是？',
+    opts: [
+      { label: '好奇，想嘗試看看', scores: {破界者:2, 戲中人:1} },
+      { label: '觀察對方的反應再決定', scores: {觀察者:2, Switch:1} },
+      { label: '謹慎，需要充分信任才願意', scores: {慢熱派:2, 面具大師:1} },
+      { label: '可以扮演不同角色來探索', scores: {戲中人:2, 曖昧大師:1} }
     ]
   },
   {
-    text: "在性方面，你更享受哪種角色？",
-    options: [
-      { text: "主導者——我喜歡設定節奏和方向", scores: { E:0, D:2, F:1, T:0 } },
-      { text: "順從者——我喜歡被帶領、被照顧", scores: { E:1, D:0, F:1, T:0 } },
-      { text: "平等的——我們輪流，沒有固定角色", scores: { E:1, D:1, F:2, T:0 } },
-      { text: "觀察者——我很享受「看」這件事本身", scores: { E:2, D:0, F:1, T:2 } }
+    text: '你在親密關係裡最吸引人的特質是？',
+    opts: [
+      { label: '強大的氣場和掌控感', scores: {掌權人:2, 引力家:1} },
+      { label: '讓對方感到安全和被接納', scores: {臣服者:2, 慢熱派:1} },
+      { label: '神秘感和讓人猜不透', scores: {曖昧大師:2, 面具大師:1} },
+      { label: '感官上的精準和敏銳', scores: {感官師:2, 儀式專家:1} }
     ]
   },
   {
-    text: "你對於性幻想的態度是？",
-    options: [
-      { text: "豐富且具體，我的幻想世界很有畫面", scores: { E:2, D:1, F:1, T:1 } },
-      { text: "以情感為主，更多是關係的想像", scores: { E:0, D:0, F:0, T:0 } },
-      { text: "我喜歡幻想有些「不該有」的場景", scores: { E:1, D:1, F:1, T:2 } },
-      { text: "我很少主動幻想，需要現實刺激才有感", scores: { E:0, D:1, F:2, T:0 } }
+    text: '你如何看待親密關係中的「儀式感」？',
+    opts: [
+      { label: '非常重要，重複的儀式讓我有安全感', scores: {儀式專家:2, 感官師:1} },
+      { label: '我喜歡每次都有新鮮感', scores: {破界者:2, 戲中人:1} },
+      { label: '適度就好，不必過於刻意', scores: {觀察者:2, Switch:1} },
+      { label: '儀式對我來說是一種服從或支配的象徵', scores: {掌權人:2, 臣服者:1} }
     ]
   },
   {
-    text: "當感情中出現衝突或張力時，你傾向？",
-    options: [
-      { text: "直接面對，甚至有時候張力本身讓我興奮", scores: { E:1, D:2, F:0, T:1 } },
-      { text: "退後，先消化自己的情緒再說", scores: { E:1, D:0, F:0, T:0 } },
-      { text: "用身體接近來修復關係", scores: { E:2, D:0, F:1, T:0 } },
-      { text: "把張力留著，讓它成為一種動力", scores: { E:1, D:1, F:2, T:2 } }
+    text: '你喜歡在親密互動中展現多少真實的自己？',
+    opts: [
+      { label: '完全展現，赤裸真實', scores: {感官師:2, 臣服者:1} },
+      { label: '保留一些神秘感', scores: {曖昧大師:2, 面具大師:1} },
+      { label: '扮演角色讓我感覺更自由', scores: {戲中人:2, 曖昧大師:1} },
+      { label: '我喜歡觀察對方多過暴露自己', scores: {觀察者:2, 慢熱派:1} }
     ]
   },
   {
-    text: "對你來說，性和情感的連結是？",
-    options: [
-      { text: "強烈相關——沒有情感基礎我很難有真實的慾望", scores: { E:0, D:0, F:0, T:0 } },
-      { text: "可以分開——我可以享受純粹的肉體連結", scores: { E:1, D:1, F:2, T:0 } },
-      { text: "越複雜越好——不確定感反而讓我更有感", scores: { E:2, D:1, F:1, T:2 } },
-      { text: "我從未想過這個問題，可能兩者都有？", scores: { E:1, D:0, F:1, T:0 } }
+    text: '當你對某人產生強烈的吸引力時，你會？',
+    opts: [
+      { label: '主動製造張力，讓對方先開口', scores: {引力家:2, 曖昧大師:1} },
+      { label: '直接表達，不藏著掖著', scores: {破界者:2, 掌權人:1} },
+      { label: '先觀察，慢慢靠近', scores: {慢熱派:2, 觀察者:1} },
+      { label: '透過特定環境或情境暗示', scores: {儀式專家:2, 面具大師:1} }
     ]
   },
   {
-    text: "你最能激發你慾望的是哪種情境？",
-    options: [
-      { text: "明確的掌控感——是我在主導這一切", scores: { E:0, D:2, F:1, T:0 } },
-      { text: "完全的放棄感——我不需要做任何決定", scores: { E:1, D:0, F:2, T:1 } },
-      { text: "強烈的情感共鳴——對方真的「看見」我", scores: { E:2, D:0, F:0, T:0 } },
-      { text: "意外、打破預期——我不知道接下來會發生什麼", scores: { E:1, D:1, F:1, T:2 } }
+    text: '你對「權力遊戲」在床上的看法是？',
+    opts: [
+      { label: '我喜歡主導，掌控感讓我亢奮', scores: {掌權人:2, 引力家:1} },
+      { label: '我喜歡放手，讓對方決定一切', scores: {臣服者:2, 慢熱派:1} },
+      { label: '上下都能，看對方是誰', scores: {Switch:2, 戲中人:1} },
+      { label: '我喜歡在規則邊緣玩耍', scores: {破界者:2, 曖昧大師:1} }
     ]
   },
   {
-    text: "如果用一個詞形容你對自己性格的感知：",
-    options: [
-      { text: "強烈", scores: { E:2, D:2, F:0, T:1 } },
-      { text: "溫柔", scores: { E:0, D:0, F:0, T:0 } },
-      { text: "複雜", scores: { E:1, D:1, F:1, T:2 } },
-      { text: "自由", scores: { E:1, D:0, F:2, T:0 } }
+    text: '你的親密生活通常需要？',
+    opts: [
+      { label: '大量的感官刺激', scores: {感官師:2, 破界者:1} },
+      { label: '深層的情感連結', scores: {慢熱派:2, 臣服者:1} },
+      { label: '充分的掌控或被掌控', scores: {掌權人:2, 臣服者:1} },
+      { label: '故事感和場景設定', scores: {戲中人:2, 儀式專家:1} }
     ]
   },
   {
-    text: "你覺得「脆弱」在親密關係中的位置是？",
-    options: [
-      { text: "脆弱是親密的核心，我願意被看見", scores: { E:0, D:0, F:0, T:0 } },
-      { text: "脆弱是我最不舒服的狀態，我盡量避免", scores: { E:1, D:2, F:1, T:0 } },
-      { text: "脆弱可以很性感——當對方也這樣對我", scores: { E:2, D:0, F:1, T:1 } },
-      { text: "我分不清楚脆弱和暴露的差別", scores: { E:1, D:1, F:2, T:2 } }
+    text: '你如何處理在親密關係中的界限？',
+    opts: [
+      { label: '界限是用來突破的', scores: {破界者:2, 戲中人:1} },
+      { label: '我尊重界限，安全感很重要', scores: {慢熱派:2, 儀式專家:1} },
+      { label: '我喜歡試探界限在哪裡', scores: {觀察者:2, 曖昧大師:1} },
+      { label: '我讓對方設定界限，我來執行', scores: {臣服者:2, 面具大師:1} }
     ]
   },
   {
-    text: "你在什麼情況下最容易「關閉」自己？",
-    options: [
-      { text: "對方過度主動，讓我感到被淹沒", scores: { E:1, D:1, F:0, T:0 } },
-      { text: "關係太穩定、太可預期，失去張力", scores: { E:2, D:1, F:1, T:2 } },
-      { text: "我感到不被尊重或被忽視", scores: { E:0, D:2, F:0, T:0 } },
-      { text: "我自己給自己壓力，太在意表現", scores: { E:1, D:0, F:2, T:0 } }
+    text: '你覺得自己最像哪種親密能量？',
+    opts: [
+      { label: '火焰：熱烈、主動、燃燒一切', scores: {破界者:2, 引力家:1} },
+      { label: '磁鐵：安靜地吸引，等待靠近', scores: {引力家:2, 觀察者:1} },
+      { label: '水：流動、包容、適應一切形狀', scores: {Switch:2, 慢熱派:1} },
+      { label: '鏡子：反映對方，讓他們看見自己', scores: {面具大師:2, 觀察者:1} }
     ]
   },
   {
-    text: "你希望在性這件事上，最想探索的是？",
-    options: [
-      { text: "更深的情感連結與信任", scores: { E:0, D:0, F:0, T:0 } },
-      { text: "更強烈的身體感知和極限", scores: { E:2, D:1, F:0, T:2 } },
-      { text: "更清楚自己的慾望和需求", scores: { E:1, D:1, F:2, T:0 } },
-      { text: "更能放下控制和表現焦慮", scores: { E:0, D:0, F:1, T:1 } }
+    text: '關於角色扮演，你的感覺是？',
+    opts: [
+      { label: '我熱愛，喜歡完全進入角色', scores: {戲中人:2, 面具大師:1} },
+      { label: '可以，只要有足夠信任', scores: {慢熱派:2, 臣服者:1} },
+      { label: '我喜歡主導故事走向', scores: {掌權人:2, 引力家:1} },
+      { label: '有趣，每個角色都讓我發現新的自己', scores: {Switch:2, 曖昧大師:1} }
     ]
   }
 ];
 
-const personality_types = {
-  "深淵探索者": {
-    code: "EX-DT",
-    condition: s => s.E >= 6 && s.T >= 6,
-    subtitle: "The Abyss Diver",
-    desc: "你被強度吸引，並在越界的瞬間感受到最真實的自我。情感與性對你而言是同一件事——都是為了到達某種邊界狀態。你不害怕混亂，有時甚至主動製造它。",
-    strength: "高度敏銳的情慾感知，能與伴侶建立極深的心理連結。你的強度讓人印象深刻，也往往令人著迷。",
-    shadow: "你可能在平靜的關係中感到窒息，容易把「平淡」誤讀為「消亡」。學習在穩定中找到細微的刺激，是你的核心功課。",
-    dims: { 情感強度: 90, 越界傾向: 85, 主導慾望: 60, 自由流動: 55 }
+const TYPES = {
+  '破界者': {
+    code: 'RI-X', name: '破界者', nameSub: 'The Transgressor',
+    quote: '"規則是給不夠有趣的人設計的。"',
+    letters: [
+      { l:'R', en:'Reactive', zh:'反應', desc:'你對刺激極為敏銳，身體和心理都能快速回應當下的張力。' },
+      { l:'I', en:'Initiative', zh:'主動', desc:'你不等待，你製造。主動挑起、主動破局是你的本能。' },
+      { l:'X', en:'Crossing', zh:'越界', desc:'普通的界限對你來說是邀請，不是禁止。越界是你探索自我的方式。' }
+    ],
+    analysis: '你是那種讓人既著迷又有點不安全感的類型。你不喜歡照劇本走，喜歡在每次互動中製造意外。性對你來說是冒險，是試驗，是突破——而不只是連結或放鬆。你的能量帶有一種輕微的危險感，但那正是你的吸引力所在。',
+    secondary: '戲中人 IE-C', secondary_desc: '當你找到了真正值得的對象，你的破界衝動會開始有更多結構——你變成一個導演，而不只是破壞者。',
+    compatible: ['感官師 RI-M', '臣服者 RP-X', '掌權人 IP-C']
   },
-  "掌控建築師": {
-    code: "DM-CF",
-    condition: s => s.D >= 6 && s.F >= 4,
-    subtitle: "The Sovereign Architect",
-    desc: "你對掌控有深層的需求——不是為了傷害，而是因為只有當你設定規則，你才感到真正的安全和投入。你能在關係中建立強烈的秩序感。",
-    strength: "清晰的邊界意識，能讓伴侶感到被引導和被保護。你知道自己要什麼，這種確定性本身就有吸引力。",
-    shadow: "你的掌控慾可能讓伴侶感到壓迫，即使你沒有惡意。學習讓出空間、允許不確定性進入關係，是你需要練習的。",
-    dims: { 情感強度: 55, 越界傾向: 45, 主導慾望: 92, 自由流動: 70 }
+  '感官師': {
+    code: 'RI-M', name: '感官師', nameSub: 'The Sensualist',
+    quote: '"每一寸都值得被好好感受。"',
+    letters: [
+      { l:'R', en:'Reactive', zh:'反應', desc:'你的身體像精密儀器，能接收並放大最細微的感覺刺激。' },
+      { l:'I', en:'Initiative', zh:'主動', desc:'你主動尋求和創造感官體驗，不等對方來找你。' },
+      { l:'M', en:'Mirror', zh:'鏡像', desc:'你能精準感應對方的反應，並以此調整自己的給予節奏。' }
+    ],
+    analysis: '你活在細節裡。你注意溫度、質地、氣味、光線——這些對你來說不是背景，是主角。你在親密中極度精準，知道該在哪裡停留，哪裡施力。你的感官能力讓你成為難以忘懷的伴侶。',
+    secondary: '儀式專家 IP-M', secondary_desc: '你慢慢發展出一套固定的感官儀式——你知道什麼有效，你不輕易放棄它。',
+    compatible: ['破界者 RI-X', '臣服者 RP-X', '慢熱派 RP-M']
   },
-  "情感核心": {
-    code: "EM-BC",
-    condition: s => s.E <= 3 && s.D <= 3,
-    subtitle: "The Emotional Core",
-    desc: "你的慾望以情感為根基——沒有真實的連結，身體的感受就無法完整。你需要被真正看見，才能打開自己。這讓你的親密關係往往有罕見的深度。",
-    strength: "你能創造極深的情感親密感，伴侶往往覺得跟你在一起比跟任何人都更有「真實感」。",
-    shadow: "你可能對情感安全感的需求讓你在新關係中行動緩慢，或在被拒絕後受傷更深。學習讓身體帶路，而不總是等情感先到。",
-    dims: { 情感強度: 30, 越界傾向: 25, 主導慾望: 30, 自由流動: 35 }
+  '掌權人': {
+    code: 'IP-C', name: '掌權人', nameSub: 'The Dominant',
+    quote: '"我不需要大聲，我只需要讓你明白誰說了算。"',
+    letters: [
+      { l:'I', en:'Initiative', zh:'主動', desc:'你總是先行一步，設定規則、節奏和場景。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你享受掌控，不是控制欲，而是在權力動態中找到清晰。' },
+      { l:'C', en:'Controlled', zh:'受控', desc:'你的能量看似強烈，但你掌控自己的感情和表現極度精準。' }
+    ],
+    analysis: '你的存在本身就帶著一種令人想臣服的氣場。你不喜歡混亂，你創造秩序。在親密中，你是規則的制定者、節奏的主導者。但你並不殘忍——你的掌控是為了讓雙方都能進入更深的狀態。',
+    secondary: '引力家 IP-X', secondary_desc: '有時你退後一步，不用直接掌控，而是讓自己成為無法抗拒的引力中心。',
+    compatible: ['臣服者 RP-X', '破界者 RI-X', '面具大師 RP-C']
   },
-  "自由浪遊者": {
-    code: "FR-WD",
-    condition: s => s.F >= 6,
-    subtitle: "The Free Wanderer",
-    desc: "你把自由視為親密的前提。任何形式的束縛——無論是情感上還是身體上——都會讓你的慾望消失。你在輕盈和不確定中找到最大的興奮。",
-    strength: "你能帶給關係一種新鮮感和無壓力的氛圍，讓伴侶感到被接受，不被期待成為某種特定的樣子。",
-    shadow: "你的自由需求可能讓你迴避真正的脆弱，讓關係維持在表面。當你真的喜歡一個人時，允許自己留下來。",
-    dims: { 情感強度: 50, 越界傾向: 55, 主導慾望: 40, 自由流動: 92 }
+  '引力家': {
+    code: 'IP-X', name: '引力家', nameSub: 'The Magnetist',
+    quote: '"我什麼都沒做，但他已經走過來了。"',
+    letters: [
+      { l:'I', en:'Initiative', zh:'主動', desc:'你的主動是靜態的：你製造場域，讓對方不由自主靠近。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你的權力不來自命令，而來自存在本身的強度。' },
+      { l:'X', en:'Crossing', zh:'越界', desc:'你讓人想打破自己的界限，為你而做平時不會做的事。' }
+    ],
+    analysis: '你是那種讓人沉迷的類型。你不需要追，你吸引。你的吸引力有一種催眠感，讓人覺得靠近你是自己的選擇——但你清楚知道你在做什麼。你是沉默的掌控者。',
+    secondary: '曖昧大師 IP-M', secondary_desc: '當你不想太快讓對方讀懂你，你切換到曖昧模式——讓對方在猜測中更深陷入。',
+    compatible: ['臣服者 RP-X', '慢熱派 RP-M', '觀察者 RP-C']
   },
-  "複雜織夢者": {
-    code: "CX-WT",
-    condition: s => s.T >= 4 && s.D >= 4 && s.E >= 4,
-    subtitle: "The Complex Weaver",
-    desc: "你的性格無法被單一軸線概括。你同時渴望掌控與放棄，想要深度連結又害怕被淹沒，被禁忌吸引卻也需要安全感。這種複雜性是你最真實的本質。",
-    strength: "你的多層次特質讓你能與各種類型的人建立連結，並在關係中帶入豐富的心理動態。",
-    shadow: "你的內在矛盾可能讓你和伴侶都感到困惑。學習命名自己當下的需求，而不是讓所有的複雜性同時存在，是你的功課。",
-    dims: { 情感強度: 70, 越界傾向: 68, 主導慾望: 65, 自由流動: 60 }
+  '儀式專家': {
+    code: 'IP-M', name: '儀式專家', nameSub: 'The Ritualist',
+    quote: '"第三次，我知道你喜歡這樣。"',
+    letters: [
+      { l:'I', en:'Initiative', zh:'主動', desc:'你主動建立和維護你們之間的儀式系統。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你的權力在於「了解」——你比任何人更清楚對方的節律。' },
+      { l:'M', en:'Mirror', zh:'鏡像', desc:'你高度敏感，能鏡射對方的需求，並將其轉化為精準的回應。' }
+    ],
+    analysis: '你的親密關係是手工製作的。你記得每個細節：第一次的觸碰、對方喜歡的節奏、哪個字會讓他們融化。你的儀式感不是保守，而是精準——你在反覆中建立深度。',
+    secondary: '感官師 RI-M', secondary_desc: '你的儀式根植於感官——當你放開固定框架，你能發現更多新的感受路徑。',
+    compatible: ['慢熱派 RP-M', '臣服者 RP-X', '觀察者 RP-C']
   },
-  "感知獵人": {
-    code: "SE-HT",
-    condition: s => true,
-    subtitle: "The Sensory Hunter",
-    desc: "你以身體感知為中心——你活在感覺裡，而非概念裡。你對刺激有高度敏感性，也能從細微的身體語言中讀取豐富的訊息。",
-    strength: "你能讓伴侶感到被充分感知和回應，你的在場本身就是一種強烈的存在。",
-    shadow: "你可能有時忽略情感層次的溝通，讓伴侶覺得你「在場卻不在」。培養言語上的情感表達能讓你的關係更完整。",
-    dims: { 情感強度: 60, 越界傾向: 50, 主導慾望: 55, 自由流動: 65 }
+  '戲中人': {
+    code: 'IE-C', name: '戲中人', nameSub: 'The Performer',
+    quote: '"今晚我是誰，由你決定。"',
+    letters: [
+      { l:'I', en:'Initiative', zh:'主動', desc:'你主動進入角色，設計場景，導演整個故事。' },
+      { l:'E', en:'Emotion', zh:'情感', desc:'你用情感驅動表演——你不只是扮演，你真實感受。' },
+      { l:'C', en:'Controlled', zh:'受控', desc:'你能在任何角色中保持自我意識，不失控，不迷失。' }
+    ],
+    analysis: '親密對你來說是舞台，但這不意味著你虛假。你在角色中發現自己的邊界，在表演中找到真實。你能完全進入一個角色，卻始終保有一根線連著真實的自己。這是罕見的天賦。',
+    secondary: '破界者 RI-X', secondary_desc: '當故事已經不夠刺激，你開始想打破規則——從導演變成破壞者。',
+    compatible: ['面具大師 RP-C', 'Switch IE-M', '引力家 IP-X']
+  },
+  '曖昧大師': {
+    code: 'IP-M', name: '曖昧大師', nameSub: 'The Ambiguous',
+    quote: '"我說的是玩笑，但我沒有在開玩笑。"',
+    letters: [
+      { l:'I', en:'Initiative', zh:'主動', desc:'你主動製造曖昧，每一句話都有第二層意思。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你的權力在於讓對方永遠無法確定你的真實意圖。' },
+      { l:'M', en:'Mirror', zh:'鏡像', desc:'你善於反映對方的慾望，讓他們覺得你完全理解他們。' }
+    ],
+    analysis: '你是信息不對稱的藝術家。你讓對方永遠猜不透，但又覺得你完全理解他。你的曖昧不是軟弱，而是一種精密的控制——在清晰和模糊之間維持完美的張力。',
+    secondary: '面具大師 RP-C', secondary_desc: '當你決定讓對方看到真實的你，你切換到面具大師模式——展示一個精心設計的「真實」。',
+    compatible: ['觀察者 RP-C', '引力家 IP-X', '慢熱派 RP-M']
+  },
+  '面具大師': {
+    code: 'RP-C', name: '面具大師', nameSub: 'The Masked',
+    quote: '"我讓你看見的，都是我想讓你看見的。"',
+    letters: [
+      { l:'R', en:'Reactive', zh:'反應', desc:'你對環境和對方的每個信號都高度敏感，隨時調整自己。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你的力量在於定義別人眼中的你——你是自己形象的設計師。' },
+      { l:'C', en:'Controlled', zh:'受控', desc:'你的情感和表現始終在控制之中，極少有人看見你不設防的樣子。' }
+    ],
+    analysis: '你懂得展示自己。你知道什麼時候示弱，什麼時候強勢，什麼時候神秘——每個面具背後都是真實的你，只是你選擇在什麼時機給誰看見哪個部分。這種控制讓你極具魅力，也讓真正親近你的人感到被選中的珍貴。',
+    secondary: '曖昧大師 IP-M', secondary_desc: '面具和曖昧是近親，你能無縫切換：時而展示，時而隱藏，讓對方永遠保持好奇。',
+    compatible: ['掌權人 IP-C', '戲中人 IE-C', '觀察者 RP-C']
+  },
+  'Switch': {
+    code: 'IE-M', name: 'Switch', nameSub: 'The Fluid',
+    quote: '"我不選邊站，因為兩邊我都很好。"',
+    letters: [
+      { l:'I', en:'Initiative', zh:'主動', desc:'你在需要時能立刻切換成主動模式，毫不費力。' },
+      { l:'E', en:'Emotion', zh:'情感', desc:'你用情感感知哪個角色此刻更適合，你的直覺非常準確。' },
+      { l:'M', en:'Mirror', zh:'鏡像', desc:'你天生具備鏡像能力，能感受並反映對方的能量。' }
+    ],
+    analysis: '你不需要一個固定的身份來感到安全。你在主導和臣服之間流動，在強勢和柔軟之間轉換——而且每次轉換都是真實的，不是表演。這種流動性讓你成為極度靈活的伴侶，能和各種人格形成完美的動態。',
+    secondary: '破界者 RI-X', secondary_desc: '當所有角色都厭了，你開始想從系統本身跳出去——打破上下的二元，創造全新的動態。',
+    compatible: ['掌權人 IP-C', '臣服者 RP-X', '儀式專家 IP-M']
+  },
+  '觀察者': {
+    code: 'RP-C', name: '觀察者', nameSub: 'The Watcher',
+    quote: '"我在了解你之前，不會真的讓你了解我。"',
+    letters: [
+      { l:'R', en:'Reactive', zh:'反應', desc:'你先觀察、吸收，再決定如何回應——你的回應永遠比對方快一步。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你的權力在資訊——你比任何人更了解房間裡正在發生什麼。' },
+      { l:'C', en:'Controlled', zh:'受控', desc:'你的情感和表達極為克制，讓人猜不透你在想什麼。' }
+    ],
+    analysis: '你是安靜的收集者。你觀察每個細節，記憶每個表情，在開口之前你已經知道對方需要什麼。你的存在讓人感到被深度看見——同時又讓人想更多地了解你。你少說，但你說的每句話都精準。',
+    secondary: '引力家 IP-X', secondary_desc: '當你決定讓自己被看見，你切換為引力家——你的了解變成吸引力，讓對方不由自主靠近。',
+    compatible: ['引力家 IP-X', '曖昧大師 IP-M', '儀式專家 IP-M']
+  },
+  '慢熱派': {
+    code: 'RP-M', name: '慢熱派', nameSub: 'The Slow Burn',
+    quote: '"我需要時間，但一旦熱起來，你會知道為什麼值得等。"',
+    letters: [
+      { l:'R', en:'Reactive', zh:'反應', desc:'你的反應是真實的，從不表演——你需要時間讓情感真正發酵。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你的力量不在快，而在深——你建立的連結比任何人都持久。' },
+      { l:'M', en:'Mirror', zh:'鏡像', desc:'你極度敏感於對方的感受，能在信任建立後給予完美的鏡射回應。' }
+    ],
+    analysis: '你不是難以開始，你是值得被等待。你需要安全感，需要信任，需要知道對方不會因為你的節奏而離開。但當你真的打開，你給予的深度是其他人格都難以企及的。你的慢不是冷，是深。',
+    secondary: '臣服者 RP-X', secondary_desc: '在深度信任建立後，你發現自己渴望完全放手——你的慢熱最終流向徹底的臣服。',
+    compatible: ['感官師 RI-M', '儀式專家 IP-M', '掌權人 IP-C']
+  },
+  '臣服者': {
+    code: 'RP-X', name: '臣服者', nameSub: 'The Sublime',
+    quote: '"大概只有在床上臣服吧..."',
+    letters: [
+      { l:'R', en:'Reactive', zh:'反應', desc:'你的身體和心理對對方的每個動作都高度敏感，反應真實而強烈。' },
+      { l:'P', en:'Power', zh:'權力', desc:'你理解權力動態，但你選擇將它交出去——這是主動的選擇，不是無力。' },
+      { l:'X', en:'Crossing', zh:'越界', desc:'臣服讓你越過日常中的自我邊界，在信任中體驗一種特殊的自由。' }
+    ],
+    analysis: '你知道臣服需要比掌控更大的勇氣。你選擇信任，選擇放開控制，讓自己完全沉浸在感受中。這不是軟弱——這是需要高度自我意識才能做到的事。你的臣服是禮物，給予它需要對方真正值得。',
+    secondary: '慢熱派 RP-M', secondary_desc: '你的臣服建立在時間和信任上，副人格是慢熱派——你不輕易給出，但給出了就是全部。',
+    compatible: ['掌權人 IP-C', '感官師 RI-M', '引力家 IP-X']
   }
 };
 
-let scores = { E: 0, D: 0, F: 0, T: 0 };
+let scores = {};
 let currentQ = 0;
-let answers = new Array(12).fill(null);
+let selectedOpt = null;
 
-function startQuiz() {
-  document.getElementById('screen-intro').style.display = 'none';
-  document.getElementById('screen-quiz').style.display = 'block';
+function init() {
+  DIMS.forEach(d => scores[d] = 0);
   currentQ = 0;
-  scores = { E: 0, D: 0, F: 0, T: 0 };
-  answers = new Array(12).fill(null);
-  renderQuestion();
+  selectedOpt = null;
+  showQuestion();
 }
 
-function renderQuestion() {
-  const q = questions[currentQ];
-  const pct = Math.round((currentQ / 12) * 100);
-  document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-text').textContent = currentQ + ' / 12';
-
-  const letters = ['A', 'B', 'C', 'D'];
-  let html = `
-    <div class="question-number">Q ${String(currentQ + 1).padStart(2,'0')} · 12</div>
-    <div class="question-text">${q.text}</div>
-    <div class="options">
-  `;
-  q.options.forEach((opt, i) => {
-    const sel = answers[currentQ] === i ? 'selected' : '';
-    html += `<button class="option ${sel}" onclick="selectOption(${i})">
-      <span class="option-letter">${letters[i]}.</span>${opt.text}
-    </button>`;
+function showQuestion() {
+  const q = QUESTIONS[currentQ];
+  document.getElementById('q-counter').textContent = `問題 ${currentQ+1} / ${QUESTIONS.length}`;
+  document.getElementById('progress').style.width = `${(currentQ / QUESTIONS.length) * 100}%`;
+  document.getElementById('q-text').textContent = q.text;
+  const opts = document.getElementById('options');
+  opts.innerHTML = '';
+  selectedOpt = null;
+  q.opts.forEach((o, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.textContent = o.label;
+    btn.onclick = () => selectOpt(i, btn);
+    opts.appendChild(btn);
   });
-  html += '</div>';
-  document.getElementById('question-block').innerHTML = html;
 }
 
-function selectOption(idx) {
-  answers[currentQ] = idx;
-  setTimeout(() => {
-    currentQ++;
-    if (currentQ >= 12) {
-      calculateResult();
-    } else {
-      renderQuestion();
-    }
-  }, 200);
+function selectOpt(i, btn) {
+  document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedOpt = i;
+  setTimeout(() => nextQuestion(), 350);
 }
 
-function calculateResult() {
-  scores = { E: 0, D: 0, F: 0, T: 0 };
-  answers.forEach((ans, qi) => {
-    if (ans !== null) {
-      const s = questions[qi].options[ans].scores;
-      Object.keys(s).forEach(k => scores[k] += s[k]);
-    }
-  });
-
-  let matched = null;
-  for (const [name, ptype] of Object.entries(personality_types)) {
-    if (name === '感知獵人') continue;
-    if (ptype.condition(scores)) { matched = { name, ...ptype }; break; }
+function nextQuestion() {
+  if (selectedOpt === null) return;
+  const q = QUESTIONS[currentQ];
+  const s = q.opts[selectedOpt].scores;
+  Object.entries(s).forEach(([dim, val]) => { scores[dim] = (scores[dim] || 0) + val; });
+  currentQ++;
+  if (currentQ < QUESTIONS.length) {
+    showQuestion();
+  } else {
+    showResult();
   }
-  if (!matched) matched = { name: '感知獵人', ...personality_types['感知獵人'] };
-
-  showResult(matched);
 }
 
-function showResult(type) {
-  document.getElementById('screen-quiz').style.display = 'none';
-  document.getElementById('screen-result').style.display = 'block';
-
-  document.getElementById('res-code').textContent = type.code;
-  document.getElementById('res-name').innerHTML = type.name + ' <em>· ' + type.subtitle + '</em>';
-  document.getElementById('res-subtitle').textContent = '你的性愛人格類型';
-  document.getElementById('res-desc').textContent = type.desc;
-  document.getElementById('res-strength').textContent = type.strength;
-  document.getElementById('res-shadow').textContent = type.shadow;
-
-  const dimNames = Object.keys(type.dims);
-  const dimGrid = document.getElementById('dimension-grid');
-  dimGrid.innerHTML = dimNames.map(d => `
-    <div class="dimension-item">
-      <div class="dimension-label">${d}</div>
-      <div class="dimension-value">${type.dims[d]}%</div>
-      <div class="dimension-bar">
-        <div class="dimension-fill" style="width:0%" data-target="${type.dims[d]}"></div>
-      </div>
-    </div>
-  `).join('');
-
-  setTimeout(() => {
-    document.querySelectorAll('.dimension-fill').forEach(el => {
-      el.style.width = el.dataset.target + '%';
-    });
-  }, 100);
-
-  document.getElementById('progress-fill').style.width = '100%';
-  document.getElementById('progress-text').textContent = '12 / 12';
+function getTopType() {
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  return sorted[0][0];
 }
 
-function restartQuiz() {
-  document.getElementById('screen-result').style.display = 'none';
-  document.getElementById('screen-intro').style.display = 'block';
+function showResult() {
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'block';
+  document.getElementById('progress').style.width = '100%';
+
+  const topDim = getTopType();
+  const type = TYPES[topDim] || TYPES['觀察者'];
+
+  document.getElementById('r-code').textContent = type.code;
+  document.getElementById('r-name').textContent = type.name;
+  document.getElementById('r-name-en').textContent = type.nameSub;
+  document.getElementById('r-quote').textContent = type.quote;
+
+  // Radar
+  buildRadar(scores);
+
+  // Letters
+  const lc = document.getElementById('r-letters');
+  lc.innerHTML = '';
+  type.letters.forEach(l => {
+    lc.innerHTML += `
+      <div class="letter-card">
+        <div class="letter-big">${l.l}</div>
+        <div class="letter-info">
+          <div class="letter-en">${l.en}</div>
+          <div class="letter-zh">${l.zh}</div>
+          <div class="letter-desc">${l.desc}</div>
+        </div>
+      </div>`;
+  });
+
+  document.getElementById('r-analysis').textContent = type.analysis;
+  document.getElementById('r-secondary').textContent = type.secondary;
+  document.getElementById('r-secondary-desc').textContent = type.secondary_desc;
+
+  const cc = document.getElementById('r-compatible');
+  cc.innerHTML = '';
+  type.compatible.forEach(c => {
+    cc.innerHTML += `<span class="compat-tag">${c}</span>`;
+  });
+
+  // Top 3
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const top3 = document.getElementById('r-top3');
+  top3.innerHTML = '';
+  sorted.slice(0, 3).forEach(([dim, val], idx) => {
+    top3.innerHTML += `
+      <div class="top3-item">
+        <div class="top3-rank">${idx+1}</div>
+        <div class="top3-dim">${dim}</div>
+        <div class="top3-score">${val} 分</div>
+      </div>`;
+  });
+
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
+function buildRadar(scores) {
+  const svg = document.getElementById('radar-svg');
+  svg.innerHTML = '';
+  const W = 460, H = 460, cx = 230, cy = 230, R = 130, labelR = 175;
+  const n = DIMS.length;
+  const maxScore = Math.max(...Object.values(scores), 1);
+
+  const ns = 'http://www.w3.org/2000/svg';
+
+  function polarX(i, r) { return cx + r * Math.cos((i * 2 * Math.PI / n) - Math.PI / 2); }
+  function polarY(i, r) { return cy + r * Math.sin((i * 2 * Math.PI / n) - Math.PI / 2); }
+
+  // Grid levels
+  [0.2, 0.4, 0.6, 0.8, 1.0].forEach(level => {
+    const pts = DIMS.map((_, i) => `${polarX(i, R * level)},${polarY(i, R * level)}`).join(' ');
+    const poly = document.createElementNS(ns, 'polygon');
+    poly.setAttribute('points', pts);
+    poly.setAttribute('fill', 'none');
+    poly.setAttribute('stroke', '#d4c4b0');
+    poly.setAttribute('stroke-width', '1');
+    svg.appendChild(poly);
+  });
+
+  // Axes
+  DIMS.forEach((_, i) => {
+    const line = document.createElementNS(ns, 'line');
+    line.setAttribute('x1', cx); line.setAttribute('y1', cy);
+    line.setAttribute('x2', polarX(i, R)); line.setAttribute('y2', polarY(i, R));
+    line.setAttribute('stroke', '#d4c4b0'); line.setAttribute('stroke-width', '1');
+    svg.appendChild(line);
+  });
+
+  // Data polygon
+  const dataPts = DIMS.map((d, i) => {
+    const val = scores[d] || 0;
+    const r = (val / maxScore) * R;
+    return `${polarX(i, r)},${polarY(i, r)}`;
+  }).join(' ');
+  const dataPoly = document.createElementNS(ns, 'polygon');
+  dataPoly.setAttribute('points', dataPts);
+  dataPoly.setAttribute('fill', 'rgba(181,64,48,0.15)');
+  dataPoly.setAttribute('stroke', '#b54030');
+  dataPoly.setAttribute('stroke-width', '2');
+  svg.appendChild(dataPoly);
+
+  // Dots
+  DIMS.forEach((d, i) => {
+    const val = scores[d] || 0;
+    const r = (val / maxScore) * R;
+    const circle = document.createElementNS(ns, 'circle');
+    circle.setAttribute('cx', polarX(i, r));
+    circle.setAttribute('cy', polarY(i, r));
+    circle.setAttribute('r', '4');
+    circle.setAttribute('fill', '#b54030');
+    svg.appendChild(circle);
+  });
+
+  // Labels
+  DIMS.forEach((d, i) => {
+    const angle = (i * 2 * Math.PI / n) - Math.PI / 2;
+    const lx = cx + labelR * Math.cos(angle);
+    const ly = cy + labelR * Math.sin(angle);
+    const text = document.createElementNS(ns, 'text');
+    text.setAttribute('x', lx);
+    text.setAttribute('y', ly);
+    text.setAttribute('text-anchor', 'middle');
+    text.setAttribute('dominant-baseline', 'middle');
+    text.setAttribute('font-size', '13');
+    text.setAttribute('fill', '#2a1f1a');
+    text.textContent = d;
+    svg.appendChild(text);
+
+    const scoreVal = scores[d] || 0;
+    const sv = document.createElementNS(ns, 'text');
+    sv.setAttribute('x', lx);
+    sv.setAttribute('y', ly + 16);
+    sv.setAttribute('text-anchor', 'middle');
+    sv.setAttribute('dominant-baseline', 'middle');
+    sv.setAttribute('font-size', '11');
+    sv.setAttribute('fill', '#b54030');
+    sv.textContent = scoreVal;
+    svg.appendChild(sv);
+  });
+}
+
+function restart() {
+  DIMS.forEach(d => scores[d] = 0);
+  currentQ = 0;
+  selectedOpt = null;
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('quiz-screen').style.display = 'block';
+  showQuestion();
+}
+
+init();
 </script>
 </body>
 </html>

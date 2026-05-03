@@ -502,6 +502,11 @@ let currentQ = 0;
 let answers = [];
 let typesFromScreen = null;
 
+function rawToScore(raw) {
+  const s = 25 + 65 / (1 + Math.exp(-(raw - 3) * 0.5));
+  return Math.round(Math.max(15, Math.min(95, s)) * 10) / 10;
+}
+
 function init() {
   DIMS.forEach(d => scores[d] = 0);
   currentQ = 0;
@@ -587,7 +592,7 @@ function showResult() {
   document.getElementById('r-name').textContent = type.name;
   document.getElementById('r-name-en').textContent = type.nameSub;
   document.getElementById('r-quote').textContent = type.quote;
-  buildRadar(scores);
+  const pcts = buildRadar(scores);
   const lc = document.getElementById('r-letters');
   lc.innerHTML = '';
   type.letters.forEach(l => {
@@ -603,8 +608,8 @@ function showResult() {
   const sorted = Object.entries(scores).sort((a,b) => b[1]-a[1]);
   const top3 = document.getElementById('r-top3');
   top3.innerHTML = '';
-  sorted.slice(0,3).forEach(([dim,val],idx) => {
-    top3.innerHTML += `<div class="top3-item"><div class="top3-rank">${idx+1}</div><div class="top3-dim">${dim}</div><div class="top3-score">${val} 分</div></div>`;
+  sorted.slice(0,3).forEach(([dim],idx) => {
+    top3.innerHTML += `<div class="top3-item"><div class="top3-rank">${idx+1}</div><div class="top3-dim">${dim}</div><div class="top3-score">${pcts[dim].toFixed(1)}</div></div>`;
   });
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -614,7 +619,8 @@ function buildRadar(scoresData, svgId='radar-svg') {
   svg.innerHTML = '';
   const cx=230,cy=230,R=130,labelR=175,n=DIMS.length;
   const ns='http://www.w3.org/2000/svg';
-  const maxScore = Math.max(...Object.values(scoresData),1);
+  const pcts = {};
+  DIMS.forEach(d => { pcts[d] = rawToScore(scoresData[d] || 0); });
   function px(i,r){return cx+r*Math.cos((i*2*Math.PI/n)-Math.PI/2);}
   function py(i,r){return cy+r*Math.sin((i*2*Math.PI/n)-Math.PI/2);}
   [0.2,0.4,0.6,0.8,1.0].forEach(level=>{
@@ -631,13 +637,13 @@ function buildRadar(scoresData, svgId='radar-svg') {
     line.setAttribute('stroke','#d4c4b0');line.setAttribute('stroke-width','1');
     svg.appendChild(line);
   });
-  const dataPts=DIMS.map((d,i)=>{const r=(scoresData[d]||0)/maxScore*R;return `${px(i,r)},${py(i,r)}`;}).join(' ');
+  const dataPts=DIMS.map((d,i)=>{const r=pcts[d]/100*R;return `${px(i,r)},${py(i,r)}`;}).join(' ');
   const dp=document.createElementNS(ns,'polygon');
   dp.setAttribute('points',dataPts);dp.setAttribute('fill','rgba(181,64,48,0.15)');
   dp.setAttribute('stroke','#b54030');dp.setAttribute('stroke-width','2');
   svg.appendChild(dp);
   DIMS.forEach((d,i)=>{
-    const r=(scoresData[d]||0)/maxScore*R;
+    const r=pcts[d]/100*R;
     const c=document.createElementNS(ns,'circle');
     c.setAttribute('cx',px(i,r));c.setAttribute('cy',py(i,r));c.setAttribute('r','4');
     c.setAttribute('fill','#b54030');svg.appendChild(c);
@@ -650,8 +656,9 @@ function buildRadar(scoresData, svgId='radar-svg') {
     const sv=document.createElementNS(ns,'text');
     sv.setAttribute('x',lx);sv.setAttribute('y',ly+16);sv.setAttribute('text-anchor','middle');
     sv.setAttribute('dominant-baseline','middle');sv.setAttribute('font-size','11');
-    sv.setAttribute('fill','#b54030');sv.textContent=scoresData[d]||0;svg.appendChild(sv);
+    sv.setAttribute('fill','#b54030');sv.textContent=pcts[d].toFixed(1);svg.appendChild(sv);
   });
+  return pcts;
 }
 
 function showAllTypes(from) {

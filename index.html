@@ -47,7 +47,8 @@
   .q-back-btn { background: none; border: none; color: var(--muted); font-family: inherit; font-size: 13px; cursor: pointer; padding: 0; letter-spacing: 1px; }
   .q-back-btn:hover { color: var(--accent); }
   .q-back-btn:disabled { opacity: 0.3; cursor: default; }
-  .q-text { font-size: 20px; line-height: 1.6; margin-bottom: 36px; color: var(--text); min-height: 80px; }
+  .q-text { font-size: 20px; line-height: 1.6; margin-bottom: 8px; color: var(--text); min-height: 60px; }
+  .q-sub { font-size: 13px; color: var(--muted); letter-spacing: 1px; margin-bottom: 28px; }
   .options { display: flex; flex-direction: column; gap: 12px; }
   .opt-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 16px 20px; text-align: left; font-family: inherit; font-size: 15px; line-height: 1.5; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
   .opt-btn:hover { background: var(--surface2); border-color: var(--accent); }
@@ -176,6 +177,7 @@
       <button class="q-back-btn" id="q-back-btn" onclick="goBack()" disabled>← 返回上一題</button>
     </div>
     <div class="q-text" id="q-text"></div>
+    <div class="q-sub" id="q-sub"></div>
     <div class="options" id="options"></div>
   </div>
 
@@ -250,83 +252,95 @@
 const DIMS = ['破界者','感官師','掌權人','引力家','儀式專家','戲中人','曖昧大師','面具大師','Switch','觀察者','慢熱派','臣服者'];
 
 const QUESTIONS = [
-  { text: '在親密互動中，你更傾向於？', opts: [
-    { label: '主動帶領，決定節奏和方向', scores: {掌權人:2,引力家:1} },
-    { label: '順著對方，享受被帶著走', scores: {臣服者:2,慢熱派:1} },
-    { label: '兩者都行，視當下情境決定', scores: {Switch:2,觀察者:1} },
-    { label: '我喜歡打破預設規則', scores: {破界者:2,戲中人:1} }
+  { text: '在什麼時刻，會讓你意識到——你想要了？', sub: 'When do you realize you want it?', opts: [
+    { label: '看到、想到一個情色的畫面，身體產生反應', scores: {感官師:2,破界者:1} },
+    { label: '原本沒事卻忽然想要，那個感覺變化的時刻', scores: {慢熱派:2,引力家:1} },
+    { label: '看到對方因為我動情的反應，會覺得很想要', scores: {觀察者:2,引力家:1} },
+    { label: '想到自己變成另一個人，做平時不做的事就很有感覺', scores: {戲中人:2,破界者:1} },
+    { label: '突然就來感覺了，也說不清楚具體怎麼回事', scores: {Switch:2,曖昧大師:1} }
   ]},
-  { text: '你認為身體感官在親密中有多重要？', opts: [
-    { label: '最重要的事，細節決定一切', scores: {感官師:2,儀式專家:1} },
-    { label: '重要，但情緒連結更關鍵', scores: {慢熱派:2,臣服者:1} },
-    { label: '我喜歡探索邊界和新奇感受', scores: {破界者:2,感官師:1} },
-    { label: '我更注重心理層面的控制感', scores: {掌權人:2,面具大師:1} }
+  { text: '以下最讓你有感覺的畫面是', sub: 'What scene gets you most?', opts: [
+    { label: '吻從你的嘴角、臉頰到頸側，輕柔落下', scores: {感官師:2,慢熱派:1} },
+    { label: '身體貼合糾纏，激烈的互動喘息', scores: {破界者:2,Switch:1} },
+    { label: '擁抱時，雙手伸進了你的衣服裡', scores: {臣服者:2,感官師:1} },
+    { label: '桌底下的手，在你的大腿內側摩挲', scores: {曖昧大師:2,引力家:1} },
+    { label: '閉上眼，任由對方主導你的身體', scores: {臣服者:2,慢熱派:1} }
   ]},
-  { text: '面對陌生的性幻想或行為，你的反應通常是？', opts: [
-    { label: '好奇，想嘗試看看', scores: {破界者:2,戲中人:1} },
-    { label: '觀察對方的反應再決定', scores: {觀察者:2,Switch:1} },
-    { label: '謹慎，需要充分信任才願意', scores: {慢熱派:2,面具大師:1} },
-    { label: '可以扮演不同角色來探索', scores: {戲中人:2,曖昧大師:1} }
+  { text: '一個人 solo play 時，你更喜歡做的準備是', sub: 'Alone, you would rather...', opts: [
+    { label: '想像有人看著我／對著鏡子看自己，這讓我更有感覺', scores: {觀察者:2,面具大師:1} },
+    { label: '把房間環境布置好，蠟燭香氛、燈光音樂等等', scores: {儀式專家:2,感官師:1} },
+    { label: '幻想一個平時絕對禁忌，甚至完全不現實的畫面', scores: {破界者:2,曖昧大師:1} },
+    { label: '想像一個畫面，都按照我的意願，對方完全聽我的', scores: {掌權人:2,引力家:1} },
+    { label: '不固定／不確定，我喜歡嘗試不一樣的方式', scores: {Switch:2,戲中人:1} }
   ]},
-  { text: '你在親密關係裡最吸引人的特質是？', opts: [
-    { label: '強大的氣場和掌控感', scores: {掌權人:2,引力家:1} },
-    { label: '讓對方感到安全和被接納', scores: {臣服者:2,慢熱派:1} },
-    { label: '神秘感和讓人猜不透', scores: {曖昧大師:2,面具大師:1} },
-    { label: '感官上的精準和敏銳', scores: {感官師:2,儀式專家:1} }
+  { text: '最讓你上頭的狀態是', sub: 'The state that gets you most', opts: [
+    { label: '一個對的畫面、一個對的觸感，身體一下就有反應', scores: {感官師:2,破界者:1} },
+    { label: '被靠近、被撫摸、被引導', scores: {臣服者:2,慢熱派:1} },
+    { label: '進入角色之後，連說話語氣都不一樣了', scores: {戲中人:2,面具大師:1} },
+    { label: '在主導和順從之間反覆拉扯', scores: {Switch:2,掌權人:1} },
+    { label: '整個房間只剩兩人的呼吸，空氣都緊繃起來', scores: {引力家:2,曖昧大師:1} }
   ]},
-  { text: '你如何看待親密關係中的「儀式感」？', opts: [
-    { label: '非常重要，重複的儀式讓我有安全感', scores: {儀式專家:2,感官師:1} },
-    { label: '我喜歡每次都有新鮮感', scores: {破界者:2,戲中人:1} },
-    { label: '適度就好，不必過於刻意', scores: {觀察者:2,Switch:1} },
-    { label: '儀式對我來說是一種服從或支配的象徵', scores: {掌權人:2,臣服者:1} }
+  { text: '讓你著迷的性愛小細節是', sub: 'The detail that captivates you', opts: [
+    { label: '把自己的意識和身體全然交給對方，大腦空白', scores: {臣服者:2,慢熱派:1} },
+    { label: '一個短暫的停留，知道要發生什麼但還沒有的那一刻', scores: {引力家:2,曖昧大師:1} },
+    { label: '看到對方因我而變得呼吸急促、回應我、渴望我', scores: {觀察者:2,引力家:1} },
+    { label: '投向我的目光，帶著我喜歡的感覺注視著彼此', scores: {觀察者:2,面具大師:1} },
+    { label: '整個空間特別美好，光線、聲音、味道一切都剛剛好', scores: {感官師:2,儀式專家:1} }
   ]},
-  { text: '你喜歡在親密互動中展現多少真實的自己？', opts: [
-    { label: '完全展現，赤裸真實', scores: {感官師:2,臣服者:1} },
-    { label: '保留一些神秘感', scores: {曖昧大師:2,面具大師:1} },
-    { label: '扮演角色讓我感覺更自由', scores: {戲中人:2,曖昧大師:1} },
-    { label: '我喜歡觀察對方多過暴露自己', scores: {觀察者:2,慢熱派:1} }
+  { text: '對你來說，性愛最大的樂趣是', sub: 'Your greatest pleasure in sex', opts: [
+    { label: '新姿勢、新場景、新玩具——永遠有下一種可能', scores: {破界者:2,Switch:1} },
+    { label: '在角色裡說平時說不出口的話，做平時做不出來的事', scores: {戲中人:2,面具大師:1} },
+    { label: '從完全無感到色慾薰心，這種轉變的過程', scores: {慢熱派:2,引力家:1} },
+    { label: '做一些日常禁忌的事，已經偷偷幻想很多回了', scores: {破界者:2,曖昧大師:1} },
+    { label: '享受兩個人互動時，慢慢勾起的情欲氛圍', scores: {引力家:2,慢熱派:1} }
   ]},
-  { text: '當你對某人產生強烈的吸引力時，你會？', opts: [
-    { label: '主動製造張力，讓對方先開口', scores: {引力家:2,曖昧大師:1} },
-    { label: '直接表達，不藏著掖著', scores: {破界者:2,掌權人:1} },
-    { label: '先觀察，慢慢靠近', scores: {慢熱派:2,觀察者:1} },
-    { label: '透過特定環境或情境暗示', scores: {儀式專家:2,面具大師:1} }
+  { text: '一場「完美性愛」裡，最不能少的是', sub: 'In a perfect night, what matters most?', opts: [
+    { label: '一段不會被打斷的時間，可以慢慢開始', scores: {慢熱派:2,儀式專家:1} },
+    { label: '一種能閉上眼什麼都不用想的信任感', scores: {臣服者:2,慢熱派:1} },
+    { label: '在掌控和被掌控之間反覆切換', scores: {Switch:2,掌權人:1} },
+    { label: '一段互相試探的拉扯，勾引與反勾引', scores: {曖昧大師:2,引力家:1} },
+    { label: '一個私密的、提前布置好的完美空間', scores: {儀式專家:2,感官師:1} }
   ]},
-  { text: '你對「權力遊戲」在床上的看法是？', opts: [
-    { label: '我喜歡主導，掌控感讓我亢奮', scores: {掌權人:2,引力家:1} },
-    { label: '我喜歡放手，讓對方決定一切', scores: {臣服者:2,慢熱派:1} },
-    { label: '上下都能，看對方是誰', scores: {Switch:2,戲中人:1} },
-    { label: '我喜歡在規則邊緣玩耍', scores: {破界者:2,曖昧大師:1} }
+  { text: '性愛中，你在什麼時刻感受最真實？', sub: 'When do you feel most truly yourself?', opts: [
+    { label: '我能說停就停想做就做，喜歡擁有掌控權', scores: {掌權人:2,破界者:1} },
+    { label: '我被注視或注視他人的時候，喜歡被看見／看見的感覺', scores: {觀察者:2,面具大師:1} },
+    { label: '我做不該做的事時最像我，喜歡掙脫束縛後的自己', scores: {破界者:2,戲中人:1} },
+    { label: '我拒絕性愛的固有規則，喜歡每次都可以略有不同', scores: {Switch:2,破界者:1} },
+    { label: '我在扮演某個角色的時候，喜歡透過角色探索自己另一面', scores: {戲中人:2,面具大師:1} }
   ]},
-  { text: '你的親密生活通常需要？', opts: [
-    { label: '大量的感官刺激', scores: {感官師:2,破界者:1} },
-    { label: '深層的情感連結', scores: {慢熱派:2,臣服者:1} },
-    { label: '充分的掌控或被掌控', scores: {掌權人:2,臣服者:1} },
-    { label: '故事感和場景設定', scores: {戲中人:2,儀式專家:1} }
+  { text: '最讓你享受的性愛節奏是', sub: 'The pace that gets you most', opts: [
+    { label: '完全不固定，節奏由誰是主導決定', scores: {Switch:2,掌權人:1} },
+    { label: '他快我快、他慢我慢，不需要我做決定', scores: {臣服者:2,慢熱派:1} },
+    { label: '時快時慢，一直在推拉互動之間', scores: {曖昧大師:2,Switch:1} },
+    { label: '先慢慢累積氛圍，再進入正題', scores: {慢熱派:2,引力家:1} },
+    { label: '全程緩慢，品味每一種感官刺激', scores: {感官師:2,儀式專家:1} }
   ]},
-  { text: '你如何處理在親密關係中的界限？', opts: [
-    { label: '界限是用來突破的', scores: {破界者:2,戲中人:1} },
-    { label: '我尊重界限，安全感很重要', scores: {慢熱派:2,儀式專家:1} },
-    { label: '我喜歡試探界限在哪裡', scores: {觀察者:2,曖昧大師:1} },
-    { label: '我讓對方設定界限，我來執行', scores: {臣服者:2,面具大師:1} }
+  { text: '性愛結束後，你最喜歡的狀態是', sub: 'Right after sex, what do you love most?', opts: [
+    { label: '被對方抱著，依偎在一起慢慢恢復', scores: {臣服者:2,慢熱派:1} },
+    { label: '整理好環境和自己，回歸日常生活', scores: {儀式專家:2,面具大師:1} },
+    { label: '看對方依然沉浸在我營造的狀態裡', scores: {掌權人:2,引力家:1} },
+    { label: '一個深深的對視，無聲勝有聲', scores: {觀察者:2,引力家:1} },
+    { label: '上次想被抱著，這次想立刻去洗澡——看心情', scores: {Switch:2,曖昧大師:1} }
   ]},
-  { text: '你覺得自己最像哪種親密能量？', opts: [
-    { label: '火焰：熱烈、主動、燃燒一切', scores: {破界者:2,引力家:1} },
-    { label: '磁鐵：安靜地吸引，等待靠近', scores: {引力家:2,觀察者:1} },
-    { label: '水：流動、包容、適應一切形狀', scores: {Switch:2,慢熱派:1} },
-    { label: '鏡子：反映對方，讓他們看見自己', scores: {面具大師:2,觀察者:1} }
+  { text: '哪種性癖好最戳中你？', sub: 'Which kink hits you most?', opts: [
+    { label: '主從、綁縛、支配／服從', scores: {Switch:2,掌權人:1} },
+    { label: '不倫、年齡差、外遇等「不該」的關係', scores: {破界者:2,曖昧大師:1} },
+    { label: '長前戲、被照顧、不需要主動', scores: {慢熱派:2,臣服者:1} },
+    { label: '曖昧、Situationship、若即若離', scores: {曖昧大師:2,引力家:1} },
+    { label: '師生、醫生病人、陌生人等角色扮演', scores: {戲中人:2,面具大師:1} }
   ]},
-  { text: '關於角色扮演，你的感覺是？', opts: [
-    { label: '我熱愛，喜歡完全進入角色', scores: {戲中人:2,面具大師:1} },
-    { label: '可以，只要有足夠信任', scores: {慢熱派:2,臣服者:1} },
-    { label: '我喜歡主導故事走向', scores: {掌權人:2,引力家:1} },
-    { label: '有趣，每個角色都讓我發現新的自己', scores: {Switch:2,曖昧大師:1} }
+  { text: '最讓你瞬間下頭的是', sub: 'What kills the mood instantly?', opts: [
+    { label: '被催促主動，或被反覆問「感覺怎麼樣」', scores: {臣服者:2,慢熱派:1} },
+    { label: '床單不舒服、燈太亮、聲音雜，總有細節問題', scores: {感官師:2,儀式專家:1} },
+    { label: '整個氛圍臨時又湊合，沒有任何儀式感', scores: {儀式專家:2,感官師:1} },
+    { label: '全程沒有眼神交流，對方注意力總在別處', scores: {觀察者:2,引力家:1} },
+    { label: '一上來就直奔主題，沒有任何前戲拉扯', scores: {引力家:2,慢熱派:1} }
   ]}
 ];
 
 const TYPES = {
   '破界者': {
-    code:'RI-X', name:'破界者', nameSub:'The Transgressor',
+    code:'IT-X', name:'破界者', nameSub:'The Trespasser',
     quote:'"規則是給不夠有趣的人設計的。"',
     letters:[
       {l:'R',en:'Reactive',zh:'反應',desc:'你對刺激極為敏銳，身體和心理都能快速回應當下的張力。'},
@@ -339,7 +353,7 @@ const TYPES = {
     compatible:['感官師 RI-M','臣服者 RP-X','掌權人 IP-C']
   },
   '感官師': {
-    code:'RI-M', name:'感官師', nameSub:'The Sensualist',
+    code:'IF-N', name:'感官師', nameSub:'The Aesthete',
     quote:'"每一寸都值得被好好感受。"',
     letters:[
       {l:'R',en:'Reactive',zh:'反應',desc:'你的身體像精密儀器，能接收並放大最細微的感覺刺激。'},
@@ -352,7 +366,7 @@ const TYPES = {
     compatible:['破界者 RI-X','臣服者 RP-X','慢熱派 RP-M']
   },
   '掌權人': {
-    code:'IP-C', name:'掌權人', nameSub:'The Dominant',
+    code:'IP-X', name:'掌權人', nameSub:'The Sovereign',
     quote:'"我不需要大聲，我只需要讓你明白誰說了算。"',
     letters:[
       {l:'I',en:'Initiative',zh:'主動',desc:'你總是先行一步，設定規則、節奏和場景。'},
@@ -365,7 +379,7 @@ const TYPES = {
     compatible:['臣服者 RP-X','破界者 RI-X','面具大師 RP-C']
   },
   '引力家': {
-    code:'IP-X', name:'引力家', nameSub:'The Magnetist',
+    code:'ST-N', name:'引力家', nameSub:'The Magnetic',
     quote:'"我什麼都沒做，但他已經走過來了。"',
     letters:[
       {l:'I',en:'Initiative',zh:'主動',desc:'你的主動是靜態的：你製造場域，讓對方不由自主靠近。'},
@@ -378,7 +392,7 @@ const TYPES = {
     compatible:['臣服者 RP-X','慢熱派 RP-M','觀察者 RP-C']
   },
   '儀式專家': {
-    code:'IP-M', name:'儀式專家', nameSub:'The Ritualist',
+    code:'SF-N', name:'儀式專家', nameSub:'The Hierophant',
     quote:'"第三次，我知道你喜歡這樣。"',
     letters:[
       {l:'I',en:'Initiative',zh:'主動',desc:'你主動建立和維護你們之間的儀式系統。'},
@@ -391,7 +405,7 @@ const TYPES = {
     compatible:['慢熱派 RP-M','臣服者 RP-X','觀察者 RP-C']
   },
   '戲中人': {
-    code:'IE-C', name:'戲中人', nameSub:'The Performer',
+    code:'SP-M', name:'戲中人', nameSub:'The Roleplayer',
     quote:'"今晚我是誰，由你決定。"',
     letters:[
       {l:'I',en:'Initiative',zh:'主動',desc:'你主動進入角色，設計場景，導演整個故事。'},
@@ -404,7 +418,7 @@ const TYPES = {
     compatible:['面具大師 RP-C','Switch IE-M','引力家 IP-X']
   },
   '曖昧大師': {
-    code:'IP-M', name:'曖昧大師', nameSub:'The Ambiguous',
+    code:'DT-V', name:'曖昧大師', nameSub:'The Coquette',
     quote:'"我說的是玩笑，但我沒有在開玩笑。"',
     letters:[
       {l:'I',en:'Initiative',zh:'主動',desc:'你主動製造曖昧，每一句話都有第二層意思。'},
@@ -417,7 +431,7 @@ const TYPES = {
     compatible:['觀察者 RP-C','引力家 IP-X','慢熱派 RP-M']
   },
   '面具大師': {
-    code:'RP-C', name:'面具大師', nameSub:'The Masked',
+    code:'DF-V', name:'面具大師', nameSub:'The Shapeshifter',
     quote:'"我讓你看見的，都是我想讓你看見的。"',
     letters:[
       {l:'R',en:'Reactive',zh:'反應',desc:'你對環境和對方的每個信號都高度敏感，隨時調整自己。'},
@@ -430,7 +444,7 @@ const TYPES = {
     compatible:['掌權人 IP-C','戲中人 IE-C','觀察者 RP-C']
   },
   'Switch': {
-    code:'IE-M', name:'Switch', nameSub:'The Fluid',
+    code:'DP-V', name:'Switch', nameSub:'The Switch',
     quote:'"我不選邊站，因為兩邊我都很好。"',
     letters:[
       {l:'I',en:'Initiative',zh:'主動',desc:'你在需要時能立刻切換成主動模式，毫不費力。'},
@@ -443,7 +457,7 @@ const TYPES = {
     compatible:['掌權人 IP-C','臣服者 RP-X','儀式專家 IP-M']
   },
   '觀察者': {
-    code:'RP-C', name:'觀察者', nameSub:'The Watcher',
+    code:'RT-M', name:'觀察者', nameSub:'The Witness',
     quote:'"我在了解你之前，不會真的讓你了解我。"',
     letters:[
       {l:'R',en:'Reactive',zh:'反應',desc:'你先觀察、吸收，再決定如何回應——你的回應永遠比對方快一步。'},
@@ -456,7 +470,7 @@ const TYPES = {
     compatible:['引力家 IP-X','曖昧大師 IP-M','儀式專家 IP-M']
   },
   '慢熱派': {
-    code:'RP-M', name:'慢熱派', nameSub:'The Slow Burn',
+    code:'RF-M', name:'慢熱派', nameSub:'The Kindling',
     quote:'"我需要時間，但一旦熱起來，你會知道為什麼值得等。"',
     letters:[
       {l:'R',en:'Reactive',zh:'反應',desc:'你的反應是真實的，從不表演——你需要時間讓情感真正發酵。'},
@@ -515,6 +529,7 @@ function showQuestion() {
   document.getElementById('q-counter').textContent = `問題 ${currentQ+1} / ${QUESTIONS.length}`;
   document.getElementById('progress').style.width = `${(currentQ / QUESTIONS.length) * 100}%`;
   document.getElementById('q-text').textContent = q.text;
+  document.getElementById('q-sub').textContent = q.sub || '';
   document.getElementById('q-back-btn').disabled = currentQ === 0;
   const opts = document.getElementById('options');
   opts.innerHTML = '';

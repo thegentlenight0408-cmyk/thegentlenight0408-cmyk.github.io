@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mafiana · 性愛人格測驗</title>
+<title>性愛人格測驗</title>
 <style>
   :root {
     --bg: #f7f0e8;
@@ -232,7 +232,7 @@
 
   <!-- SHARE CARD -->
   <div id="share-card">
-    <div class="sc-brand">MAFIANA · Sexual Personality Index</div>
+    <div class="sc-brand">Sexual Personality Index</div>
     <div class="sc-code" id="sc-code"></div>
     <div class="sc-name" id="sc-name"></div>
     <div class="sc-name-en" id="sc-name-en"></div>
@@ -242,7 +242,7 @@
       <div class="sc-top3-label">最強三個維度</div>
       <div id="sc-top3"></div>
     </div>
-    <div class="sc-footer">mafiana.co</div>
+    <div class="sc-footer">thegentlenight0408-cmyk.github.io</div>
   </div>
 
 </div>
@@ -726,7 +726,7 @@ function downloadResult() {
   card.style.left = '-9999px';
   html2canvas(card, {backgroundColor:'#f7f0e8', scale:2, useCORS:true, logging:false}).then(canvas => {
     const link = document.createElement('a');
-    link.download = `mafiana-${type.code}.png`;
+    link.download = `result-${type.code}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
     btn.disabled = false;

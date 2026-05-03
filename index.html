@@ -27,7 +27,7 @@
   #start-screen, #quiz-screen, #result-screen, #types-screen { display: none; }
 
   /* START */
-  .start-logo { font-size: 32px; font-weight: 700; color: var(--text); text-align: center; line-height: 1.5; margin-bottom: 24px; }
+  .start-logo { font-size: 24px; font-weight: 700; color: var(--text); text-align: center; line-height: 1.6; margin-bottom: 24px; }
   .start-en { font-size: 11px; letter-spacing: 6px; color: var(--gold); text-transform: uppercase; text-align: center; margin-bottom: 32px; }
   .start-desc { font-size: 16px; color: var(--muted); line-height: 1.9; text-align: center; margin-bottom: 40px; }
   .start-meta { display: flex; justify-content: center; gap: 32px; margin-bottom: 48px; }
@@ -136,7 +136,7 @@
 
   @media (max-width: 480px) {
     .type-code { font-size: 56px; }
-    .start-logo { font-size: 56px; }
+    .start-logo { font-size: 22px; }
     .types-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -144,9 +144,7 @@
 <body>
 <div class="container">
 
-  <header class="site-header">
-    <div class="site-sub">找到你在親密關係裡真正的樣子</div>
-  </header>
+  <header class="site-header" style="display:none"></header>
 
   <!-- START -->
   <div id="start-screen">

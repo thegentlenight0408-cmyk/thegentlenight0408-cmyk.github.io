@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>慾望原型測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkaiscreen.css" rel="stylesheet">
+<style>
+:root {
+  --bg: #0D0A08;
+  --panel: #141218;
+  --panel-deep: #1A141D;
+  --text: #F0EAE0;
+  --text-muted: #B8AFA3;
+  --gold: #B8965A;
+  --gold-dim: #80683D;
+  --wine: #6E1F2F;
+  --teal: #163C40;
+  --fog: #787276;
+  --accent: #B8965A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.04; pointer-events: none; z-index: 0;
+}
+.screen {
+  position: fixed; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 24px 20px;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+.screen.hidden { opacity: 0; pointer-events: none; }
+.screen.visible { opacity: 1; }
+
+/* Typography */
+.title-main {
+  font-family: 'LXGW WenKai Screen', 'Noto Sans TC', serif;
+  font-size: clamp(28px, 8vw, 44px);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  text-align: center;
+}
+.title-sub {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-align: center;
+  font-style: italic;
+}
+.section-title {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: clamp(18px, 5vw, 24px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  text-align: center;
+}
+.body-text {
+  font-size: clamp(14px, 3.8vw, 16px);
+  line-height: 1.9;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 520px;
+}
+
+/* Gold divider */
+.gold-line {
+  width: 60px; height: 1px;
+  background: var(--gold-dim);
+  margin: 20px auto;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--gold);
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 32px;
+}
+.btn-primary:hover, .btn-primary:active {
+  background: var(--panel);
+  border-color: var(--gold);
+}
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 28px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: 1px solid var(--fog);
+  transition: all 0.3s;
+}
+.btn-secondary:hover { color: var(--text); border-color: var(--text-muted); }
+
+/* Progress bar */
+#progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 2px;
+  background: var(--gold);
+  z-index: 100;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 6px var(--gold-dim);
+}
+
+/* Chapter header in quiz */
+#chapter-label {
+  position: fixed; top: 12px; left: 20px;
+  font-size: 11px; letter-spacing: 0.2em;
+  color: var(--fog); font-family: 'Cormorant Garant', serif;
+  font-style: italic; z-index: 99;
+}
+
+/* ---- LANDING ---- */
+#screen-landing .taglines {
+  margin: 24px 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+#screen-landing .tagline-item {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: clamp(14px, 4vw, 17px);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ---- SAFETY / INTRO ---- */
+.prose {
+  max-width: 480px;
+  font-size: clamp(14px, 3.8vw, 15px);
+  line-height: 2;
+  color: var(--text-muted);
+  text-align: center;
+}
+.prose em { color: var(--text); font-style: normal; }
+
+/* ---- GENDER SELECTION ---- */
+.gender-cards {
+  display: flex; gap: 20px; margin-top: 32px;
+  flex-wrap: wrap; justify-content: center;
+}
+.gender-card {
+  width: 140px; padding: 20px 16px;
+  border: 1px solid var(--panel-deep);
+  background: var(--panel);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.gender-card:hover, .gender-card.selected {
+  border-color: var(--gold);
+  background: var(--panel-deep);
+}
+.gender-card .gender-icon {
+  width: 72px; height: 72px;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.gender-card:hover .gender-icon, .gender-card.selected .gender-icon { opacity: 1; }
+.gender-card span {
+  font-size: 13px; letter-spacing: 0.1em; color: var(--text-muted);
+}
+.gender-card.selected span { color: var(--gold); }
+
+/* ---- CHAPTER TRANSITION ---- */
+.chapter-screen {
+  text-align: center; max-width: 480px;
+}
+.chapter-num {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 12px; letter-spacing: 0.3em;
+  color: var(--gold-dim); margin-bottom: 16px;
+}
+.chapter-title {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: clamp(20px, 6vw, 28px);
+  color: var(--text); margin-bottom: 20px;
+}
+.chapter-desc {
+  font-size: 14px; line-height: 2;
+  color: var(--text-muted);
+}
+
+/* ---- X NOTICE ---- */
+.x-notice-box {
+  max-width: 440px; padding: 32px;
+  border: 1px solid var(--wine);
+  background: rgba(110,31,47,0.08);
+  text-align: center;
+}
+.x-notice-box .x-title {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: 16px; color: var(--text);
+  margin-bottom: 16px;
+}
+.x-notice-box .x-body {
+  font-size: 14px; line-height: 2; color: var(--text-muted);
+}
+#x-notice-btn { display: none; margin-top: 24px; }
+
+/* ---- QUIZ SCREEN ---- */
+#screen-quiz {
+  justify-content: flex-start;
+  padding-top: 60px;
+  overflow-y: auto;
+}
+.quiz-inner {
+  width: 100%; max-width: 560px;
+  margin: 0 auto; padding: 0 0 40px;
+}
+.q-number {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 12px; letter-spacing: 0.3em;
+  color: var(--gold-dim); margin-bottom: 16px;
+}
+.q-text {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: clamp(15px, 4.5vw, 18px);
+  line-height: 1.8; color: var(--text);
+  margin-bottom: 28px;
+}
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option-card {
+  padding: 16px 20px;
+  border: 1px solid var(--panel-deep);
+  background: var(--panel);
+  cursor: pointer;
+  display: flex; align-items: flex-start; gap: 14px;
+  transition: all 0.25s ease;
+  opacity: 0; transform: translateY(6px);
+}
+.option-card.visible {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.25s, background 0.25s;
+}
+.option-card:hover {
+  border-color: var(--gold-dim);
+  background: var(--panel-deep);
+}
+.option-card.selected {
+  border-color: var(--gold);
+  background: var(--panel-deep);
+}
+.option-label {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 14px; color: var(--gold);
+  letter-spacing: 0.1em; flex-shrink: 0;
+  margin-top: 1px;
+}
+.option-text {
+  font-size: clamp(13px, 3.8vw, 15px);
+  line-height: 1.7; color: var(--text-muted);
+}
+.option-card.selected .option-text { color: var(--text); }
+.nav-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 24px;
+}
+.btn-back {
+  background: transparent; border: none;
+  color: var(--fog); font-size: 13px;
+  letter-spacing: 0.1em; cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+.btn-back:hover { color: var(--text-muted); }
+
+/* ---- CALCULATING ---- */
+.calc-ring {
+  width: 60px; height: 60px;
+  border: 1px solid var(--gold-dim);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  margin: 0 auto 28px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- RESULT PAGE ---- */
+#screen-result {
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0; overflow-y: auto;
+}
+.result-inner {
+  max-width: 640px; margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+/* Accent theming by drive type */
+.result-inner.drive-N { --accent: #C4956A; }
+.result-inner.drive-P { --accent: #8B3A4A; }
+.result-inner.drive-C { --accent: #4A7B7B; }
+.result-inner.drive-X { --accent: #7B5A9B; }
+
+.result-card {
+  text-align: center; margin-bottom: 40px;
+}
+.result-image {
+  width: 100%; max-width: 320px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin: 0 auto 24px;
+  display: block;
+  border: 1px solid var(--accent);
+}
+.result-code {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 13px; letter-spacing: 0.35em;
+  color: var(--accent); margin-bottom: 8px;
+}
+.result-name {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: clamp(26px, 7vw, 36px);
+  color: var(--text); margin-bottom: 12px;
+}
+.result-tagline {
+  font-size: 14px; line-height: 1.9;
+  color: var(--text-muted); max-width: 400px; margin: 0 auto;
+  font-style: italic;
+}
+
+/* Axis bars */
+.axis-section { margin-bottom: 36px; }
+.axis-group { margin-bottom: 16px; }
+.axis-group-label {
+  font-size: 11px; letter-spacing: 0.2em;
+  color: var(--fog); margin-bottom: 10px;
+}
+.axis-bar-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 6px;
+}
+.axis-bar-label {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 13px; color: var(--text-muted);
+  width: 48px; flex-shrink: 0; letter-spacing: 0.08em;
+}
+.axis-bar-track {
+  flex: 1; height: 2px; background: var(--panel-deep);
+  position: relative;
+}
+.axis-bar-fill {
+  height: 100%; background: var(--accent);
+  transition: width 1s ease;
+}
+.axis-bar-dominant .axis-bar-fill { background: var(--gold); }
+
+/* Result sections */
+.result-section {
+  border-top: 1px solid var(--panel-deep);
+  padding: 28px 0;
+}
+.result-section-label {
+  font-size: 11px; letter-spacing: 0.25em;
+  color: var(--accent); margin-bottom: 14px;
+}
+.result-section-title {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: 18px; color: var(--text);
+  margin-bottom: 14px;
+}
+.result-para {
+  font-size: clamp(13px, 3.8vw, 15px);
+  line-height: 2; color: var(--text-muted);
+}
+.result-para + .result-para { margin-top: 14px; }
+.result-highlight { color: var(--text); }
+
+/* Sub-type pill */
+.sub-type-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--panel-deep);
+  background: var(--panel);
+  margin-bottom: 14px;
+}
+.sub-type-code {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 12px; letter-spacing: 0.2em; color: var(--accent);
+}
+.sub-type-name { font-size: 14px; color: var(--text); }
+
+/* Compat */
+.compat-box {
+  border: 1px solid var(--panel-deep);
+  padding: 20px; background: var(--panel);
+  margin-bottom: 16px;
+}
+.compat-label {
+  font-size: 11px; letter-spacing: 0.2em; color: var(--fog);
+  margin-bottom: 6px;
+}
+.compat-name {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: 17px; color: var(--text); margin-bottom: 10px;
+}
+.compat-note {
+  font-size: 12px; color: var(--fog);
+  border-top: 1px solid var(--panel-deep); margin-top: 12px; padding-top: 10px;
+  line-height: 1.8;
+}
+
+/* Action buttons */
+.result-actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  justify-content: center; margin-top: 36px;
+}
+.result-actions button {
+  padding: 12px 28px;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--gold); font-family: 'LXGW WenKai Screen', serif;
+  font-size: 14px; letter-spacing: 0.1em;
+  cursor: pointer; transition: all 0.25s;
+}
+.result-actions button:hover { background: var(--panel); }
+
+/* Utility */
+.mt-4 { margin-top: 16px; }
+.text-center { text-align: center; }
+.italic { font-style: italic; }
+</style>
+</head>
+<body>
+
+<div id="progress-bar" style="width:0%"></div>
+<div id="chapter-label"></div>
+
+<!-- LANDING -->
+<div id="screen-landing" class="screen visible">
+  <p class="title-sub" style="margin-bottom:16px">DESIRE ARCHETYPE</p>
+  <h1 class="title-main">慾望原型測驗</h1>
+  <div class="gold-line"></div>
+  <div class="taglines">
+    <p class="tagline-item">你如何被點燃？</p>
+    <p class="tagline-item">你如何流動？</p>
+    <p class="tagline-item">你被什麼牽引？</p>
+  </div>
+  <button class="btn-primary" onclick="goTo('intro')">開始測驗</button>
+</div>
+
+<!-- INTRO -->
+<div id="screen-intro" class="screen hidden">
+  <div style="max-width:480px;text-align:center">
+    <p class="title-sub" style="margin-bottom:24px">BEFORE YOU BEGIN</p>
+    <h2 class="section-title" style="margin-bottom:24px">關於這份測驗</h2>
+    <div class="gold-line"></div>
+    <p class="prose" style="margin-top:20px">
+      這不是一份測出你有多特別的測驗。<br><br>
+      這是一份關於<em>慾望如何被點燃</em>、<br>
+      <em>權力如何在關係中流動</em>、<br>
+      以及你<em>真正被什麼牽引</em>的原型分析。<br><br>
+      請依照你在親密關係中的真實反應作答，<br>
+      不要選你希望自己成為的樣子。
+    </p>
+    <button class="btn-primary" onclick="goTo('safety')">我了解了</button>
+  </div>
+</div>
+
+<!-- SAFETY -->
+<div id="screen-safety" class="screen hidden">
+  <div style="max-width:480px;text-align:center">
+    <p class="title-sub" style="margin-bottom:24px">NOTICE</p>
+    <h2 class="section-title" style="margin-bottom:24px">重要聲明</h2>
+    <div class="gold-line"></div>
+    <p class="prose" style="margin-top:20px">
+      本測驗中的「越界」指的是在<em>明確合意、可撤回、安全詞與事後照護</em>存在的前提下，探索心理、情境、身份或感官邊界。<br><br>
+      它不代表侵犯、不代表強迫，也不代表突破拒絕。<br><br>
+      本結果描述的是你在親密與慾望情境中的<em>原型傾向</em>，不等同於完整人格、道德評價或心理診斷。
+    </p>
+    <button class="btn-primary" onclick="goTo('gender')">我已閱讀</button>
+  </div>
+</div>
+
+<!-- GENDER -->
+<div id="screen-gender" class="screen hidden">
+  <div style="text-align:center">
+    <p class="title-sub" style="margin-bottom:24px">IMAGE PREFERENCE</p>
+    <h2 class="section-title" style="margin-bottom:8px">選擇你希望看見的角色圖像</h2>
+    <p class="body-text" style="margin-top:8px;font-size:13px">這只影響結果頁的圖像呈現，不影響分析內容</p>
+    <div class="gender-cards">
+      <div class="gender-card" id="card-female" onclick="selectGender('female')">
+        <img class="gender-icon" src="images/AGP-支配者-女性-黑暗女王的華麗肖像.png" alt="女性圖像">
+        <span>女性圖像</span>
+      </div>
+      <div class="gender-card" id="card-male" onclick="selectGender('male')">
+        <img class="gender-icon" src="images/AGP-支配者-男性-燭陣前俯視伸手的掌控者.png" alt="男性圖像">
+        <span>男性圖像</span>
+      </div>
+    </div>
+    <button class="btn-primary" id="gender-confirm" onclick="startQuiz()" style="display:none">確認，開始測驗</button>
+  </div>
+</div>
+
+<!-- CHAPTER TRANSITIONS -->
+<div id="screen-chapter1" class="screen hidden">
+  <div class="chapter-screen">
+    <p class="chapter-num">CHAPTER ONE</p>
+    <h2 class="chapter-title">火如何升起</h2>
+    <div class="gold-line"></div>
+    <p class="chapter-desc" style="margin-top:16px">有些慾望從自身內部燃起，<br>有些慾望在對方靠近時才開始有形。</p>
+    <button class="btn-primary" onclick="startChapter(1)">繼續</button>
+  </div>
+</div>
+
+<div id="screen-chapter2" class="screen hidden">
+  <div class="chapter-screen">
+    <p class="chapter-num">CHAPTER TWO</p>
+    <h2 class="chapter-title">關係如何牽動</h2>
+    <div class="gold-line"></div>
+    <p class="chapter-desc" style="margin-top:16px">親密不是固定的上下，<br>而是能量在兩人之間被給出、接收、交換。</p>
+    <button class="btn-primary" onclick="startChapter(2)">繼續</button>
+  </div>
+</div>
+
+<div id="screen-chapter3" class="screen hidden">
+  <div class="chapter-screen">
+    <p class="chapter-num">CHAPTER THREE</p>
+    <h2 class="chapter-title">深處如何召喚</h2>
+    <div class="gold-line"></div>
+    <p class="chapter-desc" style="margin-top:16px">有些人被感官召喚，有些人被張力牽引，<br>有些人需要儀式，有些人靠近邊界。</p>
+    <div style="margin-top:28px;padding:20px;border:1px solid rgba(110,31,47,0.4);background:rgba(110,31,47,0.05);">
+      <p style="font-size:13px;line-height:1.9;color:var(--text-muted);">
+        後面的題目會觸及「邊界」的概念。<br>
+        這裡的邊界，指的是在清楚合意與可撤回的前提下，心理或情境層面的探索。<br>
+        如果你感到不適，可以隨時停止。
+      </p>
+    </div>
+    <button class="btn-primary" onclick="startChapter(3)" style="margin-top:24px">繼續</button>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="screen-quiz" class="screen hidden">
+  <div class="quiz-inner">
+    <p class="q-number" id="q-number"></p>
+    <p class="q-text" id="q-text"></p>
+    <div class="options" id="q-options"></div>
+    <div class="nav-row">
+      <button class="btn-back" id="btn-back" onclick="prevQuestion()">← 上一題</button>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATING -->
+<div id="screen-calculating" class="screen hidden">
+  <div class="calc-ring"></div>
+  <p class="section-title" style="margin-bottom:12px">正在分析你的慾望原型</p>
+  <p class="body-text" style="font-size:13px">——</p>
+</div>
+
+<!-- RESULT -->
+<div id="screen-result" class="screen hidden">
+  <div class="result-inner" id="result-inner"></div>
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+
+const QUESTIONS = [
+  // Q1–Q8: 啟動方式 A/R
+  {chapter:1, text:'在一次聚會裡，你注意到某個人讓你有點在意。接下來你比較可能怎麼做？',
+   opts:[
+    {t:'你發現自己開始頻繁找理由跟他待在同一個空間。',s:{A:3}},
+    {t:'你先看他怎麼看你、怎麼回應你，再決定要不要靠近。',s:{R:3}},
+    {t:'原本只是普通互動，但某個眼神或一句話讓你突然有了感覺。',s:{R:2,A:1}},
+    {t:'你不急著動作，而是默默觀察他一段時間，看他值不值得你靠近。',s:{R:3}},
+  ]},
+  {chapter:1, text:'你和某個人開始有曖昧感，但關係還沒有明說。你比較像哪一種反應？',
+   opts:[
+    {t:'你會自然地多丟幾個訊號，讓互動往更曖昧的方向走。',s:{A:3}},
+    {t:'你會等對方多靠近一點，確定他有意思後才慢慢打開。',s:{R:3}},
+    {t:'你會先試探幾次，看對方有沒有接住你的訊號。',s:{R:2,A:1}},
+    {t:'你常常是聊著聊著、相處久了，才突然發現自己已經被拉進去了。',s:{R:3}},
+  ]},
+  {chapter:1, text:'你和某個人單獨相處時，哪種情況最容易讓你開始進入狀態？',
+   opts:[
+    {t:'你腦中已經浮現想做什麼，身體也開始往那個方向靠近。',s:{A:3}},
+    {t:'對方的一個動作讓你感覺自己被注意到，於是你慢慢靠近。',s:{R:3}},
+    {t:'氣氛沒有突然爆開，而是越來越安靜、越來越密，直到你無法忽略。',s:{R:2}},
+    {t:'當你決定這個人是可以靠近的，你會開始更明確地行動。',s:{A:2,R:1}},
+  ]},
+  {chapter:1, text:'你丟出一點曖昧訊號，但對方沒有明顯接住。你比較可能？',
+   opts:[
+    {t:'你會再往前一步，直接測試對方是不是只是反應慢。',s:{A:3}},
+    {t:'你會先收住，等對方給出更明確的回應。',s:{R:3}},
+    {t:'你不會立刻退開，但會換個方式再觀察一次。',s:{R:2,A:1}},
+    {t:'你會明顯冷下來，因為沒有互動感就很難繼續升溫。',s:{R:3}},
+  ]},
+  {chapter:1, text:'你在一段關係裡原本沒有特別強烈的感覺。哪種情況最可能讓你突然意識到「我想要」？',
+   opts:[
+    {t:'你原本就隱約有衝動，只是某一刻終於找到可以釋放的出口。',s:{A:3}},
+    {t:'對的人在對的距離裡停留太久，你的感覺就慢慢被煮熱。',s:{R:3}},
+    {t:'某個觸感、氣味、聲音或畫面突然打中你，你才發現自己有反應。',s:{R:2,N:1}},
+    {t:'你可以先主動靠近，但真正升溫要看對方怎麼接你。',s:{A:2,R:1}},
+  ]},
+  {chapter:1, text:'你和某個人互動一段時間後，什麼情況最容易讓你越陷越深？',
+   opts:[
+    {t:'你越想越清楚自己要什麼，於是開始安排更多接觸機會。',s:{A:3}},
+    {t:'對方越自然地出現在你的生活裡，你越容易被他牽動。',s:{R:3}},
+    {t:'你們之間開始有固定的節奏、默契或只屬於彼此的相處方式。',s:{R:2,C:1}},
+    {t:'你一旦確認他是你想靠近的人，就會變得比一開始主動很多。',s:{A:2,R:1}},
+  ]},
+  {chapter:1, text:'如果把慾望想成一條線，它通常是怎麼開始的？',
+   opts:[
+    {t:'你自己先往前拉出那條線，對方只是讓它有了方向。',s:{A:3}},
+    {t:'對方先丟出某個東西，你才沿著那條線走過去。',s:{R:3}},
+    {t:'線不是誰先丟的，而是在兩個人來回之間慢慢浮現。',s:{R:2}},
+    {t:'你先選定一個人，然後那條線才越拉越緊。',s:{A:2,R:1}},
+  ]},
+  {chapter:1, text:'很久沒有進入親密狀態時，你比較容易出現哪種情況？',
+   opts:[
+    {t:'你會明顯開始想找出口，甚至主動安排讓自己重新靠近某人。',s:{A:3}},
+    {t:'平常不一定會想，但某個人一靠近，你的感覺就被喚醒。',s:{R:3}},
+    {t:'你需要先聊起來、靠近起來，身體和情緒才慢慢跟上。',s:{R:3}},
+    {t:'你會主動製造機會，但對方有沒有接住會決定你能不能真的進入。',s:{A:2,R:1}},
+  ]},
+  // Q9–Q20: 能量方向 G/T/S
+  {chapter:2, text:'當你和對方之間的親密張力開始升起，你最常怎麼反應？',
+   opts:[
+    {t:'你會開始安排節奏，讓對方一步一步走進你設下的方向。',s:{G:3}},
+    {t:'你會放慢自己，讓對方的節奏帶著你往裡走。',s:{T:3}},
+    {t:'你會看當下的氣氛，有時推進，有時退開，有時交給對方。',s:{S:3}},
+    {t:'你會故意變換自己的位置，讓對方猜不到你下一秒會怎麼接。',s:{S:2,G:1}},
+  ]},
+  {chapter:2, text:'一段親密互動中，哪個瞬間最容易讓你覺得「對，就是這裡」？',
+   opts:[
+    {t:'你看到對方因為你的動作、語氣或安排而明顯改變。',s:{G:3}},
+    {t:'你感覺自己被對方的節奏包住，開始不用再自己撐著。',s:{T:3}},
+    {t:'你們在推與退之間找到一種很自然的來回。',s:{S:3}},
+    {t:'你在不同對象或不同場景裡，能切換出完全不同的自己。',s:{S:2,G:1}},
+  ]},
+  {chapter:2, text:'對方把選擇權交到你手上，說「你決定」。你比較可能？',
+   opts:[
+    {t:'你會很快開始整理順序、安排節奏，讓事情有方向。',s:{G:3}},
+    {t:'你會有點卡住，因為你更習慣照著對方給出的方向走。',s:{T:3}},
+    {t:'你會先接過來，但保留隨時把球丟回去的空間。',s:{S:3}},
+    {t:'你會先看對方真正想被怎麼對待，再決定要怎麼安排。',s:{G:2,S:1}},
+  ]},
+  {chapter:2, text:'對方突然變得強勢、明確、很有壓迫感。你比較可能？',
+   opts:[
+    {t:'你會被激起反應，想看看自己能不能把節奏搶回來。',s:{G:2,S:1}},
+    {t:'你反而更容易安靜下來，讓自己跟著對方的方向走。',s:{T:3}},
+    {t:'你會先確認這個人是否值得你真的放手。',s:{T:2,S:1}},
+    {t:'你會在順著他與反過來挑動他之間來回切換。',s:{S:3}},
+  ]},
+  {chapter:2, text:'哪種互動最容易讓你玩得投入？',
+   opts:[
+    {t:'你先鋪好情境，看著對方慢慢走進你安排好的節奏。',s:{G:3}},
+    {t:'對方鋪好情境，你在他的安排裡一層一層陷進去。',s:{T:3}},
+    {t:'兩個人互相試探，誰也不完全固定在某個位置。',s:{S:3}},
+    {t:'你表面配合對方，但其實用小動作悄悄改變走向。',s:{S:2,G:1}},
+  ]},
+  {chapter:2, text:'當你真的喜歡一個人時，你比較容易做出哪種事？',
+   opts:[
+    {t:'你會開始替他安排、提醒、照看，甚至想掌握他的狀態。',s:{G:3}},
+    {t:'你會變得更願意靠近他、聽他的、讓他影響你的情緒。',s:{T:3}},
+    {t:'你們會發展出一種只有彼此懂的玩法與節奏。',s:{S:3}},
+    {t:'你有時很想照顧他，有時又很想被他接住。',s:{S:3}},
+  ]},
+  {chapter:2, text:'在親密關係裡，哪個畫面最容易讓你感覺自己很有力量？',
+   opts:[
+    {t:'對方因為你一句話、一個動作，就明顯放鬆、打開或改變。',s:{G:3}},
+    {t:'你終於能在對方面前不用防備，讓自己被接住。',s:{T:3}},
+    {t:'你不需要固定成某個樣子，可以隨時切換位置。',s:{S:3}},
+    {t:'你知道什麼時候要靠近、什麼時候要停、什麼時候要換玩法。',s:{S:2,G:1}},
+  ]},
+  {chapter:2, text:'當關係裡出現「誰來決定」的時刻，你比較可能怎麼做？',
+   opts:[
+    {t:'你會接過來，並開始確認對方能不能跟上你的安排。',s:{G:3}},
+    {t:'你會把選擇權交出去，但前提是對方讓你信得過。',s:{T:3}},
+    {t:'你不覺得一定要固定誰決定，當下適合誰就交給誰。',s:{S:3}},
+    {t:'你覺得最有趣的是，決定權可以在一瞬間換到另一個人手上。',s:{S:3}},
+  ]},
+  {chapter:2, text:'當一段關係開始讓你不安，你比較常出現哪種反應？',
+   opts:[
+    {t:'你會想把事情講清楚、排好順序，重新抓回主導感。',s:{G:3}},
+    {t:'你會想知道對方還會不會靠近你、還願不願意接住你。',s:{T:3}},
+    {t:'你會先退到一個比較不容易被定義的位置，觀察局面。',s:{S:3}},
+    {t:'你會丟出一些試探，看對方怎麼反應再決定下一步。',s:{S:2,T:1}},
+  ]},
+  {chapter:2, text:'哪種互動最容易讓你失去興趣？',
+   opts:[
+    {t:'你怎麼安排，對方都沒有明顯反應，也不跟著進入。',s:{G:3}},
+    {t:'對方沒有方向，讓你不知道自己可以交給誰。',s:{T:3}},
+    {t:'從頭到尾只能待在同一個位置，沒有任何變化。',s:{S:3}},
+    {t:'對方只期待你永遠扮演同一種角色。',s:{S:3}},
+  ]},
+  {chapter:2, text:'在親密互動中，你最常注意到哪件事？',
+   opts:[
+    {t:'對方有沒有被你的動作、語氣、節奏牽著走。',s:{G:3}},
+    {t:'自己能不能真的跟上對方給出的方向，慢慢沉進去。',s:{T:3}},
+    {t:'兩個人之間的節奏是不是有來有往，而不是單向固定。',s:{S:3}},
+    {t:'當下有沒有機會變出另一種角色、另一種玩法。',s:{S:3}},
+  ]},
+  {chapter:2, text:'對方很認真地說：「我想交給你。」你比較可能出現哪種反應？',
+   opts:[
+    {t:'你會立刻開始思考怎麼接住、怎麼安排、怎麼負責。',s:{G:3}},
+    {t:'你會被那句話打動，甚至想像自己也能那樣交出去。',s:{T:3}},
+    {t:'你會想知道，這份交付之後能不能也有反向流動的空間。',s:{S:3}},
+    {t:'你可以接住對方，但不想永遠被固定成唯一掌控的人。',s:{G:2,S:1}},
+  ]},
+  // Q21–Q36: 核心驅動 N/P/C/X
+  {chapter:3, text:'你和某個人獨處，氣氛開始變得安靜。哪種細節最容易讓你真的進入狀態？',
+   opts:[
+    {t:'你開始注意到對方的呼吸、體溫、距離，甚至衣料摩擦的聲音。',s:{N:3}},
+    {t:'你們明明都感覺到了，卻誰也沒有先說破。',s:{P:3}},
+    {t:'你們像是默契地進入某種固定步驟，每一步都有位置。',s:{C:3}},
+    {t:'你感覺自己正在靠近某個平常不會讓人碰到的地方。',s:{X:3}},
+  ]},
+  {chapter:3, text:'在親密互動裡，哪種小細節最容易讓你一直記著？',
+   opts:[
+    {t:'對方皮膚的溫度、聲音、氣味，或身體一瞬間的反應。',s:{N:3}},
+    {t:'對方明明想靠近，卻還在忍耐或克制的樣子。',s:{P:3}},
+    {t:'某個固定稱呼、固定動作、固定位置或只有你們懂的流程。',s:{C:3}},
+    {t:'那種明知道不能隨便靠近，卻被允許多走一步的感覺。',s:{X:3}},
+  ]},
+  {chapter:3, text:'如果一段親密關係讓你久久忘不了，通常是因為？',
+   opts:[
+    {t:'你還記得當時身體的反應，像感覺真的留在皮膚上。',s:{N:3}},
+    {t:'你還記得那種拉很久、壓很深、最後才爆開的過程。',s:{P:3}},
+    {t:'你還記得彼此在那段關係裡的位置、規則與專屬稱呼。',s:{C:3}},
+    {t:'你還記得自己曾經讓對方走進一個很少人能進來的地方。',s:{X:3}},
+  ]},
+  {chapter:3, text:'哪種親密互動最容易讓你覺得「少了什麼」？',
+   opts:[
+    {t:'過程很正確，但身體沒有真的被喚醒。',s:{N:3}},
+    {t:'一切都太快、太直白，沒有讓人等待和懸著的時間。',s:{P:3}},
+    {t:'沒有明確的位置、規則或進入狀態的開關。',s:{C:3}},
+    {t:'太安全、太平面，沒有任何需要鼓起勇氣靠近的東西。',s:{X:3}},
+  ]},
+  {chapter:3, text:'如果有一段關係讓你想繼續往裡走，最可能是因為哪個畫面？',
+   opts:[
+    {t:'對方一靠近，你會先從身體細節開始感覺到他。',s:{N:3}},
+    {t:'你們之間總有一段沒說破的距離，讓你忍不住想再靠近一點。',s:{P:3}},
+    {t:'你們慢慢建立出固定的稱呼、節奏、位置與只屬於彼此的流程。',s:{C:3}},
+    {t:'你感覺他能帶你走到平常不會讓人碰到的那條界線前。',s:{X:3}},
+  ]},
+  {chapter:3, text:'你和對方之間已經有曖昧，但誰都還沒有真正跨出去。哪一種「等待」最容易讓你被拉住？',
+   opts:[
+    {t:'對方的手停在快要碰到你的距離，你開始注意到自己的呼吸變慢。',s:{N:2,P:1}},
+    {t:'你們都知道下一步快要發生了，但對方偏偏讓那一刻停得更久。',s:{P:3}},
+    {t:'你知道某個流程還沒完成，所以只能照著順序等到被允許的時候。',s:{C:3}},
+    {t:'你站在某個明顯不能隨便跨過的位置前，等對方示意你是否可以進去。',s:{X:3}},
+  ]},
+  {chapter:3, text:'如果把一段親密關係拍成一張畫面，哪一幕最容易讓你停下來看很久？',
+   opts:[
+    {t:'兩個人靠得很近，近到能看見呼吸牽動肩膀和指尖的細節。',s:{N:3}},
+    {t:'一個人停在快要靠近的位置，另一個人沒有退，也沒有主動迎上去。',s:{P:3}},
+    {t:'兩人站在對稱的位置裡，像是正在完成某個只有彼此知道的步驟。',s:{C:3}},
+    {t:'一個人站在半開的門前，身後是霧，前方像是不能輕易回頭的地方。',s:{X:3}},
+  ]},
+  {chapter:3, text:'你和對方進入一段更私密的關係時，哪種安排最能讓你真的投入？',
+   opts:[
+    {t:'對方不是只說話，而是能用距離、觸碰和反應讓你身體跟上。',s:{N:3}},
+    {t:'對方不急著揭曉下一步，讓你一直停在猜測與等待之間。',s:{P:3}},
+    {t:'你們先建立好規則、稱呼、位置或流程，進入時就知道自己該在哪裡。',s:{C:3}},
+    {t:'對方清楚確認你的允許後，帶你靠近一個平常不會被碰到的界線。',s:{X:3}},
+  ]},
+  {chapter:3, text:'一段強烈經驗結束後，隔天你最可能反覆想起哪個片段？',
+   opts:[
+    {t:'某個觸碰落下時，你身體最先反應的那一秒。',s:{N:3}},
+    {t:'那段被吊在半空、明明快到了卻還不能抵達的時間。',s:{P:3}},
+    {t:'某個固定稱呼、固定姿勢、固定步驟被執行時的畫面。',s:{C:3}},
+    {t:'自己跨過某條心理界線後，突然發現已經回不到原本位置的瞬間。',s:{X:3}},
+  ]},
+  {chapter:3, text:'如果某種互動會讓你一次又一次想回去，你最可能回去的是哪種？',
+   opts:[
+    {t:'每次都從熟悉的觸感、氣味或身體反應開始，然後越來越快進入狀態。',s:{N:3}},
+    {t:'每次都被拉近，又被停住，直到整個人被那段等待磨得更敏銳。',s:{P:3}},
+    {t:'每次都照著某套固定流程開始，越重複越像進入專屬場域。',s:{C:3}},
+    {t:'每次都靠近同一條界線，但對方會帶你比上一次再多走一點。',s:{X:3}},
+  ]},
+  {chapter:3, text:'你和對方約好某些規則後，你通常會怎麼反應？',
+   opts:[
+    {t:'你不會太在意規則本身，真正讓你進入的是當下身體有沒有反應。',s:{N:3}},
+    {t:'規則讓你更注意那些「還不能做」的部分，反而更容易被吊起來。',s:{P:2,C:1}},
+    {t:'規則一旦被說清楚，你會更容易知道自己怎麼進入那個狀態。',s:{C:3}},
+    {t:'規則像一道線；你會開始注意那條線什麼時候、用什麼方式能被允許跨過。',s:{X:2,C:1}},
+  ]},
+  {chapter:3, text:'在一段對話裡，哪種說話方式最容易讓你被帶進去？',
+   opts:[
+    {t:'對方描述得很貼近身體，連呼吸、距離和細微反應都沒有放過。',s:{N:3}},
+    {t:'對方說得很慢，留很多空白，讓你一直等他下一句要落在哪裡。',s:{P:3}},
+    {t:'對方把規則、順序和位置說得很清楚，像是在替你打開某個入口。',s:{C:3}},
+    {t:'對方的語氣像在帶你靠近禁區，讓你知道再往前一步就不是普通互動了。',s:{X:3}},
+  ]},
+  {chapter:3, text:'當你和對方已經很靠近，但你還想「再更深一點」，你通常會想讓什麼變得更明確？',
+   opts:[
+    {t:'讓身體感覺更清楚，例如距離更近、觸碰更細、反應更真實。',s:{N:3}},
+    {t:'讓那段拉扯更久一點，不急著抵達，讓壓力慢慢堆上去。',s:{P:3}},
+    {t:'讓彼此的位置、稱呼、規則或承諾更清楚，不只是即興靠近。',s:{C:3}},
+    {t:'讓對方帶你碰到更深的界線，但每一步都仍然能被確認與停止。',s:{X:3}},
+  ]},
+  {chapter:3, text:'如果關係裡出現一點「失控感」，哪一種最容易吸引你？',
+   opts:[
+    {t:'你的身體先反應了，理智後面才追上來。',s:{N:3}},
+    {t:'你明明在忍，對方卻把節奏停在最難受的地方。',s:{P:3}},
+    {t:'你不是亂掉，而是在一個清楚的框架裡，照著流程慢慢放下控制。',s:{C:3}},
+    {t:'你跨過平常不會跨過的位置，但對方一路確認你仍然可以回來。',s:{X:3}},
+  ]},
+  {chapter:3, text:'一段親密互動結束後，你覺得它「不夠深」，最可能是少了哪種東西？',
+   opts:[
+    {t:'少了真正落到身體裡的細節，像只是完成了事件，卻沒有留下感覺。',s:{N:3}},
+    {t:'少了等待與拉扯，太快走完流程，沒有被吊住的時間。',s:{P:3}},
+    {t:'少了明確位置與專屬規則，整段互動像散的，沒有被框起來。',s:{C:3}},
+    {t:'少了那種靠近未知邊界的震動感，一切都太可預期。',s:{X:3}},
+  ]},
+  {chapter:3, text:'最後，如果你和某個人只能留下一種最核心的親密方式，你會選哪一種？',
+   opts:[
+    {t:'你們不一定說很多，但身體細節會替彼此留下記號。',s:{N:3}},
+    {t:'你們總是保留一段快要抵達卻尚未抵達的距離，讓渴望一直存在。',s:{P:3}},
+    {t:'你們有一套只屬於彼此的規則、稱呼與進入方式，每次都像重新啟動關係。',s:{C:3}},
+    {t:'你們能在清楚合意下，把彼此帶到平常不會讓任何人靠近的地方。',s:{X:3}},
+  ]},
+];
+
+const TYPES = {
+  'A-G-N':{name:'獵手',tagline:'你主動燃起慾望，以身體作為真實語言的入口。',
+    desc:'你的慾望從你自己內部燃起，不需要等待誰來點燃。你會主動靠近、安排、引導，清楚知道自己想要什麼感覺。身體對你來說是最誠實的語言——你在意的不是概念，而是實際的觸感、溫度、呼吸和反應。你享受讓對方在你的引導下，真的進入某種感官狀態。',
+    shadow:'你可能太專注於得到你想要的感覺，而忽略對方是否也真的進入了狀態。你以為推進是在帶對方，實際上可能是在要求對方跟上你的節奏。最好的感官體驗，是兩個人都真的在那裡。',
+    compat:'R-T-N',compatName:'聆感者',
+    compatText:'獵手知道自己要什麼，聆感者擅長接收並真實回應。你的主動與對方的開放，讓感官真的有地方落下。'},
+  'R-T-N':{name:'聆感者',tagline:'你的感官世界在對方靠近時才展開，細節是你的入口。',
+    desc:'你的慾望不是從你自己出發的——它需要被喚醒。當對方靠近、當氣氛開始堆疊，你才會發現自己有這麼強的反應。你在感官上非常敏銳，細節對你比大動作更有穿透力——對方的溫度、聲音、呼吸、一個眼神，都可能讓你完全沉進去。',
+    shadow:'你可能太依賴外在條件才能進入狀態，以至於自己無法主動靠近想要的東西。你等的是點燃，但有時那個點燃需要你先給出一點信號。',
+    compat:'A-G-N',compatName:'獵手',
+    compatText:'獵手會主動創造條件，讓你的感官有機會被喚醒。你不需要自己拉開感覺，對方已經替你鋪好了路。'},
+  'A-T-N':{name:'享樂者',tagline:'你知道自己想要，也喜歡讓感官帶你沉進去。',
+    desc:'你從自己內部升起慾望，但你喜歡把自己交出去——不是失控，而是在安全的空間裡，讓感官帶你去你想去的地方。你主動靠近，但你享受的不是引導對方，而是讓自己完全沉浸在對方給出的感官體驗裡。',
+    shadow:'你可能會把「我想要感官滿足」和「我想要被接住」混在一起，以至於不清楚自己真正需要的是什麼。成熟的享樂者會知道：我可以主動選擇進入，也可以主動說出我想要什麼感覺。',
+    compat:'R-G-N',compatName:'感應者',
+    compatText:'感應者擅長讀取你的反應，並根據你的狀態調整。你的開放讓對方有空間施力，對方的敏銳讓你的感官真的被看見。'},
+  'R-G-N':{name:'感應者',tagline:'你用感應力讀取對方，再精準地給出剛好的東西。',
+    desc:'你的慾望是被喚醒的，但一旦喚醒，你會開始主動感應並引導。你對對方的狀態非常敏銳——你能讀到他們的反應、需求、節奏，然後用這些資訊調整你的動作。你不是強勢地控制，而是精準地感應，然後給出剛好的東西。',
+    shadow:'你可能太關注對方的狀態，而忽略了自己也有需求。你替對方感應得太周全，以至於從來沒有讓自己被好好接住過。',
+    compat:'A-T-N',compatName:'享樂者',
+    compatText:'享樂者知道自己想要，也願意開放地接收。你的感應能力讓你能夠真的給出他們需要的東西，而不只是你以為他們需要的。'},
+  'A-S-N':{name:'逐感者',tagline:'你的感官探索沒有固定方向，你在流動中發現自己。',
+    desc:'你的慾望從自己升起，但你不喜歡固定。你想感覺，但你想以各種方式感覺——有時主動帶著對方走，有時讓對方帶你，有時在兩者之間游移。你對感官的興趣是廣泛的，你喜歡在不同情境、不同節奏裡發現自己有新的反應。',
+    shadow:'你可能會把流動當成逃避承諾的方式。你享受變化，但如果對方需要一些穩定的位置，你可能會讓他們不知道該怎麼靠近你。',
+    compat:'R-S-N',compatName:'共舞者',
+    compatText:'共舞者能夠跟著你的流動走，不會要求你固定成某種樣子，也不會讓互動失去方向。'},
+  'R-S-N':{name:'共舞者',tagline:'你和對方在同一個感官頻率上共振，有來有往是你的根。',
+    desc:'你的慾望是被環境喚醒的，而你在感官上的回應方式很靈活——你可以跟著對方走，也可以在某個時刻自然地接過方向。你不需要固定角色，你享受的是那種有來有往的感覺，像是兩個人在同一個感官頻率上共振。',
+    shadow:'你可能太依賴對方來決定節奏，以至於你自己的感官需求從來沒有被說出來。流動不等於沒有方向——你可以在流動中也表達自己想要什麼。',
+    compat:'A-S-N',compatName:'逐感者',
+    compatText:'逐感者喜歡在不同節奏間移動，你的靈活讓你能夠真的跟上，而不是被動等待。'},
+  'A-G-P':{name:'支配者',tagline:'你渴望看見對方在你的張力裡，清醒地選擇交付。',
+    desc:'你的慾望從你自己升起，你知道自己要什麼，並且會主動安排和推進。但你真正迷戀的不是控制本身——你迷戀的是張力。你喜歡看見對方在你設計的節奏裡慢慢被牽動，喜歡把懸念拉得很長，喜歡在你決定的時刻才讓事情往下走。',
+    shadow:'你可能會把張力設計得太完整，卻忽略對方是否真的跟得上。你以為自己在引導，實際上可能是在要求對方配合你的劇本。最有力量的控制，是對方清醒地選擇留在裡面。',
+    compat:'R-T-P',compatName:'臣服者',
+    compatText:'支配者能設計張力，臣服者能在張力裡釋放。一方給出方向和壓力，另一方把壓力化為交付。契合不等於保證適合——真實關係仍取決於溝通與照護。'},
+  'R-T-P':{name:'臣服者',tagline:'你選擇在對方的節奏裡放下防備，交付是你的力量。',
+    desc:'你的慾望是被喚醒的，而你喜歡把自己交出去——不是因為你沒有想法，而是因為在對方清楚的節奏和壓力裡放下防備，對你來說是一種深刻的體驗。你喜歡張力，喜歡等待，喜歡被吊在某個懸念裡，喜歡知道有人在掌控節奏、而那個人是你信任的。',
+    shadow:'你可能會用「交付」來迴避自己的需求——以為只要配合對方，關係就會穩定。成熟的臣服者會知道：你的慾望和邊界也是需要被說出來的，交付是有尊嚴的。',
+    compat:'A-G-P',compatName:'支配者',
+    compatText:'支配者能創造你需要的張力和方向，你的開放讓他有地方施力。你不是被動的，而是選擇在這個框架裡讓自己釋放。'},
+  'A-T-P':{name:'墜落者',tagline:'你主動靠近，然後讓自己在清醒中被張力帶走。',
+    desc:'你從自己升起慾望，但你享受的是往下墜落的感覺——主動靠近，然後讓自己被張力帶走。你知道自己想要，你也知道自己要去哪裡，但你不想一直撐著。你喜歡那種在清醒中失控的感覺，喜歡在自己選擇進入的壓力裡，讓防備一層一層剝落。',
+    shadow:'你可能會追求「墜落感」本身，而忽略在整個過程中你是否真的感到安全。張力很迷人，但安全感是讓你能夠真正放開的前提。',
+    compat:'R-G-P',compatName:'捕時者',
+    compatText:'捕時者知道什麼時候出手，會在你最剛好的時刻給出壓力。你的主動進入讓對方有機會真正帶你走，而不是只是在等待。'},
+  'R-G-P':{name:'捕時者',tagline:'你靜靜等待那個最剛好的瞬間，然後精準地介入。',
+    desc:'你的慾望是被情境喚醒的，但一旦喚醒，你會開始尋找那個最剛好的時機。你不急著推進，你喜歡靜靜觀察，讓緊張感在空氣裡堆疊，然後在一個精準的瞬間介入。你創造的不是衝動的壓力，而是讓對方感覺到「他一直在等著這一刻」的那種深沉張力。',
+    shadow:'你可能會等太久，以至於時機流走了，對方開始懷疑你是否真的有意思。等待是你的力量，但也需要有一個時刻讓對方知道你在這裡。',
+    compat:'A-T-P',compatName:'墜落者',
+    compatText:'墜落者想要被帶走，而你知道什麼時候伸出手才最有力量。你們的節奏是互相等待的，但你等的是時機，他等的是你。'},
+  'A-S-P':{name:'翻轉者',tagline:'讓對方猜不透你，翻轉本身就是你製造的張力。',
+    desc:'你的慾望從自己升起，但你不想被固定。你最享受的是那種讓對方猜不透你的感覺——你可以在主導與服從之間翻轉，可以在製造張力與承接張力之間切換，可以在一場互動裡扮演完全不同的位置。翻轉本身對你來說就是一種張力。',
+    shadow:'你可能會用翻轉來迴避真正的靠近。變化本身沒有問題，但如果你永遠不讓任何人看見你固定的樣子，沒有人能夠真正接住你。',
+    compat:'R-S-P',compatName:'迷霧者',
+    compatText:'迷霧者讓你猜，你讓對方猜。你們之間永遠有一層薄薄的不確定，讓互動保持張力而不結束。'},
+  'R-S-P':{name:'迷霧者',tagline:'你用游離在定義之外的方式，讓關係保持張力。',
+    desc:'你的慾望是被情境喚醒的，而你在關係裡的方式是製造迷霧——你讓對方猜你在哪裡、你在想什麼、你下一步會怎麼走。你不是算計，而是你真的喜歡那種游離在定義之外的感覺。你在乎張力，也在乎自己的自由。',
+    shadow:'你的迷霧可能會讓真正想靠近你的人不知道要往哪裡走。保持神秘是你的本能，但有時你需要給出一個讓對方能夠靠近的縫隙。',
+    compat:'A-S-P',compatName:'翻轉者',
+    compatText:'翻轉者同樣不喜歡被固定，但他們會主動改變位置，而你則是讓位置難以被定義。你們都不需要對方給出明確的答案。'},
+  'A-G-C':{name:'編儀者',tagline:'你設計儀式，讓深刻有地方發生。',
+    desc:'你的慾望從你自己升起，你需要秩序和框架來承載它。你喜歡建立規則、設計流程、確立彼此的位置和稱呼，不是因為你需要控制，而是因為你知道儀式是讓深刻發生的容器。在一個清楚的結構裡，你才能真正放開。',
+    shadow:'你可能會太投入於規則本身，以至於儀式變成了目的，而忘記了它原本是為了讓彼此更深地靠近。框架是手段，不是終點。',
+    compat:'R-T-C',compatName:'沉浸者',
+    compatText:'沉浸者需要一個清楚的結構才能真正放進去，而你能夠建立那個結構。你設計入口，對方進入。'},
+  'R-T-C':{name:'沉浸者',tagline:'你在清楚的框架裡，一層一層放開自己。',
+    desc:'你的慾望是被環境喚醒的，而你需要一個清楚的框架才能真正沉進去。當有人替你設立規則、確認位置、建立儀式，你就像終於找到了入口——你不需要再用力撐著，可以跟著流程一層一層放開。',
+    shadow:'你可能會太依賴外部框架才能進入狀態，以至於在沒有明確結構的關係裡迷失自己。你也可以說出你需要什麼樣的框架，而不是只能等別人建立。',
+    compat:'A-G-C',compatName:'編儀者',
+    compatText:'編儀者能夠設計你需要的框架，讓你有地方可以進入。你不需要告訴他每一步怎麼走，他已經知道要鋪什麼路。'},
+  'A-T-C':{name:'求道者',tagline:'你主動選擇進入，讓儀式帶你觸碰更深的自己。',
+    desc:'你從自己升起慾望，但你想要的不是主導——你想要進入。你主動靠近、主動選擇，然後把自己放進一個你尊重的框架裡，讓儀式和秩序帶你去更深的地方。你對深度有強烈的追求，你不是在找刺激，而是在找某種能夠讓你真正觸碰自己的體驗。',
+    shadow:'你可能會把「進入儀式」當成證明自己有深度的方式，以至於失去了儀式原本的意義。求道不是表演，是真實地讓自己被觸碰。',
+    compat:'R-G-C',compatName:'守儀者',
+    compatText:'守儀者能感應你的狀態，在對的時機給出對的框架，讓你的主動進入有一個值得靠近的目標。'},
+  'R-G-C':{name:'守儀者',tagline:'你感應框架的需要，穩定地守護讓深刻發生的結構。',
+    desc:'你的慾望是被情境喚醒的，但一旦喚醒，你會開始建立和維護框架。你對秩序有一種天然的感應力——你知道什麼時候需要設立規則，什麼時候框架需要被調整。你不是在控制，而是在守護一個讓深刻發生的結構。',
+    shadow:'你可能會太執著於維護框架的穩定，以至於沒有辦法回應對方超出框架的需求。守護需要彈性——框架是為了讓人靠近，不是為了讓人無處可去。',
+    compat:'A-T-C',compatName:'求道者',
+    compatText:'求道者主動靠近，想要進入。你能夠替他建立一個值得進入的框架，讓他的主動有地方落下。'},
+  'A-S-C':{name:'化身者',tagline:'你在不同的儀式框架裡探索自己，每次都是全新的進入。',
+    desc:'你的慾望從自己升起，但你不想固定在任何一個樣子裡。你能夠在不同的角色、規則、儀式之間切換，每次進入一個新的框架，你都能完全投入。你享受的是那種「成為另一個自己」的感覺，而不是某個固定的身份。',
+    shadow:'你可能會用角色切換來迴避真實的自我——進入任何框架都可以，但你自己在哪裡？成熟的化身者會知道：即使在變化裡，也有一個不變的核心。',
+    compat:'R-S-C',compatName:'應形者',
+    compatText:'應形者能夠跟著你的切換走，而不要求你固定。你在不同的儀式框架裡探索，他在不同的框架裡找到自己的應對方式。'},
+  'R-S-C':{name:'應形者',tagline:'你感應不同關係需要的形式，靈活地回應卻不失去自己。',
+    desc:'你的慾望是被喚醒的，而你在關係裡的方式是應形——你能夠感應到不同人需要的框架和儀式，然後調整自己去配合，卻不失去自己。你不是沒有立場，你是擁有足夠的彈性讓不同的關係都能找到屬於彼此的形式。',
+    shadow:'你可能會太善於配合，以至於不知道自己真正想要什麼樣的框架。應形不是沒有需求——你也可以說出你喜歡什麼樣的儀式形式。',
+    compat:'A-S-C',compatName:'化身者',
+    compatText:'化身者喜歡切換，你喜歡應形。你們在彼此的變化裡找到流動，而不是找到固定點。'},
+  'A-G-X':{name:'禁忌嚮導',tagline:'你清醒地帶路，走向那條值得靠近的邊界。',
+    desc:'你的慾望從你自己升起，你知道你想去哪裡——而那個地方通常在別人不敢輕易靠近的邊緣。你不是出於衝動，而是出於清醒的好奇——你想要在明確合意的前提下，帶自己和對方去更深的心理領域。你的主導是帶路，不是強迫。',
+    shadow:'你可能太專注於「帶對方去更遠的地方」，而沒有確認對方是否真的想要走那麼遠。嚮導的責任不只是知道路，而是確認同行者的狀態。',
+    compat:'R-T-X',compatName:'消融者',
+    compatText:'消融者願意在你的帶領下讓自己的邊界消融，你能夠創造一個讓那種消融安全發生的空間。'},
+  'R-T-X':{name:'消融者',tagline:'在清楚合意下，你讓邊界慢慢模糊，體驗深刻的觸碰。',
+    desc:'你的慾望是被帶起來的，你喜歡在另一個人清楚的引導下，讓自己的邊界慢慢模糊——不是因為你沒有邊界，而是因為在清楚合意的框架下，讓那個邊界被觸碰，對你來說是一種深刻的體驗。信任是前提，消融是結果。',
+    shadow:'你可能會把消融當成迴避自我的方式，在越界的過程裡失去了跟自己的連結。你可以讓邊界被觸碰，但你的核心是不應該被抹去的。',
+    compat:'A-G-X',compatName:'禁忌嚮導',
+    compatText:'嚮導知道路，也知道要在什麼時候停下來確認你是否還在。你的信任讓他有地方帶你去，你的回應讓他知道往哪裡走。'},
+  'A-T-X':{name:'赴界者',tagline:'你主動走向那條線，在它面前的清醒讓你有感覺。',
+    desc:'你從自己升起慾望，你主動選擇靠近那條線——不是因為你想突破規則，而是因為「在邊界前的清醒」本身讓你有一種強烈的感覺。你知道自己在做什麼，你也知道那條線在哪裡，你享受的是在它面前選擇進或退的那個時刻。',
+    shadow:'你可能會為了靠近那條線而忽略了整個過程的安全感——不是說你在危險裡，而是說你有時會忘記在每一步確認自己和對方的狀態。赴界是清醒的行動，不是衝動。',
+    compat:'R-G-X',compatName:'守門人',
+    compatText:'守門人能夠感應你靠近的方式，在對的時刻打開那扇門，也能在需要的時候守住它。你的主動靠近讓對方有機會真正帶你進去。'},
+  'R-G-X':{name:'守門人',tagline:'你感應誰值得靠近那扇門，並決定什麼時候打開。',
+    desc:'你的慾望是被情境喚醒的，但一旦喚醒，你開始掌控那扇門——誰可以進來，什麼時候進來，進來之後往哪裡走。你不是排斥外人，而是你對那條線的感應非常精準，你知道什麼樣的人值得讓他穿越。你的主導是守護，也是帶路。',
+    shadow:'你可能會守得太緊，讓真正想靠近的人找不到入口。守門不是把門永遠關著——它的意義在於你有能力選擇什麼時候打開。',
+    compat:'A-T-X',compatName:'赴界者',
+    compatText:'赴界者知道自己要走向那條線，而你能夠感應到他是否真的準備好了，並在對的時刻打開那扇門。'},
+  'A-S-X':{name:'越界者',tagline:'你在邊界附近游走，每一次靠近都是嶄新的可能。',
+    desc:'你的慾望從自己升起，你喜歡流動，你也喜歡邊界——但你喜歡的是在邊界附近游走，有時越過，有時退回，有時在這個位置和那個位置之間切換。你不喜歡固定，但你也不是無秩序的。你想要的是那種「每次靠近都可能是不同體驗」的開放感。',
+    shadow:'你可能會把越界當成逃避承諾的方式——一直在移動，以至於從來沒有讓任何事真正深下去。流動需要深度，越界需要在對的地方停下來。',
+    compat:'R-S-X',compatName:'遊蕩者',
+    compatText:'遊蕩者也喜歡游走，也喜歡邊界附近的不確定。你們不需要固定方向，但都知道在哪裡可以找到對方。'},
+  'R-S-X':{name:'遊蕩者',tagline:'你隨感應移動，在不確定裡發現自己被什麼牽引。',
+    desc:'你的慾望是被喚醒的，而你在關係裡的方式是遊蕩——你不在某個固定的位置，你在不同的邊界、不同的框架之間移動，感應著哪裡有什麼在等著你被喚醒。你不是沒有方向，而是你的方向是由當下的感應決定的。',
+    shadow:'你可能因為一直遊蕩而從來沒有讓任何事真正沉下去。遊蕩是你的方式，但有時深度需要你在某個地方停留夠久。',
+    compat:'A-S-X',compatName:'越界者',
+    compatText:'越界者主動游走，你隨著感應移動。你們都不需要固定的地方，但你們能在流動裡找到彼此。'},
+};
+
+const IMAGES = {
+  'AGN':{female:'AGN-獵手-女性-黑暗魅影的力量姐姐.png',male:'AGN-獵手-男性-月夜獵影與黑犬.png'},
+  'RTN':{female:'RTN-聆感者-女性-夢幻花園中的低語.png',male:'RTN-聆感者-男性-暗花叢中倚首沉思的男子.png'},
+  'ATN':{female:'ATN-享樂者-女性-華麗的燭光女神.png',male:'ATN-享樂者-男性-奢華藝術新潮肖像.png'},
+  'RGN':{female:'RGN-感應者-女性-浪漫昏燈中的誘惑妝容.png',male:'RGN-感應者-男性-燭光中沉思凝視的男人.png'},
+  'ASN':{female:'ASN-逐感者-女性-月光下的飄逸女子.png',male:'ASN-逐感者-男性-夜海之行的浪漫魅影.png'},
+  'RSN':{female:'RSN-共舞者-女性-月下輕舞的花藤女神.png',male:'RSN-共舞者-男性-華麗的黑暗幻想肖像.png'},
+  'AGP':{female:'AGP-支配者-女性-黑暗女王的華麗肖像.png',male:'AGP-支配者-男性-燭陣前俯視伸手的掌控者.png'},
+  'RTP':{female:'RTP-臣服者-女性-金鍊垂頸燭光下低首的女子.png',male:'RTP-臣服者-男性-燭光鏡前被鍊牽引的臣服男子.png'},
+  'ATP':{female:'ATP-墜落者-女性-暗光中的束縛與渴望.png',male:'ATP-墜落者-男性-跪地仰望被鍊牽引的墜落男子.png'},
+  'RGP':{female:'RGP-捕時者-女性-燭光側影中靜待的女子.png',male:'RGP-捕時者-男性-燭光酒杯旁靜候俯首的男子.png'},
+  'ASP':{female:'ASP-翻轉者-女性-燭影棋局中的翻轉女子.png',male:'ASP-翻轉者-男性-燭光下持面具的謎樣男子.png'},
+  'RSP':{female:'RSP-迷霧者-女性-燭火鏡前的謎樣女子.png',male:'RSP-迷霧者-男性-煙霧骷髏中的謎顏男子.png'},
+  'AGC':{female:'AGC-編儀者-女性-神秘儀式中的女祭司.png',male:'AGC-編儀者-男性-金紋星盤環繞的儀式執行者.png'},
+  'RTC':{female:'RTC-沉浸者-女性-燭光中閉目沉醉的女子.png',male:'RTC-沉浸者-男性-神秘的燭光儀式肖像.png'},
+  'ATC':{female:'ATC-求道者-女性-神秘儀式中的祈禱女祭司.png',male:'ATC-求道者-男性-星陣前的黑袍祈禱者.png'},
+  'RGC':{female:'RGC-守儀者-女性-神秘女祭司的儀式畫作.png',male:'RGC-守儀者-男性-神殿中的午夜儀式.png'},
+  'ASC':{female:'ASC-化身者-女性-華麗的面具與神秘舞台.png',male:'ASC-化身者-男性-神秘哥德式面具舞會.png'},
+  'RSC':{female:'RSC-應形者-女性-神秘女神的多面形象.png',male:'RSC-應形者-男性-神秘面具之間的多重形象.png'},
+  'AGX':{female:'AGX-禁忌嚮導-女性-神秘之門與古老鑰匙.png',male:'AGX-禁忌嚮導-男性-神秘之鑰與旋轉之門.png'},
+  'RTX':{female:'RTX-消融者-女性-星網光暈中的消融女神.png',male:'RTX-消融者-男性-星紋裂光中的暗影男子.png'},
+  'ATX':{female:'ATX-赴界者-女性-燭火間伸手相邀的女子.png',male:'ATX-赴界者-男性-星盤前展臂的暗影使者.png'},
+  'RGX':{female:'RGX-守門人-女性-神秘的古典哥德式之門.png',male:'RGX-守門人-男性-暗夜拱門前的孤獨守衛.png'},
+  'ASX':{female:'ASX-越界者-女性-群鴉圍繞的暗門女神.png',male:'ASX-越界者-男性-烏鴉羽翼下的暗夜行者.png'},
+  'RSX':{female:'RSX-遊蕩者-女性-羽落廢墟中的孤獨旅者.png',male:'RSX-遊蕩者-男性-迷霧中的孤獨旅者.png'},
+};
+
+const COMPAT = {
+  'A-G-N':'R-T-N','R-T-N':'A-G-N','A-T-N':'R-G-N','R-G-N':'A-T-N',
+  'A-S-N':'R-S-N','R-S-N':'A-S-N','A-G-P':'R-T-P','R-T-P':'A-G-P',
+  'A-T-P':'R-G-P','R-G-P':'A-T-P','A-S-P':'R-S-P','R-S-P':'A-S-P',
+  'A-G-C':'R-T-C','R-T-C':'A-G-C','A-T-C':'R-G-C','R-G-C':'A-T-C',
+  'A-S-C':'R-S-C','R-S-C':'A-S-C','A-G-X':'R-T-X','R-T-X':'A-G-X',
+  'A-T-X':'R-G-X','R-G-X':'A-T-X','A-S-X':'R-S-X','R-S-X':'A-S-X',
+};
+
+// ============================================================
+// STATE
+// ============================================================
+
+let state = {
+  screen: 'landing',
+  gender: null, // 'female' | 'male'
+  currentQ: 0,
+  answers: {}, // index -> option index (0-3)
+  scores: {A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0},
+  result: null,
+  optionTimer: null,
+  advanceTimer: null,
+};
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+
+function goTo(screenId) {
+  const current = document.getElementById('screen-' + state.screen);
+  const next = document.getElementById('screen-' + screenId);
+  if (!next) return;
+  if (current) { current.classList.remove('visible'); current.classList.add('hidden'); }
+  next.classList.remove('hidden');
+  requestAnimationFrame(() => next.classList.add('visible'));
+  state.screen = screenId;
+}
+
+function selectGender(g) {
+  state.gender = g;
+  document.getElementById('card-female').classList.toggle('selected', g==='female');
+  document.getElementById('card-male').classList.toggle('selected', g==='male');
+  document.getElementById('gender-confirm').style.display = 'inline-block';
+}
+
+function startQuiz() {
+  state.currentQ = 0;
+  state.answers = {};
+  state.scores = {A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0};
+  goTo('chapter1');
+}
+
+function startChapter(ch) {
+  goTo('quiz');
+  // Set currentQ to first question of chapter
+  const idx = QUESTIONS.findIndex(q => q.chapter === ch);
+  if (idx >= 0) state.currentQ = idx;
+  renderQuestion(state.currentQ);
+}
+
+// ============================================================
+// QUIZ
+// ============================================================
+
+function updateProgress() {
+  const pct = (state.currentQ / QUESTIONS.length) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  const q = QUESTIONS[state.currentQ];
+  const chLabels = {1:'第一章｜火如何升起',2:'第二章｜關係如何牽動',3:'第三章｜深處如何召喚'};
+  document.getElementById('chapter-label').textContent = chLabels[q.chapter] || '';
+}
+
+function renderQuestion(idx) {
+  clearTimers();
+  const q = QUESTIONS[idx];
+  document.getElementById('q-number').textContent = String(idx+1).padStart(2,'0') + ' / ' + QUESTIONS.length;
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('btn-back').style.visibility = idx > 0 ? 'visible' : 'hidden';
+  updateProgress();
+
+  const optionsEl = document.getElementById('q-options');
+  optionsEl.innerHTML = '';
+  const labels = ['A','B','C','D'];
+  q.opts.forEach((opt, i) => {
+    const card = document.createElement('div');
+    card.className = 'option-card' + (state.answers[idx] === i ? ' selected' : '');
+    card.innerHTML = `<span class="option-label">${labels[i]}</span><span class="option-text">${opt.t}</span>`;
+    card.onclick = () => selectOption(idx, i);
+    optionsEl.appendChild(card);
+  });
+
+  // Staggered fade-in
+  state.optionTimer = setTimeout(() => {
+    document.querySelectorAll('.option-card').forEach((c,i) => {
+      setTimeout(() => c.classList.add('visible'), i * 80);
+    });
+  }, 350);
+
+  // Scroll to top of quiz
+  document.getElementById('screen-quiz').scrollTop = 0;
+}
+
+function selectOption(qIdx, optIdx) {
+  clearTimers();
+  const wasAnswered = state.answers[qIdx] !== undefined;
+  state.answers[qIdx] = optIdx;
+
+  // Update visual
+  document.querySelectorAll('.option-card').forEach((c,i) => {
+    c.classList.toggle('selected', i === optIdx);
+  });
+
+  // Update scores if first time answering this question
+  if (!wasAnswered) {
+    const scores = QUESTIONS[qIdx].opts[optIdx].s;
+    Object.entries(scores).forEach(([k,v]) => { state.scores[k] = (state.scores[k]||0) + v; });
+  } else {
+    // Recalculate all scores from scratch
+    recalcScores();
+  }
+
+  // Auto-advance after 0.8s
+  state.advanceTimer = setTimeout(() => nextQuestion(), 800);
+}
+
+function recalcScores() {
+  state.scores = {A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0};
+  Object.entries(state.answers).forEach(([qi, oi]) => {
+    const scores = QUESTIONS[parseInt(qi)].opts[oi].s;
+    Object.entries(scores).forEach(([k,v]) => { state.scores[k] = (state.scores[k]||0) + v; });
+  });
+}
+
+function nextQuestion() {
+  clearTimers();
+  const nextIdx = state.currentQ + 1;
+
+  if (nextIdx >= QUESTIONS.length) {
+    finishQuiz();
+    return;
+  }
+
+  const cur = QUESTIONS[state.currentQ];
+  const next = QUESTIONS[nextIdx];
+
+  state.currentQ = nextIdx;
+
+  if (cur.chapter !== next.chapter) {
+    // Show chapter transition
+    goTo('chapter' + next.chapter);
+  } else {
+    renderQuestion(nextIdx);
+  }
+}
+
+function prevQuestion() {
+  clearTimers();
+  if (state.currentQ <= 0) return;
+  state.currentQ--;
+  const q = QUESTIONS[state.currentQ];
+  goTo('quiz');
+  renderQuestion(state.currentQ);
+}
+
+function clearTimers() {
+  if (state.optionTimer) { clearTimeout(state.optionTimer); state.optionTimer = null; }
+  if (state.advanceTimer) { clearTimeout(state.advanceTimer); state.advanceTimer = null; }
+}
+
+// ============================================================
+// SCORING & RESULT
+// ============================================================
+
+function finishQuiz() {
+  goTo('calculating');
+  setTimeout(() => {
+    const result = calculateResult();
+    state.result = result;
+    renderResult(result);
+    goTo('result');
+  }, 2000);
+}
+
+function calculateResult() {
+  const s = state.scores;
+
+  // Axis 1: A vs R (max 24)
+  const axA = s.A / 24 * 100;
+  const axR = s.R / 24 * 100;
+  const act = axA >= axR ? 'A' : 'R';
+  const act2 = axA >= axR ? 'R' : 'A';
+
+  // Axis 2: G vs T vs S (max 36)
+  const axG = s.G / 36 * 100;
+  const axT = s.T / 36 * 100;
+  const axS = s.S / 36 * 100;
+  const en2 = [[axG,'G'],[axT,'T'],[axS,'S']].sort((a,b)=>b[0]-a[0]);
+  const en = en2[0][1];
+  const en_2nd = en2[1][1];
+
+  // Axis 3: N vs P vs C vs X (max 48)
+  const axN = s.N / 48 * 100;
+  const axP = s.P / 48 * 100;
+  const axC = s.C / 48 * 100;
+  const axX = s.X / 48 * 100;
+  const dr2 = [[axN,'N'],[axP,'P'],[axC,'C'],[axX,'X']].sort((a,b)=>b[0]-a[0]);
+  const dr = dr2[0][1];
+  const dr_2nd = dr2[1][1];
+
+  const primaryCode = `${act}-${en}-${dr}`;
+  const subCode1 = `${act}-${en_2nd}-${dr}`;
+  const subCode2 = `${act}-${en}-${dr_2nd}`;
+
+  return {
+    primaryCode,
+    subCode1: TYPES[subCode1] ? subCode1 : null,
+    subCode2: TYPES[subCode2] ? subCode2 : null,
+    axA, axR, axG, axT, axS, axN, axP, axC, axX,
+    act1stGap: Math.abs(axA - axR),
+    en1stGap: en2[0][0] - en2[1][0],
+    dr1stGap: dr2[0][0] - dr2[1][0],
+    drive: dr,
+  };
+}
+
+function renderResult(r) {
+  const type = TYPES[r.primaryCode];
+  if (!type) return;
+
+  const codeKey = r.primaryCode.replace(/-/g,'');
+  const imgKey = codeKey.slice(0,3);
+  const genderKey = state.gender || 'female';
+  const imgFile = IMAGES[imgKey] ? IMAGES[imgKey][genderKey] : '';
+  const imgSrc = imgFile ? `images/${imgFile}` : '';
+
+  const driveClass = 'drive-' + r.drive;
+
+  const compatType = TYPES[r.primaryCode] ? TYPES[r.primaryCode] : null;
+  const compatCode = type.compat;
+  const compatName = type.compatName;
+  const compatText = type.compatText;
+
+  // Sub-types
+  let subHTML = '';
+  if (r.subCode1 && r.en1stGap < 20) {
+    const sub = TYPES[r.subCode1];
+    if (sub && r.subCode1 !== r.primaryCode) {
+      subHTML += `<div class="sub-type-pill"><span class="sub-type-code">${r.subCode1}</span><span class="sub-type-name">${sub.name}</span></div>`;
+      subHTML += `<p class="result-para" style="margin-top:10px">如果你的副人格是<span class="result-highlight">${sub.name}</span>，代表你在能量流動方式上有另一種傾向——能在不同的位置找到自己的感覺。</p>`;
+    }
+  }
+  if (r.subCode2 && r.dr1stGap < 20) {
+    const sub2 = TYPES[r.subCode2];
+    if (sub2 && r.subCode2 !== r.primaryCode && r.subCode2 !== r.subCode1) {
+      subHTML += `<div class="sub-type-pill" style="margin-top:12px"><span class="sub-type-code">${r.subCode2}</span><span class="sub-type-name">${sub2.name}</span></div>`;
+      subHTML += `<p class="result-para" style="margin-top:10px">如果你的副人格是<span class="result-highlight">${sub2.name}</span>，代表你的核心驅動有另一個相近的入口，兩者共存在你的慾望結構裡。</p>`;
+    }
+  }
+  if (!subHTML) subHTML = '<p class="result-para">你的各軸分數相對集中，主型傾向清楚。</p>';
+
+  // X-axis note
+  const xNote = r.drive === 'X' ? `
+    <div style="margin-top:16px;padding:14px 16px;border:1px solid rgba(110,31,47,0.35);background:rgba(110,31,47,0.06);">
+      <p style="font-size:12px;line-height:1.9;color:var(--text-muted);">這裡的「越界」不是侵犯拒絕，而是在明確合意、可撤回、安全詞與事後照護存在的前提下，探索心理或情境邊界。</p>
+    </div>` : '';
+
+  document.getElementById('result-inner').innerHTML = `
+    <div class="result-inner ${driveClass}" id="result-inner-styled">
+      <!-- Block 1: Card -->
+      <div class="result-card">
+        ${imgSrc ? `<img class="result-image" src="${imgSrc}" alt="${type.name}" onerror="this.style.display='none'">` : ''}
+        <p class="result-code">${r.primaryCode}</p>
+        <h1 class="result-name">${type.name}</h1>
+        <p class="result-tagline">${type.tagline}</p>
+      </div>
+
+      <!-- Block 2: Axis visualization -->
+      <div class="result-section axis-section">
+        <p class="result-section-label">AXIS PROFILE</p>
+        <div class="axis-group">
+          <p class="axis-group-label">啟動方式</p>
+          <div class="axis-bar-row ${r.axA >= r.axR ? 'axis-bar-dominant':''}">
+            <span class="axis-bar-label">主動</span>
+            <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(r.axA)}%"></div></div>
+          </div>
+          <div class="axis-bar-row ${r.axR > r.axA ? 'axis-bar-dominant':''}">
+            <span class="axis-bar-label">回應</span>
+            <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(r.axR)}%"></div></div>
+          </div>
+        </div>
+        <div class="axis-group">
+          <p class="axis-group-label">能量方向</p>
+          ${['G','T','S'].map(k=>{
+            const labels={G:'給予',T:'承接',S:'交替'};
+            const vals={G:r.axG,T:r.axT,S:r.axS};
+            const isPrimary = k===r.primaryCode.split('-')[1];
+            return `<div class="axis-bar-row ${isPrimary?'axis-bar-dominant':''}">
+              <span class="axis-bar-label">${labels[k]}</span>
+              <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(vals[k])}%"></div></div>
+            </div>`;
+          }).join('')}
+        </div>
+        <div class="axis-group">
+          <p class="axis-group-label">核心驅動</p>
+          ${['N','P','C','X'].map(k=>{
+            const labels={N:'感官',P:'張力',C:'儀式',X:'越界'};
+            const vals={N:r.axN,P:r.axP,C:r.axC,X:r.axX};
+            const isPrimary = k===r.drive;
+            return `<div class="axis-bar-row ${isPrimary?'axis-bar-dominant':''}">
+              <span class="axis-bar-label">${labels[k]}</span>
+              <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(vals[k])}%"></div></div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- Block 3: Main description -->
+      <div class="result-section">
+        <p class="result-section-label">YOUR ARCHETYPE</p>
+        <h2 class="result-section-title">主型：${type.name}</h2>
+        <p class="result-para">${type.desc}</p>
+      </div>
+
+      <!-- Block 4: Sub-type -->
+      <div class="result-section">
+        <p class="result-section-label">SECONDARY TENDENCY</p>
+        <h2 class="result-section-title">副型傾向</h2>
+        ${subHTML}
+      </div>
+
+      <!-- Block 5: Shadow -->
+      <div class="result-section">
+        <p class="result-section-label">SHADOW SIDE</p>
+        <h2 class="result-section-title">陰影面</h2>
+        <p class="result-para">當這個原型失衡時——</p>
+        <p class="result-para">${type.shadow}</p>
+      </div>
+
+      <!-- Block 6: Compatibility -->
+      <div class="result-section">
+        <p class="result-section-label">CORE COMPATIBILITY</p>
+        <h2 class="result-section-title">核心契合</h2>
+        <div class="compat-box">
+          <p class="compat-label">${compatCode}</p>
+          <p class="compat-name">${compatName}</p>
+          <p class="result-para">${compatText}</p>
+          <p class="compat-note">契合不等於保證適合。真實關係仍取決於成熟度、溝通、界線與照護能力。</p>
+        </div>
+        ${xNote}
+      </div>
+
+      <!-- Block 7: Actions -->
+      <div class="result-section">
+        <p class="result-section-label">SHARE</p>
+        <div class="result-actions">
+          <button onclick="restartQuiz()">重新測驗</button>
+          <button onclick="copyResult()">複製結果</button>
+        </div>
+        <p style="font-size:12px;color:var(--fog);margin-top:16px;text-align:center;line-height:1.8;">
+          本結果描述的是你在親密與慾望情境中的原型傾向，<br>不等同於完整人格、道德評價或心理診斷。
+        </p>
+      </div>
+    </div>
+  `;
+
+  // Apply theme class to the styled inner div
+  const inner = document.getElementById('result-inner-styled');
+  if (inner) inner.className = `result-inner ${driveClass}`;
+}
+
+function copyResult() {
+  const r = state.result;
+  const type = TYPES[r.primaryCode];
+  const text = `慾望原型測驗結果\n\n${r.primaryCode} ${type.name}\n${type.tagline}\n\n核心契合：${type.compat} ${type.compatName}`;
+  navigator.clipboard.writeText(text).then(()=>{
+    alert('已複製結果');
+  }).catch(()=>{
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    alert('已複製結果');
+  });
+}
+
+function restartQuiz() {
+  state = {screen:'landing',gender:null,currentQ:0,answers:{},
+    scores:{A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0},result:null,
+    optionTimer:null,advanceTimer:null};
+  document.getElementById('progress-bar').style.width = '0%';
+  document.getElementById('chapter-label').textContent = '';
+  document.getElementById('gender-confirm').style.display = 'none';
+  document.getElementById('card-female').classList.remove('selected');
+  document.getElementById('card-male').classList.remove('selected');
+  // Hide all screens
+  document.querySelectorAll('.screen').forEach(s=>{
+    s.classList.remove('visible'); s.classList.add('hidden');
+  });
+  goTo('landing');
+}
+</script>
+</body>
+</html>

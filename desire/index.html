@@ -286,13 +286,16 @@ body::before {
   margin-top: 24px;
 }
 .btn-back {
-  background: transparent; border: none;
-  color: var(--fog); font-size: 13px;
+  background: transparent;
+  border: 1px solid var(--panel-deep);
+  color: var(--text-muted); font-size: 13px;
   letter-spacing: 0.1em; cursor: pointer;
-  padding: 8px 0;
-  transition: color 0.2s;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  display: none;
 }
-.btn-back:hover { color: var(--text-muted); }
+.btn-back.visible { display: inline-block; }
+.btn-back:hover { color: var(--text); border-color: var(--fog); }
 
 /* ---- CALCULATING ---- */
 .calc-ring {
@@ -464,6 +467,7 @@ body::before {
     <p class="tagline-item">你如何流動？</p>
     <p class="tagline-item">你被什麼牽引？</p>
   </div>
+  <p style="font-size:12px;letter-spacing:0.2em;color:var(--fog);margin-top:20px;">36 題・約 8–10 分鐘</p>
   <button class="btn-primary" onclick="goTo('intro')">開始測驗</button>
 </div>
 
@@ -1072,7 +1076,8 @@ function renderQuestion(idx) {
   const q = QUESTIONS[idx];
   document.getElementById('q-number').textContent = String(idx+1).padStart(2,'0') + ' / ' + QUESTIONS.length;
   document.getElementById('q-text').textContent = q.text;
-  document.getElementById('btn-back').style.visibility = idx > 0 ? 'visible' : 'hidden';
+  const backBtn = document.getElementById('btn-back');
+  backBtn.classList.toggle('visible', idx > 0);
   updateProgress();
 
   const optionsEl = document.getElementById('q-options');

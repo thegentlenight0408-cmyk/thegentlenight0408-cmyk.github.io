@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkaiscreen.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
 <style>
 :root {
   --bg: #0D0A08;
@@ -358,23 +359,7 @@ body::before {
   font-size: 11px; letter-spacing: 0.2em;
   color: var(--fog); margin-bottom: 10px;
 }
-.axis-bar-row {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 6px;
-}
-.axis-bar-label {
-  font-family: 'Cormorant Garant', serif;
-  font-size: 13px; color: var(--text-muted);
-  width: 48px; flex-shrink: 0; letter-spacing: 0.08em;
-}
-.axis-bar-track {
-  flex: 1; height: 2px; background: var(--panel-deep);
-  position: relative;
-}
-.axis-bar-fill {
-  height: 100%; background: var(--accent);
-  transition: width 1s ease;
-}
-.axis-bar-dominant .axis-bar-fill { background: var(--gold); }
+/* radar chart rendered inline via SVG */
 
 /* Result sections */
 .result-section {
@@ -1279,41 +1264,7 @@ function renderResult(r) {
       <!-- Block 2: Axis visualization -->
       <div class="result-section axis-section">
         <p class="result-section-label">AXIS PROFILE</p>
-        <div class="axis-group">
-          <p class="axis-group-label">啟動方式</p>
-          <div class="axis-bar-row ${r.axA >= r.axR ? 'axis-bar-dominant':''}">
-            <span class="axis-bar-label">主動</span>
-            <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(r.axA)}%"></div></div>
-          </div>
-          <div class="axis-bar-row ${r.axR > r.axA ? 'axis-bar-dominant':''}">
-            <span class="axis-bar-label">回應</span>
-            <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(r.axR)}%"></div></div>
-          </div>
-        </div>
-        <div class="axis-group">
-          <p class="axis-group-label">能量方向</p>
-          ${['G','T','S'].map(k=>{
-            const labels={G:'給予',T:'承接',S:'交替'};
-            const vals={G:r.axG,T:r.axT,S:r.axS};
-            const isPrimary = k===r.primaryCode.split('-')[1];
-            return `<div class="axis-bar-row ${isPrimary?'axis-bar-dominant':''}">
-              <span class="axis-bar-label">${labels[k]}</span>
-              <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(vals[k])}%"></div></div>
-            </div>`;
-          }).join('')}
-        </div>
-        <div class="axis-group">
-          <p class="axis-group-label">核心驅動</p>
-          ${['N','P','C','X'].map(k=>{
-            const labels={N:'感官',P:'張力',C:'儀式',X:'越界'};
-            const vals={N:r.axN,P:r.axP,C:r.axC,X:r.axX};
-            const isPrimary = k===r.drive;
-            return `<div class="axis-bar-row ${isPrimary?'axis-bar-dominant':''}">
-              <span class="axis-bar-label">${labels[k]}</span>
-              <div class="axis-bar-track"><div class="axis-bar-fill" style="width:${Math.round(vals[k])}%"></div></div>
-            </div>`;
-          }).join('')}
-        </div>
+        ${buildRadarChart(r)}
       </div>
 
       <!-- Block 3: Main description -->
@@ -1356,7 +1307,7 @@ function renderResult(r) {
         <p class="result-section-label">SHARE</p>
         <div class="result-actions">
           <button onclick="restartQuiz()">重新測驗</button>
-          <button onclick="copyResult()">複製結果</button>
+          <button onclick="downloadResult(this)">下載結果</button>
         </div>
         <p style="font-size:12px;color:var(--fog);margin-top:16px;text-align:center;line-height:1.8;">
           本結果描述的是你在親密與慾望情境中的原型傾向，<br>不等同於完整人格、道德評價或心理診斷。
@@ -1370,19 +1321,78 @@ function renderResult(r) {
   if (inner) inner.className = `result-inner ${driveClass}`;
 }
 
-function copyResult() {
-  const r = state.result;
-  const type = TYPES[r.primaryCode];
-  const text = `慾望原型測驗結果\n\n${r.primaryCode} ${type.name}\n${type.tagline}\n\n核心契合：${type.compat} ${type.compatName}`;
-  navigator.clipboard.writeText(text).then(()=>{
-    alert('已複製結果');
-  }).catch(()=>{
-    // fallback
-    const ta = document.createElement('textarea');
-    ta.value = text; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-    alert('已複製結果');
-  });
+function buildRadarChart(r) {
+  const cx=160, cy=160, maxR=100;
+  const axes=[
+    {label:'主動',val:r.axA},{label:'回應',val:r.axR},
+    {label:'給予',val:r.axG},{label:'承接',val:r.axT},{label:'交替',val:r.axS},
+    {label:'感官',val:r.axN},{label:'張力',val:r.axP},{label:'儀式',val:r.axC},{label:'越界',val:r.axX},
+  ];
+  const n=axes.length;
+  const ang=i=>i/n*Math.PI*2-Math.PI/2;
+  const pt=(i,rad)=>{const a=ang(i);return[cx+rad*Math.cos(a),cy+rad*Math.sin(a)];};
+  const pAct=r.primaryCode.split('-')[0], pEn=r.primaryCode.split('-')[1], pDr=r.drive;
+  const keyOf={主動:'A',回應:'R',給予:'G',承接:'T',交替:'S',感官:'N',張力:'P',儀式:'C',越界:'X'};
+
+  const grids=[25,50,75,100].map(lv=>{
+    const pts=axes.map((_,i)=>{const[x,y]=pt(i,maxR*lv/100);return`${x.toFixed(1)},${y.toFixed(1)}`;}).join(' ');
+    return `<polygon points="${pts}" fill="none" stroke="#2a2230" stroke-width="${lv===100?1.5:0.7}"/>`;
+  }).join('');
+
+  const lines=axes.map((_,i)=>{
+    const[x,y]=pt(i,maxR);
+    return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#2a2230" stroke-width="0.8"/>`;
+  }).join('');
+
+  const dataPts=axes.map((ax,i)=>{
+    const[x,y]=pt(i,maxR*Math.min(ax.val,100)/100);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+
+  const LR=133;
+  const labelEls=axes.map((ax,i)=>{
+    const[lx,ly]=pt(i,LR);
+    const cosA=Math.cos(ang(i)), sinA=Math.sin(ang(i));
+    const anchor=cosA>0.2?'start':cosA<-0.2?'end':'middle';
+    const dy=sinA<-0.35?-7:sinA>0.35?5:2;
+    const key=keyOf[ax.label];
+    const isPrimary=(['A','R'].includes(key)&&key===pAct)||
+                    (['G','T','S'].includes(key)&&key===pEn)||
+                    (['N','P','C','X'].includes(key)&&key===pDr);
+    const col=isPrimary?'#B8965A':'#787276';
+    const pct=Math.round(ax.val);
+    return `<text x="${lx.toFixed(1)}" y="${(ly+dy).toFixed(1)}" text-anchor="${anchor}"
+      font-family="'LXGW WenKai Screen',serif" font-size="10.5" fill="${col}">${ax.label
+    }<tspan font-family="Cormorant Garant,serif" font-size="9" dx="2" fill="${isPrimary?'#B8965A':'#555'}">${pct}%</tspan></text>`;
+  }).join('');
+
+  return `<div style="margin:0 auto 4px;max-width:320px"><svg viewBox="0 0 320 320" style="width:100%;display:block">
+    ${grids}${lines}
+    <polygon points="${dataPts}" fill="rgba(184,150,90,0.12)" stroke="#B8965A" stroke-width="1.5" stroke-linejoin="round"/>
+    ${labelEls}
+  </svg></div>`;
+}
+
+async function downloadResult(btn) {
+  const el = document.getElementById('result-inner-styled');
+  if (!el) return;
+  if (typeof html2canvas === 'undefined') { alert('下載功能仍在載入，請稍後再試'); return; }
+  const orig = btn.textContent;
+  btn.textContent = '生成中…'; btn.disabled = true;
+  try {
+    const canvas = await html2canvas(el, {
+      backgroundColor: '#0D0A08', scale: 2, useCORS: true, logging: false,
+      windowWidth: el.scrollWidth, windowHeight: el.scrollHeight,
+    });
+    const link = document.createElement('a');
+    link.download = `desire-${state.result.primaryCode}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) {
+    alert('下載失敗，請截圖儲存');
+  } finally {
+    btn.textContent = orig; btn.disabled = false;
+  }
 }
 
 function restartQuiz() {

@@ -1386,7 +1386,7 @@ function buildRadarChart(r) {
     }<tspan font-family="Cormorant Garant,serif" font-size="9" dx="2" fill="${isPrimary?'#B8965A':'#555'}">${pct}%</tspan></text>`;
   }).join('');
 
-  return `<div style="margin:0 auto 4px;max-width:320px"><svg viewBox="0 0 320 320" style="width:100%;display:block">
+  return `<div style="margin:0 auto 4px;max-width:320px;padding:0 14px;box-sizing:border-box"><svg viewBox="0 0 320 320" overflow="visible" style="width:100%;display:block">
     ${grids}${lines}
     <polygon points="${dataPts}" fill="rgba(184,150,90,0.12)" stroke="#B8965A" stroke-width="1.5" stroke-linejoin="round"/>
     ${labelEls}

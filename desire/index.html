@@ -448,7 +448,10 @@ body::before {
     <p class="tagline-item">牽引。</p>
   </div>
   <p style="font-size:12px;letter-spacing:0.2em;color:var(--fog);margin-top:20px;">36 題・約 10 分鐘</p>
-  <button class="btn-primary" onclick="goTo('intro')">揭開原型</button>
+  <button class="btn-primary" onclick="startFresh()">揭開原型</button>
+  <div id="resume-section" style="display:none;margin-top:16px;">
+    <button class="btn-secondary" onclick="resumeQuiz()" style="font-size:13px;padding:10px 24px;letter-spacing:0.15em;">繼續上次測驗</button>
+  </div>
 </div>
 
 <!-- INTRO -->
@@ -1108,6 +1111,8 @@ function selectOption(qIdx, optIdx) {
     recalcScores();
   }
 
+  saveProgress();
+
   // Auto-advance after 0.8s
   state.advanceTimer = setTimeout(() => nextQuestion(), 800);
 }
@@ -1161,6 +1166,7 @@ function clearTimers() {
 // ============================================================
 
 function finishQuiz() {
+  clearProgress();
   goTo('calculating');
   setTimeout(() => {
     const result = calculateResult();
@@ -1397,7 +1403,57 @@ async function downloadResult(btn) {
   }
 }
 
+const STORAGE_KEY = 'desireQuizProgress';
+
+function saveProgress() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      currentQ: state.currentQ,
+      answers: state.answers,
+      scores: state.scores,
+      shuffledOpts: state.shuffledOpts,
+      gender: state.gender,
+    }));
+  } catch(e) {}
+}
+
+function clearProgress() {
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+}
+
+function startFresh() {
+  clearProgress();
+  goTo('intro');
+}
+
+function resumeQuiz() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (!saved || !saved.currentQ) { goTo('intro'); return; }
+    state.gender = saved.gender;
+    state.currentQ = saved.currentQ;
+    state.answers = saved.answers || {};
+    state.scores = saved.scores || {A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0};
+    state.shuffledOpts = saved.shuffledOpts || {};
+    goTo('quiz');
+    renderQuestion(state.currentQ);
+  } catch(e) { goTo('intro'); }
+}
+
+function checkResume() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (saved && saved.currentQ > 0) {
+      document.getElementById('resume-section').style.display = 'block';
+    }
+  } catch(e) {}
+}
+
+// Check for saved progress on load
+window.addEventListener('DOMContentLoaded', checkResume);
+
 function restartQuiz() {
+  clearProgress();
   state = {screen:'landing',gender:null,currentQ:0,answers:{},
     shuffledOpts:{},scores:{A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0},result:null,
     optionTimer:null,advanceTimer:null};

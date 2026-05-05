@@ -1404,12 +1404,23 @@ async function downloadResult(btn) {
       backgroundColor: '#0D0A08', scale: 2, useCORS: true, logging: false,
       windowWidth: el.scrollWidth, windowHeight: el.scrollHeight,
     });
+    const filename = `desire-${state.result.primaryCode}.png`;
+    // Try Web Share API (iOS share sheet → 儲存影像 → 相簿)
+    if (navigator.canShare) {
+      const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+      const file = new File([blob], filename, { type: 'image/png' });
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: '慾望原型測驗結果' });
+        return;
+      }
+    }
+    // Fallback: direct download
     const link = document.createElement('a');
-    link.download = `desire-${state.result.primaryCode}.png`;
+    link.download = filename;
     link.href = canvas.toDataURL('image/png');
     link.click();
   } catch(e) {
-    alert('下載失敗，請截圖儲存');
+    if (e.name !== 'AbortError') alert('下載失敗，請截圖儲存');
   } finally {
     btn.textContent = orig; btn.disabled = false;
   }

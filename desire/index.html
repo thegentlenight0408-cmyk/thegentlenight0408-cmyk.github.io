@@ -998,7 +998,8 @@ let state = {
   screen: 'landing',
   gender: null, // 'female' | 'male'
   currentQ: 0,
-  answers: {}, // index -> option index (0-3)
+  answers: {}, // qIdx -> original opt index
+  shuffledOpts: {}, // qIdx -> array of original indices in display order
   scores: {A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0},
   result: null,
   optionTimer: null,
@@ -1065,11 +1066,21 @@ function renderQuestion(idx) {
   const optionsEl = document.getElementById('q-options');
   optionsEl.innerHTML = '';
   const labels = ['A','B','C','D'];
-  q.opts.forEach((opt, i) => {
+  if (!state.shuffledOpts[idx]) {
+    const order = q.opts.map((_,i)=>i);
+    for (let i = order.length-1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i+1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    state.shuffledOpts[idx] = order;
+  }
+  const order = state.shuffledOpts[idx];
+  order.forEach((origIdx, dispIdx) => {
+    const opt = q.opts[origIdx];
     const card = document.createElement('div');
-    card.className = 'option-card' + (state.answers[idx] === i ? ' selected' : '');
-    card.innerHTML = `<span class="option-label">${labels[i]}</span><span class="option-text">${opt.t}</span>`;
-    card.onclick = () => selectOption(idx, i);
+    card.className = 'option-card' + (state.answers[idx] === origIdx ? ' selected' : '');
+    card.innerHTML = `<span class="option-label">${labels[dispIdx]}</span><span class="option-text">${opt.t}</span>`;
+    card.onclick = () => selectOption(idx, origIdx);
     optionsEl.appendChild(card);
   });
 
@@ -1089,9 +1100,10 @@ function selectOption(qIdx, optIdx) {
   const wasAnswered = state.answers[qIdx] !== undefined;
   state.answers[qIdx] = optIdx;
 
-  // Update visual
+  // Update visual (map display position back to original index)
+  const ord = state.shuffledOpts[qIdx] || [];
   document.querySelectorAll('.option-card').forEach((c,i) => {
-    c.classList.toggle('selected', i === optIdx);
+    c.classList.toggle('selected', ord[i] === optIdx);
   });
 
   // Update scores if first time answering this question
@@ -1394,7 +1406,7 @@ async function downloadResult(btn) {
 
 function restartQuiz() {
   state = {screen:'landing',gender:null,currentQ:0,answers:{},
-    scores:{A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0},result:null,
+    shuffledOpts:{},scores:{A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0},result:null,
     optionTimer:null,advanceTimer:null};
   document.getElementById('progress-bar').style.width = '0%';
   document.getElementById('chapter-label').textContent = '';

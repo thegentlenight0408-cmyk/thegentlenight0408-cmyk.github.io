@@ -1453,29 +1453,45 @@ async function downloadResult(btn) {
     });
 
     const filename = `desire-${state.result.primaryCode}.png`;
-    const blob = await new Promise((resolve, reject) => {
-      canvas.toBlob(b => b ? resolve(b) : reject(new Error('blob_failed')), 'image/png');
-    });
+    const dataUrl = canvas.toDataURL('image/png');
 
-    if (navigator.canShare && typeof File !== 'undefined') {
-      const file = new File([blob], filename, { type: 'image/png' });
-      if (navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title: '慾望原型測驗結果' });
+    if (navigator.share) {
+      try {
+        const resp = await fetch(dataUrl);
+        const blob = await resp.blob();
+        if (typeof File !== 'undefined' && navigator.canShare) {
+          const file = new File([blob], filename, { type: 'image/png' });
+          if (navigator.canShare({ files: [file] })) {
+            await navigator.share({ files: [file], title: '慾望原型測驗結果' });
+            return;
+          }
+        }
+      } catch (shareErr) {
+        console.warn('share fallback skipped', shareErr);
+      }
+    }
+
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (isIOS) {
+      const win = window.open('', '_blank');
+      if (win) {
+        win.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>${filename}</title><style>body{margin:0;background:#111;display:flex;min-height:100vh;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-family:sans-serif;padding:16px}img{max-width:100%;height:auto;box-shadow:0 8px 24px rgba(0,0,0,.35)}p{margin-top:16px;font-size:14px;line-height:1.6;text-align:center;color:#ddd}</style></head><body><img src="${dataUrl}" alt="result"><p>長按圖片即可儲存到照片</p></body></html>`);
+        win.document.close();
         return;
       }
     }
 
     const link = document.createElement('a');
-    const objectUrl = URL.createObjectURL(blob);
     link.download = filename;
-    link.href = objectUrl;
+    link.href = dataUrl;
     document.body.appendChild(link);
     link.click();
     link.remove();
-    setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
   } catch(e) {
     console.error('downloadResult failed', e);
-    if (e.name !== 'AbortError') alert('下載失敗，請截圖儲存');
+    if (e.name !== 'AbortError') alert('下載失敗，請改用截圖或長按圖片儲存');
   } finally {
     btn.textContent = orig; btn.disabled = false;
   }

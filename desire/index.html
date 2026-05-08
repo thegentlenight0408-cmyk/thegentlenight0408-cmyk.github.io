@@ -1273,7 +1273,7 @@ function renderResult(r) {
       const sub1Img = subImgSrc(r.subCode1);
       subHTML += `
         <div class="result-card" style="margin-bottom:20px">
-          ${sub1Img ? `<img class="result-image" src="${sub1Img}" alt="${sub.name}" onerror="this.style.display='none'">` : ''}
+          ${sub1Img ? `<img class="result-image" src="${sub1Img}" alt="${sub.name}" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : ''}
           <p class="result-code">${r.subCode1}</p>
           <h2 class="result-section-title" style="margin-top:6px">${sub.name}</h2>
         </div>`;
@@ -1305,7 +1305,7 @@ function renderResult(r) {
     <div class="result-inner ${driveClass}" id="result-inner-styled">
       <!-- Block 1: Card -->
       <div class="result-card">
-        ${imgSrc ? `<img class="result-image" src="${imgSrc}" alt="${type.name}" onerror="this.style.display='none'">` : ''}
+        ${imgSrc ? `<img class="result-image" src="${imgSrc}" alt="${type.name}" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : ''}
         <p class="result-code">${r.primaryCode}</p>
         <h1 class="result-name">${type.name}</h1>
         <p class="result-tagline">${type.tagline}</p>
@@ -1430,26 +1430,51 @@ async function downloadResult(btn) {
   const orig = btn.textContent;
   btn.textContent = '生成中…'; btn.disabled = true;
   try {
+    const images = Array.from(el.querySelectorAll('img'));
+    await Promise.all(images.map(img => {
+      if (img.complete) return Promise.resolve();
+      return new Promise(resolve => {
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+      });
+    }));
+
     const canvas = await html2canvas(el, {
-      backgroundColor: '#0D0A08', scale: 2, useCORS: true, logging: false,
-      windowWidth: el.scrollWidth, windowHeight: el.scrollHeight,
+      backgroundColor: '#0D0A08',
+      scale: 2,
+      useCORS: true,
+      allowTaint: false,
+      logging: false,
+      imageTimeout: 15000,
+      windowWidth: Math.max(el.scrollWidth, el.offsetWidth),
+      windowHeight: Math.max(el.scrollHeight, el.offsetHeight),
+      scrollX: 0,
+      scrollY: -window.scrollY,
     });
+
     const filename = `desire-${state.result.primaryCode}.png`;
-    // Try Web Share API (iOS share sheet → 儲存影像 → 相簿)
-    if (navigator.canShare) {
-      const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+    const blob = await new Promise((resolve, reject) => {
+      canvas.toBlob(b => b ? resolve(b) : reject(new Error('blob_failed')), 'image/png');
+    });
+
+    if (navigator.canShare && typeof File !== 'undefined') {
       const file = new File([blob], filename, { type: 'image/png' });
       if (navigator.canShare({ files: [file] })) {
         await navigator.share({ files: [file], title: '慾望原型測驗結果' });
         return;
       }
     }
-    // Fallback: direct download
+
     const link = document.createElement('a');
+    const objectUrl = URL.createObjectURL(blob);
     link.download = filename;
-    link.href = canvas.toDataURL('image/png');
+    link.href = objectUrl;
+    document.body.appendChild(link);
     link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
   } catch(e) {
+    console.error('downloadResult failed', e);
     if (e.name !== 'AbortError') alert('下載失敗，請截圖儲存');
   } finally {
     btn.textContent = orig; btn.disabled = false;

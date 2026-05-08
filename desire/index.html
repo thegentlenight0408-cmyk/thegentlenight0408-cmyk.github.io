@@ -1357,7 +1357,7 @@ function renderResult(r) {
         <p class="result-section-label">SHARE</p>
         <div class="result-actions">
           <button onclick="restartQuiz()">重新測驗</button>
-          <button onclick="downloadResult(this)">下載結果</button>
+          <button onclick="downloadResult(this)">儲存結果圖</button>
         </div>
         <p style="font-size:12px;color:var(--fog);margin-top:16px;text-align:center;line-height:1.8;">
           本結果描述的是你在親密與慾望情境中的原型傾向，<br>不等同於完整人格、道德評價或心理診斷。
@@ -1426,7 +1426,7 @@ function buildRadarChart(r) {
 async function downloadResult(btn) {
   const el = document.getElementById('result-inner-styled');
   if (!el) return;
-  if (typeof html2canvas === 'undefined') { alert('下載功能仍在載入，請稍後再試'); return; }
+  if (typeof html2canvas === 'undefined') { alert('功能仍在載入，請稍後再試'); return; }
   const orig = btn.textContent;
   btn.textContent = '生成中…'; btn.disabled = true;
   try {
@@ -1455,32 +1455,11 @@ async function downloadResult(btn) {
     const filename = `desire-${state.result.primaryCode}.png`;
     const dataUrl = canvas.toDataURL('image/png');
 
-    if (navigator.share) {
-      try {
-        const resp = await fetch(dataUrl);
-        const blob = await resp.blob();
-        if (typeof File !== 'undefined' && navigator.canShare) {
-          const file = new File([blob], filename, { type: 'image/png' });
-          if (navigator.canShare({ files: [file] })) {
-            await navigator.share({ files: [file], title: '慾望原型測驗結果' });
-            return;
-          }
-        }
-      } catch (shareErr) {
-        console.warn('share fallback skipped', shareErr);
-      }
-    }
-
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-    if (isIOS) {
-      const win = window.open('', '_blank');
-      if (win) {
-        win.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>${filename}</title><style>body{margin:0;background:#111;display:flex;min-height:100vh;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-family:sans-serif;padding:16px}img{max-width:100%;height:auto;box-shadow:0 8px 24px rgba(0,0,0,.35)}p{margin-top:16px;font-size:14px;line-height:1.6;text-align:center;color:#ddd}</style></head><body><img src="${dataUrl}" alt="result"><p>長按圖片即可儲存到照片</p></body></html>`);
-        win.document.close();
-        return;
-      }
+    const win = window.open('', '_blank');
+    if (win) {
+      win.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>${filename}</title><style>body{margin:0;background:#111;display:flex;min-height:100vh;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-family:sans-serif;padding:16px}img{max-width:100%;height:auto;box-shadow:0 8px 24px rgba(0,0,0,.35)}p{margin-top:16px;font-size:14px;line-height:1.7;text-align:center;color:#ddd;max-width:320px}button{margin-top:12px;padding:12px 16px;border:none;border-radius:999px;background:#b8965a;color:#111;font-size:14px}</style></head><body><img src="${dataUrl}" alt="result"><p>長按圖片即可儲存到照片。若你使用電腦，可直接在此頁另存圖片。</p><button onclick="window.print()">列印 / 另存 PDF</button></body></html>`);
+      win.document.close();
+      return;
     }
 
     const link = document.createElement('a');
@@ -1491,7 +1470,7 @@ async function downloadResult(btn) {
     link.remove();
   } catch(e) {
     console.error('downloadResult failed', e);
-    if (e.name !== 'AbortError') alert('下載失敗，請改用截圖或長按圖片儲存');
+    if (e.name !== 'AbortError') alert('產生圖片失敗，請直接截圖');
   } finally {
     btn.textContent = orig; btn.disabled = false;
   }

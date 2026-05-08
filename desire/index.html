@@ -1428,7 +1428,7 @@ async function downloadResult(btn) {
   if (!el) return;
   if (typeof html2canvas === 'undefined') { alert('功能仍在載入，請稍後再試'); return; }
   const orig = btn.textContent;
-  btn.textContent = '生成中…'; btn.disabled = true;
+  btn.textContent = '生成高畫質圖片中…'; btn.disabled = true;
   try {
     const images = Array.from(el.querySelectorAll('img'));
     await Promise.all(images.map(img => {
@@ -1439,25 +1439,31 @@ async function downloadResult(btn) {
       });
     }));
 
+    const exportWidth = 1080;
+    const sourceWidth = Math.max(el.scrollWidth, el.offsetWidth, 1);
+    const scale = Math.max(3, exportWidth / sourceWidth);
+
     const canvas = await html2canvas(el, {
       backgroundColor: '#0D0A08',
-      scale: 2,
+      scale,
       useCORS: true,
       allowTaint: false,
       logging: false,
-      imageTimeout: 15000,
-      windowWidth: Math.max(el.scrollWidth, el.offsetWidth),
+      imageTimeout: 20000,
+      windowWidth: sourceWidth,
       windowHeight: Math.max(el.scrollHeight, el.offsetHeight),
+      width: sourceWidth,
+      height: Math.max(el.scrollHeight, el.offsetHeight),
       scrollX: 0,
       scrollY: -window.scrollY,
     });
 
-    const filename = `desire-${state.result.primaryCode}.png`;
-    const dataUrl = canvas.toDataURL('image/png');
+    const dataUrl = canvas.toDataURL('image/png', 1.0);
+    const filename = `desire-${state.result.primaryCode}-hd.png`;
 
     const win = window.open('', '_blank');
     if (win) {
-      win.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>${filename}</title><style>body{margin:0;background:#111;display:flex;min-height:100vh;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-family:sans-serif;padding:16px}img{max-width:100%;height:auto;box-shadow:0 8px 24px rgba(0,0,0,.35)}p{margin-top:16px;font-size:14px;line-height:1.7;text-align:center;color:#ddd;max-width:320px}button{margin-top:12px;padding:12px 16px;border:none;border-radius:999px;background:#b8965a;color:#111;font-size:14px}</style></head><body><img src="${dataUrl}" alt="result"><p>長按圖片即可儲存到照片。若你使用電腦，可直接在此頁另存圖片。</p><button onclick="window.print()">列印 / 另存 PDF</button></body></html>`);
+      win.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>${filename}</title><style>body{margin:0;background:#111;display:flex;min-height:100vh;align-items:center;justify-content:flex-start;flex-direction:column;color:#fff;font-family:sans-serif;padding:16px}img{width:min(100%,540px);height:auto;box-shadow:0 8px 24px rgba(0,0,0,.35);image-rendering:auto}p{margin-top:16px;font-size:14px;line-height:1.7;text-align:center;color:#ddd;max-width:360px}small{margin-top:8px;color:#999}button{margin-top:12px;padding:12px 16px;border:none;border-radius:999px;background:#b8965a;color:#111;font-size:14px}</style></head><body><img src="${dataUrl}" alt="result"><p>這是高畫質版本，長按圖片即可儲存到照片。</p><small>若覺得太長，可存圖後再裁切。</small><button onclick="window.print()">列印 / 另存 PDF</button></body></html>`);
       win.document.close();
       return;
     }
@@ -1470,7 +1476,7 @@ async function downloadResult(btn) {
     link.remove();
   } catch(e) {
     console.error('downloadResult failed', e);
-    if (e.name !== 'AbortError') alert('產生圖片失敗，請直接截圖');
+    if (e.name !== 'AbortError') alert('產生高畫質圖片失敗，請直接截圖');
   } finally {
     btn.textContent = orig; btn.disabled = false;
   }

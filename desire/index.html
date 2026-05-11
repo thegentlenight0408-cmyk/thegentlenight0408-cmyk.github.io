@@ -1279,6 +1279,10 @@ function renderResult(r) {
   const compatCode = type.compat;
   const compatName = type.compatName;
   const compatText = type.compatText;
+  const compatImgGender = genderKey === 'female' ? 'male' : 'female';
+  const compatImgKey = compatCode ? compatCode.replace(/-/g,'').slice(0,3) : '';
+  const compatImgFile = compatImgKey && IMAGES[compatImgKey] ? IMAGES[compatImgKey][compatImgGender] : '';
+  const compatImgSrc = compatImgFile ? `images/${compatImgFile}` : '';
 
   // Sub-types
   function subImgSrc(code) {
@@ -1294,7 +1298,7 @@ function renderResult(r) {
       const sub1Img = subImgSrc(r.subCode1);
       subHTML += `
         <div class="result-card" style="margin-bottom:20px">
-          ${sub1Img ? `<img class="result-image" src="${sub1Img}" alt="${sub.name}" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : ''}
+          ${sub1Img ? `<img class="result-image" src="${sub1Img}" alt="${sub.name}" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
           <p class="result-code">${r.subCode1}</p>
           <h2 class="result-section-title" style="margin-top:6px">${sub.name}</h2>
         </div>`;
@@ -1365,6 +1369,7 @@ function renderResult(r) {
         <p class="result-section-label">CORE COMPATIBILITY</p>
         <h2 class="result-section-title">核心契合</h2>
         <div class="compat-box">
+          ${compatImgSrc ? `<img class="result-image" src="${compatImgSrc}" alt="${compatName}" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
           <p class="compat-label">${compatCode}</p>
           <p class="compat-name">${compatName}</p>
           <p class="result-para">${compatText}</p>
@@ -1373,16 +1378,18 @@ function renderResult(r) {
         ${xNote}
       </div>
 
+      <!-- Disclaimer -->
+      <p style="font-size:12px;color:var(--fog);margin-top:0;padding:16px 0;text-align:center;line-height:1.8;border-top:1px solid var(--panel-deep);">
+        本結果描述的是你在親密與慾望情境中的原型傾向，<br>不等同於完整人格、道德評價或心理診斷。
+      </p>
+
       <!-- Block 7: Actions -->
-      <div class="result-section">
+      <div class="result-section" id="result-share-section">
         <p class="result-section-label">SHARE</p>
         <div class="result-actions">
           <button onclick="restartQuiz()">重新測驗</button>
           <button onclick="downloadResult(this)">儲存結果圖</button>
         </div>
-        <p style="font-size:12px;color:var(--fog);margin-top:16px;text-align:center;line-height:1.8;">
-          本結果描述的是你在親密與慾望情境中的原型傾向，<br>不等同於完整人格、道德評價或心理診斷。
-        </p>
       </div>
     </div>
   `;
@@ -1450,6 +1457,8 @@ async function downloadResult(btn) {
   if (typeof html2canvas === 'undefined') { alert('功能仍在載入，請稍後再試'); return; }
   const orig = btn.textContent;
   btn.textContent = '生成高畫質圖片中…'; btn.disabled = true;
+  const shareSection = document.getElementById('result-share-section');
+  if (shareSection) shareSection.style.display = 'none';
   try {
     const images = Array.from(el.querySelectorAll('img'));
     await Promise.all(images.map(img => {
@@ -1499,6 +1508,7 @@ async function downloadResult(btn) {
     console.error('downloadResult failed', e);
     if (e.name !== 'AbortError') alert('產生高畫質圖片失敗，請直接截圖');
   } finally {
+    if (shareSection) shareSection.style.display = '';
     btn.textContent = orig; btn.disabled = false;
   }
 }

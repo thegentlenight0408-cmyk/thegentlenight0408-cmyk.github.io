@@ -393,8 +393,6 @@ body::before {
 
 /* Compat */
 .compat-box {
-  border: 1px solid var(--panel-deep);
-  padding: 20px; background: var(--panel);
   margin-bottom: 16px;
 }
 .compat-label {
@@ -1378,7 +1376,7 @@ function renderResult(r) {
       <!-- Block 6: Compatibility -->
       <div class="result-section">
         <p class="result-section-label">CORE COMPATIBILITY</p>
-        <h2 class="result-section-title">核心契合</h2>
+        <h2 class="result-section-title">核心契合者</h2>
         ${compatImgSrc ? `<div class="result-card" style="margin-bottom:16px"><img src="${compatImgSrc}" alt="${compatName}" style="width:100%;max-width:320px;aspect-ratio:1;object-fit:cover;display:block;margin:0 auto 0" onerror="this.parentElement.style.display='none'"></div>` : ''}
         <div class="compat-box">
           <p class="compat-label">${compatCode}</p>

@@ -1499,16 +1499,33 @@ async function downloadResult(btn) {
       scrollY: -window.scrollY,
     });
 
-    const dataUrl = canvas.toDataURL('image/png', 1.0);
     const filename = `desire-${state.result.primaryCode}-hd.png`;
 
+    // iOS Safari: Web Share API (opens native share sheet → Save Image → Photos)
+    if (navigator.canShare) {
+      try {
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png', 1.0));
+        const file = new File([blob], filename, { type: 'image/png' });
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({ files: [file], title: '我的慾望原型結果' });
+          return;
+        }
+      } catch(shareErr) {
+        if (shareErr.name === 'AbortError') return; // user cancelled share sheet
+        // canShare failed, fall through to next method
+      }
+    }
+
+    // Desktop: open in new tab with long-press instructions
+    const dataUrl = canvas.toDataURL('image/png', 1.0);
     const win = window.open('', '_blank');
     if (win) {
-      win.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>${filename}</title><style>body{margin:0;background:#111;display:flex;min-height:100vh;align-items:center;justify-content:flex-start;flex-direction:column;color:#fff;font-family:sans-serif;padding:16px}img{width:min(100%,540px);height:auto;box-shadow:0 8px 24px rgba(0,0,0,.35);image-rendering:auto}p{margin-top:16px;font-size:14px;line-height:1.7;text-align:center;color:#ddd;max-width:360px}small{margin-top:8px;color:#999}button{margin-top:12px;padding:12px 16px;border:none;border-radius:999px;background:#b8965a;color:#111;font-size:14px}</style></head><body><img src="${dataUrl}" alt="result"><p>這是高畫質版本，長按圖片即可儲存到照片。</p><small>若覺得太長，可存圖後再裁切。</small><button onclick="window.print()">列印 / 另存 PDF</button></body></html>`);
+      win.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>${filename}</title><style>body{margin:0;background:#111;display:flex;min-height:100vh;align-items:center;justify-content:flex-start;flex-direction:column;color:#fff;font-family:sans-serif;padding:16px}img{width:min(100%,540px);height:auto;box-shadow:0 8px 24px rgba(0,0,0,.35);image-rendering:auto}p{margin-top:16px;font-size:14px;line-height:1.7;text-align:center;color:#ddd;max-width:360px}small{margin-top:8px;color:#999}button{margin-top:12px;padding:12px 16px;border:none;border-radius:999px;background:#b8965a;color:#111;font-size:14px}</style></head><body><img src="${dataUrl}" alt="result"><p>長按圖片即可儲存到照片。</p><button onclick="window.print()">列印 / 另存 PDF</button></body></html>`);
       win.document.close();
       return;
     }
 
+    // Fallback: direct download
     const link = document.createElement('a');
     link.download = filename;
     link.href = dataUrl;

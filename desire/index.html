@@ -437,7 +437,7 @@ body::before {
 <div id="chapter-label"></div>
 
 <!-- COUNTER -->
-<div id="screen-counter" class="screen visible">
+<div id="screen-counter" class="screen hidden">
   <div style="text-align:center;padding:0 24px">
     <p class="title-sub" style="margin-bottom:36px;letter-spacing:0.35em">DESIRE ARCHETYPE</p>
     <p style="font-family:'LXGW WenKai Screen',serif;font-size:clamp(15px,4vw,19px);color:var(--text-muted);letter-spacing:0.08em;line-height:1.5">妳是第</p>
@@ -450,7 +450,7 @@ body::before {
 </div>
 
 <!-- LANDING -->
-<div id="screen-landing" class="screen hidden">
+<div id="screen-landing" class="screen visible">
   <p class="title-sub" style="margin-bottom:16px">DESIRE ARCHETYPE</p>
   <h1 class="title-main">慾望原型</h1>
   <div class="gold-line"></div>
@@ -475,9 +475,9 @@ body::before {
     <p class="prose" style="margin-top:20px">
       這份測驗問的不是你想成為的樣子。<br><br>
       而是探討你最原始的慾望來源——<br>
-      當慾望真的升起時，心會往哪裡去？<br><br>
+      當慾望真的升起時，你會往哪裡去？<br><br>
       請憑直覺選擇<br>
-      選那個讀完之後最像你的
+      選那個讀完覺得最像你的
     </p>
     <button class="btn-primary" onclick="goTo('safety')">開始</button>
   </div>
@@ -524,7 +524,7 @@ body::before {
     <p class="chapter-num">CHAPTER ONE</p>
     <h2 class="chapter-title">慾火怎麼升起</h2>
     <div class="gold-line"></div>
-    <p class="chapter-desc" style="margin-top:16px">有些人的性慾向來旺盛——它早就在身體裡燒著，只是在找地方發洩。<br><br>也有些人不是沒有慾望。只是要等對的人靠近，等那令人著迷的氣味、聲音、命令、眼神，或某個不能再裝沒事的距離，把身體真的點燃。</p>
+    <p class="chapter-desc" style="margin-top:16px">有些人的慾望向來旺盛——它早就在身體裡燒著，只是在找地方發洩。<br><br>其他人不是沒有想法。只是要等對的人靠近，等那令人著迷的氣味、聲音、命令、眼神，或某個不能假裝若無其事的距離，把身體真的點燃。</p>
     <button class="btn-primary" onclick="startChapter(1)">繼續</button>
   </div>
 </div>
@@ -532,7 +532,7 @@ body::before {
 <div id="screen-chapter2" class="screen hidden">
   <div class="chapter-screen">
     <p class="chapter-num">CHAPTER TWO</p>
-    <h2 class="chapter-title">控制怎麼流動</h2>
+    <h2 class="chapter-title">權力怎麼流動</h2>
     <div class="gold-line"></div>
     <p class="chapter-desc" style="margin-top:16px">D/s 不是單純一個人看似高高在上，另一個人跪地趴低。<br><br>真正讓人上癮的，是控制權在兩個人之間被試探、拿起、交出、接住。<br><br>有人習慣主動拿取。有人習慣被動承接。也有人一旦位置被固定，就覺得整段實踐失去意義。</p>
     <button class="btn-primary" onclick="startChapter(2)">繼續</button>
@@ -542,9 +542,9 @@ body::before {
 <div id="screen-chapter3" class="screen hidden">
   <div class="chapter-screen">
     <p class="chapter-num">CHAPTER THREE</p>
-    <h2 class="chapter-title">你的慾望來源究竟是什麼</h2>
+    <h2 class="chapter-title">你的慾望究竟來自何處？</h2>
     <div class="gold-line"></div>
-    <p class="chapter-desc" style="margin-top:16px">有人著迷於感官。氣味、體溫、皮膚、聲音，一碰就進入狀況。<br><br>有人喜歡劍拔弩張的氛圍。等待、忍耐、懸吊著，明明快到了卻不被允許釋放——那段時間本身就是折磨，也是快感。<br><br>有人是儀式的殉道者。稱呼、規則、姿勢、流程，一旦開始，就知道自己該在哪個位置。<br><br>有人就喜歡探索禁忌。不是忽視拒絕，是清楚合意後，被帶到平常不敢碰、不能說、不想承認的地方。</p>
+    <p class="chapter-desc" style="margin-top:16px">有人著迷於感官。氣味、體溫、皮膚、聲音，一碰就進入狀況。<br><br>有人喜歡劍拔弩張的氛圍。等待、忍耐、懸吊著，明明快到了卻不被允許釋放——那段時間本身就是折磨，也是快感。<br><br>有人是儀式的殉道者。稱呼、規則、姿勢、流程，一旦開始，就知道自己該在哪個位置。<br><br>有人就喜歡探索禁忌。在清楚合意後，被帶到平常不敢碰、不能說、不想承認的地方。</p>
     <div style="margin-top:28px;padding:20px;border:1px solid rgba(110,31,47,0.4);background:rgba(110,31,47,0.05);">
       <p style="font-size:13px;line-height:1.9;color:var(--text-muted);">
         接下來的「越界」，只指清楚合意、能撤回、可以立即停止，並且結束後能被照護的心理、身體或情境探索。<br><br>
@@ -589,13 +589,13 @@ const QUESTIONS = [
   {chapter:1, text:'活動場上注意到某個人，體內好像有些什麼反應。接下來比較可能怎麼做？',
    opts:[
     {t:'身體先動了。繞到對方附近，找理由停下來，讓對方不能不注意到你。',s:{A:3,G:1,N:1}},
-    {t:'想靠近，但先壓著不動，等對方丟出一點訊號，再讓自己往前。',s:{R:3,T:1,P:1}},
-    {t:'原本沒想太多，對方某個動作突然讓你想碰上去，或乾脆讓對方碰你。',s:{R:2,S:1,N:2}},
-    {t:'有衝動，但不急著交出去。要先確認這個人值不值得你把身體和防備一起放下。',s:{R:2,T:1,C:1,X:1}},
+    {t:'想靠近，但先按兵不動，等對方丟出一點訊號，再讓自己往前。',s:{R:3,T:1,P:1}},
+    {t:'原本沒想太多，對方某個動作突然讓你想跟對方有些肢體碰觸。',s:{R:2,S:1,N:2}},
+    {t:'有衝動，但不著急。要先確認這個人值不值得你把身體和防備一起放下。',s:{R:2,T:1,C:1,X:1}},
   ]},
   {chapter:1, text:'和某個人開始有火花，但誰都還沒把話說破。哪一個比較像你？',
    opts:[
-    {t:'會多丟幾個訊號，把曖昧往更明確、更靠近身體的地方推。',s:{A:3,G:1,P:1}},
+    {t:'會多丟幾個訊號，讓氣氛更曖昧、讓對方更靠近身體一些。',s:{A:3,G:1,P:1}},
     {t:'會等對方再靠近一點，確認對方真的想要你，才把門慢慢打開。',s:{R:3,T:1,P:1}},
     {t:'先試探幾次，看對方接不接得住。接住了，才讓距離變得更近一點。',s:{A:1,R:2,S:1,P:1}},
     {t:'聊著聊著，有天才發現自己已經陷進去了，甚至開始想像對方的手會怎麼碰你。',s:{R:3,N:1,P:1}},
@@ -609,12 +609,12 @@ const QUESTIONS = [
   ]},
   {chapter:1, text:'丟出一點曖昧或挑逗，但對方沒有明顯接住。接下來比較可能發生？',
    opts:[
-    {t:'再往前一步，讓對方給反應，看是遲鈍，還是真的沒那個意思。',s:{A:3,G:1,P:1}},
+    {t:'再往前一步，讓對方時間反應，看是遲鈍還是真的沒那個意思。',s:{A:3,G:1,P:1}},
     {t:'先停住，等對方給出更清楚的信號。如果沒有信號，就把手收回來。',s:{R:3,P:1,C:1}},
     {t:'不立刻退開，換一種方式再試一次，看對方到底是沒接到，還是在忍耐。',s:{A:1,R:2,G:1,S:1}},
     {t:'整個冷掉。如果對方沒有回應，就不會想再繼續下去。',s:{R:3,T:1,P:1}},
   ]},
-  {chapter:1, text:'和某個人在一起，原本沒什麼感覺。哪種情況最可能讓慾火突然浮現？',
+  {chapter:1, text:'和某個人在一起，原本沒什麼感覺。哪種情況最可能讓慾望突然浮現？',
    opts:[
     {t:'那股慾火其實早就在了，對方只是讓它終於有地方可以傾瀉出去。',s:{A:3,G:1,N:1}},
     {t:'對方一直在旁邊，距離近到身體開始在意，想讓對方再靠近、再貼近一點。',s:{R:3,N:2}},
@@ -623,7 +623,7 @@ const QUESTIONS = [
   ]},
   {chapter:1, text:'和某個人互動一段時間後，什麼最容易讓你越陷越深？',
    opts:[
-    {t:'越來越清楚自己想要對方，開始安排更多接觸、獨處，甚至把人逼進曖昧裡。',s:{A:3,G:1,P:1}},
+    {t:'越來越清楚自己想要對方，開始安排更多接觸、獨處，只屬於兩個人的空間。',s:{A:3,G:1,P:1}},
     {t:'對方自然出現在生活裡，你就越來越容易被牽動，甚至開始期待對方來撩你、碰你。',s:{R:3,T:1,P:1}},
     {t:'你們開始有固定節奏、稱呼或默契，那個只有彼此懂的開關一被碰到就停不下來。',s:{R:2,S:1,C:2}},
     {t:'確認對方是你想要的人之後，就會比一開始主動很多，不再只是等著。',s:{A:3,R:1,C:1}},
@@ -659,7 +659,7 @@ const QUESTIONS = [
   ]},
   {chapter:2, text:'對方說「交給你決定」。接下來比較可能會？',
    opts:[
-    {t:'馬上開始整理調教順序、安排事項，讓對方知道接下來會被怎麼對待。',s:{A:1,G:3,C:1}},
+    {t:'馬上開始整理實踐順序、安排事項，讓對方知道接下來會被怎麼對待。',s:{A:1,G:3,C:1}},
     {t:'有點卡住，因為你更習慣按對方的意思走，等對方開口命令。',s:{R:1,T:3,C:1}},
     {t:'先接過來，但保留隨時把主導權丟回去、讓對方決定的可能。',s:{G:1,S:3,C:1}},
     {t:'先看看對方真正想被怎麼被對待之後，再決定怎麼安排。',s:{A:1,G:2,T:1,S:1}},
@@ -694,7 +694,7 @@ const QUESTIONS = [
   ]},
   {chapter:2, text:'關係裡出現「誰來決定」的時刻，比較可能怎麼做？',
    opts:[
-    {t:'直接接手，再確認對方能不能跟上你的安排、吃得下你的安排。',s:{A:1,G:3,C:1}},
+    {t:'直接接手，再確認對方能不能跟上你的安排、吃下你的實踐。',s:{A:1,G:3,C:1}},
     {t:'把選擇權交出去，但前提是對方真的讓你信得過，知道怎麼處理你。',s:{R:1,T:3,C:1}},
     {t:'不覺得一定要固定誰決定，當下誰接更有感覺，就交給誰。',s:{G:1,T:1,S:3}},
     {t:'最有趣的是，決定權可以馬上交換到另一個人手上，下一秒就翻盤。',s:{G:1,T:1,S:2,P:1}},
@@ -1030,7 +1030,7 @@ const COMPAT = {
 // ============================================================
 
 let state = {
-  screen: 'counter',
+  screen: 'landing',
   gender: null, // 'female' | 'male'
   currentQ: 0,
   answers: {}, // qIdx -> original opt index

@@ -1379,8 +1379,8 @@ function renderResult(r) {
       <div class="result-section">
         <p class="result-section-label">CORE COMPATIBILITY</p>
         <h2 class="result-section-title">核心契合</h2>
+        ${compatImgSrc ? `<div class="result-card" style="margin-bottom:16px"><img src="${compatImgSrc}" alt="${compatName}" style="width:100%;max-width:320px;aspect-ratio:1;object-fit:cover;display:block;margin:0 auto 0" onerror="this.parentElement.style.display='none'"></div>` : ''}
         <div class="compat-box">
-          ${compatImgSrc ? `<img class="result-image" src="${compatImgSrc}" alt="${compatName}" onerror="this.remove()">` : ''}
           <p class="compat-label">${compatCode}</p>
           <p class="compat-name">${compatName}</p>
           <p class="result-para">${compatText}</p>

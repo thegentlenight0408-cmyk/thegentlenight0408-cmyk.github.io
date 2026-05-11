@@ -8,6 +8,14 @@
 <meta property="og:title" content="慾望原型測驗">
 <meta property="og:description" content="一套關於慾望結構的原型測驗，探索你在親密關係中的真實傾向。共 24 種原型，36 道題目。">
 <meta property="og:type" content="website">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZ3HKXPKN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VZ3HKXPKN4');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkaiscreen.css" rel="stylesheet">
@@ -1253,6 +1261,12 @@ function finishQuiz() {
     state.result = result;
     renderResult(result);
     goTo('result');
+    if (typeof gtag === 'function') {
+      gtag('event', 'quiz_complete', {
+        personality_type: result.primaryCode,
+        type_name: (TYPES[result.primaryCode] || {}).name || result.primaryCode
+      });
+    }
   }, 2000);
 }
 

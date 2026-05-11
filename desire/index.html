@@ -409,6 +409,32 @@ body::before {
   line-height: 1.8;
 }
 
+/* Axis breakdown cards */
+.axis-card {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 18px 16px;
+  border: 1px solid var(--panel-deep);
+  margin-bottom: 10px;
+}
+.axis-card-letter {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 54px; font-style: italic;
+  color: var(--accent); line-height: 1;
+  min-width: 42px; text-align: center; padding-top: 2px;
+}
+.axis-card-en {
+  font-size: 10px; letter-spacing: 0.25em;
+  color: var(--accent); margin-bottom: 4px;
+}
+.axis-card-zh {
+  font-family: 'LXGW WenKai Screen', serif;
+  font-size: 16px; color: var(--text);
+  margin-bottom: 8px;
+}
+.axis-card-desc {
+  font-size: 13px; color: var(--text-muted); line-height: 1.9;
+}
+
 /* Action buttons */
 .result-actions {
   display: flex; gap: 12px; flex-wrap: wrap;
@@ -1015,6 +1041,18 @@ const IMAGES = {
   'RSX':{female:'RSX-遊蕩者-女性-羽落廢墟中的孤獨旅者.png',male:'RSX-遊蕩者-男性-迷霧中的孤獨旅者.png'},
 };
 
+const AXIS_INFO = {
+  'A':{en:'INITIATIVE',zh:'主動',desc:'你傾向主動發起節奏。感官的火苗通常先從你這側點燃，等待對你而言是一種選擇，不是預設狀態。'},
+  'R':{en:'RESPONSIVE',zh:'回應',desc:'你從對方的狀態變化中獲得驅力。對方的反應、停頓、細小的動作，是你進入感官的主要語言。'},
+  'G':{en:'GIVING',zh:'給予',desc:'你的慾望以輸出為主。感受對方因你而改變、被你影響的那一刻，讓你真正進入狀態。'},
+  'T':{en:'RECEPTIVE',zh:'承接',desc:'你的慾望以接收為主。被靠近、被包覆、被帶走——那種被完整承接的感覺，讓你最深地放下。'},
+  'S':{en:'FLUID',zh:'交替',desc:'你不固定在單一位置。你能在給予與承接之間自然流動，隨對方的節奏與場景切換，不需要事先決定。'},
+  'N':{en:'SENSORY',zh:'感官',desc:'身體的感知是你進入親密的主要入口。觸碰的溫度、氣味的濃淡、聲音的震動——這些細節對你有真實的重量。'},
+  'P':{en:'TENSION',zh:'張力',desc:'心理的壓力與等待讓你上癮。節奏的拉扯、懸而未決的瞬間，比直接的碰觸更能把你帶進去。'},
+  'C':{en:'RITUAL',zh:'儀式',desc:'規則、稱呼、固定的流程讓你有安全感。儀式建立了邊界，邊界讓你知道可以真的放下。'},
+  'X':{en:'BOUNDARY',zh:'越界',desc:'邊界線對你有強烈的吸引力。你想靠近那條線、感覺它，甚至想知道越過去以後，裡面有什麼。'},
+};
+
 const COMPAT = {
   'A-G-N':'R-T-N','R-T-N':'A-G-N','A-T-N':'R-G-N','R-G-N':'A-T-N',
   'A-S-N':'R-S-N','R-S-N':'A-S-N','A-G-P':'R-T-P','R-T-P':'A-G-P',
@@ -1343,6 +1381,23 @@ function renderResult(r) {
         <p class="result-code">${r.primaryCode}</p>
         <h1 class="result-name">${type.name}</h1>
         <p class="result-tagline">${type.tagline}</p>
+      </div>
+
+      <!-- Block 1.5: Axis code breakdown -->
+      <div class="result-section">
+        <p class="result-section-label">CODE BREAKDOWN</p>
+        ${r.primaryCode.split('-').map(letter => {
+          const ax = AXIS_INFO[letter];
+          if (!ax) return '';
+          return `<div class="axis-card">
+            <div class="axis-card-letter">${letter}</div>
+            <div>
+              <p class="axis-card-en">${ax.en}</p>
+              <p class="axis-card-zh">${ax.zh}</p>
+              <p class="axis-card-desc">${ax.desc}</p>
+            </div>
+          </div>`;
+        }).join('')}
       </div>
 
       <!-- Block 2: Axis visualization -->

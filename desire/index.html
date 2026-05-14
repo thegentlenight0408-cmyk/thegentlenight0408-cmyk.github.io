@@ -1453,6 +1453,7 @@ function renderResult(r) {
           <p class="result-code">${r.subCode1}</p>
           <h2 class="result-section-title" style="margin-top:6px">${sub.name}</h2>
         </div>`;
+      subHTML += `<div style="margin:12px 0 4px">${axisBreakdown(r.subCode1)}</div>`;
       if (sub.subDesc) {
         sub.subDesc.split('\n\n').forEach(p => {
           subHTML += `<p class="result-para">${p}</p>`;
@@ -1472,6 +1473,7 @@ function renderResult(r) {
           <p class="result-code">${r.subCode2}</p>
           <h2 class="result-section-title" style="margin-top:6px">${sub2.name}</h2>
         </div>`;
+      subHTML += `<div style="margin:12px 0 4px">${axisBreakdown(r.subCode2)}</div>`;
       if (sub2.subDesc) {
         subHTML += `<p class="result-para">${sub2.subDesc}</p>`;
       } else {
@@ -1480,6 +1482,21 @@ function renderResult(r) {
     }
   }
   if (!subHTML) subHTML = '<p class="result-para">你的各軸分數相對集中，主型傾向清楚。</p>';
+
+  function axisBreakdown(code) {
+    return code.split('-').map(letter => {
+      const ax = AXIS_INFO[letter];
+      if (!ax) return '';
+      return `<div class="axis-card">
+        <div class="axis-card-letter">${letter}</div>
+        <div>
+          <p class="axis-card-en">${ax.en}</p>
+          <p class="axis-card-zh">${ax.zh}</p>
+          <p class="axis-card-desc">${ax.desc}</p>
+        </div>
+      </div>`;
+    }).join('');
+  }
 
   // X-axis note
   const xNote = r.drive === 'X' ? `
@@ -1550,6 +1567,7 @@ function renderResult(r) {
         <div class="compat-box">
           <p class="compat-label">${compatCode}</p>
           <p class="compat-name">${compatName}</p>
+          <div style="margin:10px 0 4px">${compatCode ? axisBreakdown(compatCode) : ''}</div>
           <p class="result-para">${compatText}</p>
           <p class="compat-note">契合不等於保證適合。真實關係仍取決於成熟度、溝通、界線與照護能力。</p>
         </div>

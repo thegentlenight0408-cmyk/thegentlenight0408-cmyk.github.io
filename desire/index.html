@@ -409,11 +409,11 @@ body::before {
 }
 .compat-label {
   font-size: 11px; letter-spacing: 0.2em; color: var(--fog);
-  margin-bottom: 6px;
+  margin-bottom: 6px; text-align: center;
 }
 .compat-name {
   font-family: 'LXGW WenKai Screen', serif;
-  font-size: 17px; color: var(--text); margin-bottom: 10px;
+  font-size: 17px; color: var(--text); margin-bottom: 10px; text-align: center;
 }
 .compat-note {
   font-size: 12px; color: var(--fog);
@@ -1452,6 +1452,7 @@ function renderResult(r) {
           ${sub1Img ? `<img class="result-image" src="${sub1Img}" alt="${sub.name}" onerror="this.remove()">` : ''}
           <p class="result-code">${r.subCode1}</p>
           <h2 class="result-section-title" style="margin-top:6px">${sub.name}</h2>
+          ${sub.tagline ? `<p class="result-tagline">${sub.tagline}</p>` : ''}
         </div>`;
       subHTML += `<div style="margin:12px 0 4px">${axisBreakdown(r.subCode1)}</div>`;
       if (sub.subDesc) {
@@ -1472,6 +1473,7 @@ function renderResult(r) {
           ${sub2Img ? `<img class="result-image" src="${sub2Img}" alt="${sub2.name}" onerror="this.remove()">` : ''}
           <p class="result-code">${r.subCode2}</p>
           <h2 class="result-section-title" style="margin-top:6px">${sub2.name}</h2>
+          ${sub2.tagline ? `<p class="result-tagline">${sub2.tagline}</p>` : ''}
         </div>`;
       subHTML += `<div style="margin:12px 0 4px">${axisBreakdown(r.subCode2)}</div>`;
       if (sub2.subDesc) {
@@ -1567,6 +1569,7 @@ function renderResult(r) {
         <div class="compat-box">
           <p class="compat-label">${compatCode}</p>
           <p class="compat-name">${compatName}</p>
+          ${compatCode && TYPES[compatCode] && TYPES[compatCode].tagline ? `<p class="result-tagline" style="text-align:center;margin-bottom:10px">${TYPES[compatCode].tagline}</p>` : ''}
           <div style="margin:10px 0 4px">${compatCode ? axisBreakdown(compatCode) : ''}</div>
           <p class="result-para">${compatText}</p>
           <p class="compat-note">契合不等於保證適合。真實關係仍取決於成熟度、溝通、界線與照護能力。</p>

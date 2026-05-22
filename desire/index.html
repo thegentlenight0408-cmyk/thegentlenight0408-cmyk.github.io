@@ -1358,9 +1358,14 @@ function finishQuiz() {
     renderResult(result);
     goTo('result');
     if (typeof gtag === 'function') {
+      const [pAct, pEn] = (result.primaryCode || '').split('-');
       gtag('event', 'quiz_complete', {
         personality_type: result.primaryCode,
-        type_name: (TYPES[result.primaryCode] || {}).name || result.primaryCode
+        type_name: (TYPES[result.primaryCode] || {}).name || result.primaryCode,
+        axis_activation: pAct,
+        axis_energy: pEn,
+        axis_drive: result.drive,
+        gender: state.gender || 'unknown'
       });
     }
   }, 2000);

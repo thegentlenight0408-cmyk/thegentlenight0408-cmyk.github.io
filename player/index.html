@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a0a14">
 <title>Nyxa Player · Suno Library</title>
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <div id="app">
@@ -65,6 +65,8 @@
       <button id="btn-apply-current" class="primary">套用本曲</button>
       <button id="btn-apply-all" class="primary alt">全部套用</button>
       <button id="btn-metronome" class="primary metronome" title="以目前 BPM 啟動節拍器">🥁 節拍器</button>
+      <button id="btn-tap" class="primary tap" title="跟著歌曲節奏連點，自動算 BPM">👆 TAP</button>
+      <span id="tap-readout" class="tap-readout"></span>
     </div>
     <div class="bpm-presets">
       <span class="hint">快速：</span>
@@ -98,6 +100,6 @@
   <audio id="audio" preload="metadata"></audio>
 </div>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

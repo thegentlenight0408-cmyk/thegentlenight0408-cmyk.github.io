@@ -47,6 +47,14 @@ button.primary.alt { background: var(--bg-3); }
 button.primary.alt:hover { background: var(--accent-2); }
 button.primary.metronome { background: var(--bg-3); color: var(--text); }
 button.primary.metronome.active { background: var(--ok); color: var(--bg-0); animation: metronome-pulse 0.3s ease; }
+button.primary.tap { background: var(--bg-3); color: var(--text); user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; touch-action: manipulation; }
+button.primary.tap:active { transform: scale(0.92); background: var(--accent); }
+button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s ease; }
+@keyframes tap-flash {
+  0% { box-shadow: 0 0 0 0 var(--accent); }
+  100% { box-shadow: 0 0 0 14px transparent; }
+}
+.tap-readout { color: var(--accent); font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; min-width: 90px; }
 @keyframes metronome-pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); box-shadow: 0 0 12px var(--ok); }

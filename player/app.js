@@ -476,6 +476,73 @@ $("target-bpm").addEventListener("input", () => {
   }
 });
 
+// ===== TAP TEMPO =====
+let tapTimes = [];
+let tapResetTimer = null;
+let tapFinalizedBpm = null;
+
+function tapBpm() {
+  // 從最近 8 次 tap 算 BPM（用中位數，抗抖動）
+  if (tapTimes.length < 2) return null;
+  const intervals = [];
+  for (let i = 1; i < tapTimes.length; i++) intervals.push(tapTimes[i] - tapTimes[i-1]);
+  intervals.sort((a,b)=>a-b);
+  const median = intervals[Math.floor(intervals.length/2)];
+  return 60000 / median;
+}
+
+function tapRender() {
+  const r = $("tap-readout");
+  const bpm = tapBpm();
+  if (bpm === null) {
+    r.textContent = "請連點...";
+  } else {
+    const conf = tapTimes.length >= 6 ? "✓" : "...";
+    r.textContent = `${bpm.toFixed(1)} BPM ${conf}`;
+  }
+}
+
+function tapEvent() {
+  const now = performance.now();
+  // 距上次 tap > 2 秒視為重新開始
+  if (tapTimes.length > 0 && now - tapTimes[tapTimes.length-1] > 2000) {
+    tapTimes = [];
+    tapFinalizedBpm = null;
+  }
+  tapTimes.push(now);
+  if (tapTimes.length > 8) tapTimes.shift();
+  // 視覺閃光
+  const btn = $("btn-tap");
+  btn.classList.remove("flash"); void btn.offsetWidth; btn.classList.add("flash");
+  tapRender();
+  // 1.5 秒後沒新 tap → 自動把 BPM 填到目標欄
+  if (tapResetTimer) clearTimeout(tapResetTimer);
+  tapResetTimer = setTimeout(() => {
+    const bpm = tapBpm();
+    if (bpm !== null && tapTimes.length >= 4) {
+      tapFinalizedBpm = Math.round(bpm);
+      $("target-bpm").value = tapFinalizedBpm;
+      $("tap-readout").textContent = `${tapFinalizedBpm} BPM → 已填入`;
+      // 如果節拍器在跑，同步新 BPM
+      if (metroOn) {
+        metroBpm = tapFinalizedBpm;
+        $("btn-metronome").textContent = `🥁 停止 (${tapFinalizedBpm})`;
+      }
+    }
+    // 清空準備下一輪
+    tapTimes = [];
+  }, 1500);
+}
+
+$("btn-tap").addEventListener("click", tapEvent);
+// 鍵盤空白鍵也能 tap（player 不在 input focus 時）
+document.addEventListener("keydown", e => {
+  if (e.code === "Space" && !["INPUT","TEXTAREA"].includes(document.activeElement?.tagName) && !document.activeElement?.isContentEditable) {
+    e.preventDefault();
+    tapEvent();
+  }
+});
+
 $("btn-restore").addEventListener("click", () => {
   // 還原全部被移除的歌
   let restored = 0;

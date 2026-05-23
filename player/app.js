@@ -30,7 +30,7 @@ function fmt(t) {
 function save() {
   const minimal = {
     order: state.order,
-    overrides: Object.fromEntries(state.songs.map(s => [s.id, {targetBpm: s.targetBpm, removed: s.removed}])),
+    overrides: Object.fromEntries(state.songs.map(s => [s.id, {targetBpm: s.targetBpm, userBpm: s.userBpm, removed: s.removed}])),
     currentIdx: state.currentIdx,
     mode: state.mode,
     targetBpm: state.targetBpm,
@@ -79,7 +79,11 @@ async function loadLibrary() {
     if (saved.overrides) {
       for (const s of arr) {
         const o = saved.overrides[s.id];
-        if (o) { s.targetBpm = o.targetBpm || null; s.removed = !!o.removed; }
+        if (o) {
+          s.targetBpm = o.targetBpm || null;
+          s.userBpm = o.userBpm || null;
+          s.removed = !!o.removed;
+        }
       }
     }
     if (saved.mode) state.mode = saved.mode;
@@ -300,11 +304,17 @@ function setMode(mode) {
 }
 
 // Audio events
+let isSeeking = false;
 audio.addEventListener("timeupdate", () => {
   const t = audio.currentTime, d = audio.duration || 0;
   $("t-current").textContent = fmt(t);
   $("t-total").textContent = fmt(d);
-  $("progress-fill").style.width = (d > 0 ? (t/d*100) : 0) + "%";
+  if (!isSeeking) {
+    const slider = $("seek-slider");
+    const pct = d > 0 ? (t/d) : 0;
+    slider.value = Math.round(pct * 1000);
+    slider.style.setProperty("--progress", (pct*100) + "%");
+  }
 });
 audio.addEventListener("ended", () => {
   if (state.mode === "loop-one") {
@@ -328,12 +338,27 @@ $("btn-loop-one").addEventListener("click", () => setMode("loop-one"));
 $("btn-loop-all").addEventListener("click", () => setMode("loop-all"));
 $("btn-shuffle").addEventListener("click", () => setMode("shuffle"));
 
-// Progress seek
-$("progress-bar").addEventListener("click", e => {
+// Progress seek (native range slider)
+const seekSlider = $("seek-slider");
+seekSlider.addEventListener("input", () => {
+  isSeeking = true;
+  const pct = seekSlider.value / 1000;
+  seekSlider.style.setProperty("--progress", (pct*100) + "%");
+  if (audio.duration) $("t-current").textContent = fmt(pct * audio.duration);
+});
+seekSlider.addEventListener("change", () => {
+  if (audio.duration) audio.currentTime = (seekSlider.value / 1000) * audio.duration;
+  isSeeking = false;
+});
+
+// Skip ±10s
+$("btn-back10").addEventListener("click", () => {
   if (!audio.duration) return;
-  const rect = e.currentTarget.getBoundingClientRect();
-  const pct = (e.clientX - rect.left) / rect.width;
-  audio.currentTime = pct * audio.duration;
+  audio.currentTime = Math.max(0, audio.currentTime - 10);
+});
+$("btn-fwd10").addEventListener("click", () => {
+  if (!audio.duration) return;
+  audio.currentTime = Math.min(audio.duration - 0.05, audio.currentTime + 10);
 });
 
 // BPM control
@@ -521,9 +546,21 @@ function tapEvent() {
     const bpm = tapBpm();
     if (bpm !== null && tapTimes.length >= 4) {
       tapFinalizedBpm = Math.round(bpm);
+      // 1. 填入目標 BPM 欄位
       $("target-bpm").value = tapFinalizedBpm;
-      $("tap-readout").textContent = `${tapFinalizedBpm} BPM → 已填入`;
-      // 如果節拍器在跑，同步新 BPM
+      // 2. 自動更新「目前播放這首歌」的真實 BPM（覆寫 aubio 偵測值）
+      const s = currentSong();
+      if (s) {
+        s.userBpm = tapFinalizedBpm;
+        s.targetBpm = null; // 因為新 base = tap 值，回到 1.0× 原速
+        save();
+        applyRate();
+        renderPlaylist();
+        $("tap-readout").textContent = `✓ ${tapFinalizedBpm} BPM → 已校正本曲`;
+      } else {
+        $("tap-readout").textContent = `${tapFinalizedBpm} BPM → 已填入目標 BPM`;
+      }
+      // 3. 如果節拍器在跑，同步新 BPM
       if (metroOn) {
         metroBpm = tapFinalizedBpm;
         $("btn-metronome").textContent = `🥁 停止 (${tapFinalizedBpm})`;

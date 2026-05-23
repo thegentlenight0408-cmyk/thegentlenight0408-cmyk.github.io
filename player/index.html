@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a0a14">
 <title>Nyxa Player · Suno Library</title>
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <div id="app">
@@ -31,9 +31,7 @@
     </div>
     <div class="np-progress">
       <span class="t-current" id="t-current">0:00</span>
-      <div class="progress-bar" id="progress-bar">
-        <div class="progress-fill" id="progress-fill"></div>
-      </div>
+      <input type="range" id="seek-slider" class="seek-slider" min="0" max="1000" value="0" step="1">
       <span class="t-total" id="t-total">0:00</span>
     </div>
     <div class="np-bpm-row">
@@ -48,12 +46,16 @@
       </div>
     </div>
     <div class="transport">
-      <button id="btn-prev" class="circle">⏮</button>
+      <button id="btn-prev" class="circle" title="上一首">⏮</button>
+      <button id="btn-back10" class="circle" title="後退 10 秒">−10</button>
       <button id="btn-play" class="circle big">▶</button>
-      <button id="btn-next" class="circle">⏭</button>
-      <button id="btn-loop-one" class="circle mode" data-mode="loop-one">🔂</button>
-      <button id="btn-loop-all" class="circle mode active" data-mode="loop-all">🔁</button>
-      <button id="btn-shuffle" class="circle mode" data-mode="shuffle">🔀</button>
+      <button id="btn-fwd10" class="circle" title="前進 10 秒">+10</button>
+      <button id="btn-next" class="circle" title="下一首">⏭</button>
+    </div>
+    <div class="transport mode-row">
+      <button id="btn-loop-one" class="circle mode" data-mode="loop-one" title="單曲循環">🔂</button>
+      <button id="btn-loop-all" class="circle mode active" data-mode="loop-all" title="歌單循環">🔁</button>
+      <button id="btn-shuffle" class="circle mode" data-mode="shuffle" title="隨機循環">🔀</button>
     </div>
   </section>
 
@@ -100,6 +102,6 @@
   <audio id="audio" preload="metadata"></audio>
 </div>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

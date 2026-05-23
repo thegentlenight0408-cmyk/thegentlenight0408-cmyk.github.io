@@ -75,11 +75,35 @@ button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s
 .np-progress { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .t-current, .t-total { font-size: 12px; color: var(--text-dim); font-variant-numeric: tabular-nums; min-width: 36px; }
 .t-total { text-align: right; }
-.progress-bar {
-  flex: 1; height: 6px; background: var(--bg-3); border-radius: 3px;
-  cursor: pointer; position: relative; overflow: hidden;
+
+/* Seek slider (native input range, styled) */
+.seek-slider {
+  -webkit-appearance: none; appearance: none;
+  flex: 1; height: 24px; background: transparent; cursor: pointer; outline: none;
+  padding: 0; margin: 0;
 }
-.progress-fill { height: 100%; background: var(--accent); width: 0%; border-radius: 3px; transition: width 0.1s linear; }
+.seek-slider::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 3px;
+  background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--progress, 0%), var(--bg-3) var(--progress, 0%), var(--bg-3) 100%);
+}
+.seek-slider::-moz-range-track {
+  height: 6px; border-radius: 3px;
+  background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--progress, 0%), var(--bg-3) var(--progress, 0%), var(--bg-3) 100%);
+}
+.seek-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--accent); border: 2px solid white;
+  margin-top: -5px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+.seek-slider::-moz-range-thumb {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--accent); border: 2px solid white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+.seek-slider:active::-webkit-slider-thumb { transform: scale(1.2); }
+.seek-slider:active::-moz-range-thumb { transform: scale(1.2); }
 
 .np-bpm-row { display: flex; gap: 24px; padding: 10px 0; border-top: 1px solid var(--bg-3); border-bottom: 1px solid var(--bg-3); margin-bottom: 14px; }
 .bpm-info { display: flex; flex-direction: column; gap: 2px; }
@@ -87,7 +111,9 @@ button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s
 .bpm-info strong { font-size: 20px; font-weight: 600; }
 .bpm-info em { font-size: 11px; color: var(--accent); font-style: normal; }
 
-.transport { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.transport { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.transport.mode-row { margin-bottom: 0; }
+.circle.small-num { font-size: 11px; }
 .circle {
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--bg-3); color: var(--text); border: 0;

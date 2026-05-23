@@ -388,13 +388,25 @@ $("btn-sort-bpm").addEventListener("click", () => {
 });
 
 $("btn-clear").addEventListener("click", () => {
-  if (!confirm("確定清空全部歌曲？（不會刪除檔案，只是從清單移除）")) return;
+  if (!confirm("確定清空全部歌曲？\n（檔案不會被刪除，按「還原全部」可恢復）")) return;
   for (const s of state.songs) s.removed = true;
   state.currentIdx = -1;
   audio.pause();
   save();
   renderPlaylist();
   renderNowPlaying();
+});
+
+$("btn-restore").addEventListener("click", () => {
+  // 還原全部被移除的歌
+  let restored = 0;
+  for (const s of state.songs) {
+    if (s.removed) { s.removed = false; restored++; }
+  }
+  save();
+  renderPlaylist();
+  renderNowPlaying();
+  if (restored === 0) alert("沒有需要還原的歌曲");
 });
 
 // Add local songs
@@ -424,6 +436,12 @@ $("file-input").addEventListener("change", e => {
 
 // Boot
 (async () => {
+  // 緊急重置：網址加 ?reset=1 就清空 localStorage
+  if (new URL(location.href).searchParams.has("reset")) {
+    localStorage.removeItem(STATE_KEY);
+    // 移掉 query 避免重新整理又清一次
+    history.replaceState(null, "", location.pathname);
+  }
   try {
     await loadLibrary();
   } catch(err) {

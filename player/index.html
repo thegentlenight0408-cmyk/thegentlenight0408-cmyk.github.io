@@ -83,9 +83,10 @@
     <div class="playlist-header">
       <h2>歌單</h2>
       <div class="playlist-actions">
+        <button id="btn-restore" class="ghost" title="把所有從歌單移除的歌加回來">↻ 還原全部</button>
         <button id="btn-sort-order" class="ghost" title="依原始順序排序">↕ 原始順序</button>
         <button id="btn-sort-bpm" class="ghost" title="依 BPM 排序">↕ 依 BPM</button>
-        <button id="btn-clear" class="ghost danger">清空</button>
+        <button id="btn-clear" class="ghost danger" title="清空歌單（檔案還在，可用「還原全部」復原）">清空</button>
       </div>
     </div>
     <ul id="playlist" class="playlist"></ul>

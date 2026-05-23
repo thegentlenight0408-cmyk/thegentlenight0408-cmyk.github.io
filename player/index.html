@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a14">
+<title>Nyxa Player · Suno Library</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◐</span>
+      <span class="title">Nyxa Player</span>
+      <span class="subtitle">Suno Library</span>
+    </div>
+    <div class="topbar-actions">
+      <button id="btn-add-song" class="ghost" title="新增歌曲（從本機選擇 mp3）">＋ 加曲</button>
+      <button id="btn-reset" class="ghost" title="還原原始 BPM">↺ 重置 BPM</button>
+    </div>
+  </header>
+
+  <!-- NOW PLAYING -->
+  <section class="now-playing">
+    <div class="np-meta">
+      <div class="np-title" id="np-title">尚未選曲</div>
+      <div class="np-tags" id="np-tags"></div>
+    </div>
+    <div class="np-progress">
+      <span class="t-current" id="t-current">0:00</span>
+      <div class="progress-bar" id="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="t-total" id="t-total">0:00</span>
+    </div>
+    <div class="np-bpm-row">
+      <div class="bpm-info">
+        <span>原始 BPM</span>
+        <strong id="bpm-original">—</strong>
+      </div>
+      <div class="bpm-info">
+        <span>目前播放</span>
+        <strong id="bpm-current">—</strong>
+        <em id="rate-current"></em>
+      </div>
+    </div>
+    <div class="transport">
+      <button id="btn-prev" class="circle">⏮</button>
+      <button id="btn-play" class="circle big">▶</button>
+      <button id="btn-next" class="circle">⏭</button>
+      <button id="btn-loop-one" class="circle mode" data-mode="loop-one">🔂</button>
+      <button id="btn-loop-all" class="circle mode active" data-mode="loop-all">🔁</button>
+      <button id="btn-shuffle" class="circle mode" data-mode="shuffle">🔀</button>
+    </div>
+  </section>
+
+  <!-- BPM CONTROL -->
+  <section class="bpm-control">
+    <div class="bpm-control-row">
+      <label>目標 BPM</label>
+      <input id="target-bpm" type="number" min="40" max="300" value="180" step="1">
+      <button id="btn-apply-current" class="primary">套用本曲</button>
+      <button id="btn-apply-all" class="primary alt">全部套用</button>
+    </div>
+    <div class="bpm-presets">
+      <span class="hint">快速：</span>
+      <button class="chip" data-bpm="126">126</button>
+      <button class="chip" data-bpm="138">138</button>
+      <button class="chip" data-bpm="150">150</button>
+      <button class="chip" data-bpm="160">160</button>
+      <button class="chip" data-bpm="170">170</button>
+      <button class="chip" data-bpm="180">180</button>
+      <button class="chip" data-bpm="190">190</button>
+      <button class="chip" data-bpm="200">200</button>
+    </div>
+  </section>
+
+  <!-- PLAYLIST -->
+  <section class="playlist-section">
+    <div class="playlist-header">
+      <h2>歌單</h2>
+      <div class="playlist-actions">
+        <button id="btn-sort-order" class="ghost" title="依原始順序排序">↕ 原始順序</button>
+        <button id="btn-sort-bpm" class="ghost" title="依 BPM 排序">↕ 依 BPM</button>
+        <button id="btn-clear" class="ghost danger">清空</button>
+      </div>
+    </div>
+    <ul id="playlist" class="playlist"></ul>
+  </section>
+
+  <input type="file" id="file-input" accept="audio/*" multiple hidden>
+
+  <audio id="audio" preload="metadata"></audio>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

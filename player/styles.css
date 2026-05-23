@@ -45,6 +45,13 @@ button.primary {
 button.primary:hover { background: var(--accent); }
 button.primary.alt { background: var(--bg-3); }
 button.primary.alt:hover { background: var(--accent-2); }
+button.primary.metronome { background: var(--bg-3); color: var(--text); }
+button.primary.metronome.active { background: var(--ok); color: var(--bg-0); animation: metronome-pulse 0.3s ease; }
+@keyframes metronome-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); box-shadow: 0 0 12px var(--ok); }
+  100% { transform: scale(1); }
+}
 
 /* NOW PLAYING */
 .now-playing {

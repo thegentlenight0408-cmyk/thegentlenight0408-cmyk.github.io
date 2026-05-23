@@ -9,8 +9,9 @@
     "order": 1,
     "aubio_bpm": 114.32,
     "beat_count_bpm": 118.27,
-    "detected_bpm": 114.32,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 118.27,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 118.27
   },
   "6def2241-42ad-4080-8d22-9cc2ce199056": {
     "title": "FREEDOM RUN",
@@ -22,8 +23,9 @@
     "order": 2,
     "aubio_bpm": 115.3,
     "beat_count_bpm": 116.15,
-    "detected_bpm": 115.3,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 116.15,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 116.15
   },
   "be4f50ff-ff5d-4817-a2d7-5ddbd2029379": {
     "title": "FEEL THE BEAT",
@@ -35,8 +37,9 @@
     "order": 3,
     "aubio_bpm": 107.24,
     "beat_count_bpm": 111.35,
-    "detected_bpm": 107.24,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 111.35,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 111.35
   },
   "0ae83bb0-ce41-49a5-9ae0-a1cececd40df": {
     "title": "FEEL THE BEAT",
@@ -48,8 +51,9 @@
     "order": 4,
     "aubio_bpm": 149.91,
     "beat_count_bpm": 175.64,
-    "detected_bpm": 149.91,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 175.64,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 175.64
   },
   "71d29f26-f9ae-40d6-b779-75d37dec7b93": {
     "title": "Glassfield Anthem",
@@ -61,8 +65,9 @@
     "order": 5,
     "aubio_bpm": 126.86,
     "beat_count_bpm": 127.71,
-    "detected_bpm": 126.86,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 127.71,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.71
   },
   "ded59048-6d8b-474b-b97e-019422488bc1": {
     "title": "Glassfield Anthem",
@@ -74,8 +79,9 @@
     "order": 6,
     "aubio_bpm": 134.47,
     "beat_count_bpm": 127.78,
-    "detected_bpm": 134.47,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 127.78,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.78
   },
   "eca07d6c-5e1d-4022-8044-6ce3230ad3be": {
     "title": "Mechanical Hum",
@@ -87,8 +93,9 @@
     "order": 7,
     "aubio_bpm": 136.83,
     "beat_count_bpm": 140.16,
-    "detected_bpm": 136.83,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 140.16,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 140.16
   },
   "b41ad272-962c-4187-9293-cc6925c06f7b": {
     "title": "Mechanical Hum",
@@ -100,8 +107,9 @@
     "order": 8,
     "aubio_bpm": 135.72,
     "beat_count_bpm": 140.13,
-    "detected_bpm": 135.72,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 140.13,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 140.13
   },
   "36f31a68-abbc-4207-bd3c-e5c69917c670": {
     "title": "Fire In My Chest",
@@ -113,8 +121,9 @@
     "order": 9,
     "aubio_bpm": 135.3,
     "beat_count_bpm": 117.57,
-    "detected_bpm": 135.3,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 117.57,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.57
   },
   "3b6f276c-05e7-48b3-b53c-da4e17717383": {
     "title": "Fire In My Chest",
@@ -126,8 +135,9 @@
     "order": 10,
     "aubio_bpm": 124.77,
     "beat_count_bpm": 116.37,
-    "detected_bpm": 124.77,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 116.37,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 116.37
   },
   "0df44b18-e292-4607-a96c-01b875624c02": {
     "title": "Every Step Ignites",
@@ -139,8 +149,9 @@
     "order": 11,
     "aubio_bpm": 121.92,
     "beat_count_bpm": 118.54,
-    "detected_bpm": 121.92,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 118.54,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 118.54
   },
   "b77a91d3-d944-4959-84b3-e51c76807b26": {
     "title": "Every Step Ignites",
@@ -152,8 +163,9 @@
     "order": 12,
     "aubio_bpm": 113.01,
     "beat_count_bpm": 117.52,
-    "detected_bpm": 113.01,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 117.52,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.52
   },
   "d8e57132-126c-46d0-84b8-343d26ad6192": {
     "title": "Metronome Pulse Run",
@@ -165,8 +177,9 @@
     "order": 13,
     "aubio_bpm": 127.37,
     "beat_count_bpm": 117.62,
-    "detected_bpm": 127.37,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 117.62,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.62
   },
   "7ae03cb7-8055-4b18-bc25-d2ed8294e322": {
     "title": "Metronome Pulse Run",
@@ -178,8 +191,9 @@
     "order": 14,
     "aubio_bpm": 123.48,
     "beat_count_bpm": 116.36,
-    "detected_bpm": 123.48,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 116.36,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 116.36
   },
   "d3c326d9-76eb-4fbb-a91f-b562aa172bfb": {
     "title": "Never Loose Time",
@@ -191,8 +205,9 @@
     "order": 15,
     "aubio_bpm": 121.62,
     "beat_count_bpm": 119.12,
-    "detected_bpm": 121.62,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 119.12,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 119.12
   },
   "88c84610-8a22-4a70-850b-3b2796efdc19": {
     "title": "Never Loose Time",
@@ -204,8 +219,9 @@
     "order": 16,
     "aubio_bpm": 119.3,
     "beat_count_bpm": 118.05,
-    "detected_bpm": 119.3,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 118.05,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 118.05
   },
   "3f362b93-c8cf-48ba-b918-8d6348a5abf8": {
     "title": "MIDNIGHT RUNNER",
@@ -217,8 +233,9 @@
     "order": 17,
     "aubio_bpm": 146.7,
     "beat_count_bpm": 166.74,
-    "detected_bpm": 146.7,
-    "confidence": "~ close"
+    "detected_bpm": 166.74,
+    "confidence": "~ close",
+    "aubiotrack_median_bpm": 166.74
   },
   "dbe6df19-a092-4552-8342-1a9c43054145": {
     "title": "MIDNIGHT RUNNER",
@@ -230,8 +247,9 @@
     "order": 18,
     "aubio_bpm": 138.47,
     "beat_count_bpm": 160.73,
-    "detected_bpm": 138.47,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 160.73,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 160.73
   },
   "d0aff763-3b5a-415f-886c-309a2875edb9": {
     "title": "UNBREAKABLE",
@@ -243,8 +261,9 @@
     "order": 19,
     "aubio_bpm": 116.96,
     "beat_count_bpm": 118.2,
-    "detected_bpm": 116.96,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 118.2,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 118.2
   },
   "266505c4-b767-45a6-8abc-68c4301cd445": {
     "title": "UNBREAKABLE",
@@ -256,8 +275,9 @@
     "order": 20,
     "aubio_bpm": 146.86,
     "beat_count_bpm": 155.51,
-    "detected_bpm": 146.86,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 155.51,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 155.51
   },
   "e1db42f9-654e-4d96-b88b-bb773118132a": {
     "title": "UNBREAKABLE",
@@ -269,8 +289,9 @@
     "order": 21,
     "aubio_bpm": 119.96,
     "beat_count_bpm": 121.72,
-    "detected_bpm": 119.96,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 121.72,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 121.72
   },
   "6bea755c-5f2b-4cf1-85f5-003b38f98a97": {
     "title": "UNBREAKABLE",
@@ -282,8 +303,9 @@
     "order": 22,
     "aubio_bpm": 134.15,
     "beat_count_bpm": 122.54,
-    "detected_bpm": 134.15,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 122.54,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 122.54
   },
   "6ddcface-8385-420b-8b49-58898ad5be27": {
     "title": "IGNITE",
@@ -295,8 +317,9 @@
     "order": 23,
     "aubio_bpm": 117.89,
     "beat_count_bpm": 117.47,
-    "detected_bpm": 117.89,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 117.47,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.47
   },
   "3228200c-7878-4aba-aed4-ad7a9c9f58c0": {
     "title": "IGNITE",
@@ -308,8 +331,9 @@
     "order": 24,
     "aubio_bpm": 127.05,
     "beat_count_bpm": 116.52,
-    "detected_bpm": 127.05,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 116.52,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 116.52
   },
   "97f71b7d-d9f1-42eb-bfe1-fee8e432f401": {
     "title": "IGNITE",
@@ -321,8 +345,9 @@
     "order": 25,
     "aubio_bpm": 141.46,
     "beat_count_bpm": 121.91,
-    "detected_bpm": 141.46,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 121.91,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 121.91
   },
   "d0be4bb4-f93d-48ff-8204-9657977fd176": {
     "title": "IGNITE",
@@ -334,8 +359,9 @@
     "order": 26,
     "aubio_bpm": 128.26,
     "beat_count_bpm": 122.37,
-    "detected_bpm": 128.26,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 122.37,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 122.37
   },
   "8a3b973d-42d1-4fca-9292-ca95a1621835": {
     "title": "Running Fuel",
@@ -347,8 +373,9 @@
     "order": 27,
     "aubio_bpm": 126.34,
     "beat_count_bpm": 117.52,
-    "detected_bpm": 126.34,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 117.52,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.52
   },
   "216142d5-fc94-4b38-9801-5cecc0449cb8": {
     "title": "Running Fuel",
@@ -360,8 +387,9 @@
     "order": 28,
     "aubio_bpm": 148.74,
     "beat_count_bpm": 176.85,
-    "detected_bpm": 148.74,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 176.85,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 176.85
   },
   "b67eb748-fe41-4ade-8961-d09121d31370": {
     "title": "Crankwheel Symphony",
@@ -373,8 +401,9 @@
     "order": 29,
     "aubio_bpm": 122.13,
     "beat_count_bpm": 122.57,
-    "detected_bpm": 122.13,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 122.57,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 122.57
   },
   "bf09165c-fa13-4ea2-9c78-9e449f4fbf1b": {
     "title": "Crankwheel Symphony",
@@ -386,8 +415,9 @@
     "order": 30,
     "aubio_bpm": 123.73,
     "beat_count_bpm": 125.51,
-    "detected_bpm": 123.73,
-    "confidence": "⚠ far from Suno"
+    "detected_bpm": 125.51,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 125.51
   },
   "1fcacd52-78ea-49fb-a818-771e80e030ad": {
     "title": "Lost In You",
@@ -399,8 +429,9 @@
     "order": 31,
     "aubio_bpm": 126.96,
     "beat_count_bpm": 128.59,
-    "detected_bpm": 126.96,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 128.59,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 128.59
   },
   "ec4644d8-ff5e-4346-bd48-47e489de72fb": {
     "title": "Lost In You",
@@ -412,8 +443,9 @@
     "order": 32,
     "aubio_bpm": 130.95,
     "beat_count_bpm": 127.88,
-    "detected_bpm": 130.95,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 127.88,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.88
   },
   "205647df-a155-44d0-839b-d901a89e5e83": {
     "title": "Lost In You",
@@ -425,8 +457,9 @@
     "order": 33,
     "aubio_bpm": 129.19,
     "beat_count_bpm": 127.95,
-    "detected_bpm": 129.19,
-    "confidence": "✓ near Suno"
+    "detected_bpm": 127.95,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.95
   },
   "289469ed-42da-4a80-9b3a-5e76ae97b8c4": {
     "title": "Lost In You",
@@ -438,7 +471,8 @@
     "order": 34,
     "aubio_bpm": 130.3,
     "beat_count_bpm": 130.12,
-    "detected_bpm": 130.3,
-    "confidence": "~ close"
+    "detected_bpm": 130.12,
+    "confidence": "~ close",
+    "aubiotrack_median_bpm": 130.12
   }
 }

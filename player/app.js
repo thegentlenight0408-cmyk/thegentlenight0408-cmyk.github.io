@@ -397,6 +397,85 @@ $("btn-clear").addEventListener("click", () => {
   renderNowPlaying();
 });
 
+// ===== 節拍器 (Metronome) =====
+let metroCtx = null;
+let metroOn = false;
+let metroNextTime = 0;
+let metroBpm = 180;
+let metroSchedTimer = null;
+let metroVisualTimer = null;
+let metroBeatCount = 0;
+
+function metroSchedule() {
+  // 預先排程未來 0.2 秒內的所有 click
+  const lookahead = 0.2;
+  const now = metroCtx.currentTime;
+  while (metroNextTime < now + lookahead) {
+    metroPlayClick(metroNextTime, metroBeatCount);
+    metroNextTime += 60.0 / metroBpm;
+    metroBeatCount++;
+  }
+}
+
+function metroPlayClick(when, beatIdx) {
+  // 強拍（每 4 拍一次）用較高頻、較強；其他拍用低頻短音
+  const isAccent = (beatIdx % 4 === 0);
+  const osc = metroCtx.createOscillator();
+  const gain = metroCtx.createGain();
+  osc.frequency.value = isAccent ? 1800 : 1200;
+  gain.gain.setValueAtTime(0, when);
+  gain.gain.linearRampToValueAtTime(isAccent ? 0.4 : 0.22, when + 0.001);
+  gain.gain.exponentialRampToValueAtTime(0.001, when + 0.05);
+  osc.connect(gain).connect(metroCtx.destination);
+  osc.start(when);
+  osc.stop(when + 0.06);
+  // 視覺脈動
+  const delay = Math.max(0, (when - metroCtx.currentTime) * 1000);
+  setTimeout(() => {
+    const btn = $("btn-metronome");
+    if (btn && metroOn) {
+      btn.classList.remove("active");
+      void btn.offsetWidth; // restart animation
+      btn.classList.add("active");
+    }
+  }, delay);
+}
+
+function metroStart() {
+  if (!metroCtx) metroCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (metroCtx.state === "suspended") metroCtx.resume();
+  metroBpm = Math.max(40, Math.min(300, parseInt($("target-bpm").value, 10) || 180));
+  metroOn = true;
+  metroNextTime = metroCtx.currentTime + 0.05;
+  metroBeatCount = 0;
+  metroSchedTimer = setInterval(metroSchedule, 25);
+  const btn = $("btn-metronome");
+  btn.classList.add("active");
+  btn.textContent = `🥁 停止 (${metroBpm})`;
+}
+
+function metroStop() {
+  metroOn = false;
+  if (metroSchedTimer) clearInterval(metroSchedTimer);
+  metroSchedTimer = null;
+  const btn = $("btn-metronome");
+  btn.classList.remove("active");
+  btn.textContent = "🥁 節拍器";
+}
+
+$("btn-metronome").addEventListener("click", () => {
+  if (metroOn) metroStop(); else metroStart();
+});
+
+// BPM 變更時，若節拍器在跑就自動同步
+$("target-bpm").addEventListener("input", () => {
+  if (metroOn) {
+    const newBpm = Math.max(40, Math.min(300, parseInt($("target-bpm").value, 10) || 180));
+    metroBpm = newBpm;
+    $("btn-metronome").textContent = `🥁 停止 (${newBpm})`;
+  }
+});
+
 $("btn-restore").addEventListener("click", () => {
   // 還原全部被移除的歌
   let restored = 0;

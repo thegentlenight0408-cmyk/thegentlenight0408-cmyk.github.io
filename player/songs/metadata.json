@@ -11,7 +11,10 @@
     "beat_count_bpm": 118.27,
     "detected_bpm": 118.27,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 118.27
+    "aubiotrack_median_bpm": 118.27,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "6def2241-42ad-4080-8d22-9cc2ce199056": {
     "title": "FREEDOM RUN",
@@ -25,7 +28,10 @@
     "beat_count_bpm": 116.15,
     "detected_bpm": 116.15,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 116.15
+    "aubiotrack_median_bpm": 116.15,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "be4f50ff-ff5d-4817-a2d7-5ddbd2029379": {
     "title": "FEEL THE BEAT",
@@ -39,7 +45,10 @@
     "beat_count_bpm": 111.35,
     "detected_bpm": 111.35,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 111.35
+    "aubiotrack_median_bpm": 111.35,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "0ae83bb0-ce41-49a5-9ae0-a1cececd40df": {
     "title": "FEEL THE BEAT",
@@ -53,7 +62,10 @@
     "beat_count_bpm": 175.64,
     "detected_bpm": 175.64,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 175.64
+    "aubiotrack_median_bpm": 175.64,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "71d29f26-f9ae-40d6-b779-75d37dec7b93": {
     "title": "Glassfield Anthem",
@@ -67,7 +79,10 @@
     "beat_count_bpm": 127.71,
     "detected_bpm": 127.71,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 127.71
+    "aubiotrack_median_bpm": 127.71,
+    "playlists": [
+      "工作"
+    ]
   },
   "ded59048-6d8b-474b-b97e-019422488bc1": {
     "title": "Glassfield Anthem",
@@ -81,7 +96,10 @@
     "beat_count_bpm": 127.78,
     "detected_bpm": 127.78,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 127.78
+    "aubiotrack_median_bpm": 127.78,
+    "playlists": [
+      "工作"
+    ]
   },
   "eca07d6c-5e1d-4022-8044-6ce3230ad3be": {
     "title": "Mechanical Hum",
@@ -95,7 +113,10 @@
     "beat_count_bpm": 140.16,
     "detected_bpm": 140.16,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 140.16
+    "aubiotrack_median_bpm": 140.16,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "b41ad272-962c-4187-9293-cc6925c06f7b": {
     "title": "Mechanical Hum",
@@ -109,7 +130,10 @@
     "beat_count_bpm": 140.13,
     "detected_bpm": 140.13,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 140.13
+    "aubiotrack_median_bpm": 140.13,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "36f31a68-abbc-4207-bd3c-e5c69917c670": {
     "title": "Fire In My Chest",
@@ -123,7 +147,10 @@
     "beat_count_bpm": 117.57,
     "detected_bpm": 117.57,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 117.57
+    "aubiotrack_median_bpm": 117.57,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "3b6f276c-05e7-48b3-b53c-da4e17717383": {
     "title": "Fire In My Chest",
@@ -137,7 +164,10 @@
     "beat_count_bpm": 116.37,
     "detected_bpm": 116.37,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 116.37
+    "aubiotrack_median_bpm": 116.37,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "0df44b18-e292-4607-a96c-01b875624c02": {
     "title": "Every Step Ignites",
@@ -151,7 +181,10 @@
     "beat_count_bpm": 118.54,
     "detected_bpm": 118.54,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 118.54
+    "aubiotrack_median_bpm": 118.54,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "b77a91d3-d944-4959-84b3-e51c76807b26": {
     "title": "Every Step Ignites",
@@ -165,7 +198,10 @@
     "beat_count_bpm": 117.52,
     "detected_bpm": 117.52,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 117.52
+    "aubiotrack_median_bpm": 117.52,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "d8e57132-126c-46d0-84b8-343d26ad6192": {
     "title": "Metronome Pulse Run",
@@ -179,7 +215,10 @@
     "beat_count_bpm": 117.62,
     "detected_bpm": 117.62,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 117.62
+    "aubiotrack_median_bpm": 117.62,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "7ae03cb7-8055-4b18-bc25-d2ed8294e322": {
     "title": "Metronome Pulse Run",
@@ -193,7 +232,10 @@
     "beat_count_bpm": 116.36,
     "detected_bpm": 116.36,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 116.36
+    "aubiotrack_median_bpm": 116.36,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "d3c326d9-76eb-4fbb-a91f-b562aa172bfb": {
     "title": "Never Loose Time",
@@ -207,7 +249,10 @@
     "beat_count_bpm": 119.12,
     "detected_bpm": 119.12,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 119.12
+    "aubiotrack_median_bpm": 119.12,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "88c84610-8a22-4a70-850b-3b2796efdc19": {
     "title": "Never Loose Time",
@@ -221,7 +266,10 @@
     "beat_count_bpm": 118.05,
     "detected_bpm": 118.05,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 118.05
+    "aubiotrack_median_bpm": 118.05,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "3f362b93-c8cf-48ba-b918-8d6348a5abf8": {
     "title": "MIDNIGHT RUNNER",
@@ -235,7 +283,10 @@
     "beat_count_bpm": 166.74,
     "detected_bpm": 166.74,
     "confidence": "~ close",
-    "aubiotrack_median_bpm": 166.74
+    "aubiotrack_median_bpm": 166.74,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "dbe6df19-a092-4552-8342-1a9c43054145": {
     "title": "MIDNIGHT RUNNER",
@@ -249,7 +300,10 @@
     "beat_count_bpm": 160.73,
     "detected_bpm": 160.73,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 160.73
+    "aubiotrack_median_bpm": 160.73,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "d0aff763-3b5a-415f-886c-309a2875edb9": {
     "title": "UNBREAKABLE",
@@ -263,7 +317,10 @@
     "beat_count_bpm": 118.2,
     "detected_bpm": 118.2,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 118.2
+    "aubiotrack_median_bpm": 118.2,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "266505c4-b767-45a6-8abc-68c4301cd445": {
     "title": "UNBREAKABLE",
@@ -277,7 +334,10 @@
     "beat_count_bpm": 155.51,
     "detected_bpm": 155.51,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 155.51
+    "aubiotrack_median_bpm": 155.51,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "6ddcface-8385-420b-8b49-58898ad5be27": {
     "title": "IGNITE",
@@ -291,7 +351,10 @@
     "beat_count_bpm": 117.47,
     "detected_bpm": 117.47,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 117.47
+    "aubiotrack_median_bpm": 117.47,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "3228200c-7878-4aba-aed4-ad7a9c9f58c0": {
     "title": "IGNITE",
@@ -305,7 +368,10 @@
     "beat_count_bpm": 116.52,
     "detected_bpm": 116.52,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 116.52
+    "aubiotrack_median_bpm": 116.52,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "8a3b973d-42d1-4fca-9292-ca95a1621835": {
     "title": "Running Fuel",
@@ -319,7 +385,10 @@
     "beat_count_bpm": 117.52,
     "detected_bpm": 117.52,
     "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 117.52
+    "aubiotrack_median_bpm": 117.52,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "216142d5-fc94-4b38-9801-5cecc0449cb8": {
     "title": "Running Fuel",
@@ -333,7 +402,10 @@
     "beat_count_bpm": 176.85,
     "detected_bpm": 176.85,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 176.85
+    "aubiotrack_median_bpm": 176.85,
+    "playlists": [
+      "慢跑"
+    ]
   },
   "1fcacd52-78ea-49fb-a818-771e80e030ad": {
     "title": "Lost In You",
@@ -347,7 +419,10 @@
     "beat_count_bpm": 128.59,
     "detected_bpm": 128.59,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 128.59
+    "aubiotrack_median_bpm": 128.59,
+    "playlists": [
+      "工作"
+    ]
   },
   "ec4644d8-ff5e-4346-bd48-47e489de72fb": {
     "title": "Lost In You",
@@ -361,7 +436,10 @@
     "beat_count_bpm": 127.88,
     "detected_bpm": 127.88,
     "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 127.88
+    "aubiotrack_median_bpm": 127.88,
+    "playlists": [
+      "工作"
+    ]
   },
   "1ef3da8b-178c-4a5f-8626-19136a2dd92f": {
     "title": "REBORN",
@@ -374,7 +452,10 @@
     "aubiotrack_median_bpm": 117.4,
     "filename": "35_REBORN_v1.mp3",
     "order": 35,
-    "suno_id": "1ef3da8b-178c-4a5f-8626-19136a2dd92f"
+    "suno_id": "1ef3da8b-178c-4a5f-8626-19136a2dd92f",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "24acbe08-e880-4206-b77f-b8735c00ac66": {
     "title": "REBORN",
@@ -387,7 +468,10 @@
     "aubiotrack_median_bpm": 117.34,
     "filename": "36_REBORN_v2.mp3",
     "order": 36,
-    "suno_id": "24acbe08-e880-4206-b77f-b8735c00ac66"
+    "suno_id": "24acbe08-e880-4206-b77f-b8735c00ac66",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "918bb129-953c-46a1-9910-abdbabf386e2": {
     "title": "ELECTRIC",
@@ -400,7 +484,10 @@
     "aubiotrack_median_bpm": 117.37,
     "filename": "37_ELECTRIC_v1.mp3",
     "order": 37,
-    "suno_id": "918bb129-953c-46a1-9910-abdbabf386e2"
+    "suno_id": "918bb129-953c-46a1-9910-abdbabf386e2",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "0e5aaf6a-74ea-4149-8f44-609e574314eb": {
     "title": "ELECTRIC",
@@ -413,7 +500,10 @@
     "aubiotrack_median_bpm": 117.43,
     "filename": "38_ELECTRIC_v2.mp3",
     "order": 38,
-    "suno_id": "0e5aaf6a-74ea-4149-8f44-609e574314eb"
+    "suno_id": "0e5aaf6a-74ea-4149-8f44-609e574314eb",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "fd6c75a2-a6c6-4ea3-b0d3-f3b559330d83": {
     "title": "WARRIOR",
@@ -426,7 +516,10 @@
     "aubiotrack_median_bpm": 119.31,
     "filename": "39_WARRIOR_v1.mp3",
     "order": 39,
-    "suno_id": "fd6c75a2-a6c6-4ea3-b0d3-f3b559330d83"
+    "suno_id": "fd6c75a2-a6c6-4ea3-b0d3-f3b559330d83",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "7fa17beb-32ed-43d2-b9ea-c67849bb73c4": {
     "title": "WARRIOR",
@@ -439,7 +532,10 @@
     "aubiotrack_median_bpm": 117.58,
     "filename": "40_WARRIOR_v2.mp3",
     "order": 40,
-    "suno_id": "7fa17beb-32ed-43d2-b9ea-c67849bb73c4"
+    "suno_id": "7fa17beb-32ed-43d2-b9ea-c67849bb73c4",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "622a8d82-fd47-479e-9582-c562ef9189f4": {
     "title": "PULSE",
@@ -452,7 +548,10 @@
     "aubiotrack_median_bpm": 118.19,
     "filename": "41_PULSE_v1.mp3",
     "order": 41,
-    "suno_id": "622a8d82-fd47-479e-9582-c562ef9189f4"
+    "suno_id": "622a8d82-fd47-479e-9582-c562ef9189f4",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "7c03de0f-bae7-4382-8310-e7dedf049739": {
     "title": "PULSE",
@@ -465,7 +564,10 @@
     "aubiotrack_median_bpm": 155.27,
     "filename": "42_PULSE_v2.mp3",
     "order": 42,
-    "suno_id": "7c03de0f-bae7-4382-8310-e7dedf049739"
+    "suno_id": "7c03de0f-bae7-4382-8310-e7dedf049739",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "218d5f5d-5926-462f-8ddc-fc246f2e7954": {
     "title": "RISE",
@@ -478,7 +580,10 @@
     "aubiotrack_median_bpm": 117.36,
     "filename": "43_RISE_v1.mp3",
     "order": 43,
-    "suno_id": "218d5f5d-5926-462f-8ddc-fc246f2e7954"
+    "suno_id": "218d5f5d-5926-462f-8ddc-fc246f2e7954",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "4d87d2ab-ca23-4570-a959-6f8b7445fd4c": {
     "title": "RISE",
@@ -491,7 +596,10 @@
     "aubiotrack_median_bpm": 119.16,
     "filename": "44_RISE_v2.mp3",
     "order": 44,
-    "suno_id": "4d87d2ab-ca23-4570-a959-6f8b7445fd4c"
+    "suno_id": "4d87d2ab-ca23-4570-a959-6f8b7445fd4c",
+    "playlists": [
+      "慢跑"
+    ]
   },
   "2c44efc0-7dbf-4bc9-9a33-59e01914b633": {
     "title": "AFTERGLOW",
@@ -504,7 +612,10 @@
     "aubiotrack_median_bpm": 127.82,
     "filename": "45_AFTERGLOW_v1.mp3",
     "order": 45,
-    "suno_id": "2c44efc0-7dbf-4bc9-9a33-59e01914b633"
+    "suno_id": "2c44efc0-7dbf-4bc9-9a33-59e01914b633",
+    "playlists": [
+      "工作"
+    ]
   },
   "9cf2cf22-0397-4c07-bbb0-6ff9419eb32d": {
     "title": "AFTERGLOW",
@@ -517,7 +628,10 @@
     "aubiotrack_median_bpm": 127.95,
     "filename": "46_AFTERGLOW_v2.mp3",
     "order": 46,
-    "suno_id": "9cf2cf22-0397-4c07-bbb0-6ff9419eb32d"
+    "suno_id": "9cf2cf22-0397-4c07-bbb0-6ff9419eb32d",
+    "playlists": [
+      "工作"
+    ]
   },
   "4ce115bd-49d0-49a2-866a-1504a8673ff5": {
     "title": "WEIGHTLESS",
@@ -530,7 +644,10 @@
     "aubiotrack_median_bpm": 128.06,
     "filename": "47_WEIGHTLESS_v1.mp3",
     "order": 47,
-    "suno_id": "4ce115bd-49d0-49a2-866a-1504a8673ff5"
+    "suno_id": "4ce115bd-49d0-49a2-866a-1504a8673ff5",
+    "playlists": [
+      "工作"
+    ]
   },
   "78c22176-f955-4f51-8e3f-98b3dbfaf2a4": {
     "title": "WEIGHTLESS",
@@ -543,7 +660,10 @@
     "aubiotrack_median_bpm": 128.76,
     "filename": "48_WEIGHTLESS_v2.mp3",
     "order": 48,
-    "suno_id": "78c22176-f955-4f51-8e3f-98b3dbfaf2a4"
+    "suno_id": "78c22176-f955-4f51-8e3f-98b3dbfaf2a4",
+    "playlists": [
+      "工作"
+    ]
   },
   "95e8f32a-631a-40db-8ca4-07e0ff9b34ba": {
     "title": "HORIZON LINE",
@@ -556,7 +676,10 @@
     "aubiotrack_median_bpm": 127.86,
     "filename": "49_HORIZON_LINE_v1.mp3",
     "order": 49,
-    "suno_id": "95e8f32a-631a-40db-8ca4-07e0ff9b34ba"
+    "suno_id": "95e8f32a-631a-40db-8ca4-07e0ff9b34ba",
+    "playlists": [
+      "工作"
+    ]
   },
   "d7e98623-3570-4c60-bcaf-bc3dd39a3a86": {
     "title": "HORIZON LINE",
@@ -569,7 +692,10 @@
     "aubiotrack_median_bpm": 128.62,
     "filename": "50_HORIZON_LINE_v2.mp3",
     "order": 50,
-    "suno_id": "d7e98623-3570-4c60-bcaf-bc3dd39a3a86"
+    "suno_id": "d7e98623-3570-4c60-bcaf-bc3dd39a3a86",
+    "playlists": [
+      "工作"
+    ]
   },
   "7ee24143-8ca2-4c69-862f-17c6e036962d": {
     "title": "PARALLEL HEARTS",
@@ -582,7 +708,10 @@
     "aubiotrack_median_bpm": 128.59,
     "filename": "51_PARALLEL_HEARTS_v1.mp3",
     "order": 51,
-    "suno_id": "7ee24143-8ca2-4c69-862f-17c6e036962d"
+    "suno_id": "7ee24143-8ca2-4c69-862f-17c6e036962d",
+    "playlists": [
+      "工作"
+    ]
   },
   "b5d7048c-75d7-4b20-ba0f-6002126263d1": {
     "title": "PARALLEL HEARTS",
@@ -595,7 +724,10 @@
     "aubiotrack_median_bpm": 127.93,
     "filename": "52_PARALLEL_HEARTS_v2.mp3",
     "order": 52,
-    "suno_id": "b5d7048c-75d7-4b20-ba0f-6002126263d1"
+    "suno_id": "b5d7048c-75d7-4b20-ba0f-6002126263d1",
+    "playlists": [
+      "工作"
+    ]
   },
   "05d64de8-68a4-42f2-aa55-72d11aaaca80": {
     "title": "NORTHERN LIGHT",
@@ -608,7 +740,10 @@
     "aubiotrack_median_bpm": 127.81,
     "filename": "53_NORTHERN_LIGHT_v1.mp3",
     "order": 53,
-    "suno_id": "05d64de8-68a4-42f2-aa55-72d11aaaca80"
+    "suno_id": "05d64de8-68a4-42f2-aa55-72d11aaaca80",
+    "playlists": [
+      "工作"
+    ]
   },
   "a287f742-dd57-44bb-876e-b6f331bd2262": {
     "title": "NORTHERN LIGHT",
@@ -621,6 +756,9 @@
     "aubiotrack_median_bpm": 128.57,
     "filename": "54_NORTHERN_LIGHT_v2.mp3",
     "order": 54,
-    "suno_id": "a287f742-dd57-44bb-876e-b6f331bd2262"
+    "suno_id": "a287f742-dd57-44bb-876e-b6f331bd2262",
+    "playlists": [
+      "工作"
+    ]
   }
 }

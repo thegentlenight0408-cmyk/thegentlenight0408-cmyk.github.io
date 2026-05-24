@@ -14,6 +14,8 @@ const state = {
   mode: "loop-all",
   targetBpm: 180,
   shuffleHistory: [],
+  activePlaylist: "慢跑",
+  allPlaylists: ["慢跑", "工作"],
 };
 
 function $(id) { return document.getElementById(id); }
@@ -30,10 +32,12 @@ function fmt(t) {
 function save() {
   const minimal = {
     order: state.order,
-    overrides: Object.fromEntries(state.songs.map(s => [s.id, {targetBpm: s.targetBpm, userBpm: s.userBpm, removed: s.removed}])),
+    overrides: Object.fromEntries(state.songs.map(s => [s.id, {targetBpm: s.targetBpm, userBpm: s.userBpm, removed: s.removed, playlists: s.playlists}])),
     currentIdx: state.currentIdx,
     mode: state.mode,
     targetBpm: state.targetBpm,
+    activePlaylist: state.activePlaylist,
+    allPlaylists: state.allPlaylists,
   };
   try { localStorage.setItem(STATE_KEY, JSON.stringify(minimal)); } catch(e) {}
 }
@@ -54,7 +58,7 @@ async function loadLibrary() {
     tags: m.tags,
     duration: m.duration,
     sunoBpm: m.suno_bpm,
-    detectedBpm: m.detected_bpm,         // 由 aubio 量測的實際 BPM（主要參考）
+    detectedBpm: m.detected_bpm,
     aubioBpm: m.aubio_bpm,
     beatCountBpm: m.beat_count_bpm,
     filename: m.filename,
@@ -62,6 +66,7 @@ async function loadLibrary() {
     src: `songs/${encodeURIComponent(m.filename)}`,
     targetBpm: null,
     removed: false,
+    playlists: Array.isArray(m.playlists) && m.playlists.length ? [...m.playlists] : ["慢跑"],
   }));
   arr.sort((a,b) => a.order - b.order);
   state.songs = arr;
@@ -83,19 +88,66 @@ async function loadLibrary() {
           s.targetBpm = o.targetBpm || null;
           s.userBpm = o.userBpm || null;
           s.removed = !!o.removed;
+          if (Array.isArray(o.playlists) && o.playlists.length) s.playlists = o.playlists;
         }
       }
     }
     if (saved.mode) state.mode = saved.mode;
     if (saved.targetBpm) state.targetBpm = saved.targetBpm;
     if (typeof saved.currentIdx === "number") state.currentIdx = saved.currentIdx;
+    if (saved.activePlaylist) state.activePlaylist = saved.activePlaylist;
+    if (Array.isArray(saved.allPlaylists) && saved.allPlaylists.length) state.allPlaylists = saved.allPlaylists;
+  }
+  // 確保 allPlaylists 含所有實際使用的歌單
+  const usedPlaylists = new Set();
+  for (const s of arr) (s.playlists || []).forEach(p => usedPlaylists.add(p));
+  for (const p of usedPlaylists) {
+    if (!state.allPlaylists.includes(p)) state.allPlaylists.push(p);
   }
 }
 
 function visible() {
   return state.order
     .map(id => state.songs.find(s => s.id === id))
-    .filter(s => s && !s.removed);
+    .filter(s => s && !s.removed && (s.playlists || []).includes(state.activePlaylist));
+}
+
+function renderTabs() {
+  const tabsEl = $("playlist-tabs");
+  tabsEl.innerHTML = "";
+  for (const pl of state.allPlaylists) {
+    const count = state.songs.filter(s => !s.removed && (s.playlists || []).includes(pl)).length;
+    const btn = document.createElement("button");
+    btn.className = "pl-tab" + (pl === state.activePlaylist ? " active" : "");
+    btn.innerHTML = `${pl} <span class="pl-count">${count}</span>`;
+    btn.addEventListener("click", () => {
+      if (pl === state.activePlaylist) return;
+      state.activePlaylist = pl;
+      state.currentIdx = -1;
+      save();
+      renderTabs();
+      renderPlaylist();
+      renderNowPlaying();
+    });
+    tabsEl.appendChild(btn);
+  }
+  // + 新增
+  const addBtn = document.createElement("button");
+  addBtn.className = "pl-tab pl-tab-add";
+  addBtn.textContent = "+ 新增歌單";
+  addBtn.addEventListener("click", () => {
+    const name = prompt("新歌單名稱（例如：上班通勤、睡前、訓練 HIIT）", "");
+    if (!name || !name.trim()) return;
+    const trimmed = name.trim();
+    if (state.allPlaylists.includes(trimmed)) { alert("已存在這個歌單"); return; }
+    state.allPlaylists.push(trimmed);
+    state.activePlaylist = trimmed;
+    save();
+    renderTabs();
+    renderPlaylist();
+  });
+  tabsEl.appendChild(addBtn);
+  $("playlist-name").textContent = state.activePlaylist;
 }
 
 function currentSong() {
@@ -140,8 +192,8 @@ function renderPlaylist() {
 
     const rm = document.createElement("button");
     rm.className = "pl-remove";
-    rm.textContent = "×";
-    rm.title = "從歌單移除";
+    rm.textContent = "⋮";
+    rm.title = "更多操作（移到其他歌單、移除）";
 
     li.appendChild(idxSpan);
     li.appendChild(title);
@@ -174,14 +226,66 @@ function renderPlaylist() {
       if (e.key === "Escape") { bpm.textContent = s.targetBpm || effectiveBaseBpm(s) || ""; bpm.blur(); }
     });
 
-    // Remove
+    // More actions menu
     rm.addEventListener("click", e => {
       e.stopPropagation();
-      if (idx === state.currentIdx) audio.pause();
-      s.removed = true;
-      save();
-      renderPlaylist();
-      renderNowPlaying();
+      // Clear any existing menu
+      document.querySelectorAll('.pl-actions-menu').forEach(m => m.remove());
+      const menu = document.createElement("div");
+      menu.className = "pl-actions-menu";
+      const rect = rm.getBoundingClientRect();
+      menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
+      menu.style.left = (rect.right + window.scrollX - 140) + "px";
+      // Label
+      const lab = document.createElement("div");
+      lab.className = "label"; lab.textContent = "移到歌單";
+      menu.appendChild(lab);
+      // List target playlists
+      for (const pl of state.allPlaylists) {
+        const b = document.createElement("button");
+        const isIn = (s.playlists || []).includes(pl);
+        b.textContent = (isIn ? "✓ " : "  ") + pl;
+        b.addEventListener("click", () => {
+          let plArr = [...(s.playlists || [])];
+          if (isIn) {
+            // 只在不是「最後一個」歌單時才允許移除（避免歌曲消失）
+            if (plArr.length > 1) plArr = plArr.filter(p => p !== pl);
+            else { alert("這首歌至少要在一個歌單裡"); return; }
+          } else {
+            plArr.push(pl);
+          }
+          s.playlists = plArr;
+          save();
+          renderTabs();
+          renderPlaylist();
+          menu.remove();
+        });
+        menu.appendChild(b);
+      }
+      // Divider + actions
+      const div = document.createElement("div"); div.className = "divider"; menu.appendChild(div);
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "× 從清單移除";
+      removeBtn.style.color = "var(--danger)";
+      removeBtn.addEventListener("click", () => {
+        if (idx === state.currentIdx) audio.pause();
+        s.removed = true;
+        save();
+        renderTabs();
+        renderPlaylist();
+        renderNowPlaying();
+        menu.remove();
+      });
+      menu.appendChild(removeBtn);
+      document.body.appendChild(menu);
+      // Click outside to close
+      const closeOnOutside = (ev) => {
+        if (!menu.contains(ev.target) && ev.target !== rm) {
+          menu.remove();
+          document.removeEventListener("click", closeOnOutside);
+        }
+      };
+      setTimeout(() => document.addEventListener("click", closeOnOutside), 50);
     });
 
     // Drag/drop reorder
@@ -413,11 +517,16 @@ $("btn-sort-bpm").addEventListener("click", () => {
 });
 
 $("btn-clear").addEventListener("click", () => {
-  if (!confirm("確定清空全部歌曲？\n（檔案不會被刪除，按「還原全部」可恢復）")) return;
-  for (const s of state.songs) s.removed = true;
+  const cur = state.activePlaylist;
+  if (!confirm(`從「${cur}」歌單清空全部歌曲？\n（不會刪除檔案；若歌曲只在此歌單，會被標記為移除，可用「還原全部」復原）`)) return;
+  for (const s of visible()) {
+    s.playlists = (s.playlists || []).filter(p => p !== cur);
+    if (s.playlists.length === 0) s.removed = true;
+  }
   state.currentIdx = -1;
   audio.pause();
   save();
+  renderTabs();
   renderPlaylist();
   renderNowPlaying();
 });
@@ -581,15 +690,18 @@ document.addEventListener("keydown", e => {
 });
 
 $("btn-restore").addEventListener("click", () => {
-  // 還原全部被移除的歌
+  // 還原全部被移除的歌；同時若歌沒有 playlist，加回當前 playlist
   let restored = 0;
+  const cur = state.activePlaylist;
   for (const s of state.songs) {
     if (s.removed) { s.removed = false; restored++; }
+    if (!s.playlists || s.playlists.length === 0) s.playlists = [cur];
   }
   save();
+  renderTabs();
   renderPlaylist();
   renderNowPlaying();
-  if (restored === 0) alert("沒有需要還原的歌曲");
+  if (restored === 0) alert(`「${cur}」歌單沒有需要還原的歌曲`);
 });
 
 // Add local songs
@@ -608,11 +720,13 @@ $("file-input").addEventListener("change", e => {
       src: url,
       targetBpm: null,
       removed: false,
+      playlists: [state.activePlaylist],
     };
     state.songs.push(newSong);
     state.order.push(id);
   }
   save();
+  renderTabs();
   renderPlaylist();
   e.target.value = "";
 });
@@ -633,6 +747,7 @@ $("file-input").addEventListener("change", e => {
   }
   setMode(state.mode);
   $("target-bpm").value = state.targetBpm;
+  renderTabs();
   renderPlaylist();
   if (state.currentIdx >= 0 && state.currentIdx < visible().length) {
     const s = visible()[state.currentIdx];

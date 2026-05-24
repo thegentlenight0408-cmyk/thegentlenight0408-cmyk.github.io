@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a0a14">
 <title>Nyxa Player · Suno Library</title>
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <div id="app">
@@ -83,15 +83,18 @@
     </div>
   </section>
 
-  <!-- PLAYLIST -->
+  <!-- PLAYLIST TABS -->
   <section class="playlist-section">
+    <div class="playlist-tabs" id="playlist-tabs">
+      <!-- 由 JS 動態填入 -->
+    </div>
     <div class="playlist-header">
-      <h2>歌單</h2>
+      <h2 id="playlist-name">歌單</h2>
       <div class="playlist-actions">
         <button id="btn-restore" class="ghost" title="把所有從歌單移除的歌加回來">↻ 還原全部</button>
-        <button id="btn-sort-order" class="ghost" title="依原始順序排序">↕ 原始順序</button>
-        <button id="btn-sort-bpm" class="ghost" title="依 BPM 排序">↕ 依 BPM</button>
-        <button id="btn-clear" class="ghost danger" title="清空歌單（檔案還在，可用「還原全部」復原）">清空</button>
+        <button id="btn-sort-order" class="ghost" title="依原始順序排序">↕ 原始</button>
+        <button id="btn-sort-bpm" class="ghost" title="依 BPM 排序">↕ BPM</button>
+        <button id="btn-clear" class="ghost danger" title="從當前歌單清空（檔案還在）">清空</button>
       </div>
     </div>
     <ul id="playlist" class="playlist"></ul>
@@ -102,6 +105,6 @@
   <audio id="audio" preload="metadata"></audio>
 </div>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

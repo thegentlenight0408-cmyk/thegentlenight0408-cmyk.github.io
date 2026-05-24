@@ -147,9 +147,27 @@ button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s
 
 /* PLAYLIST */
 .playlist-section { margin-top: 24px; }
-.playlist-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+
+/* Playlist tabs */
+.playlist-tabs {
+  display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--bg-2); padding-bottom: 10px;
+}
+.pl-tab {
+  background: var(--bg-1); color: var(--text-dim); border: 1px solid var(--bg-2);
+  border-radius: 14px; padding: 6px 12px; font-size: 13px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: all 0.15s;
+}
+.pl-tab:hover { color: var(--text); border-color: var(--accent-2); }
+.pl-tab.active { background: var(--accent-2); color: white; border-color: var(--accent-2); font-weight: 600; }
+.pl-tab .pl-count { font-size: 11px; opacity: 0.8; }
+.pl-tab-add { background: transparent; color: var(--text-dim); border: 1px dashed var(--bg-3); }
+.pl-tab-add:hover { color: var(--accent); border-color: var(--accent); }
+
+.playlist-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
 .playlist-header h2 { font-size: 14px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin: 0; }
-.playlist-actions { display: flex; gap: 6px; }
+.playlist-actions { display: flex; gap: 6px; flex-wrap: wrap; }
 
 .playlist { list-style: none; padding: 0; margin: 0; }
 .playlist li {
@@ -185,6 +203,21 @@ button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s
   border-radius: 4px;
 }
 .pl-remove:hover { color: var(--danger); background: var(--bg-3); }
+
+/* Move-to-playlist menu */
+.pl-actions-menu {
+  position: absolute; background: var(--bg-2); border: 1px solid var(--bg-3);
+  border-radius: 8px; padding: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  z-index: 100; min-width: 140px;
+}
+.pl-actions-menu button {
+  display: block; width: 100%; text-align: left;
+  background: transparent; border: 0; color: var(--text); padding: 6px 10px;
+  font-size: 12px; cursor: pointer; border-radius: 4px;
+}
+.pl-actions-menu button:hover { background: var(--accent-2); }
+.pl-actions-menu .divider { height: 1px; background: var(--bg-3); margin: 4px 0; }
+.pl-actions-menu .label { font-size: 10px; color: var(--text-dim); padding: 4px 10px; text-transform: uppercase; letter-spacing: 1px; }
 
 @media (max-width: 540px) {
   #app { padding: 10px; padding-bottom: 80px; }

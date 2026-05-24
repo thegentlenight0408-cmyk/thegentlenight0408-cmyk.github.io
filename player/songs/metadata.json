@@ -279,34 +279,6 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 155.51
   },
-  "e1db42f9-654e-4d96-b88b-bb773118132a": {
-    "title": "UNBREAKABLE",
-    "tags": "drum and bass, 180 BPM (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 180,
-    "filename": "21_UNBREAKABLE_v3.mp3",
-    "suno_id": "e1db42f9-654e-4d96-b88b-bb773118132a",
-    "order": 21,
-    "aubio_bpm": 119.96,
-    "beat_count_bpm": 121.72,
-    "detected_bpm": 121.72,
-    "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 121.72
-  },
-  "6bea755c-5f2b-4cf1-85f5-003b38f98a97": {
-    "title": "UNBREAKABLE",
-    "tags": "drum and bass, 180 BPM (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 180,
-    "filename": "22_UNBREAKABLE_v4.mp3",
-    "suno_id": "6bea755c-5f2b-4cf1-85f5-003b38f98a97",
-    "order": 22,
-    "aubio_bpm": 134.15,
-    "beat_count_bpm": 122.54,
-    "detected_bpm": 122.54,
-    "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 122.54
-  },
   "6ddcface-8385-420b-8b49-58898ad5be27": {
     "title": "IGNITE",
     "tags": "drum and bass, 180 BPM, energetic, continuous driving beat throughout, no silent break, beat never stops, punchy snare, powerful kick, constant rhythmic pulse, uplifting EDM, euphoric drop, anthemic female vocal, motivational, running workout",
@@ -334,34 +306,6 @@
     "detected_bpm": 116.52,
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 116.52
-  },
-  "97f71b7d-d9f1-42eb-bfe1-fee8e432f401": {
-    "title": "IGNITE",
-    "tags": "drum and bass, 180 BPM (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 180,
-    "filename": "25_IGNITE_v3.mp3",
-    "suno_id": "97f71b7d-d9f1-42eb-bfe1-fee8e432f401",
-    "order": 25,
-    "aubio_bpm": 141.46,
-    "beat_count_bpm": 121.91,
-    "detected_bpm": 121.91,
-    "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 121.91
-  },
-  "d0be4bb4-f93d-48ff-8204-9657977fd176": {
-    "title": "IGNITE",
-    "tags": "drum and bass, 180 BPM (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 180,
-    "filename": "26_IGNITE_v4.mp3",
-    "suno_id": "d0be4bb4-f93d-48ff-8204-9657977fd176",
-    "order": 26,
-    "aubio_bpm": 128.26,
-    "beat_count_bpm": 122.37,
-    "detected_bpm": 122.37,
-    "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 122.37
   },
   "8a3b973d-42d1-4fca-9292-ca95a1621835": {
     "title": "Running Fuel",
@@ -391,34 +335,6 @@
     "confidence": "✓ near Suno",
     "aubiotrack_median_bpm": 176.85
   },
-  "b67eb748-fe41-4ade-8961-d09121d31370": {
-    "title": "Crankwheel Symphony",
-    "tags": "drum and bass, 180 BPM (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 180,
-    "filename": "29_Crankwheel_Symphony_v1.mp3",
-    "suno_id": "b67eb748-fe41-4ade-8961-d09121d31370",
-    "order": 29,
-    "aubio_bpm": 122.13,
-    "beat_count_bpm": 122.57,
-    "detected_bpm": 122.57,
-    "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 122.57
-  },
-  "bf09165c-fa13-4ea2-9c78-9e449f4fbf1b": {
-    "title": "Crankwheel Symphony",
-    "tags": "drum and bass, 180 BPM (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 180,
-    "filename": "30_Crankwheel_Symphony_v2.mp3",
-    "suno_id": "bf09165c-fa13-4ea2-9c78-9e449f4fbf1b",
-    "order": 30,
-    "aubio_bpm": 123.73,
-    "beat_count_bpm": 125.51,
-    "detected_bpm": 125.51,
-    "confidence": "⚠ far from Suno",
-    "aubiotrack_median_bpm": 125.51
-  },
   "1fcacd52-78ea-49fb-a818-771e80e030ad": {
     "title": "Lost In You",
     "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture in the style of EDM, Progressive house, Electro house, Dance-pop",
@@ -446,34 +362,6 @@
     "detected_bpm": 127.88,
     "confidence": "✓ near Suno",
     "aubiotrack_median_bpm": 127.88
-  },
-  "205647df-a155-44d0-839b-d901a89e5e83": {
-    "title": "Lost In You",
-    "tags": "progressive house 126 bpm (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 126,
-    "filename": "33_Lost_In_You_v3.mp3",
-    "suno_id": "205647df-a155-44d0-839b-d901a89e5e83",
-    "order": 33,
-    "aubio_bpm": 129.19,
-    "beat_count_bpm": 127.95,
-    "detected_bpm": 127.95,
-    "confidence": "✓ near Suno",
-    "aubiotrack_median_bpm": 127.95
-  },
-  "289469ed-42da-4a80-9b3a-5e76ae97b8c4": {
-    "title": "Lost In You",
-    "tags": "progressive house, 126 BPM (v5.5 Preview)",
-    "duration": "1:00",
-    "suno_bpm": 126,
-    "filename": "34_Lost_In_You_v4.mp3",
-    "suno_id": "289469ed-42da-4a80-9b3a-5e76ae97b8c4",
-    "order": 34,
-    "aubio_bpm": 130.3,
-    "beat_count_bpm": 130.12,
-    "detected_bpm": 130.12,
-    "confidence": "~ close",
-    "aubiotrack_median_bpm": 130.12
   },
   "1ef3da8b-178c-4a5f-8626-19136a2dd92f": {
     "title": "REBORN",

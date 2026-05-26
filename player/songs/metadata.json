@@ -920,5 +920,141 @@
     "playlists": [
       "工作"
     ]
+  },
+  "c01c8cf7-9714-4360-8cbe-e3d748435a9a": {
+    "title": "KEEP THE PACE",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "2:50",
+    "suno_bpm": 180,
+    "filename": "65_KEEP_THE_PACE_v1.mp3",
+    "suno_id": "c01c8cf7-9714-4360-8cbe-e3d748435a9a",
+    "order": 65,
+    "aubio_bpm": 117.54,
+    "beat_count_bpm": 117.4,
+    "detected_bpm": 117.4,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.4,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "450e4dc3-686d-4bbd-96a8-d5d7eca36816": {
+    "title": "KEEP THE PACE",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:07",
+    "suno_bpm": 180,
+    "filename": "66_KEEP_THE_PACE_v2.mp3",
+    "suno_id": "450e4dc3-686d-4bbd-96a8-d5d7eca36816",
+    "order": 66,
+    "aubio_bpm": 116.74,
+    "beat_count_bpm": 117.33,
+    "detected_bpm": 117.33,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.33,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "019ab6de-4c12-4667-924b-43a42dce9b2c": {
+    "title": "QUIET FIRE",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, anthemic female vocal lead, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "4:02",
+    "suno_bpm": 126,
+    "filename": "67_QUIET_FIRE_v1.mp3",
+    "suno_id": "019ab6de-4c12-4667-924b-43a42dce9b2c",
+    "order": 67,
+    "aubio_bpm": 126.39,
+    "beat_count_bpm": 128.84,
+    "detected_bpm": 128.84,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 128.84,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "1b88ba4a-7afb-4ac2-a01f-3dc966bba389": {
+    "title": "QUIET FIRE",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, anthemic female vocal lead, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:24",
+    "suno_bpm": 126,
+    "filename": "68_QUIET_FIRE_v2.mp3",
+    "suno_id": "1b88ba4a-7afb-4ac2-a01f-3dc966bba389",
+    "order": 68,
+    "aubio_bpm": 125.05,
+    "beat_count_bpm": 127.85,
+    "detected_bpm": 127.85,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.85,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "74a9efe3-10f7-4c1f-bc14-5625c3adc26b": {
+    "title": "OPEN SKY",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, anthemic female vocal lead, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:37",
+    "suno_bpm": 126,
+    "filename": "69_OPEN_SKY_v1.mp3",
+    "suno_id": "74a9efe3-10f7-4c1f-bc14-5625c3adc26b",
+    "order": 69,
+    "aubio_bpm": 128.81,
+    "beat_count_bpm": 127.74,
+    "detected_bpm": 127.74,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.74,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "d11c1938-e031-46df-abb4-069b89fd0b52": {
+    "title": "OPEN SKY",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, anthemic female vocal lead, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:43",
+    "suno_bpm": 126,
+    "filename": "70_OPEN_SKY_v2.mp3",
+    "suno_id": "d11c1938-e031-46df-abb4-069b89fd0b52",
+    "order": 70,
+    "aubio_bpm": 134.66,
+    "beat_count_bpm": 127.78,
+    "detected_bpm": 127.78,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.78,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "6ec42716-32b8-485d-9f82-74613cfa6a2e": {
+    "title": "SLOW TIDE",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, anthemic female vocal lead, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:23",
+    "suno_bpm": 126,
+    "filename": "71_SLOW_TIDE_v1.mp3",
+    "suno_id": "6ec42716-32b8-485d-9f82-74613cfa6a2e",
+    "order": 71,
+    "aubio_bpm": 125.5,
+    "beat_count_bpm": 127.78,
+    "detected_bpm": 127.78,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.78,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "b8f3e8f3-5566-44ce-bbaf-340a4efbeded": {
+    "title": "SLOW TIDE",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, anthemic female vocal lead, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:26",
+    "suno_bpm": 126,
+    "filename": "72_SLOW_TIDE_v2.mp3",
+    "suno_id": "b8f3e8f3-5566-44ce-bbaf-340a4efbeded",
+    "order": 72,
+    "aubio_bpm": 142.95,
+    "beat_count_bpm": 128.75,
+    "detected_bpm": 128.75,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 128.75,
+    "playlists": [
+      "工作"
+    ]
   }
 }

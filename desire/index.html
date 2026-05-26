@@ -537,10 +537,10 @@ body::before {
   </div>
 </div>
 
-<!-- GENDER -->
+<!-- GENDER (self) -->
 <div id="screen-gender" class="screen hidden">
   <div style="text-align:center">
-    <p class="title-sub" style="margin-bottom:24px">IMAGE PREFERENCE</p>
+    <p class="title-sub" style="margin-bottom:24px">IMAGE PREFERENCE — STEP 1 / 2</p>
     <h2 class="section-title" style="margin-bottom:8px">選擇結果頁想看見的角色圖像</h2>
     <p class="body-text" style="margin-top:8px;font-size:13px">只影響圖像呈現，不影響結果。</p>
     <div class="gender-cards">
@@ -551,7 +551,25 @@ body::before {
         <span class="gender-symbol">♂</span><span>男性圖像</span>
       </div>
     </div>
-    <button class="btn-primary" id="gender-confirm" onclick="startQuiz()" style="display:none">確認，開始測驗</button>
+    <button class="btn-primary" id="gender-confirm" onclick="goTo('compat-gender')" style="display:none">下一步</button>
+  </div>
+</div>
+
+<!-- GENDER (compat) -->
+<div id="screen-compat-gender" class="screen hidden">
+  <div style="text-align:center">
+    <p class="title-sub" style="margin-bottom:24px">IMAGE PREFERENCE — STEP 2 / 2</p>
+    <h2 class="section-title" style="margin-bottom:8px">選擇核心契合者的圖像</h2>
+    <p class="body-text" style="margin-top:8px;font-size:13px">結果頁中「核心契合」那位人物的圖像性別。</p>
+    <div class="gender-cards">
+      <div class="gender-card" id="card-compat-female" onclick="selectCompatGender('female')">
+        <span class="gender-symbol">♀</span><span>女性圖像</span>
+      </div>
+      <div class="gender-card" id="card-compat-male" onclick="selectCompatGender('male')">
+        <span class="gender-symbol">♂</span><span>男性圖像</span>
+      </div>
+    </div>
+    <button class="btn-primary" id="compat-gender-confirm" onclick="startQuiz()" style="display:none">確認，開始測驗</button>
   </div>
 </div>
 
@@ -1177,6 +1195,7 @@ const COMPAT = {
 let state = {
   screen: 'landing',
   gender: null, // 'female' | 'male'
+  compatGender: null, // 'female' | 'male'
   currentQ: 0,
   answers: {}, // qIdx -> original opt index
   shuffledOpts: {}, // qIdx -> array of original indices in display order
@@ -1205,6 +1224,13 @@ function selectGender(g) {
   document.getElementById('card-female').classList.toggle('selected', g==='female');
   document.getElementById('card-male').classList.toggle('selected', g==='male');
   document.getElementById('gender-confirm').style.display = 'inline-block';
+}
+
+function selectCompatGender(g) {
+  state.compatGender = g;
+  document.getElementById('card-compat-female').classList.toggle('selected', g==='female');
+  document.getElementById('card-compat-male').classList.toggle('selected', g==='male');
+  document.getElementById('compat-gender-confirm').style.display = 'inline-block';
 }
 
 function startQuiz() {
@@ -1435,7 +1461,7 @@ function renderResult(r) {
   const compatCode = type.compat;
   const compatName = type.compatName;
   const compatText = type.compatText;
-  const compatImgGender = genderKey === 'female' ? 'male' : 'female';
+  const compatImgGender = state.compatGender || (genderKey === 'female' ? 'male' : 'female');
   const compatImgKey = compatCode ? compatCode.replace(/-/g,'').slice(0,3) : '';
   const compatImgFile = compatImgKey && IMAGES[compatImgKey] ? IMAGES[compatImgKey][compatImgGender] : '';
   const compatImgSrc = compatImgFile ? `images/${compatImgFile}` : '';
@@ -1744,6 +1770,7 @@ function saveProgress() {
       scores: state.scores,
       shuffledOpts: state.shuffledOpts,
       gender: state.gender,
+      compatGender: state.compatGender,
     }));
   } catch(e) {}
 }
@@ -1762,6 +1789,7 @@ function resumeQuiz() {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (!saved || !saved.currentQ) { goTo('intro'); return; }
     state.gender = saved.gender;
+    state.compatGender = saved.compatGender || null;
     state.currentQ = saved.currentQ;
     state.answers = saved.answers || {};
     state.scores = saved.scores || {A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0};
@@ -1825,7 +1853,7 @@ function animateCount(target) {
 
 function restartQuiz() {
   clearProgress();
-  state = {screen:'landing',gender:null,currentQ:0,answers:{},
+  state = {screen:'landing',gender:null,compatGender:null,currentQ:0,answers:{},
     shuffledOpts:{},scores:{A:0,R:0,G:0,T:0,S:0,N:0,P:0,C:0,X:0},result:null,
     optionTimer:null,advanceTimer:null};
   document.getElementById('progress-bar').style.width = '0%';
@@ -1833,6 +1861,9 @@ function restartQuiz() {
   document.getElementById('gender-confirm').style.display = 'none';
   document.getElementById('card-female').classList.remove('selected');
   document.getElementById('card-male').classList.remove('selected');
+  document.getElementById('compat-gender-confirm').style.display = 'none';
+  document.getElementById('card-compat-female').classList.remove('selected');
+  document.getElementById('card-compat-male').classList.remove('selected');
   // Hide all screens
   document.querySelectorAll('.screen').forEach(s=>{
     s.classList.remove('visible'); s.classList.add('hidden');

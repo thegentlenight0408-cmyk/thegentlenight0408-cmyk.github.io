@@ -346,6 +346,7 @@ function renderNowPlaying() {
   $("bpm-current").textContent = effectiveBpm || "?";
   const rate = (s.targetBpm && effectiveBaseBpm(s)) ? (s.targetBpm / effectiveBaseBpm(s)) : 1;
   $("rate-current").textContent = `${rate.toFixed(2)}×`;
+  updateMediaSession();
 }
 
 function applyRate() {
@@ -367,6 +368,33 @@ function playCurrent() {
   renderPlaylist();
   renderNowPlaying();
   save();
+}
+
+// iOS/Android 鎖定頁面媒體控制（MediaSession API）
+function setupMediaSession() {
+  if (!("mediaSession" in navigator)) return;
+  const ms = navigator.mediaSession;
+  try {
+    ms.setActionHandler("play", () => { audio.play().catch(()=>{}); });
+    ms.setActionHandler("pause", () => { audio.pause(); });
+    ms.setActionHandler("previoustrack", () => { prev(); });
+    ms.setActionHandler("nexttrack", () => { next(); });
+  } catch (e) { /* 舊瀏覽器可能不支援部分 action */ }
+}
+
+function updateMediaSession() {
+  if (!("mediaSession" in navigator)) return;
+  const s = currentSong();
+  if (!s) return;
+  try {
+    const pl = (s.playlists && s.playlists[0]) || state.activePlaylist || "";
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: s.title || "Untitled",
+      artist: "Nyxa Player",
+      album: pl ? `${pl} 歌單` : "Suno",
+    });
+    navigator.mediaSession.playbackState = audio.paused ? "paused" : "playing";
+  } catch (e) { /* ignore */ }
 }
 
 function next(skipShuffle = false) {
@@ -428,8 +456,9 @@ audio.addEventListener("ended", () => {
     next();
   }
 });
-audio.addEventListener("play", () => $("btn-play").textContent = "⏸");
-audio.addEventListener("pause", () => $("btn-play").textContent = "▶");
+audio.addEventListener("play", () => { $("btn-play").textContent = "⏸"; if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "playing"; });
+audio.addEventListener("pause", () => { $("btn-play").textContent = "▶"; if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "paused"; });
+setupMediaSession();
 
 // Controls
 $("btn-play").addEventListener("click", () => {

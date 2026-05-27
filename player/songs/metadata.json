@@ -1158,5 +1158,73 @@
     "playlists": [
       "工作"
     ]
+  },
+  "20d3db62-36fd-45ff-997b-ffc438a4607b": {
+    "title": "RUN THE DAWN",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "1:52",
+    "suno_bpm": 180,
+    "filename": "79_RUN_THE_DAWN_v1.mp3",
+    "suno_id": "20d3db62-36fd-45ff-997b-ffc438a4607b",
+    "order": 79,
+    "aubio_bpm": 113.48,
+    "beat_count_bpm": 118.76,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 118.76,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "03f67d8c-4ba6-4610-af4a-b425af50e039": {
+    "title": "RUN THE DAWN",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:02",
+    "suno_bpm": 180,
+    "filename": "80_RUN_THE_DAWN_v2.mp3",
+    "suno_id": "03f67d8c-4ba6-4610-af4a-b425af50e039",
+    "order": 80,
+    "aubio_bpm": 137.42,
+    "beat_count_bpm": 117.16,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 117.16,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "5047d25b-be6e-40d0-8a88-79dcd1891d89": {
+    "title": "NEVER SLOW DOWN",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:28",
+    "suno_bpm": 180,
+    "filename": "81_NEVER_SLOW_DOWN_v1.mp3",
+    "suno_id": "5047d25b-be6e-40d0-8a88-79dcd1891d89",
+    "order": 81,
+    "aubio_bpm": 124.53,
+    "beat_count_bpm": 119.16,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 119.16,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "481a2b23-094f-4818-89f4-9df88fc63a33": {
+    "title": "NEVER SLOW DOWN",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:26",
+    "suno_bpm": 180,
+    "filename": "82_NEVER_SLOW_DOWN_v2.mp3",
+    "suno_id": "481a2b23-094f-4818-89f4-9df88fc63a33",
+    "order": 82,
+    "aubio_bpm": 126.03,
+    "beat_count_bpm": 118.34,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 118.34,
+    "playlists": [
+      "慢跑"
+    ]
   }
 }

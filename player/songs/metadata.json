@@ -1056,5 +1056,107 @@
     "playlists": [
       "工作"
     ]
+  },
+  "2159e519-3d4d-4e57-8022-0fbc6b6506f3": {
+    "title": "GOLDEN HOURS",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:41",
+    "suno_bpm": 126,
+    "filename": "73_GOLDEN_HOURS_v1.mp3",
+    "suno_id": "2159e519-3d4d-4e57-8022-0fbc6b6506f3",
+    "order": 73,
+    "aubio_bpm": 134.85,
+    "beat_count_bpm": 127.87,
+    "detected_bpm": 127.87,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.87,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "222e6ff6-9b4e-4b8e-90f4-0f35ede8d3e1": {
+    "title": "GOLDEN HOURS",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "1:54",
+    "suno_bpm": 126,
+    "filename": "74_GOLDEN_HOURS_v2.mp3",
+    "suno_id": "222e6ff6-9b4e-4b8e-90f4-0f35ede8d3e1",
+    "order": 74,
+    "aubio_bpm": 126.98,
+    "beat_count_bpm": 127.76,
+    "detected_bpm": 127.76,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.76,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "0389baad-71d7-4f1a-82df-98ec599149c5": {
+    "title": "INTO THE FLOW",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:36",
+    "suno_bpm": 126,
+    "filename": "75_INTO_THE_FLOW_v1.mp3",
+    "suno_id": "0389baad-71d7-4f1a-82df-98ec599149c5",
+    "order": 75,
+    "aubio_bpm": 132.98,
+    "beat_count_bpm": 127.87,
+    "detected_bpm": 127.87,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.87,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "a3b6d6a1-4f7b-4e59-af82-87d06684f1b8": {
+    "title": "INTO THE FLOW",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:05",
+    "suno_bpm": 126,
+    "filename": "76_INTO_THE_FLOW_v2.mp3",
+    "suno_id": "a3b6d6a1-4f7b-4e59-af82-87d06684f1b8",
+    "order": 76,
+    "aubio_bpm": 124.63,
+    "beat_count_bpm": 127.89,
+    "detected_bpm": 127.89,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.89,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "8577dc9d-d769-4f5c-b8ec-d970bb0eca73": {
+    "title": "CLEAR SKY MIND",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "1:58",
+    "suno_bpm": 126,
+    "filename": "77_CLEAR_SKY_MIND_v1.mp3",
+    "suno_id": "8577dc9d-d769-4f5c-b8ec-d970bb0eca73",
+    "order": 77,
+    "aubio_bpm": 125.84,
+    "beat_count_bpm": 127.94,
+    "detected_bpm": 127.94,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.94,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "88afea86-0558-48be-8620-0d259e23fa79": {
+    "title": "CLEAR SKY MIND",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:49",
+    "suno_bpm": 126,
+    "filename": "78_CLEAR_SKY_MIND_v2.mp3",
+    "suno_id": "88afea86-0558-48be-8620-0d259e23fa79",
+    "order": 78,
+    "aubio_bpm": 125.03,
+    "beat_count_bpm": 128.7,
+    "detected_bpm": 128.7,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 128.7,
+    "playlists": [
+      "工作"
+    ]
   }
 }

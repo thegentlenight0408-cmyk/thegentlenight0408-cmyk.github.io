@@ -1226,5 +1226,175 @@
     "playlists": [
       "慢跑"
     ]
+  },
+  "9f002229-cb53-46b4-bd52-e38b67d77666": {
+    "title": "STEADY LIGHT",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:18",
+    "suno_bpm": 126,
+    "filename": "83_STEADY_LIGHT_v1.mp3",
+    "suno_id": "9f002229-cb53-46b4-bd52-e38b67d77666",
+    "order": 83,
+    "aubio_bpm": 124.66,
+    "beat_count_bpm": 127.81,
+    "detected_bpm": 127.81,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.81,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "649c67ea-594a-4033-b3f0-f4639d5e15b8": {
+    "title": "STEADY LIGHT",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:55",
+    "suno_bpm": 126,
+    "filename": "84_STEADY_LIGHT_v2.mp3",
+    "suno_id": "649c67ea-594a-4033-b3f0-f4639d5e15b8",
+    "order": 84,
+    "aubio_bpm": 138.22,
+    "beat_count_bpm": 129.51,
+    "detected_bpm": 129.51,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 129.51,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "61065ad1-6ab6-4e72-9436-a20628a20b5b": {
+    "title": "DEEP CURRENT",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:11",
+    "suno_bpm": 126,
+    "filename": "85_DEEP_CURRENT_v1.mp3",
+    "suno_id": "61065ad1-6ab6-4e72-9436-a20628a20b5b",
+    "order": 85,
+    "aubio_bpm": 128.84,
+    "beat_count_bpm": 128.56,
+    "detected_bpm": 128.56,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 128.56,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "7db17c6b-759c-4896-b9be-78e98afa3ad4": {
+    "title": "DEEP CURRENT",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:44",
+    "suno_bpm": 126,
+    "filename": "86_DEEP_CURRENT_v2.mp3",
+    "suno_id": "7db17c6b-759c-4896-b9be-78e98afa3ad4",
+    "order": 86,
+    "aubio_bpm": 135.72,
+    "beat_count_bpm": 140.8,
+    "detected_bpm": 140.8,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 140.8,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "f6412761-cf49-4474-a9c7-62d4fc7e81d3": {
+    "title": "QUIET ENGINE",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "1:49",
+    "suno_bpm": 126,
+    "filename": "87_QUIET_ENGINE_v1.mp3",
+    "suno_id": "f6412761-cf49-4474-a9c7-62d4fc7e81d3",
+    "order": 87,
+    "aubio_bpm": 128.94,
+    "beat_count_bpm": 128.82,
+    "detected_bpm": 128.82,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 128.82,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "725506fe-0c64-419f-94b1-0e3bfdaa7b38": {
+    "title": "QUIET ENGINE",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:22",
+    "suno_bpm": 126,
+    "filename": "88_QUIET_ENGINE_v2.mp3",
+    "suno_id": "725506fe-0c64-419f-94b1-0e3bfdaa7b38",
+    "order": 88,
+    "aubio_bpm": 130.36,
+    "beat_count_bpm": 127.8,
+    "detected_bpm": 127.8,
+    "confidence": "✓ near Suno",
+    "aubiotrack_median_bpm": 127.8,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "5ed02dcb-929e-4472-8e1d-0cab677f236b": {
+    "title": "BREAK OF DAY",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:39",
+    "suno_bpm": 180,
+    "filename": "89_BREAK_OF_DAY_v1.mp3",
+    "suno_id": "5ed02dcb-929e-4472-8e1d-0cab677f236b",
+    "order": 89,
+    "aubio_bpm": 117.75,
+    "beat_count_bpm": 118.45,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 118.45,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "ea403a0a-ab67-4808-a3cb-d4d832b3b88e": {
+    "title": "BREAK OF DAY",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:34",
+    "suno_bpm": 180,
+    "filename": "90_BREAK_OF_DAY_v2.mp3",
+    "suno_id": "ea403a0a-ab67-4808-a3cb-d4d832b3b88e",
+    "order": 90,
+    "aubio_bpm": 117.69,
+    "beat_count_bpm": 117.42,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 117.42,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "9b6334b7-a23e-408c-b46c-c01a06af4f5a": {
+    "title": "OUTRUN THE NIGHT",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "3:19",
+    "suno_bpm": 180,
+    "filename": "91_OUTRUN_THE_NIGHT_v1.mp3",
+    "suno_id": "9b6334b7-a23e-408c-b46c-c01a06af4f5a",
+    "order": 91,
+    "aubio_bpm": 118.19,
+    "beat_count_bpm": 114.76,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 114.76,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "1fd905cc-a019-4483-b853-d01bbc3f1820": {
+    "title": "OUTRUN THE NIGHT",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "3:02",
+    "suno_bpm": 180,
+    "filename": "92_OUTRUN_THE_NIGHT_v2.mp3",
+    "suno_id": "1fd905cc-a019-4483-b853-d01bbc3f1820",
+    "order": 92,
+    "aubio_bpm": 121.94,
+    "beat_count_bpm": 119.44,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "aubiotrack_median_bpm": 119.44,
+    "playlists": [
+      "慢跑"
+    ]
   }
 }

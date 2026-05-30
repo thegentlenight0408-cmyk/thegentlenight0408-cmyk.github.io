@@ -1396,5 +1396,169 @@
     "playlists": [
       "慢跑"
     ]
+  },
+  "40d9c984-e881-4ef2-83eb-0f64fe901ee2": {
+    "title": "Coffee Going Cold",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:13",
+    "suno_bpm": 126,
+    "filename": "93_COFFEE_GOING_COLD_v1.mp3",
+    "suno_id": "40d9c984-e881-4ef2-83eb-0f64fe901ee2",
+    "order": 93,
+    "aubio_bpm": 126.01,
+    "beat_count_bpm": 128.82,
+    "aubiotrack_median_bpm": 128.82,
+    "playlists": [
+      "工作"
+    ],
+    "detected_bpm": 126.01
+  },
+  "1db0999a-ebd3-427d-bc8b-e79815a86c5f": {
+    "title": "Coffee Going Cold",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "4:00",
+    "suno_bpm": 126,
+    "filename": "94_COFFEE_GOING_COLD_v2.mp3",
+    "suno_id": "1db0999a-ebd3-427d-bc8b-e79815a86c5f",
+    "order": 94,
+    "aubio_bpm": 127.09,
+    "beat_count_bpm": 127.95,
+    "aubiotrack_median_bpm": 127.95,
+    "playlists": [
+      "工作"
+    ],
+    "detected_bpm": 127.09
+  },
+  "9cb42552-4ff2-4390-9138-bc037c9781b6": {
+    "title": "Clockwork Flowstate",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:14",
+    "suno_bpm": 126,
+    "filename": "95_CLOCKWORK_FLOWSTATE_v1.mp3",
+    "suno_id": "9cb42552-4ff2-4390-9138-bc037c9781b6",
+    "order": 95,
+    "aubio_bpm": 124.85,
+    "beat_count_bpm": 127.86,
+    "aubiotrack_median_bpm": 127.86,
+    "playlists": [
+      "工作"
+    ],
+    "detected_bpm": 124.85
+  },
+  "61bf373d-6036-4531-b395-c092ea211009": {
+    "title": "Clockwork Flowstate",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:55",
+    "suno_bpm": 126,
+    "filename": "96_CLOCKWORK_FLOWSTATE_v2.mp3",
+    "suno_id": "61bf373d-6036-4531-b395-c092ea211009",
+    "order": 96,
+    "aubio_bpm": 136.28,
+    "beat_count_bpm": 129.99,
+    "aubiotrack_median_bpm": 129.99,
+    "playlists": [
+      "工作"
+    ],
+    "detected_bpm": 136.28
+  },
+  "12031436-3ab0-4658-bc58-d1994bcdbb81": {
+    "title": "Even Keel",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:40",
+    "suno_bpm": 126,
+    "filename": "97_EVEN_KEEL_v1.mp3",
+    "suno_id": "12031436-3ab0-4658-bc58-d1994bcdbb81",
+    "order": 97,
+    "aubio_bpm": 140.2,
+    "beat_count_bpm": 127.23,
+    "aubiotrack_median_bpm": 127.23,
+    "playlists": [
+      "工作"
+    ],
+    "detected_bpm": 140.2
+  },
+  "58f0565e-bed4-4ae1-9ffa-c0b52411e239": {
+    "title": "Even Keel",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:58",
+    "suno_bpm": 126,
+    "filename": "98_EVEN_KEEL_v2.mp3",
+    "suno_id": "58f0565e-bed4-4ae1-9ffa-c0b52411e239",
+    "order": 98,
+    "aubio_bpm": 132.81,
+    "beat_count_bpm": 127.71,
+    "aubiotrack_median_bpm": 127.71,
+    "playlists": [
+      "工作"
+    ],
+    "detected_bpm": 132.81
+  },
+  "bdfd8a7a-5838-4c8c-8d39-b4da87c6cc23": {
+    "title": "Lace 'Em Up",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:33",
+    "suno_bpm": 180,
+    "filename": "99_LACE_EM_UP_v1.mp3",
+    "suno_id": "bdfd8a7a-5838-4c8c-8d39-b4da87c6cc23",
+    "order": 99,
+    "aubio_bpm": 131.26,
+    "beat_count_bpm": 116.82,
+    "aubiotrack_median_bpm": 116.82,
+    "playlists": [
+      "慢跑"
+    ],
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180"
+  },
+  "b166ce84-3983-4f28-85f5-cebb63ac3fed": {
+    "title": "Lace 'Em Up",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "3:44",
+    "suno_bpm": 180,
+    "filename": "100_LACE_EM_UP_v2.mp3",
+    "suno_id": "b166ce84-3983-4f28-85f5-cebb63ac3fed",
+    "order": 100,
+    "aubio_bpm": 124.77,
+    "beat_count_bpm": 117.5,
+    "aubiotrack_median_bpm": 117.5,
+    "playlists": [
+      "慢跑"
+    ],
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180"
+  },
+  "9d436604-9a55-4103-b039-53de05e1b5b3": {
+    "title": "Green Light Sprint",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "3:49",
+    "suno_bpm": 180,
+    "filename": "101_GREEN_LIGHT_SPRINT_v1.mp3",
+    "suno_id": "9d436604-9a55-4103-b039-53de05e1b5b3",
+    "order": 101,
+    "aubio_bpm": 111.62,
+    "beat_count_bpm": 117.33,
+    "aubiotrack_median_bpm": 117.33,
+    "playlists": [
+      "慢跑"
+    ],
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180"
+  },
+  "e8db5049-704f-43d3-af64-51efccbd87d3": {
+    "title": "Green Light Sprint",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "3:13",
+    "suno_bpm": 180,
+    "filename": "102_GREEN_LIGHT_SPRINT_v2.mp3",
+    "suno_id": "e8db5049-704f-43d3-af64-51efccbd87d3",
+    "order": 102,
+    "aubio_bpm": 117.13,
+    "beat_count_bpm": 117.32,
+    "aubiotrack_median_bpm": 117.32,
+    "playlists": [
+      "慢跑"
+    ],
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180"
   }
 }

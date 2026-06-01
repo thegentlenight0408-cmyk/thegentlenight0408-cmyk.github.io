@@ -1560,5 +1560,175 @@
     ],
     "detected_bpm": 180,
     "confidence": "DnB 偵測不準，採 Suno 180"
+  },
+  "842e1fad-f4eb-4de7-a9d7-529cb288b985": {
+    "title": "First Sip Breath",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:38",
+    "suno_bpm": 126,
+    "filename": "103_First_Sip_Breath_v1.mp3",
+    "suno_id": "842e1fad-f4eb-4de7-a9d7-529cb288b985",
+    "order": 103,
+    "aubio_bpm": 126.33,
+    "beat_count_bpm": 123.28,
+    "detected_bpm": 123.28,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 127.82,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "551bf72f-67bf-4eb3-b396-483b2037b597": {
+    "title": "First Sip Breath",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "3:37",
+    "suno_bpm": 126,
+    "filename": "104_First_Sip_Breath_v2.mp3",
+    "suno_id": "551bf72f-67bf-4eb3-b396-483b2037b597",
+    "order": 104,
+    "aubio_bpm": 131.73,
+    "beat_count_bpm": 126.45,
+    "detected_bpm": 126.45,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 128.68,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "5cec45dc-d118-49d6-b322-0f5990ac5bbd": {
+    "title": "Brick-by-Brick Walls",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:45",
+    "suno_bpm": 126,
+    "filename": "105_Brick_by_Brick_Walls_v1.mp3",
+    "suno_id": "5cec45dc-d118-49d6-b322-0f5990ac5bbd",
+    "order": 105,
+    "aubio_bpm": 134.74,
+    "beat_count_bpm": 129.12,
+    "detected_bpm": 129.12,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 127.73,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "cfb2f2d8-e1db-4edf-b6b4-f62932c835ce": {
+    "title": "Brick-by-Brick Walls",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "4:01",
+    "suno_bpm": 126,
+    "filename": "106_Brick_by_Brick_Walls_v2.mp3",
+    "suno_id": "cfb2f2d8-e1db-4edf-b6b4-f62932c835ce",
+    "order": 106,
+    "aubio_bpm": 129.67,
+    "beat_count_bpm": 127.26,
+    "detected_bpm": 127.26,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 127.9,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "98ef6465-74cb-434b-a0c9-9cfbc1dbfce4": {
+    "title": "Coffee Cooled Screen",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:41",
+    "suno_bpm": 126,
+    "filename": "107_Coffee_Cooled_Screen_v1.mp3",
+    "suno_id": "98ef6465-74cb-434b-a0c9-9cfbc1dbfce4",
+    "order": 107,
+    "aubio_bpm": 131.65,
+    "beat_count_bpm": 127.71,
+    "detected_bpm": 127.71,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 128.52,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "18c90c20-74fb-4bf2-9352-05352fc6398a": {
+    "title": "Coffee Cooled Screen",
+    "tags": "progressive house 126 bpm euphoric emotional supersaws pluck melody vocal chops festival anthem build up and drop uplifting cinematic folk infused edm acoustic guitar texture, female vocal, in the style of EDM, Progressive house, Electro house, Dance-pop",
+    "duration": "2:02",
+    "suno_bpm": 126,
+    "filename": "108_Coffee_Cooled_Screen_v2.mp3",
+    "suno_id": "18c90c20-74fb-4bf2-9352-05352fc6398a",
+    "order": 108,
+    "aubio_bpm": 125.76,
+    "beat_count_bpm": 121.2,
+    "detected_bpm": 121.2,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 126.68,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "166f7e1c-e72f-49bd-8e75-62f8ca883cfd": {
+    "title": "Lacing Up Cold",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "3:21",
+    "suno_bpm": 180,
+    "filename": "109_Lacing_Up_Cold_v1.mp3",
+    "suno_id": "166f7e1c-e72f-49bd-8e75-62f8ca883cfd",
+    "order": 109,
+    "aubio_bpm": 118.62,
+    "beat_count_bpm": 115.02,
+    "detected_bpm": 115.02,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 118.26,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "aaae5480-3605-41f7-a08e-2beb37a683bd": {
+    "title": "Lacing Up Cold",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:39",
+    "suno_bpm": 180,
+    "filename": "110_Lacing_Up_Cold_v2.mp3",
+    "suno_id": "aaae5480-3605-41f7-a08e-2beb37a683bd",
+    "order": 110,
+    "aubio_bpm": 140.39,
+    "beat_count_bpm": 130.52,
+    "detected_bpm": 130.52,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 118.24,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "ff6a170a-da57-4377-9072-22b4ba689d25": {
+    "title": "Red Mile Burn",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "2:51",
+    "suno_bpm": 180,
+    "filename": "111_Red_Mile_Burn_v1.mp3",
+    "suno_id": "ff6a170a-da57-4377-9072-22b4ba689d25",
+    "order": 111,
+    "aubio_bpm": 117.4,
+    "beat_count_bpm": 113.82,
+    "detected_bpm": 113.82,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 117.74,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "2af431a3-be93-44dc-8877-611c4011b617": {
+    "title": "Red Mile Burn",
+    "tags": "drum and bass, 180 BPM, energetic, driving rolling beat, punchy snare, powerful kick, uplifting EDM, euphoric drop, anthemic female vocal, motivational, non-stop energy, running workout",
+    "duration": "3:00",
+    "suno_bpm": 180,
+    "filename": "112_Red_Mile_Burn_v2.mp3",
+    "suno_id": "2af431a3-be93-44dc-8877-611c4011b617",
+    "order": 112,
+    "aubio_bpm": 119.58,
+    "beat_count_bpm": 114.26,
+    "detected_bpm": 114.26,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 118.35,
+    "playlists": [
+      "慢跑"
+    ]
   }
 }

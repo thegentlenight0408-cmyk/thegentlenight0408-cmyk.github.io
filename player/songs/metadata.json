@@ -1730,5 +1730,39 @@
     "playlists": [
       "慢跑"
     ]
+  },
+  "0488f663-38ee-4693-b821-4d6c56ca96fe": {
+    "title": "Salt Quiet Day",
+    "tags": "indie rock, 85 bpm, d major, uplifting bright, high energy driving, electric guitars overdriven and clean, vocal-forward, sunlit beach-soaked coastal vibe, summery feel-good carefree, modern indie production warm mix, female vocal, in the style of indie rock, alt rock, surf rock, summer indie pop",
+    "duration": "2:50",
+    "suno_bpm": 85,
+    "filename": "113_Salt_Quiet_Day_v1.mp3",
+    "suno_id": "0488f663-38ee-4693-b821-4d6c56ca96fe",
+    "order": 113,
+    "aubio_bpm": 153.22,
+    "beat_count_bpm": 144.0,
+    "detected_bpm": 144.0,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 170.75,
+    "playlists": [
+      "indie"
+    ]
+  },
+  "fae361cd-ec62-4937-9bd9-7a9f6fc79700": {
+    "title": "Salt Quiet Day",
+    "tags": "indie rock, 85 bpm, d major, uplifting bright, high energy driving, electric guitars overdriven and clean, vocal-forward, sunlit beach-soaked coastal vibe, summery feel-good carefree, modern indie production warm mix, female vocal, in the style of indie rock, alt rock, surf rock, summer indie pop",
+    "duration": "3:05",
+    "suno_bpm": 85,
+    "filename": "114_Salt_Quiet_Day_v2.mp3",
+    "suno_id": "fae361cd-ec62-4937-9bd9-7a9f6fc79700",
+    "order": 114,
+    "aubio_bpm": 140.38,
+    "beat_count_bpm": 128.75,
+    "detected_bpm": 128.75,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 156.71,
+    "playlists": [
+      "indie"
+    ]
   }
 }

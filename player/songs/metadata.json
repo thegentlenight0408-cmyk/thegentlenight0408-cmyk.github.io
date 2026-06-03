@@ -1745,7 +1745,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 170.75,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "fae361cd-ec62-4937-9bd9-7a9f6fc79700": {
@@ -1762,7 +1762,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 156.71,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "3c0f36bc-a9e0-44bf-9fd9-7493efc795a8": {
@@ -1779,7 +1779,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 170.97,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "8abaebb9-fa15-4e74-9d41-5830e4bd20f4": {
@@ -1796,7 +1796,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 170.96,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "ec11f10e-5e3b-4c72-b2f3-96e9cd9c0344": {
@@ -1813,7 +1813,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 171.0,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "2869c772-715d-4e78-aacf-69e9c3df820c": {
@@ -1830,7 +1830,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 170.98,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "c8398276-268c-4c63-967a-1ac34a2981d7": {
@@ -1847,7 +1847,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 170.67,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "227c14ca-ae38-4390-80ef-f4b6dc1f7dc0": {
@@ -1864,7 +1864,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 113.49,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "01a2a2e4-bc4e-442e-98d5-63284ea1ccd4": {
@@ -1881,7 +1881,7 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 114.79,
     "playlists": [
-      "indie"
+      "indie-F"
     ]
   },
   "052596eb-7c00-469e-9b17-148721f3b1c7": {
@@ -1898,7 +1898,177 @@
     "confidence": "⚠ far from Suno",
     "aubiotrack_median_bpm": 171.74,
     "playlists": [
-      "indie"
+      "indie-F"
+    ]
+  },
+  "c69fbc1f-365f-44c7-9fa2-7bca9828c6c9": {
+    "title": "Sea Wall Lantern",
+    "tags": "indie folk rock, 82 bpm, e minor, melancholic introspective coastal, fingerpicked acoustic guitar dominant, light brushed drums, soft electric texture, male vocal warm restrained vulnerable, atmospheric cinematic, in the style of indie folk, alt folk, americana",
+    "duration": "2:52",
+    "suno_bpm": 82,
+    "filename": "123_Sea_Wall_Lantern_v1.mp3",
+    "suno_id": "c69fbc1f-365f-44c7-9fa2-7bca9828c6c9",
+    "order": 123,
+    "aubio_bpm": 155.92,
+    "beat_count_bpm": 149.58,
+    "detected_bpm": 149.58,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 161.02,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "b123892c-f253-4bf9-ad89-a3ade853c8aa": {
+    "title": "Sea Wall Lantern",
+    "tags": "indie folk rock, 82 bpm, e minor, melancholic introspective coastal, fingerpicked acoustic guitar dominant, light brushed drums, soft electric texture, male vocal warm restrained vulnerable, atmospheric cinematic, in the style of indie folk, alt folk, americana",
+    "duration": "3:20",
+    "suno_bpm": 82,
+    "filename": "124_Sea_Wall_Lantern_v2.mp3",
+    "suno_id": "b123892c-f253-4bf9-ad89-a3ade853c8aa",
+    "order": 124,
+    "aubio_bpm": 149.36,
+    "beat_count_bpm": 135.71,
+    "detected_bpm": 135.71,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 166.61,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "6d3675ce-b295-4416-a4b3-2787fa6c3577": {
+    "title": "Lantern Shoreline",
+    "tags": "indie folk rock, 82 bpm, e minor, melancholic introspective coastal, fingerpicked acoustic guitar dominant, light brushed drums, soft electric texture, male vocal warm restrained vulnerable, atmospheric cinematic, in the style of indie folk, alt folk, americana",
+    "duration": "3:00",
+    "suno_bpm": 82,
+    "filename": "125_Lantern_Shoreline_v1.mp3",
+    "suno_id": "6d3675ce-b295-4416-a4b3-2787fa6c3577",
+    "order": 125,
+    "aubio_bpm": 144.19,
+    "beat_count_bpm": 129.7,
+    "detected_bpm": 129.7,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 163.7,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "1b14c954-4b13-462a-b51d-18ea6a7a9c6c": {
+    "title": "Lantern Shoreline",
+    "tags": "indie folk rock, 82 bpm, e minor, melancholic introspective coastal, fingerpicked acoustic guitar dominant, light brushed drums, soft electric texture, male vocal warm restrained vulnerable, atmospheric cinematic, in the style of indie folk, alt folk, americana",
+    "duration": "3:51",
+    "suno_bpm": 82,
+    "filename": "126_Lantern_Shoreline_v2.mp3",
+    "suno_id": "1b14c954-4b13-462a-b51d-18ea6a7a9c6c",
+    "order": 126,
+    "aubio_bpm": 160.43,
+    "beat_count_bpm": 155.12,
+    "detected_bpm": 155.12,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 165.27,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "fcb31e8f-39d0-4cb3-9ca7-863f54a0536d": {
+    "title": "Blue Window-Hum",
+    "tags": "bedroom pop, 75 bpm, f major, dreamy hazy intimate, lo-fi tape saturation, soft strummed nylon guitar, mellotron pad, gentle hi-hat shuffle, female vocal close mic whispered breathy, in the style of bedroom pop, slowcore, dream pop",
+    "duration": "3:23",
+    "suno_bpm": 75,
+    "filename": "127_Blue_Window_Hum_v1.mp3",
+    "suno_id": "fcb31e8f-39d0-4cb3-9ca7-863f54a0536d",
+    "order": 127,
+    "aubio_bpm": 139.84,
+    "beat_count_bpm": 131.69,
+    "detected_bpm": 131.69,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 148.47,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "ed281d5e-a223-4eee-a533-f9f5065e1645": {
+    "title": "Blue Window-Hum",
+    "tags": "bedroom pop, 75 bpm, f major, dreamy hazy intimate, lo-fi tape saturation, soft strummed nylon guitar, mellotron pad, gentle hi-hat shuffle, female vocal close mic whispered breathy, in the style of bedroom pop, slowcore, dream pop",
+    "duration": "2:50",
+    "suno_bpm": 75,
+    "filename": "128_Blue_Window_Hum_v2.mp3",
+    "suno_id": "ed281d5e-a223-4eee-a533-f9f5065e1645",
+    "order": 128,
+    "aubio_bpm": 143.91,
+    "beat_count_bpm": 134.6,
+    "detected_bpm": 134.6,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 154.8,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "6f7b1006-e090-4011-a8ea-f887c9337a0d": {
+    "title": "Radiator Sighs",
+    "tags": "folk pop, 70 bpm, d major, cinematic introspective elegant, piano centerpiece, string quartet swells, soft kick on 1 and 3, no electric guitar, male vocal classically trained pure tone, in the style of folk pop, neoclassical indie, contemporary chamber",
+    "duration": "2:14",
+    "suno_bpm": 70,
+    "filename": "129_Radiator_Sighs_v1.mp3",
+    "suno_id": "6f7b1006-e090-4011-a8ea-f887c9337a0d",
+    "order": 129,
+    "aubio_bpm": 125.14,
+    "beat_count_bpm": 117.35,
+    "detected_bpm": 117.35,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 124.8,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "ec7dd4a3-930c-4022-96e7-b561667dab2b": {
+    "title": "Radiator Sighs",
+    "tags": "folk pop, 70 bpm, d major, cinematic introspective elegant, piano centerpiece, string quartet swells, soft kick on 1 and 3, no electric guitar, male vocal classically trained pure tone, in the style of folk pop, neoclassical indie, contemporary chamber",
+    "duration": "3:20",
+    "suno_bpm": 70,
+    "filename": "130_Radiator_Sighs_v2.mp3",
+    "suno_id": "ec7dd4a3-930c-4022-96e7-b561667dab2b",
+    "order": 130,
+    "aubio_bpm": 142.81,
+    "beat_count_bpm": 137.4,
+    "detected_bpm": 137.4,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 147.59,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "5240ad42-5114-4550-abb1-64ff93b945fc": {
+    "title": "Bicycle Bell",
+    "tags": "dream pop, 92 bpm, a major, washed dreamy bright nostalgic, reverb-heavy chorused electric guitar, ambient pad, soft drum machine, no acoustic guitar, female vocal layered ethereal, in the style of dream pop, shoegaze, chillwave indie",
+    "duration": "3:28",
+    "suno_bpm": 92,
+    "filename": "131_Bicycle_Bell_v1.mp3",
+    "suno_id": "5240ad42-5114-4550-abb1-64ff93b945fc",
+    "order": 131,
+    "aubio_bpm": 122.02,
+    "beat_count_bpm": 117.01,
+    "detected_bpm": 117.01,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 121.84,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "9a1f2ab3-3107-43fd-95a5-4116ccd0ef86": {
+    "title": "Bicycle Bell",
+    "tags": "dream pop, 92 bpm, a major, washed dreamy bright nostalgic, reverb-heavy chorused electric guitar, ambient pad, soft drum machine, no acoustic guitar, female vocal layered ethereal, in the style of dream pop, shoegaze, chillwave indie",
+    "duration": "4:22",
+    "suno_bpm": 92,
+    "filename": "132_Bicycle_Bell_v2.mp3",
+    "suno_id": "9a1f2ab3-3107-43fd-95a5-4116ccd0ef86",
+    "order": 132,
+    "aubio_bpm": 95.71,
+    "beat_count_bpm": 92.14,
+    "detected_bpm": 92.14,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 92.93,
+    "playlists": [
+      "indie-S"
     ]
   }
 }

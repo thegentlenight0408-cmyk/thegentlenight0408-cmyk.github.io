@@ -2070,5 +2070,175 @@
     "playlists": [
       "indie-S"
     ]
+  },
+  "6dd76adf-3079-473c-ab8d-3c1ed7ef4f79": {
+    "title": "Cassette Kitchen Jazz",
+    "tags": "dream pop, 121 bpm, c major, bright jazzy floating euphoric, clean jazz-chorded electric guitar, warm rhodes electric piano, brushed drums, melodic bass, male vocal smooth mellow young, in the style of dream pop, chillwave, indie sophisti-pop",
+    "duration": "2:47",
+    "suno_bpm": 121,
+    "filename": "133_Cassette_Kitchen_Jazz_v1.mp3",
+    "suno_id": "6dd76adf-3079-473c-ab8d-3c1ed7ef4f79",
+    "order": 133,
+    "aubio_bpm": 119.3,
+    "beat_count_bpm": 116.49,
+    "detected_bpm": 116.49,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 120.33,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "b1d97184-f42f-469b-9872-f7b7a0c2152a": {
+    "title": "Cassette Kitchen Jazz",
+    "tags": "dream pop, 121 bpm, c major, bright jazzy floating euphoric, clean jazz-chorded electric guitar, warm rhodes electric piano, brushed drums, melodic bass, male vocal smooth mellow young, in the style of dream pop, chillwave, indie sophisti-pop",
+    "duration": "3:32",
+    "suno_bpm": 121,
+    "filename": "134_Cassette_Kitchen_Jazz_v2.mp3",
+    "suno_id": "b1d97184-f42f-469b-9872-f7b7a0c2152a",
+    "order": 134,
+    "aubio_bpm": 119.61,
+    "beat_count_bpm": 117.7,
+    "detected_bpm": 117.7,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 120.31,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "8973f149-3c59-4501-8433-9912098f7428": {
+    "title": "Parking Star",
+    "tags": "psych-pop, 108 bpm, a minor, woozy psychedelic groove, blown-out fuzz bass dominant, vintage drum machine, swirling synth texture, gang vocal backups, male lead vocal pitched and warped, in the style of psych-pop, neo-psychedelia, lo-fi funk",
+    "duration": "2:50",
+    "suno_bpm": 108,
+    "filename": "135_Parking_Star_v1.mp3",
+    "suno_id": "8973f149-3c59-4501-8433-9912098f7428",
+    "order": 135,
+    "aubio_bpm": 109.71,
+    "beat_count_bpm": 107.07,
+    "detected_bpm": 107.07,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 110.28,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "69fc0df8-7d35-4457-b71a-eb7719e87e16": {
+    "title": "Parking Star",
+    "tags": "psych-pop, 108 bpm, a minor, woozy psychedelic groove, blown-out fuzz bass dominant, vintage drum machine, swirling synth texture, gang vocal backups, male lead vocal pitched and warped, in the style of psych-pop, neo-psychedelia, lo-fi funk",
+    "duration": "3:19",
+    "suno_bpm": 108,
+    "filename": "136_Parking_Star_v2.mp3",
+    "suno_id": "69fc0df8-7d35-4457-b71a-eb7719e87e16",
+    "order": 136,
+    "aubio_bpm": 110.64,
+    "beat_count_bpm": 107.27,
+    "detected_bpm": 107.27,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 109.38,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "22cec025-3783-4ddb-a7ed-55ae22c859b6": {
+    "title": "Smoke Alarm Screaming",
+    "tags": "alternative rock, 128 bpm, g major, driving 90s revival energetic, distorted overdriven electric guitar wall, punchy drums, snare crack, no synth, male vocal mid-range angsty melodic, in the style of 90s alt rock, indie rock, grunge revival",
+    "duration": "2:08",
+    "suno_bpm": 128,
+    "filename": "137_Smoke_Alarm_Screaming_v1.mp3",
+    "suno_id": "22cec025-3783-4ddb-a7ed-55ae22c859b6",
+    "order": 137,
+    "aubio_bpm": 125.13,
+    "beat_count_bpm": 121.18,
+    "detected_bpm": 121.18,
+    "confidence": "≈ Suno-ish",
+    "aubiotrack_median_bpm": 128.5,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "c3f832ec-7a3f-4263-bc86-34e7262ba36f": {
+    "title": "Smoke Alarm Screaming",
+    "tags": "alternative rock, 128 bpm, g major, driving 90s revival energetic, distorted overdriven electric guitar wall, punchy drums, snare crack, no synth, male vocal mid-range angsty melodic, in the style of 90s alt rock, indie rock, grunge revival",
+    "duration": "2:20",
+    "suno_bpm": 128,
+    "filename": "138_Smoke_Alarm_Screaming_v2.mp3",
+    "suno_id": "c3f832ec-7a3f-4263-bc86-34e7262ba36f",
+    "order": 138,
+    "aubio_bpm": 126.29,
+    "beat_count_bpm": 121.53,
+    "detected_bpm": 121.53,
+    "confidence": "≈ Suno-ish",
+    "aubiotrack_median_bpm": 128.62,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "4190095a-b5e4-4a1f-a480-c6f1ba7b3e4e": {
+    "title": "Neon Saltwater Speedrun",
+    "tags": "electronic indie, 135 bpm, b minor, atmospheric coastal night-drive, analog synth pad wash, electronic drum machine kick steady, no acoustic guitar, sub bass pulse, male vocal layered effected, in the style of electronic indie, alt pop, dream electronic",
+    "duration": "3:08",
+    "suno_bpm": 135,
+    "filename": "139_Neon_Saltwater_Speedrun_v1.mp3",
+    "suno_id": "4190095a-b5e4-4a1f-a480-c6f1ba7b3e4e",
+    "order": 139,
+    "aubio_bpm": 132.28,
+    "beat_count_bpm": 128.3,
+    "detected_bpm": 128.3,
+    "confidence": "≈ Suno-ish",
+    "aubiotrack_median_bpm": 133.88,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "1e4ea184-1e73-4842-984d-128c7225deca": {
+    "title": "Neon Saltwater Speedrun",
+    "tags": "electronic indie, 135 bpm, b minor, atmospheric coastal night-drive, analog synth pad wash, electronic drum machine kick steady, no acoustic guitar, sub bass pulse, male vocal layered effected, in the style of electronic indie, alt pop, dream electronic",
+    "duration": "2:48",
+    "suno_bpm": 135,
+    "filename": "140_Neon_Saltwater_Speedrun_v2.mp3",
+    "suno_id": "1e4ea184-1e73-4842-984d-128c7225deca",
+    "order": 140,
+    "aubio_bpm": 133.36,
+    "beat_count_bpm": 129.63,
+    "detected_bpm": 129.63,
+    "confidence": "≈ Suno-ish",
+    "aubiotrack_median_bpm": 136.09,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "08e8fd7a-7f60-4e1d-a999-ac756fc5afb7": {
+    "title": "Quarter-to-Nine Velvet",
+    "tags": "indie soul, 105 bpm, g minor, smooth groovy warm sultry, groove bass driving, soft jazzy electric guitar, soul horns brass section, rim-click drums, female lead vocal soulful with male harmonies, in the style of indie soul, neo-soul, sophisti-funk",
+    "duration": "4:01",
+    "suno_bpm": 105,
+    "filename": "141_Quarter_to_Nine_Velvet_v1.mp3",
+    "suno_id": "08e8fd7a-7f60-4e1d-a999-ac756fc5afb7",
+    "order": 141,
+    "aubio_bpm": 105.06,
+    "beat_count_bpm": 103.82,
+    "detected_bpm": 103.82,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 106.15,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "cf7a9e30-c44f-49bf-a770-42a25c65fca2": {
+    "title": "Quarter-to-Nine Velvet",
+    "tags": "indie soul, 105 bpm, g minor, smooth groovy warm sultry, groove bass driving, soft jazzy electric guitar, soul horns brass section, rim-click drums, female lead vocal soulful with male harmonies, in the style of indie soul, neo-soul, sophisti-funk",
+    "duration": "2:46",
+    "suno_bpm": 105,
+    "filename": "142_Quarter_to_Nine_Velvet_v2.mp3",
+    "suno_id": "cf7a9e30-c44f-49bf-a770-42a25c65fca2",
+    "order": 142,
+    "aubio_bpm": 105.38,
+    "beat_count_bpm": 103.37,
+    "detected_bpm": 103.37,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 105.86,
+    "playlists": [
+      "indie-F"
+    ]
   }
 }

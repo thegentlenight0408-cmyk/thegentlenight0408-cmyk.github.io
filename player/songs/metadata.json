@@ -2104,5 +2104,175 @@
     "playlists": [
       "indie-F"
     ]
+  },
+  "17b38b47-16e4-441e-8734-f0d76c56f6e8": {
+    "title": "Same Old Bone",
+    "tags": "indie folk, 88 bpm, c major, nostalgic warm honest reflective, fingerstyle acoustic guitar, upright bass, soft kick brush snare, mandolin texture, male vocal mid-range storytelling, in the style of indie folk, americana, slowcore folk",
+    "duration": "2:46",
+    "suno_bpm": 88,
+    "filename": "143_Same_Old_Bone_v1.mp3",
+    "suno_id": "17b38b47-16e4-441e-8734-f0d76c56f6e8",
+    "order": 143,
+    "aubio_bpm": 130.11,
+    "beat_count_bpm": 113.41,
+    "detected_bpm": 113.41,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 91.59,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "34dfe359-f306-47be-984c-2a27a4d4584b": {
+    "title": "Same Old Bone",
+    "tags": "indie folk, 88 bpm, c major, nostalgic warm honest reflective, fingerstyle acoustic guitar, upright bass, soft kick brush snare, mandolin texture, male vocal mid-range storytelling, in the style of indie folk, americana, slowcore folk",
+    "duration": "4:29",
+    "suno_bpm": 88,
+    "filename": "144_Same_Old_Bone_v2.mp3",
+    "suno_id": "34dfe359-f306-47be-984c-2a27a4d4584b",
+    "order": 144,
+    "aubio_bpm": 97.74,
+    "beat_count_bpm": 91.87,
+    "detected_bpm": 91.87,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 89.59,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "2a96d201-3f0f-4e56-991d-fc0a1e7cd758": {
+    "title": "Quiet Cobbled Path",
+    "tags": "chamber folk, 78 bpm, a minor, atmospheric autumnal cinematic, string quartet centerpiece, soft acoustic guitar, upright bass, no drums or very subtle brush, female vocal classically pure mezzo-soprano, in the style of chamber folk, neoclassical indie, art folk",
+    "duration": "3:05",
+    "suno_bpm": 78,
+    "filename": "145_Quiet_Cobbled_Path_v1.mp3",
+    "suno_id": "2a96d201-3f0f-4e56-991d-fc0a1e7cd758",
+    "order": 145,
+    "aubio_bpm": 156.6,
+    "beat_count_bpm": 151.27,
+    "detected_bpm": 151.27,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 160.29,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "c1b88fda-4652-4410-a72d-1445af9e4d3b": {
+    "title": "Quiet Cobbled Path",
+    "tags": "chamber folk, 78 bpm, a minor, atmospheric autumnal cinematic, string quartet centerpiece, soft acoustic guitar, upright bass, no drums or very subtle brush, female vocal classically pure mezzo-soprano, in the style of chamber folk, neoclassical indie, art folk",
+    "duration": "3:21",
+    "suno_bpm": 78,
+    "filename": "146_Quiet_Cobbled_Path_v2.mp3",
+    "suno_id": "c1b88fda-4652-4410-a72d-1445af9e4d3b",
+    "order": 146,
+    "aubio_bpm": 149.18,
+    "beat_count_bpm": 143.0,
+    "detected_bpm": 143.0,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 157.3,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "6059e5f1-e3d1-4505-9402-988374a35a90": {
+    "title": "Quiet Space",
+    "tags": "slowcore post-rock, 65 bpm, d minor, atmospheric melancholic spacious, reverb-drenched electric guitar arpeggios, ambient pad, sparse rim-click drums, no acoustic guitar, very sparse minimal male vocal almost spoken, in the style of slowcore, post-rock, ambient indie",
+    "duration": "4:53",
+    "suno_bpm": 65,
+    "filename": "147_Quiet_Space_v1.mp3",
+    "suno_id": "6059e5f1-e3d1-4505-9402-988374a35a90",
+    "order": 147,
+    "aubio_bpm": 114.42,
+    "beat_count_bpm": 111.19,
+    "detected_bpm": 111.19,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 112.58,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "09df72d4-ae4a-4932-8ea8-6594b855daa6": {
+    "title": "Quiet Space",
+    "tags": "slowcore post-rock, 65 bpm, d minor, atmospheric melancholic spacious, reverb-drenched electric guitar arpeggios, ambient pad, sparse rim-click drums, no acoustic guitar, very sparse minimal male vocal almost spoken, in the style of slowcore, post-rock, ambient indie",
+    "duration": "4:23",
+    "suno_bpm": 65,
+    "filename": "148_Quiet_Space_v2.mp3",
+    "suno_id": "09df72d4-ae4a-4932-8ea8-6594b855daa6",
+    "order": 148,
+    "aubio_bpm": 131.8,
+    "beat_count_bpm": 129.93,
+    "detected_bpm": 129.93,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 133.37,
+    "playlists": [
+      "indie-S"
+    ]
+  },
+  "35573f60-0f55-4012-afab-d42207a44a9a": {
+    "title": "Five, Hands Three",
+    "tags": "math rock, 132 bpm, e minor, angular intricate driving complex, clean electric guitar tapping arpeggios, syncopated drums shifting time signatures, melodic bass lines, no synth, male vocal mid-range agile sometimes spoken sometimes melodic, in the style of math rock, post-hardcore indie, midwest emo",
+    "duration": "2:46",
+    "suno_bpm": 132,
+    "filename": "149_Five_Hands_Three_v1.mp3",
+    "suno_id": "35573f60-0f55-4012-afab-d42207a44a9a",
+    "order": 149,
+    "aubio_bpm": 130.19,
+    "beat_count_bpm": 126.72,
+    "detected_bpm": 126.72,
+    "confidence": "≈ Suno-ish",
+    "aubiotrack_median_bpm": 136.35,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "fa899f9d-b7fe-448a-8381-1a1710ad0ab3": {
+    "title": "Five, Hands Three",
+    "tags": "math rock, 132 bpm, e minor, angular intricate driving complex, clean electric guitar tapping arpeggios, syncopated drums shifting time signatures, melodic bass lines, no synth, male vocal mid-range agile sometimes spoken sometimes melodic, in the style of math rock, post-hardcore indie, midwest emo",
+    "duration": "2:45",
+    "suno_bpm": 132,
+    "filename": "150_Five_Hands_Three_v2.mp3",
+    "suno_id": "fa899f9d-b7fe-448a-8381-1a1710ad0ab3",
+    "order": 150,
+    "aubio_bpm": 116.46,
+    "beat_count_bpm": 111.1,
+    "detected_bpm": 111.1,
+    "confidence": "⚠ far from Suno",
+    "aubiotrack_median_bpm": 119.69,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "867d2613-a38a-4de1-ab51-93ab316a1e5b": {
+    "title": "Gold Birds Sing",
+    "tags": "jangle pop, 120 bpm, g major, bright sparkling cheerful chiming, 12-string electric guitar arpeggios prominent, tambourine, light kick drum, melodic bass, no fuzz no distortion, female vocal bright clean girl-group harmonies, in the style of jangle pop, indie pop, dream pop bright",
+    "duration": "1:54",
+    "suno_bpm": 120,
+    "filename": "151_Gold_Birds_Sing_v1.mp3",
+    "suno_id": "867d2613-a38a-4de1-ab51-93ab316a1e5b",
+    "order": 151,
+    "aubio_bpm": 120.97,
+    "beat_count_bpm": 115.67,
+    "detected_bpm": 115.67,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 121.79,
+    "playlists": [
+      "indie-F"
+    ]
+  },
+  "28d4aa3d-192c-4af7-bfad-a9c1ba7ef547": {
+    "title": "Gold Birds Sing",
+    "tags": "jangle pop, 120 bpm, g major, bright sparkling cheerful chiming, 12-string electric guitar arpeggios prominent, tambourine, light kick drum, melodic bass, no fuzz no distortion, female vocal bright clean girl-group harmonies, in the style of jangle pop, indie pop, dream pop bright",
+    "duration": "2:50",
+    "suno_bpm": 120,
+    "filename": "152_Gold_Birds_Sing_v2.mp3",
+    "suno_id": "28d4aa3d-192c-4af7-bfad-a9c1ba7ef547",
+    "order": 152,
+    "aubio_bpm": 123.7,
+    "beat_count_bpm": 120.35,
+    "detected_bpm": 120.35,
+    "confidence": "✓ close to Suno",
+    "aubiotrack_median_bpm": 125.57,
+    "playlists": [
+      "indie-F"
+    ]
   }
 }

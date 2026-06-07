@@ -2274,5 +2274,165 @@
     "playlists": [
       "indie-F"
     ]
+  },
+  "ff9aef90-e626-406a-a535-abce915fb266": {
+    "title": "EDGE OF LIGHT",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:07",
+    "suno_bpm": 180,
+    "filename": "153_EDGE_OF_LIGHT_v1.mp3",
+    "suno_id": "ff9aef90-e626-406a-a535-abce915fb266",
+    "order": 153,
+    "aubio_bpm": 117.86,
+    "beat_count_bpm": 117.46,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "b35c2cad-fa34-4cc9-88a4-5ab9cf123797": {
+    "title": "EDGE OF LIGHT",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:14",
+    "suno_bpm": 180,
+    "filename": "154_EDGE_OF_LIGHT_v2.mp3",
+    "suno_id": "b35c2cad-fa34-4cc9-88a4-5ab9cf123797",
+    "order": 154,
+    "aubio_bpm": 117.88,
+    "beat_count_bpm": 117.78,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "91470f79-216b-443e-a84f-6fe5d5551eab": {
+    "title": "CONCRETE PULSE",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:43",
+    "suno_bpm": 180,
+    "filename": "155_CONCRETE_PULSE_v1.mp3",
+    "suno_id": "91470f79-216b-443e-a84f-6fe5d5551eab",
+    "order": 155,
+    "aubio_bpm": 114.33,
+    "beat_count_bpm": 118.08,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "99c3e7cb-a962-4d48-a146-146cd9d365e4": {
+    "title": "CONCRETE PULSE",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "4:04",
+    "suno_bpm": 180,
+    "filename": "156_CONCRETE_PULSE_v2.mp3",
+    "suno_id": "99c3e7cb-a962-4d48-a146-146cd9d365e4",
+    "order": 156,
+    "aubio_bpm": 113.49,
+    "beat_count_bpm": 117.38,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "2d089947-36ec-4aaa-81d2-ca30ed7df186": {
+    "title": "HOLD THE STORM",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:38",
+    "suno_bpm": 180,
+    "filename": "157_HOLD_THE_STORM_v1.mp3",
+    "suno_id": "2d089947-36ec-4aaa-81d2-ca30ed7df186",
+    "order": 157,
+    "aubio_bpm": 114.76,
+    "beat_count_bpm": 118.26,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "8e3ff3ea-17d3-4371-9091-853e2fafa4bc": {
+    "title": "HOLD THE STORM",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:33",
+    "suno_bpm": 180,
+    "filename": "158_HOLD_THE_STORM_v2.mp3",
+    "suno_id": "8e3ff3ea-17d3-4371-9091-853e2fafa4bc",
+    "order": 158,
+    "aubio_bpm": 116.66,
+    "beat_count_bpm": 118.52,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "20bd16d2-ff33-4be6-8f2d-6f4812f86d3f": {
+    "title": "GLASS SKYLINE",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section",
+    "duration": "3:53",
+    "suno_bpm": 126,
+    "filename": "160_GLASS_SKYLINE_v2.mp3",
+    "suno_id": "20bd16d2-ff33-4be6-8f2d-6f4812f86d3f",
+    "order": 160,
+    "aubio_bpm": 126.76,
+    "beat_count_bpm": 128.81,
+    "detected_bpm": 126.76,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "06c6bdfd-e5a5-43af-af0f-d6d264986ad1": {
+    "title": "LONG LIGHT",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section",
+    "duration": "4:34",
+    "suno_bpm": 126,
+    "filename": "161_LONG_LIGHT_v1.mp3",
+    "suno_id": "06c6bdfd-e5a5-43af-af0f-d6d264986ad1",
+    "order": 161,
+    "aubio_bpm": 132.49,
+    "beat_count_bpm": 127.77,
+    "detected_bpm": 132.49,
+    "confidence": "⚠ delta 6.5",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "4cf33d78-8e17-4cb1-b4d7-23ad40b107b1": {
+    "title": "LONG LIGHT",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section",
+    "duration": "3:39",
+    "suno_bpm": 126,
+    "filename": "162_LONG_LIGHT_v2.mp3",
+    "suno_id": "4cf33d78-8e17-4cb1-b4d7-23ad40b107b1",
+    "order": 162,
+    "aubio_bpm": 126.38,
+    "beat_count_bpm": 127.78,
+    "detected_bpm": 126.38,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "d71dc681-e39d-4fc1-b94a-b16fafedcf9d": {
+    "title": "GLASS SKYLINE",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section",
+    "duration": "4:51",
+    "suno_bpm": 126,
+    "filename": "159_GLASS_SKYLINE_v1.mp3",
+    "suno_id": "d71dc681-e39d-4fc1-b94a-b16fafedcf9d",
+    "order": 159,
+    "aubio_bpm": 128.11,
+    "beat_count_bpm": 129.98,
+    "detected_bpm": 128.11,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
   }
 }

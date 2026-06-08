@@ -2434,5 +2434,175 @@
     "playlists": [
       "工作"
     ]
+  },
+  "e6a38b54-3231-4370-abb2-363185728759": {
+    "title": "Porch Light Letter",
+    "tags": "americana, 72 bpm, g major, dusty whiskey-soaked late-night reflective, pedal steel guitar prominent, dusty fingerpicked acoustic guitar, brushed drums, upright bass, no synth, male vocal weathered baritone storytelling, in the style of americana, alt-country, dusty folk",
+    "duration": "3:59",
+    "suno_bpm": 72,
+    "filename": "163_Porch_Light_Letter_v1.mp3",
+    "suno_id": "e6a38b54-3231-4370-abb2-363185728759",
+    "order": 163,
+    "aubio_bpm": 141.25,
+    "beat_count_bpm": 141.25,
+    "detected_bpm": 141.25,
+    "confidence": "⚠ aubio 141.2 likely half-time (Suno 72)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S8"
+  },
+  "4f3f3c68-46eb-4f4e-b100-6edd69b1fab9": {
+    "title": "Porch Light Letter",
+    "tags": "americana, 72 bpm, g major, dusty whiskey-soaked late-night reflective, pedal steel guitar prominent, dusty fingerpicked acoustic guitar, brushed drums, upright bass, no synth, male vocal weathered baritone storytelling, in the style of americana, alt-country, dusty folk",
+    "duration": "5:24",
+    "suno_bpm": 72,
+    "filename": "164_Porch_Light_Letter_v2.mp3",
+    "suno_id": "4f3f3c68-46eb-4f4e-b100-6edd69b1fab9",
+    "order": 164,
+    "aubio_bpm": 146.54,
+    "beat_count_bpm": 146.54,
+    "detected_bpm": 146.54,
+    "confidence": "⚠ aubio 146.5 likely half-time (Suno 72)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S8"
+  },
+  "5d7270aa-f626-4e8f-b901-2123c1e942ad": {
+    "title": "Velvet Ballroom",
+    "tags": "art pop, 80 bpm, g sharp minor, ornate baroque theatrical melancholic, harpsichord lead, string quartet swells, woodwind accents flute clarinet, soft timpani kick, no rock drums, female vocal theatrical airy soprano, in the style of art pop, baroque pop, chamber pop",
+    "duration": "4:13",
+    "suno_bpm": 80,
+    "filename": "165_Velvet_Ballroom_v1.mp3",
+    "suno_id": "5d7270aa-f626-4e8f-b901-2123c1e942ad",
+    "order": 165,
+    "aubio_bpm": 164.88,
+    "beat_count_bpm": 164.88,
+    "detected_bpm": 164.88,
+    "confidence": "⚠ aubio 164.9 likely half-time (Suno 80)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S14"
+  },
+  "06f70004-cced-411b-be17-2f4361418ee5": {
+    "title": "Velvet Ballroom",
+    "tags": "art pop, 80 bpm, g sharp minor, ornate baroque theatrical melancholic, harpsichord lead, string quartet swells, woodwind accents flute clarinet, soft timpani kick, no rock drums, female vocal theatrical airy soprano, in the style of art pop, baroque pop, chamber pop",
+    "duration": "3:35",
+    "suno_bpm": 80,
+    "filename": "166_Velvet_Ballroom_v2.mp3",
+    "suno_id": "06f70004-cced-411b-be17-2f4361418ee5",
+    "order": 166,
+    "aubio_bpm": 159.61,
+    "beat_count_bpm": 159.61,
+    "detected_bpm": 159.61,
+    "confidence": "⚠ aubio 159.6 likely half-time (Suno 80)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S14"
+  },
+  "18121ba5-9910-46cb-be77-4ec906703b7d": {
+    "title": "Pier End Drift",
+    "tags": "surf rock revival, 138 bpm, a major, sun-soaked breezy californian carefree, spring-reverb twangy electric guitar, surf-style drum pattern with snare emphasis, walking electric bass, tambourine, no synth, male vocal laid-back californian melodic, in the style of surf rock revival, beach pop, indie surf",
+    "duration": "3:24",
+    "suno_bpm": 138,
+    "filename": "167_Pier_End_Drift_v1.mp3",
+    "suno_id": "18121ba5-9910-46cb-be77-4ec906703b7d",
+    "order": 167,
+    "aubio_bpm": 141.45,
+    "beat_count_bpm": 141.45,
+    "detected_bpm": 141.45,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F8"
+  },
+  "99cd131b-f448-4d0d-bca7-5598c6dc4fcf": {
+    "title": "Pier End Drift",
+    "tags": "surf rock revival, 138 bpm, a major, sun-soaked breezy californian carefree, spring-reverb twangy electric guitar, surf-style drum pattern with snare emphasis, walking electric bass, tambourine, no synth, male vocal laid-back californian melodic, in the style of surf rock revival, beach pop, indie surf",
+    "duration": "3:36",
+    "suno_bpm": 138,
+    "filename": "168_Pier_End_Drift_v2.mp3",
+    "suno_id": "99cd131b-f448-4d0d-bca7-5598c6dc4fcf",
+    "order": 168,
+    "aubio_bpm": 141.26,
+    "beat_count_bpm": 141.26,
+    "detected_bpm": 141.26,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F8"
+  },
+  "c8ac6ce8-d094-4e10-87c3-354bea5cefb4": {
+    "title": "Friday Strut",
+    "tags": "indie disco, 122 bpm, d minor, danceable groovy nightclub-bright confident, four-on-the-floor kick, walking disco bass, choppy syncopated rhythm electric guitar, retro analog synth stabs, hi-hat shuffle, female vocal confident danceable bright, in the style of indie disco, nu-disco, dance pop indie",
+    "duration": "3:38",
+    "suno_bpm": 122,
+    "filename": "169_Friday_Strut_v1.mp3",
+    "suno_id": "c8ac6ce8-d094-4e10-87c3-354bea5cefb4",
+    "order": 169,
+    "aubio_bpm": 123.63,
+    "beat_count_bpm": 123.63,
+    "detected_bpm": 123.63,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F13"
+  },
+  "00672327-395d-4b8b-9acc-98d1d8c0b323": {
+    "title": "Friday Strut",
+    "tags": "indie disco, 122 bpm, d minor, danceable groovy nightclub-bright confident, four-on-the-floor kick, walking disco bass, choppy syncopated rhythm electric guitar, retro analog synth stabs, hi-hat shuffle, female vocal confident danceable bright, in the style of indie disco, nu-disco, dance pop indie",
+    "duration": "3:34",
+    "suno_bpm": 122,
+    "filename": "170_Friday_Strut_v2.mp3",
+    "suno_id": "00672327-395d-4b8b-9acc-98d1d8c0b323",
+    "order": 170,
+    "aubio_bpm": 123.48,
+    "beat_count_bpm": 123.48,
+    "detected_bpm": 123.48,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F13"
+  },
+  "75a4b3af-a58f-41af-917c-754f8e72726f": {
+    "title": "Window Latch",
+    "tags": "post-punk revival, 145 bpm, d minor, urgent angular tense motorik driving, clean trebly chorused electric guitar, driving melodic bass dominant, motorik four-on-the-floor drums, no synth pad, male vocal tense talk-sing baritone urgent, in the style of post-punk revival, indie rock UK, krautrock-influenced",
+    "duration": "2:52",
+    "suno_bpm": 145,
+    "filename": "171_Window_Latch_v1.mp3",
+    "suno_id": "75a4b3af-a58f-41af-917c-754f8e72726f",
+    "order": 171,
+    "aubio_bpm": 148.81,
+    "beat_count_bpm": 148.81,
+    "detected_bpm": 148.81,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F11"
+  },
+  "85fdaf6c-d5b5-4948-a779-b1099cdd544c": {
+    "title": "Window Latch",
+    "tags": "post-punk revival, 145 bpm, d minor, urgent angular tense motorik driving, clean trebly chorused electric guitar, driving melodic bass dominant, motorik four-on-the-floor drums, no synth pad, male vocal tense talk-sing baritone urgent, in the style of post-punk revival, indie rock UK, krautrock-influenced",
+    "duration": "3:00",
+    "suno_bpm": 145,
+    "filename": "172_Window_Latch_v2.mp3",
+    "suno_id": "85fdaf6c-d5b5-4948-a779-b1099cdd544c",
+    "order": 172,
+    "aubio_bpm": 149.48,
+    "beat_count_bpm": 149.48,
+    "detected_bpm": 149.48,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F11"
   }
 }

@@ -540,7 +540,17 @@ $("btn-sort-order").addEventListener("click", () => {
   renderPlaylist();
 });
 $("btn-sort-bpm").addEventListener("click", () => {
-  state.order = [...state.songs].sort((a,b) => (a.sunoBpm||9999) - (b.sunoBpm||9999) || a.order - b.order).map(s=>s.id);
+  state.order = [...state.songs].sort((a,b) => (effectiveBaseBpm(a)||9999) - (effectiveBaseBpm(b)||9999) || a.order - b.order).map(s=>s.id);
+  save();
+  renderPlaylist();
+});
+$("btn-sort-shuffle").addEventListener("click", () => {
+  const ids = [...state.songs].map(s=>s.id);
+  for (let i = ids.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [ids[i], ids[j]] = [ids[j], ids[i]];
+  }
+  state.order = ids;
   save();
   renderPlaylist();
 });

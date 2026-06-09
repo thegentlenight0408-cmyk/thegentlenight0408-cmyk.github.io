@@ -2604,5 +2604,175 @@
       "indie-F"
     ],
     "prompt_id": "F11"
+  },
+  "b74976c8-9cf0-4c1d-b402-a6355699c074": {
+    "title": "Velvet Three AM",
+    "tags": "neo-soul, 68 bpm, f sharp minor, smoky velvety late-night sensual, warm rhodes piano, soft electric bass groove, brushed kit with rim-clicks, muted horn accents, female vocal sultry contralto with layered backing harmonies, in the style of neo-soul, downtempo R&B, indie soul slow",
+    "duration": "4:42",
+    "suno_bpm": 68,
+    "filename": "173_Velvet_Three_AM_v1.mp3",
+    "suno_id": "b74976c8-9cf0-4c1d-b402-a6355699c074",
+    "order": 173,
+    "aubio_bpm": 139.94,
+    "beat_count_bpm": 139.94,
+    "detected_bpm": 139.94,
+    "confidence": "⚠ aubio 139.9 likely half-time (Suno 68)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S9"
+  },
+  "79253c17-c988-4c75-822c-28c03ecb7866": {
+    "title": "Velvet Three AM",
+    "tags": "neo-soul, 68 bpm, f sharp minor, smoky velvety late-night sensual, warm rhodes piano, soft electric bass groove, brushed kit with rim-clicks, muted horn accents, female vocal sultry contralto with layered backing harmonies, in the style of neo-soul, downtempo R&B, indie soul slow",
+    "duration": "4:04",
+    "suno_bpm": 68,
+    "filename": "174_Velvet_Three_AM_v2.mp3",
+    "suno_id": "79253c17-c988-4c75-822c-28c03ecb7866",
+    "order": 174,
+    "aubio_bpm": 140.05,
+    "beat_count_bpm": 140.05,
+    "detected_bpm": 140.05,
+    "confidence": "⚠ aubio 140.1 likely half-time (Suno 68)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S9"
+  },
+  "99fe5b7c-f5c3-4e2a-9ef4-abbe97e8717f": {
+    "title": "Folded In Wax",
+    "tags": "indie piano ballad, 60 bpm, b minor, heartbroken sparse fragile, solo piano centerpiece intimate, sparse cello swells, no drums, no guitar, male vocal fragile restrained almost-breaking, in the style of sad indie, piano ballad, contemporary chamber",
+    "duration": "4:25",
+    "suno_bpm": 60,
+    "filename": "175_Folded_In_Wax_v1.mp3",
+    "suno_id": "99fe5b7c-f5c3-4e2a-9ef4-abbe97e8717f",
+    "order": 175,
+    "aubio_bpm": 129.61,
+    "beat_count_bpm": 129.61,
+    "detected_bpm": 129.61,
+    "confidence": "⚠ aubio 129.6 likely half-time (Suno 60)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S10"
+  },
+  "9779571b-502b-45fa-9cc7-f5994b2d5d1d": {
+    "title": "Folded In Wax",
+    "tags": "indie piano ballad, 60 bpm, b minor, heartbroken sparse fragile, solo piano centerpiece intimate, sparse cello swells, no drums, no guitar, male vocal fragile restrained almost-breaking, in the style of sad indie, piano ballad, contemporary chamber",
+    "duration": "3:38",
+    "suno_bpm": 60,
+    "filename": "176_Folded_In_Wax_v2.mp3",
+    "suno_id": "9779571b-502b-45fa-9cc7-f5994b2d5d1d",
+    "order": 176,
+    "aubio_bpm": 127.79,
+    "beat_count_bpm": 127.79,
+    "detected_bpm": 127.79,
+    "confidence": "⚠ aubio 127.8 likely half-time (Suno 60)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S10"
+  },
+  "2458f4ae-9d18-4495-b4f2-28973143eebd": {
+    "title": "Midnight Exit Ramp",
+    "tags": "synthwave indie, 124 bpm, a minor, neon nostalgic 80s night-drive nostalgic, analog synth lead arpeggios, vintage drum machine LinnDrum, gated reverb snare, sub bass pulse, no guitar, male vocal reverberant 80s-style melodic, in the style of synthwave indie, dreamwave, 80s revival pop",
+    "duration": "4:11",
+    "suno_bpm": 124,
+    "filename": "177_Midnight_Exit_Ramp_v1.mp3",
+    "suno_id": "2458f4ae-9d18-4495-b4f2-28973143eebd",
+    "order": 177,
+    "aubio_bpm": 125.51,
+    "beat_count_bpm": 125.51,
+    "detected_bpm": 125.51,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F10"
+  },
+  "dce4a693-2683-4be2-b072-a8d6a2d2d7cf": {
+    "title": "Midnight Exit Ramp",
+    "tags": "synthwave indie, 124 bpm, a minor, neon nostalgic 80s night-drive nostalgic, analog synth lead arpeggios, vintage drum machine LinnDrum, gated reverb snare, sub bass pulse, no guitar, male vocal reverberant 80s-style melodic, in the style of synthwave indie, dreamwave, 80s revival pop",
+    "duration": "4:09",
+    "suno_bpm": 124,
+    "filename": "178_Midnight_Exit_Ramp_v2.mp3",
+    "suno_id": "dce4a693-2683-4be2-b072-a8d6a2d2d7cf",
+    "order": 178,
+    "aubio_bpm": 125.63,
+    "beat_count_bpm": 125.63,
+    "detected_bpm": 125.63,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F10"
+  },
+  "fd069c94-a87f-4437-bf3d-07bf3b359fb8": {
+    "title": "Strawberry Bench",
+    "tags": "twee pop, 130 bpm, c major, sweet bouncy childlike sunny, strummed ukulele, glockenspiel melody, tambourine, bouncy melodic bass, light handclaps, light kick, no distortion, female vocal sweet childlike bright with girl-group harmonies, in the style of twee pop, anorak pop, cute indie pop",
+    "duration": "2:09",
+    "suno_bpm": 130,
+    "filename": "179_Strawberry_Bench_v1.mp3",
+    "suno_id": "fd069c94-a87f-4437-bf3d-07bf3b359fb8",
+    "order": 179,
+    "aubio_bpm": 131.72,
+    "beat_count_bpm": 131.72,
+    "detected_bpm": 131.72,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F12"
+  },
+  "0fd0be31-a217-4ba8-bf61-9d98d514f885": {
+    "title": "Strawberry Bench",
+    "tags": "twee pop, 130 bpm, c major, sweet bouncy childlike sunny, strummed ukulele, glockenspiel melody, tambourine, bouncy melodic bass, light handclaps, light kick, no distortion, female vocal sweet childlike bright with girl-group harmonies, in the style of twee pop, anorak pop, cute indie pop",
+    "duration": "2:30",
+    "suno_bpm": 130,
+    "filename": "180_Strawberry_Bench_v2.mp3",
+    "suno_id": "0fd0be31-a217-4ba8-bf61-9d98d514f885",
+    "order": 180,
+    "aubio_bpm": 133.13,
+    "beat_count_bpm": 133.13,
+    "detected_bpm": 133.13,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F12"
+  },
+  "d027f1c5-01b2-4f95-832c-81448fc5b6f2": {
+    "title": "Basement String Riot",
+    "tags": "lo-fi garage rock, 140 bpm, e major, raw sloppy unpolished energetic, fuzzy distorted electric guitar, sloppy crashing drums tape-saturated, growling bass, no synth, no acoustic guitar, male vocal raw shouted unpolished slightly off-mic, in the style of lo-fi garage rock, garage punk, indie garage",
+    "duration": "3:41",
+    "suno_bpm": 140,
+    "filename": "181_Basement_String_Riot_v1.mp3",
+    "suno_id": "d027f1c5-01b2-4f95-832c-81448fc5b6f2",
+    "order": 181,
+    "aubio_bpm": 148.5,
+    "beat_count_bpm": 148.5,
+    "detected_bpm": 148.5,
+    "confidence": "⚠ 148.5 vs Suno 140",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F14"
+  },
+  "5b6bd4a9-f2b6-4c98-a190-4fdcf6bc8649": {
+    "title": "Basement String Riot",
+    "tags": "lo-fi garage rock, 140 bpm, e major, raw sloppy unpolished energetic, fuzzy distorted electric guitar, sloppy crashing drums tape-saturated, growling bass, no synth, no acoustic guitar, male vocal raw shouted unpolished slightly off-mic, in the style of lo-fi garage rock, garage punk, indie garage",
+    "duration": "3:09",
+    "suno_bpm": 140,
+    "filename": "182_Basement_String_Riot_v2.mp3",
+    "suno_id": "5b6bd4a9-f2b6-4c98-a190-4fdcf6bc8649",
+    "order": 182,
+    "aubio_bpm": 147.7,
+    "beat_count_bpm": 147.7,
+    "detected_bpm": 147.7,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F14"
   }
 }

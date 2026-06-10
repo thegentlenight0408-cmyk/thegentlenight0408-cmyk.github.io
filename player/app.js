@@ -32,7 +32,7 @@ function fmt(t) {
 function save() {
   const minimal = {
     order: state.order,
-    overrides: Object.fromEntries(state.songs.map(s => [s.id, {targetBpm: s.targetBpm, userBpm: s.userBpm, removed: s.removed, playlists: s.playlists}])),
+    overrides: Object.fromEntries(state.songs.map(s => [s.id, {targetBpm: s.targetBpm, userBpm: s.userBpm, removed: s.removed, playlists: s.playlists, like: s.like, dislike: s.dislike}])),
     currentIdx: state.currentIdx,
     mode: state.mode,
     targetBpm: state.targetBpm,
@@ -67,6 +67,8 @@ async function loadLibrary() {
     targetBpm: null,
     removed: false,
     playlists: Array.isArray(m.playlists) && m.playlists.length ? [...m.playlists] : ["慢跑"],
+    like: 0,
+    dislike: 0,
   }));
   arr.sort((a,b) => a.order - b.order);
   state.songs = arr;
@@ -89,6 +91,8 @@ async function loadLibrary() {
           s.userBpm = o.userBpm || null;
           s.removed = !!o.removed;
           if (Array.isArray(o.playlists) && o.playlists.length) s.playlists = o.playlists;
+          s.like = Math.min(3, Math.max(0, Number(o.like) || 0));
+          s.dislike = Math.min(3, Math.max(0, Number(o.dislike) || 0));
         }
       }
     }
@@ -190,6 +194,41 @@ function renderPlaylist() {
     dur.className = "pl-duration";
     dur.textContent = s.duration || "";
 
+    const vote = document.createElement("div");
+    vote.className = "pl-vote";
+    const renderVote = () => {
+      const likeN = s.like || 0;
+      const dislikeN = s.dislike || 0;
+      vote.innerHTML = "";
+      const likeBtn = document.createElement("button");
+      likeBtn.className = "vote-btn like" + (likeN > 0 ? " active" : "");
+      likeBtn.dataset.count = String(likeN);
+      likeBtn.title = "按讚（0→1→2→3→0 循環，第四次清除）";
+      likeBtn.textContent = likeN > 0 ? "👍".repeat(likeN) : "👍";
+      const dislikeBtn = document.createElement("button");
+      dislikeBtn.className = "vote-btn dislike" + (dislikeN > 0 ? " active" : "");
+      dislikeBtn.dataset.count = String(dislikeN);
+      dislikeBtn.title = "倒讚（0→1→2→3→0 循環，第四次清除）";
+      dislikeBtn.textContent = dislikeN > 0 ? "👎".repeat(dislikeN) : "👎";
+      likeBtn.addEventListener("click", e => {
+        e.stopPropagation();
+        s.like = (s.like + 1) % 4;
+        if (s.like > 0) s.dislike = 0;
+        save();
+        renderVote();
+      });
+      dislikeBtn.addEventListener("click", e => {
+        e.stopPropagation();
+        s.dislike = (s.dislike + 1) % 4;
+        if (s.dislike > 0) s.like = 0;
+        save();
+        renderVote();
+      });
+      vote.appendChild(likeBtn);
+      vote.appendChild(dislikeBtn);
+    };
+    renderVote();
+
     const rm = document.createElement("button");
     rm.className = "pl-remove";
     rm.textContent = "⋮";
@@ -199,6 +238,7 @@ function renderPlaylist() {
     li.appendChild(title);
     li.appendChild(bpm);
     li.appendChild(dur);
+    li.appendChild(vote);
     li.appendChild(rm);
     ul.appendChild(li);
 

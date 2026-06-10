@@ -172,7 +172,7 @@ button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s
 .playlist { list-style: none; padding: 0; margin: 0; }
 .playlist li {
   display: grid;
-  grid-template-columns: 24px 1fr 56px 50px 24px;
+  grid-template-columns: 24px 1fr 56px 50px auto 24px;
   gap: 10px; align-items: center;
   padding: 10px 12px;
   background: var(--bg-1);
@@ -197,6 +197,26 @@ button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s
 .pl-bpm.has-target { background: var(--accent-2); color: white; }
 
 .pl-duration { font-size: 11px; color: var(--text-dim); font-variant-numeric: tabular-nums; text-align: right; }
+
+/* Like / Dislike vote buttons */
+.pl-vote { display: flex; gap: 4px; align-items: center; }
+.vote-btn {
+  background: var(--bg-3); border: 1px solid transparent;
+  border-radius: 6px; padding: 2px 5px; cursor: pointer;
+  font-size: 12px; line-height: 1.4;
+  min-width: 26px; min-height: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  letter-spacing: -3px;
+  opacity: 0.45;
+  transition: opacity 0.15s, background 0.15s, border-color 0.15s;
+}
+.vote-btn:hover { opacity: 0.9; background: var(--bg-2); }
+.vote-btn.active { opacity: 1; }
+.vote-btn.like.active { background: rgba(124, 200, 124, 0.18); border-color: rgba(124, 200, 124, 0.6); }
+.vote-btn.dislike.active { background: rgba(220, 100, 100, 0.18); border-color: rgba(220, 100, 100, 0.6); }
+.vote-btn[data-count="2"] { padding-right: 7px; }
+.vote-btn[data-count="3"] { padding-right: 9px; }
+
 .pl-remove {
   background: transparent; color: var(--text-dim); border: 0;
   font-size: 16px; cursor: pointer; padding: 0; width: 24px; height: 24px;
@@ -225,5 +245,6 @@ button.primary.tap.flash { background: var(--accent); animation: tap-flash 0.15s
   .np-title { font-size: 17px; }
   .circle { width: 40px; height: 40px; font-size: 14px; }
   .circle.big { width: 52px; height: 52px; font-size: 20px; }
-  .playlist li { grid-template-columns: 22px 1fr 48px 44px 22px; gap: 6px; padding: 8px 10px; }
+  .playlist li { grid-template-columns: 22px 1fr 48px 44px auto 22px; gap: 6px; padding: 8px 10px; }
+  .vote-btn { font-size: 11px; padding: 2px 4px; min-width: 22px; min-height: 22px; }
 }

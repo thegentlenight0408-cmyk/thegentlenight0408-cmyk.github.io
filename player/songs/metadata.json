@@ -2774,5 +2774,175 @@
       "indie-F"
     ],
     "prompt_id": "F14"
+  },
+  "5711759c-c772-4386-b91e-5a7b5b1f5a6c": {
+    "title": "Oil-Black Coffee",
+    "tags": "folk noir, 74 bpm, e minor, dark cinematic ominous nocturnal, fingerpicked nylon guitar, baritone guitar drone, ominous string swells, sparse hand percussion, no kit, male vocal brooding baritone half-whispered, in the style of folk noir, dark americana, cinematic indie folk",
+    "duration": "4:09",
+    "suno_bpm": 74,
+    "filename": "183_Oil-Black_Coffee_v1.mp3",
+    "suno_id": "5711759c-c772-4386-b91e-5a7b5b1f5a6c",
+    "order": 183,
+    "aubio_bpm": 152.06,
+    "beat_count_bpm": 152.06,
+    "detected_bpm": 152.06,
+    "confidence": "⚠ aubio 152.1 likely half-time (Suno 74)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S11"
+  },
+  "9f720558-1b0f-4266-8ebd-50555d6bb247": {
+    "title": "Oil-Black Coffee",
+    "tags": "folk noir, 74 bpm, e minor, dark cinematic ominous nocturnal, fingerpicked nylon guitar, baritone guitar drone, ominous string swells, sparse hand percussion, no kit, male vocal brooding baritone half-whispered, in the style of folk noir, dark americana, cinematic indie folk",
+    "duration": "4:57",
+    "suno_bpm": 74,
+    "filename": "184_Oil-Black_Coffee_v2.mp3",
+    "suno_id": "9f720558-1b0f-4266-8ebd-50555d6bb247",
+    "order": 184,
+    "aubio_bpm": 150.58,
+    "beat_count_bpm": 150.58,
+    "detected_bpm": 150.58,
+    "confidence": "⚠ aubio 150.6 likely half-time (Suno 74)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S11"
+  },
+  "860400e2-b7bd-4925-bf05-82eae73fdcac": {
+    "title": "Breathing Glass Dawn",
+    "tags": "ambient folk, 58 bpm, c major, hushed weightless dawn-like spacious, plucked harp, breathy synth pad drone, soft fingerpicked acoustic guitar, no drums or percussion, female vocal airy whispered close-mic ethereal, in the style of ambient folk, neoclassical, drone folk",
+    "duration": "4:23",
+    "suno_bpm": 58,
+    "filename": "185_Breathing_Glass_Dawn_v1.mp3",
+    "suno_id": "860400e2-b7bd-4925-bf05-82eae73fdcac",
+    "order": 185,
+    "aubio_bpm": 134.63,
+    "beat_count_bpm": 134.63,
+    "detected_bpm": 134.63,
+    "confidence": "⚠ aubio 134.6 likely half-time (Suno 58)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S12"
+  },
+  "51cd1ad4-8e6d-4651-a2b0-e00cdb336945": {
+    "title": "Breathing Glass Dawn",
+    "tags": "ambient folk, 58 bpm, c major, hushed weightless dawn-like spacious, plucked harp, breathy synth pad drone, soft fingerpicked acoustic guitar, no drums or percussion, female vocal airy whispered close-mic ethereal, in the style of ambient folk, neoclassical, drone folk",
+    "duration": "3:39",
+    "suno_bpm": 58,
+    "filename": "186_Breathing_Glass_Dawn_v2.mp3",
+    "suno_id": "51cd1ad4-8e6d-4651-a2b0-e00cdb336945",
+    "order": 186,
+    "aubio_bpm": 133.87,
+    "beat_count_bpm": 133.87,
+    "detected_bpm": 133.87,
+    "confidence": "⚠ aubio 133.9 likely half-time (Suno 58)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S12"
+  },
+  "deb22d9f-4a25-42e9-86b4-b964628042d2": {
+    "title": "Porch Swing Home",
+    "tags": "indie ballad, 84 bpm, a minor, emotional intimate cinematic lush, strummed acoustic guitar, lush string section, light kick drum on 1 and 3, soft brushed snare, no electric guitar, male vocal intimate tenor emotional, in the style of indie ballad, acoustic singer-songwriter, contemporary chamber pop",
+    "duration": "4:22",
+    "suno_bpm": 84,
+    "filename": "187_Porch_Swing_Home_v1.mp3",
+    "suno_id": "deb22d9f-4a25-42e9-86b4-b964628042d2",
+    "order": 187,
+    "aubio_bpm": 84.24,
+    "beat_count_bpm": 84.24,
+    "detected_bpm": 84.24,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S15"
+  },
+  "0b68f6da-c900-4858-959b-23a36561aeaa": {
+    "title": "Porch Swing Home",
+    "tags": "indie ballad, 84 bpm, a minor, emotional intimate cinematic lush, strummed acoustic guitar, lush string section, light kick drum on 1 and 3, soft brushed snare, no electric guitar, male vocal intimate tenor emotional, in the style of indie ballad, acoustic singer-songwriter, contemporary chamber pop",
+    "duration": "3:18",
+    "suno_bpm": 84,
+    "filename": "188_Porch_Swing_Home_v2.mp3",
+    "suno_id": "0b68f6da-c900-4858-959b-23a36561aeaa",
+    "order": 188,
+    "aubio_bpm": 169.42,
+    "beat_count_bpm": 169.42,
+    "detected_bpm": 169.42,
+    "confidence": "⚠ aubio 169.4 likely half-time (Suno 84)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S15"
+  },
+  "13df8c37-b4c6-4e59-9c9f-f6602720f91d": {
+    "title": "Salted Hands",
+    "tags": "shoegaze, 118 bpm, f major, wall-of-sound dreamy distorted euphoric, massive distorted shimmering electric guitar wall, big driving drums, buried melodic bass, no acoustic guitar, female vocal buried ethereal layered angelic, in the style of shoegaze, noise pop, dream pop heavy",
+    "duration": "4:06",
+    "suno_bpm": 118,
+    "filename": "189_Salted_Hands_v1.mp3",
+    "suno_id": "13df8c37-b4c6-4e59-9c9f-f6602720f91d",
+    "order": 189,
+    "aubio_bpm": 119.94,
+    "beat_count_bpm": 119.94,
+    "detected_bpm": 119.94,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F9"
+  },
+  "c8b6230b-e7ff-400b-8c5a-9ba4720cc27f": {
+    "title": "Salted Hands",
+    "tags": "shoegaze, 118 bpm, f major, wall-of-sound dreamy distorted euphoric, massive distorted shimmering electric guitar wall, big driving drums, buried melodic bass, no acoustic guitar, female vocal buried ethereal layered angelic, in the style of shoegaze, noise pop, dream pop heavy",
+    "duration": "4:49",
+    "suno_bpm": 118,
+    "filename": "190_Salted_Hands_v2.mp3",
+    "suno_id": "c8b6230b-e7ff-400b-8c5a-9ba4720cc27f",
+    "order": 190,
+    "aubio_bpm": 120.98,
+    "beat_count_bpm": 120.98,
+    "detected_bpm": 120.98,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F9"
+  },
+  "837d65ab-1d83-46f2-abf5-1e74a91c3c11": {
+    "title": "Ten-Foot Tall",
+    "tags": "britpop revival, 126 bpm, f sharp major, anthemic swaggering 90s UK indie cocky, jangly distorted electric guitars layered, anthemic big chorus drums, melodic bass, tambourine, no synth, male vocal British-accent swagger melodic anthemic, in the style of britpop revival, indie rock UK, 90s britpop",
+    "duration": "3:49",
+    "suno_bpm": 126,
+    "filename": "191_Ten-Foot_Tall_v1.mp3",
+    "suno_id": "837d65ab-1d83-46f2-abf5-1e74a91c3c11",
+    "order": 191,
+    "aubio_bpm": 128.41,
+    "beat_count_bpm": 128.41,
+    "detected_bpm": 128.41,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F15"
+  },
+  "ddb4cac5-84f1-46d5-9378-1e66a15fc8c0": {
+    "title": "Ten-Foot Tall",
+    "tags": "britpop revival, 126 bpm, f sharp major, anthemic swaggering 90s UK indie cocky, jangly distorted electric guitars layered, anthemic big chorus drums, melodic bass, tambourine, no synth, male vocal British-accent swagger melodic anthemic, in the style of britpop revival, indie rock UK, 90s britpop",
+    "duration": "4:19",
+    "suno_bpm": 126,
+    "filename": "192_Ten-Foot_Tall_v2.mp3",
+    "suno_id": "ddb4cac5-84f1-46d5-9378-1e66a15fc8c0",
+    "order": 192,
+    "aubio_bpm": 127.19,
+    "beat_count_bpm": 127.19,
+    "detected_bpm": 127.19,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F15"
   }
 }

@@ -28,6 +28,13 @@ body { min-height: 100vh; padding-bottom: env(safe-area-inset-bottom); }
 .logo { font-size: 28px; color: var(--accent); }
 .title { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
 .subtitle { font-size: 11px; color: var(--text-dim); }
+.build-tag {
+  font-size: 9px; color: var(--text-dim); opacity: 0.5;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  background: var(--bg-1); border: 1px solid var(--bg-2);
+  padding: 1px 5px; border-radius: 3px; margin-left: 4px;
+  letter-spacing: 0;
+}
 .topbar-actions { display: flex; gap: 8px; }
 
 button.ghost {

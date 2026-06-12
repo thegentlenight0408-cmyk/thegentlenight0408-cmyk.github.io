@@ -2944,5 +2944,175 @@
       "indie-F"
     ],
     "prompt_id": "F15"
+  },
+  "0ca4632c-11b7-45b5-90a2-25820f5fd020": {
+    "title": "Sawdust Waltz",
+    "tags": "indie country waltz, 90 bpm 3/4 time, d major, sentimental porch-light slow-dance, pedal steel guitar, fiddle, brushed snare on 1, upright bass, light acoustic guitar strum, male vocal twangy tender storytelling, in the style of indie country, alt-country waltz, americana",
+    "duration": "6:33",
+    "suno_bpm": 90,
+    "filename": "193_Sawdust_Waltz_v1.mp3",
+    "suno_id": "0ca4632c-11b7-45b5-90a2-25820f5fd020",
+    "order": 193,
+    "aubio_bpm": 93.7,
+    "beat_count_bpm": 93.7,
+    "detected_bpm": 93.7,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S13"
+  },
+  "82934e08-a511-42b0-a23c-afe9c9d47457": {
+    "title": "Sawdust Waltz",
+    "tags": "indie country waltz, 90 bpm 3/4 time, d major, sentimental porch-light slow-dance, pedal steel guitar, fiddle, brushed snare on 1, upright bass, light acoustic guitar strum, male vocal twangy tender storytelling, in the style of indie country, alt-country waltz, americana",
+    "duration": "4:47",
+    "suno_bpm": 90,
+    "filename": "194_Sawdust_Waltz_v2.mp3",
+    "suno_id": "82934e08-a511-42b0-a23c-afe9c9d47457",
+    "order": 194,
+    "aubio_bpm": 140.74,
+    "beat_count_bpm": 140.74,
+    "detected_bpm": 140.74,
+    "confidence": "⚠ aubio 140.7 likely half-time (Suno 90)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S13"
+  },
+  "45dea432-858b-42e6-9b07-fbe37b3cabda": {
+    "title": "Unread on My Chest",
+    "tags": "bedroom pop, 75 bpm, f major, dreamy hazy intimate, lo-fi tape saturation, soft strummed nylon guitar, mellotron pad, gentle hi-hat shuffle, female vocal close mic whispered breathy, in the style of bedroom pop, slowcore, dream pop",
+    "duration": "3:57",
+    "suno_bpm": 75,
+    "filename": "195_Unread_on_My_Chest_v1.mp3",
+    "suno_id": "45dea432-858b-42e6-9b07-fbe37b3cabda",
+    "order": 195,
+    "aubio_bpm": 151.61,
+    "beat_count_bpm": 151.61,
+    "detected_bpm": 151.61,
+    "confidence": "⚠ aubio 151.6 likely half-time (Suno 75)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S2"
+  },
+  "5b42d3e3-3251-4ca1-9e30-881c4d02259e": {
+    "title": "Unread on My Chest",
+    "tags": "bedroom pop, 75 bpm, f major, dreamy hazy intimate, lo-fi tape saturation, soft strummed nylon guitar, mellotron pad, gentle hi-hat shuffle, female vocal close mic whispered breathy, in the style of bedroom pop, slowcore, dream pop",
+    "duration": "4:37",
+    "suno_bpm": 75,
+    "filename": "196_Unread_on_My_Chest_v2.mp3",
+    "suno_id": "5b42d3e3-3251-4ca1-9e30-881c4d02259e",
+    "order": 196,
+    "aubio_bpm": 152.61,
+    "beat_count_bpm": 152.61,
+    "detected_bpm": 152.61,
+    "confidence": "⚠ aubio 152.6 likely half-time (Suno 75)",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S2"
+  },
+  "9b4f374a-ba5f-4456-8a1b-fc1242539beb": {
+    "title": "Wet Glass Home",
+    "tags": "psych-pop, 108 bpm, a minor, woozy psychedelic groove, blown-out fuzz bass dominant, vintage drum machine, swirling synth texture, gang vocal backups, male lead vocal pitched and warped, in the style of psych-pop, neo-psychedelia, lo-fi funk",
+    "duration": "4:22",
+    "suno_bpm": 108,
+    "filename": "197_Wet_Glass_Home_v1.mp3",
+    "suno_id": "9b4f374a-ba5f-4456-8a1b-fc1242539beb",
+    "order": 197,
+    "aubio_bpm": 109.81,
+    "beat_count_bpm": 109.81,
+    "detected_bpm": 109.81,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F2"
+  },
+  "61742994-be97-45e4-bb8d-f48113a32986": {
+    "title": "Wet Glass Home",
+    "tags": "psych-pop, 108 bpm, a minor, woozy psychedelic groove, blown-out fuzz bass dominant, vintage drum machine, swirling synth texture, gang vocal backups, male lead vocal pitched and warped, in the style of psych-pop, neo-psychedelia, lo-fi funk",
+    "duration": "3:59",
+    "suno_bpm": 108,
+    "filename": "198_Wet_Glass_Home_v2.mp3",
+    "suno_id": "61742994-be97-45e4-bb8d-f48113a32986",
+    "order": 198,
+    "aubio_bpm": 110.72,
+    "beat_count_bpm": 110.72,
+    "detected_bpm": 110.72,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F2"
+  },
+  "9aaec817-435e-4355-b741-efe07ee599c4": {
+    "title": "Room Key Hour",
+    "tags": "indie soul, 105 bpm, g minor, smooth groovy warm sultry, groove bass driving, soft jazzy electric guitar, soul horns brass section, rim-click drums, female lead vocal soulful with male harmonies, in the style of indie soul, neo-soul, sophisti-funk",
+    "duration": "4:22",
+    "suno_bpm": 105,
+    "filename": "199_Room_Key_Hour_v1.mp3",
+    "suno_id": "9aaec817-435e-4355-b741-efe07ee599c4",
+    "order": 199,
+    "aubio_bpm": 105.83,
+    "beat_count_bpm": 105.83,
+    "detected_bpm": 105.83,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F5"
+  },
+  "ed0f074d-c291-4dda-9475-de1614c21f1d": {
+    "title": "Room Key Hour",
+    "tags": "indie soul, 105 bpm, g minor, smooth groovy warm sultry, groove bass driving, soft jazzy electric guitar, soul horns brass section, rim-click drums, female lead vocal soulful with male harmonies, in the style of indie soul, neo-soul, sophisti-funk",
+    "duration": "4:51",
+    "suno_bpm": 105,
+    "filename": "200_Room_Key_Hour_v2.mp3",
+    "suno_id": "ed0f074d-c291-4dda-9475-de1614c21f1d",
+    "order": 200,
+    "aubio_bpm": 106.85,
+    "beat_count_bpm": 106.85,
+    "detected_bpm": 106.85,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F5"
+  },
+  "7490ea77-1bf3-4fee-bb55-776faf60c2c8": {
+    "title": "Back Door Verdict",
+    "tags": "alternative rock, 128 bpm, g major, driving 90s revival energetic, distorted overdriven electric guitar wall, punchy drums, snare crack, no synth, male vocal mid-range angsty melodic, in the style of 90s alt rock, indie rock, grunge revival",
+    "duration": "3:35",
+    "suno_bpm": 128,
+    "filename": "201_Back_Door_Verdict_v1.mp3",
+    "suno_id": "7490ea77-1bf3-4fee-bb55-776faf60c2c8",
+    "order": 201,
+    "aubio_bpm": 127.18,
+    "beat_count_bpm": 127.18,
+    "detected_bpm": 127.18,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F3"
+  },
+  "255d90ac-587c-4ada-bc94-a9cfe4557b35": {
+    "title": "Back Door Verdict",
+    "tags": "alternative rock, 128 bpm, g major, driving 90s revival energetic, distorted overdriven electric guitar wall, punchy drums, snare crack, no synth, male vocal mid-range angsty melodic, in the style of 90s alt rock, indie rock, grunge revival",
+    "duration": "2:52",
+    "suno_bpm": 128,
+    "filename": "202_Back_Door_Verdict_v2.mp3",
+    "suno_id": "255d90ac-587c-4ada-bc94-a9cfe4557b35",
+    "order": 202,
+    "aubio_bpm": 129.51,
+    "beat_count_bpm": 129.51,
+    "detected_bpm": 129.51,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F3"
   }
 }

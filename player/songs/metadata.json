@@ -3114,5 +3114,175 @@
       "indie-F"
     ],
     "prompt_id": "F3"
+  },
+  "dc5fe001-8060-46ad-8741-488f91d2eada": {
+    "title": "Saltline Run",
+    "tags": "indie folk rock, 82 bpm, e minor, melancholic introspective coastal, fingerpicked acoustic guitar dominant, light brushed drums, soft electric texture, male vocal warm restrained vulnerable, atmospheric cinematic, in the style of indie folk, alt folk, americana",
+    "duration": "4:06",
+    "suno_bpm": 82,
+    "filename": "203_Saltline_Run_v1.mp3",
+    "suno_id": "dc5fe001-8060-46ad-8741-488f91d2eada",
+    "order": 203,
+    "aubio_bpm": 134.07,
+    "beat_count_bpm": 134.71,
+    "detected_bpm": 134.07,
+    "confidence": "⚠ far from Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S1"
+  },
+  "273f403a-f6d2-4a08-82e2-df458e23eaad": {
+    "title": "Saltline Run",
+    "tags": "indie folk rock, 82 bpm, e minor, melancholic introspective coastal, fingerpicked acoustic guitar dominant, light brushed drums, soft electric texture, male vocal warm restrained vulnerable, atmospheric cinematic, in the style of indie folk, alt folk, americana",
+    "duration": "4:31",
+    "suno_bpm": 82,
+    "filename": "204_Saltline_Run_v2.mp3",
+    "suno_id": "273f403a-f6d2-4a08-82e2-df458e23eaad",
+    "order": 204,
+    "aubio_bpm": 133.81,
+    "beat_count_bpm": 134.97,
+    "detected_bpm": 133.81,
+    "confidence": "⚠ far from Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S1"
+  },
+  "f5dd4263-9ba9-4bc9-b281-ba9f6c55b4d7": {
+    "title": "Unsent Letters",
+    "tags": "folk pop, 70 bpm, d major, cinematic introspective elegant, piano centerpiece, string quartet swells, soft kick on 1 and 3, no electric guitar, male vocal classically trained pure tone, in the style of folk pop, neoclassical indie, contemporary chamber",
+    "duration": "5:24",
+    "suno_bpm": 70,
+    "filename": "205_Unsent_Letters_v1.mp3",
+    "suno_id": "f5dd4263-9ba9-4bc9-b281-ba9f6c55b4d7",
+    "order": 205,
+    "aubio_bpm": 128.13,
+    "beat_count_bpm": 127.83,
+    "detected_bpm": 128.13,
+    "confidence": "⚠ far from Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S4"
+  },
+  "02c8429a-e8c6-4e9e-ad94-b8d3b4e52a2a": {
+    "title": "Unsent Letters",
+    "tags": "folk pop, 70 bpm, d major, cinematic introspective elegant, piano centerpiece, string quartet swells, soft kick on 1 and 3, no electric guitar, male vocal classically trained pure tone, in the style of folk pop, neoclassical indie, contemporary chamber",
+    "duration": "3:58",
+    "suno_bpm": 70,
+    "filename": "206_Unsent_Letters_v2.mp3",
+    "suno_id": "02c8429a-e8c6-4e9e-ad94-b8d3b4e52a2a",
+    "order": 206,
+    "aubio_bpm": 141.5,
+    "beat_count_bpm": 147.08,
+    "detected_bpm": 141.5,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S4"
+  },
+  "c532ccd2-1919-4659-8f51-ac4632a5b8d2": {
+    "title": "Borrowed Summer",
+    "tags": "dream pop, 92 bpm, a major, washed dreamy bright nostalgic, reverb-heavy chorused electric guitar, ambient pad, soft drum machine, no acoustic guitar, female vocal layered ethereal, in the style of dream pop, shoegaze, chillwave indie",
+    "duration": "3:22",
+    "suno_bpm": 92,
+    "filename": "207_Borrowed_Summer_v1.mp3",
+    "suno_id": "c532ccd2-1919-4659-8f51-ac4632a5b8d2",
+    "order": 207,
+    "aubio_bpm": 96.12,
+    "beat_count_bpm": 92.97,
+    "detected_bpm": 96.12,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S5"
+  },
+  "7b2dcf82-c963-403a-9dcf-f4ecbf846f10": {
+    "title": "Borrowed Summer",
+    "tags": "dream pop, 92 bpm, a major, washed dreamy bright nostalgic, reverb-heavy chorused electric guitar, ambient pad, soft drum machine, no acoustic guitar, female vocal layered ethereal, in the style of dream pop, shoegaze, chillwave indie",
+    "duration": "4:19",
+    "suno_bpm": 92,
+    "filename": "208_Borrowed_Summer_v2.mp3",
+    "suno_id": "7b2dcf82-c963-403a-9dcf-f4ecbf846f10",
+    "order": 208,
+    "aubio_bpm": 91.37,
+    "beat_count_bpm": 92.58,
+    "detected_bpm": 91.37,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S5"
+  },
+  "4e9a483d-77f3-4158-8d89-a8a0c44d809c": {
+    "title": "Maple Street Run",
+    "tags": "dream pop, 121 bpm, c major, bright jazzy floating euphoric, clean jazz-chorded electric guitar, warm rhodes electric piano, brushed drums, melodic bass, male vocal smooth mellow young, in the style of dream pop, chillwave, indie sophisti-pop",
+    "duration": "4:48",
+    "suno_bpm": 121,
+    "filename": "209_Maple_Street_Run_v1.mp3",
+    "suno_id": "4e9a483d-77f3-4158-8d89-a8a0c44d809c",
+    "order": 209,
+    "aubio_bpm": 120.75,
+    "beat_count_bpm": 122.59,
+    "detected_bpm": 120.75,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F1"
+  },
+  "67c1dbf3-df1a-455d-af76-d1030e5283a6": {
+    "title": "Maple Street Run",
+    "tags": "dream pop, 121 bpm, c major, bright jazzy floating euphoric, clean jazz-chorded electric guitar, warm rhodes electric piano, brushed drums, melodic bass, male vocal smooth mellow young, in the style of dream pop, chillwave, indie sophisti-pop",
+    "duration": "4:40",
+    "suno_bpm": 121,
+    "filename": "210_Maple_Street_Run_v2.mp3",
+    "suno_id": "67c1dbf3-df1a-455d-af76-d1030e5283a6",
+    "order": 210,
+    "aubio_bpm": 121.21,
+    "beat_count_bpm": 122.49,
+    "detected_bpm": 121.21,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F1"
+  },
+  "29888578-b9b2-4c76-81b5-ef99e0b178fd": {
+    "title": "Salt On My Shoes",
+    "tags": "electronic indie, 135 bpm, b minor, atmospheric coastal night-drive, analog synth pad wash, electronic drum machine kick steady, no acoustic guitar, sub bass pulse, male vocal layered effected, in the style of electronic indie, alt pop, dream electronic",
+    "duration": "4:48",
+    "suno_bpm": 135,
+    "filename": "211_Salt_On_My_Shoes_v1.mp3",
+    "suno_id": "29888578-b9b2-4c76-81b5-ef99e0b178fd",
+    "order": 211,
+    "aubio_bpm": 148.68,
+    "beat_count_bpm": 167.33,
+    "detected_bpm": 148.68,
+    "confidence": "⚠ far from Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F4"
+  },
+  "80a7fc39-caa7-4394-be63-b47de9607456": {
+    "title": "Salt On My Shoes",
+    "tags": "electronic indie, 135 bpm, b minor, atmospheric coastal night-drive, analog synth pad wash, electronic drum machine kick steady, no acoustic guitar, sub bass pulse, male vocal layered effected, in the style of electronic indie, alt pop, dream electronic",
+    "duration": "4:44",
+    "suno_bpm": 135,
+    "filename": "212_Salt_On_My_Shoes_v2.mp3",
+    "suno_id": "80a7fc39-caa7-4394-be63-b47de9607456",
+    "order": 212,
+    "aubio_bpm": 130.96,
+    "beat_count_bpm": 113.02,
+    "detected_bpm": 130.96,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F4"
   }
 }

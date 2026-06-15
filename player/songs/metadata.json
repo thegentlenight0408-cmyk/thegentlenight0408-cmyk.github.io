@@ -3284,5 +3284,175 @@
       "indie-F"
     ],
     "prompt_id": "F4"
+  },
+  "17d35d29-d407-46df-8361-5afb7925a3ca": {
+    "title": "Porch Box Photos",
+    "tags": "indie folk, 88 bpm, c major, nostalgic warm honest reflective, fingerstyle acoustic guitar, upright bass, soft kick brush snare, mandolin texture, male vocal mid-range storytelling, in the style of indie folk, americana, slowcore folk",
+    "duration": "4:47",
+    "suno_bpm": 88,
+    "filename": "213_Porch_Box_Photos_v1.mp3",
+    "suno_id": "17d35d29-d407-46df-8361-5afb7925a3ca",
+    "order": 213,
+    "aubio_bpm": 114.08,
+    "beat_count_bpm": 89.17,
+    "detected_bpm": 114.08,
+    "confidence": "⚠ far from Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S3"
+  },
+  "3a9c9b54-a402-471e-9c45-92f599f842aa": {
+    "title": "Porch Box Photos",
+    "tags": "indie folk, 88 bpm, c major, nostalgic warm honest reflective, fingerstyle acoustic guitar, upright bass, soft kick brush snare, mandolin texture, male vocal mid-range storytelling, in the style of indie folk, americana, slowcore folk",
+    "duration": "3:52",
+    "suno_bpm": 88,
+    "filename": "214_Porch_Box_Photos_v2.mp3",
+    "suno_id": "3a9c9b54-a402-471e-9c45-92f599f842aa",
+    "order": 214,
+    "aubio_bpm": 92.48,
+    "beat_count_bpm": 84.03,
+    "detected_bpm": 92.48,
+    "confidence": "⚠ far from Suno",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S3"
+  },
+  "fd06988e-0cd9-445e-b370-d684fda1116a": {
+    "title": "Dust in Afternoon",
+    "tags": "chamber folk, 78 bpm, a minor, atmospheric autumnal cinematic, string quartet centerpiece, soft acoustic guitar, upright bass, no drums or very subtle brush, female vocal classically pure mezzo-soprano, in the style of chamber folk, neoclassical indie, art folk",
+    "duration": "4:54",
+    "suno_bpm": 78,
+    "filename": "215_Dust_in_Afternoon_v1.mp3",
+    "suno_id": "fd06988e-0cd9-445e-b370-d684fda1116a",
+    "order": 215,
+    "aubio_bpm": 153.02,
+    "beat_count_bpm": 159.09,
+    "detected_bpm": 153.02,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S6"
+  },
+  "4a9a90e8-c364-400e-9c0c-e2314ce5518f": {
+    "title": "Dust in Afternoon",
+    "tags": "chamber folk, 78 bpm, a minor, atmospheric autumnal cinematic, string quartet centerpiece, soft acoustic guitar, upright bass, no drums or very subtle brush, female vocal classically pure mezzo-soprano, in the style of chamber folk, neoclassical indie, art folk",
+    "duration": "4:27",
+    "suno_bpm": 78,
+    "filename": "216_Dust_in_Afternoon_v2.mp3",
+    "suno_id": "4a9a90e8-c364-400e-9c0c-e2314ce5518f",
+    "order": 216,
+    "aubio_bpm": 153.56,
+    "beat_count_bpm": 156.12,
+    "detected_bpm": 153.56,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S6"
+  },
+  "089b4b5f-05c9-4ca4-b0e4-4e7142d9e660": {
+    "title": "Too Many Tabs",
+    "tags": "math rock, 132 bpm, e minor, angular intricate driving complex, clean electric guitar tapping arpeggios, syncopated drums shifting time signatures, melodic bass lines, no synth, male vocal mid-range agile sometimes spoken sometimes melodic, in the style of math rock, post-hardcore indie, midwest emo",
+    "duration": "5:02",
+    "suno_bpm": 132,
+    "filename": "217_Too_Many_Tabs_v1.mp3",
+    "suno_id": "089b4b5f-05c9-4ca4-b0e4-4e7142d9e660",
+    "order": 217,
+    "aubio_bpm": 134.74,
+    "beat_count_bpm": 136.14,
+    "detected_bpm": 134.74,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F6"
+  },
+  "85b0db0c-68de-4704-b5f8-960e56bc0cd2": {
+    "title": "Too Many Tabs",
+    "tags": "math rock, 132 bpm, e minor, angular intricate driving complex, clean electric guitar tapping arpeggios, syncopated drums shifting time signatures, melodic bass lines, no synth, male vocal mid-range agile sometimes spoken sometimes melodic, in the style of math rock, post-hardcore indie, midwest emo",
+    "duration": "4:23",
+    "suno_bpm": 132,
+    "filename": "218_Too_Many_Tabs_v2.mp3",
+    "suno_id": "85b0db0c-68de-4704-b5f8-960e56bc0cd2",
+    "order": 218,
+    "aubio_bpm": 133.93,
+    "beat_count_bpm": 134.79,
+    "detected_bpm": 133.93,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F6"
+  },
+  "b46817ab-5fff-472e-825e-21b000306a80": {
+    "title": "Curtains and Cereal",
+    "tags": "jangle pop, 120 bpm, g major, bright sparkling cheerful chiming, 12-string electric guitar arpeggios prominent, tambourine, light kick drum, melodic bass, no fuzz no distortion, female vocal bright clean girl-group harmonies, in the style of jangle pop, indie pop, dream pop bright",
+    "duration": "3:49",
+    "suno_bpm": 120,
+    "filename": "219_Curtains_and_Cereal_v1.mp3",
+    "suno_id": "b46817ab-5fff-472e-825e-21b000306a80",
+    "order": 219,
+    "aubio_bpm": 122.54,
+    "beat_count_bpm": 124.07,
+    "detected_bpm": 122.54,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F7"
+  },
+  "af1c9861-e589-451a-aadf-391e2f2b0a22": {
+    "title": "Curtains and Cereal",
+    "tags": "jangle pop, 120 bpm, g major, bright sparkling cheerful chiming, 12-string electric guitar arpeggios prominent, tambourine, light kick drum, melodic bass, no fuzz no distortion, female vocal bright clean girl-group harmonies, in the style of jangle pop, indie pop, dream pop bright",
+    "duration": "3:46",
+    "suno_bpm": 120,
+    "filename": "220_Curtains_and_Cereal_v2.mp3",
+    "suno_id": "af1c9861-e589-451a-aadf-391e2f2b0a22",
+    "order": 220,
+    "aubio_bpm": 122.09,
+    "beat_count_bpm": 123.68,
+    "detected_bpm": 122.09,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F7"
+  },
+  "255bff99-7234-414b-8689-f33b561960b5": {
+    "title": "Loose Surfboard",
+    "tags": "surf rock revival, 138 bpm, a major, sun-soaked breezy californian carefree, spring-reverb twangy electric guitar, surf-style drum pattern with snare emphasis, walking electric bass, tambourine, no synth, male vocal laid-back californian melodic, in the style of surf rock revival, beach pop, indie surf",
+    "duration": "3:44",
+    "suno_bpm": 138,
+    "filename": "221_Loose_Surfboard_v1.mp3",
+    "suno_id": "255bff99-7234-414b-8689-f33b561960b5",
+    "order": 221,
+    "aubio_bpm": 138.67,
+    "beat_count_bpm": 140.47,
+    "detected_bpm": 138.67,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F8"
+  },
+  "9932e6e1-5b3a-4b9e-8e2d-c87f550ad0d1": {
+    "title": "Loose Surfboard",
+    "tags": "surf rock revival, 138 bpm, a major, sun-soaked breezy californian carefree, spring-reverb twangy electric guitar, surf-style drum pattern with snare emphasis, walking electric bass, tambourine, no synth, male vocal laid-back californian melodic, in the style of surf rock revival, beach pop, indie surf",
+    "duration": "3:29",
+    "suno_bpm": 138,
+    "filename": "222_Loose_Surfboard_v2.mp3",
+    "suno_id": "9932e6e1-5b3a-4b9e-8e2d-c87f550ad0d1",
+    "order": 222,
+    "aubio_bpm": 139.98,
+    "beat_count_bpm": 140.8,
+    "detected_bpm": 139.98,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F8"
   }
 }

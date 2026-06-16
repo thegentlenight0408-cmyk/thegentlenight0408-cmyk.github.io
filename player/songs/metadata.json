@@ -3454,5 +3454,175 @@
       "indie-F"
     ],
     "prompt_id": "F8"
+  },
+  "4e437303-4ed8-4739-a74d-f6a69fccc4f5": {
+    "title": "Window Snow",
+    "tags": "slowcore post-rock, 65 bpm, d minor, atmospheric melancholic spacious, reverb-drenched electric guitar arpeggios, ambient pad, sparse rim-click drums, no acoustic guitar, very sparse minimal male vocal almost spoken, in the style of slowcore, post-rock, ambient indie",
+    "duration": "6:23",
+    "suno_bpm": 65,
+    "filename": "223_Window_Snow_v1.mp3",
+    "suno_id": "4e437303-4ed8-4739-a74d-f6a69fccc4f5",
+    "order": 223,
+    "aubio_bpm": 128.38,
+    "beat_count_bpm": 128.91,
+    "detected_bpm": 128.38,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S7"
+  },
+  "022b0cdd-428f-49df-8d04-938802bfc9de": {
+    "title": "Window Snow",
+    "tags": "slowcore post-rock, 65 bpm, d minor, atmospheric melancholic spacious, reverb-drenched electric guitar arpeggios, ambient pad, sparse rim-click drums, no acoustic guitar, very sparse minimal male vocal almost spoken, in the style of slowcore, post-rock, ambient indie",
+    "duration": "5:04",
+    "suno_bpm": 65,
+    "filename": "224_Window_Snow_v2.mp3",
+    "suno_id": "022b0cdd-428f-49df-8d04-938802bfc9de",
+    "order": 224,
+    "aubio_bpm": 124.86,
+    "beat_count_bpm": 130.84,
+    "detected_bpm": 124.86,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S7"
+  },
+  "f3914e99-812d-4c8b-9aac-4b2fdbe7993d": {
+    "title": "Long Bar Ending",
+    "tags": "americana, 72 bpm, g major, dusty whiskey-soaked late-night reflective, pedal steel guitar prominent, dusty fingerpicked acoustic guitar, brushed drums, upright bass, no synth, male vocal weathered baritone storytelling, in the style of americana, alt-country, dusty folk",
+    "duration": "6:37",
+    "suno_bpm": 72,
+    "filename": "225_Long_Bar_Ending_v1.mp3",
+    "suno_id": "f3914e99-812d-4c8b-9aac-4b2fdbe7993d",
+    "order": 225,
+    "aubio_bpm": 143.12,
+    "beat_count_bpm": 146.73,
+    "detected_bpm": 143.12,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S8"
+  },
+  "eb35e622-4e96-4122-822f-c5bc6fd280c8": {
+    "title": "Long Bar Ending",
+    "tags": "americana, 72 bpm, g major, dusty whiskey-soaked late-night reflective, pedal steel guitar prominent, dusty fingerpicked acoustic guitar, brushed drums, upright bass, no synth, male vocal weathered baritone storytelling, in the style of americana, alt-country, dusty folk",
+    "duration": "4:29",
+    "suno_bpm": 72,
+    "filename": "226_Long_Bar_Ending_v2.mp3",
+    "suno_id": "eb35e622-4e96-4122-822f-c5bc6fd280c8",
+    "order": 226,
+    "aubio_bpm": 143.31,
+    "beat_count_bpm": 146.32,
+    "detected_bpm": 143.31,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S8"
+  },
+  "2c149bd1-4c5d-4bff-9c0c-dc2df3ecf4bf": {
+    "title": "Dust on Gilded Frame",
+    "tags": "art pop, 80 bpm, g sharp minor, ornate baroque theatrical melancholic, harpsichord lead, string quartet swells, woodwind accents flute clarinet, soft timpani kick, no rock drums, female vocal theatrical airy soprano, in the style of art pop, baroque pop, chamber pop",
+    "duration": "4:29",
+    "suno_bpm": 80,
+    "filename": "227_Dust_on_Gilded_Frame_v1.mp3",
+    "suno_id": "2c149bd1-4c5d-4bff-9c0c-dc2df3ecf4bf",
+    "order": 227,
+    "aubio_bpm": 154.43,
+    "beat_count_bpm": 163.75,
+    "detected_bpm": 154.43,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S14"
+  },
+  "a0c50ce3-cc53-4b83-bc4d-81ead98f9f02": {
+    "title": "Dust on Gilded Frame",
+    "tags": "art pop, 80 bpm, g sharp minor, ornate baroque theatrical melancholic, harpsichord lead, string quartet swells, woodwind accents flute clarinet, soft timpani kick, no rock drums, female vocal theatrical airy soprano, in the style of art pop, baroque pop, chamber pop",
+    "duration": "4:28",
+    "suno_bpm": 80,
+    "filename": "228_Dust_on_Gilded_Frame_v2.mp3",
+    "suno_id": "a0c50ce3-cc53-4b83-bc4d-81ead98f9f02",
+    "order": 228,
+    "aubio_bpm": 157.43,
+    "beat_count_bpm": 160.94,
+    "detected_bpm": 157.43,
+    "confidence": "⚠ half/double time",
+    "playlists": [
+      "indie-S"
+    ],
+    "prompt_id": "S14"
+  },
+  "a2bef014-64e9-4c0a-94fb-57a304ac9b3e": {
+    "title": "Bad Weather Walk",
+    "tags": "post-punk revival, 145 bpm, d minor, urgent angular tense motorik driving, clean trebly chorused electric guitar, driving melodic bass dominant, motorik four-on-the-floor drums, no synth pad, male vocal tense talk-sing baritone urgent, in the style of post-punk revival, indie rock UK, krautrock-influenced",
+    "duration": "4:25",
+    "suno_bpm": 145,
+    "filename": "229_Bad_Weather_Walk_v1.mp3",
+    "suno_id": "a2bef014-64e9-4c0a-94fb-57a304ac9b3e",
+    "order": 229,
+    "aubio_bpm": 144.97,
+    "beat_count_bpm": 148.49,
+    "detected_bpm": 144.97,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F11"
+  },
+  "2eeee34a-bcb7-48e4-acde-5259a5473975": {
+    "title": "Bad Weather Walk",
+    "tags": "post-punk revival, 145 bpm, d minor, urgent angular tense motorik driving, clean trebly chorused electric guitar, driving melodic bass dominant, motorik four-on-the-floor drums, no synth pad, male vocal tense talk-sing baritone urgent, in the style of post-punk revival, indie rock UK, krautrock-influenced",
+    "duration": "3:49",
+    "suno_bpm": 145,
+    "filename": "230_Bad_Weather_Walk_v2.mp3",
+    "suno_id": "2eeee34a-bcb7-48e4-acde-5259a5473975",
+    "order": 230,
+    "aubio_bpm": 148.18,
+    "beat_count_bpm": 150.59,
+    "detected_bpm": 148.18,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F11"
+  },
+  "15cb2f55-2f29-4eef-81c9-a63b9a1bed80": {
+    "title": "No Apology Tonight",
+    "tags": "indie disco, 122 bpm, d minor, danceable groovy nightclub-bright confident, four-on-the-floor kick, walking disco bass, choppy syncopated rhythm electric guitar, retro analog synth stabs, hi-hat shuffle, female vocal confident danceable bright, in the style of indie disco, nu-disco, dance pop indie",
+    "duration": "3:01",
+    "suno_bpm": 122,
+    "filename": "231_No_Apology_Tonight_v1.mp3",
+    "suno_id": "15cb2f55-2f29-4eef-81c9-a63b9a1bed80",
+    "order": 231,
+    "aubio_bpm": 122.18,
+    "beat_count_bpm": 123.63,
+    "detected_bpm": 122.18,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F13"
+  },
+  "77134e2a-8f74-4a57-b554-8678a45c3536": {
+    "title": "No Apology Tonight",
+    "tags": "indie disco, 122 bpm, d minor, danceable groovy nightclub-bright confident, four-on-the-floor kick, walking disco bass, choppy syncopated rhythm electric guitar, retro analog synth stabs, hi-hat shuffle, female vocal confident danceable bright, in the style of indie disco, nu-disco, dance pop indie",
+    "duration": "3:02",
+    "suno_bpm": 122,
+    "filename": "232_No_Apology_Tonight_v2.mp3",
+    "suno_id": "77134e2a-8f74-4a57-b554-8678a45c3536",
+    "order": 232,
+    "aubio_bpm": 122.88,
+    "beat_count_bpm": 123.64,
+    "detected_bpm": 122.88,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "indie-F"
+    ],
+    "prompt_id": "F13"
   }
 }

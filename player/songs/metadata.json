@@ -3624,5 +3624,165 @@
       "indie-F"
     ],
     "prompt_id": "F13"
+  },
+  "a090d51b-3490-48d8-8ae8-52d3596f5b69": {
+    "title": "First Light Open",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, bright supersaw lead, gentle filter sweep intro, morning sunrise mood",
+    "duration": "3:14",
+    "suno_bpm": 126,
+    "filename": "233_First_Light_Open_v1.mp3",
+    "suno_id": "a090d51b-3490-48d8-8ae8-52d3596f5b69",
+    "order": 233,
+    "aubio_bpm": 126.68,
+    "beat_count_bpm": 127.85,
+    "detected_bpm": 126.68,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "4b7b0ef2-25c7-4fd8-a881-f09248997823": {
+    "title": "First Light Open",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, bright supersaw lead, gentle filter sweep intro, morning sunrise mood",
+    "duration": "3:19",
+    "suno_bpm": 126,
+    "filename": "234_First_Light_Open_v2.mp3",
+    "suno_id": "4b7b0ef2-25c7-4fd8-a881-f09248997823",
+    "order": 234,
+    "aubio_bpm": 128.16,
+    "beat_count_bpm": 130.26,
+    "detected_bpm": 128.16,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "d34aafc9-43c6-4424-8d5e-554f91694599": {
+    "title": "Quiet Code Hours",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, minimalist pluck melody, subdued mid frequencies, hypnotic loop",
+    "duration": "3:25",
+    "suno_bpm": 126,
+    "filename": "235_Quiet_Code_Hours_v1.mp3",
+    "suno_id": "d34aafc9-43c6-4424-8d5e-554f91694599",
+    "order": 235,
+    "aubio_bpm": 136.83,
+    "beat_count_bpm": 128.53,
+    "detected_bpm": 128.53,
+    "confidence": "beat_count more stable, aubio drifted",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "3ecc605c-914b-461e-842c-c2dac84911a8": {
+    "title": "Quiet Code Hours",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, minimalist pluck melody, subdued mid frequencies, hypnotic loop",
+    "duration": "3:34",
+    "suno_bpm": 126,
+    "filename": "236_Quiet_Code_Hours_v2.mp3",
+    "suno_id": "3ecc605c-914b-461e-842c-c2dac84911a8",
+    "order": 236,
+    "aubio_bpm": 132.2,
+    "beat_count_bpm": 127.76,
+    "detected_bpm": 127.76,
+    "confidence": "beat_count more stable, aubio drifted",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "17f6ddec-0e1f-4d27-b204-c5f31ed62c5f": {
+    "title": "Second Wind Climb",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, tense building risers, snare roll lift, soaring chorus drop",
+    "duration": "3:56",
+    "suno_bpm": 126,
+    "filename": "237_Second_Wind_Climb_v1.mp3",
+    "suno_id": "17f6ddec-0e1f-4d27-b204-c5f31ed62c5f",
+    "order": 237,
+    "aubio_bpm": 126.01,
+    "beat_count_bpm": 128.69,
+    "detected_bpm": 126.01,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "8a2225c0-80ea-4d51-adbb-dff3e20785d0": {
+    "title": "Second Wind Climb",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, tense building risers, snare roll lift, soaring chorus drop",
+    "duration": "3:58",
+    "suno_bpm": 126,
+    "filename": "238_Second_Wind_Climb_v2.mp3",
+    "suno_id": "8a2225c0-80ea-4d51-adbb-dff3e20785d0",
+    "order": 238,
+    "aubio_bpm": 127.05,
+    "beat_count_bpm": 130.08,
+    "detected_bpm": 127.05,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "1d16f70d-4dce-4b1f-a84b-0fc6658716e0": {
+    "title": "Tab to Tab Reset",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, crisp percussion, clean transitions, light vocal chops",
+    "duration": "3:43",
+    "suno_bpm": 126,
+    "filename": "239_Tab_to_Tab_Reset_v1.mp3",
+    "suno_id": "1d16f70d-4dce-4b1f-a84b-0fc6658716e0",
+    "order": 239,
+    "aubio_bpm": 127.4,
+    "beat_count_bpm": 128.41,
+    "detected_bpm": 127.4,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "f2eada7c-cb56-483e-82a8-4d17377c4034": {
+    "title": "Tab to Tab Reset",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, crisp percussion, clean transitions, light vocal chops",
+    "duration": "3:54",
+    "suno_bpm": 126,
+    "filename": "240_Tab_to_Tab_Reset_v2.mp3",
+    "suno_id": "f2eada7c-cb56-483e-82a8-4d17377c4034",
+    "order": 240,
+    "aubio_bpm": 127.86,
+    "beat_count_bpm": 127.74,
+    "detected_bpm": 127.86,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "9515e30d-8867-4a19-a430-86f9bd260faa": {
+    "title": "Last Hour Ship",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, festival anthem, big room synths, triumphant closing energy",
+    "duration": "3:19",
+    "suno_bpm": 126,
+    "filename": "241_Last_Hour_Ship_v1.mp3",
+    "suno_id": "9515e30d-8867-4a19-a430-86f9bd260faa",
+    "order": 241,
+    "aubio_bpm": 130.21,
+    "beat_count_bpm": 127.8,
+    "detected_bpm": 130.21,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "6a81b9b2-9c8f-4094-b16f-e3cb66dc25e7": {
+    "title": "Last Hour Ship",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, festival anthem, big room synths, triumphant closing energy",
+    "duration": "4:09",
+    "suno_bpm": 126,
+    "filename": "242_Last_Hour_Ship_v2.mp3",
+    "suno_id": "6a81b9b2-9c8f-4094-b16f-e3cb66dc25e7",
+    "order": 242,
+    "aubio_bpm": 131.53,
+    "beat_count_bpm": 127.87,
+    "detected_bpm": 127.87,
+    "confidence": "beat_count more stable, aubio drifted",
+    "playlists": [
+      "工作"
+    ]
   }
 }

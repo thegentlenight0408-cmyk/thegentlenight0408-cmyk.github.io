@@ -3784,5 +3784,165 @@
     "playlists": [
       "工作"
     ]
+  },
+  "699705bc-6ba4-47d7-acea-cf2ebe1f1f95": {
+    "title": "Cold Start Burn",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, frosty atmosphere, sharp opening synth stab, breath-on-glass intro",
+    "duration": "3:22",
+    "suno_bpm": 180,
+    "filename": "243_Cold_Start_Burn_v1.mp3",
+    "suno_id": "699705bc-6ba4-47d7-acea-cf2ebe1f1f95",
+    "order": 243,
+    "aubio_bpm": 115.27,
+    "beat_count_bpm": 118.77,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "ae73a19a-a2af-4d8f-86a4-42710061e482": {
+    "title": "Cold Start Burn",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, frosty atmosphere, sharp opening synth stab, breath-on-glass intro",
+    "duration": "3:24",
+    "suno_bpm": 180,
+    "filename": "244_Cold_Start_Burn_v2.mp3",
+    "suno_id": "ae73a19a-a2af-4d8f-86a4-42710061e482",
+    "order": 244,
+    "aubio_bpm": 115.85,
+    "beat_count_bpm": 119.04,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "4ad05b93-9da8-467f-b76d-0bbfa65c25a8": {
+    "title": "Lock the Cadence",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, hypnotic synth pulse, mechanical precision, metronomic groove",
+    "duration": "3:38",
+    "suno_bpm": 180,
+    "filename": "245_Lock_the_Cadence_v1.mp3",
+    "suno_id": "4ad05b93-9da8-467f-b76d-0bbfa65c25a8",
+    "order": 245,
+    "aubio_bpm": 114.59,
+    "beat_count_bpm": 116.55,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "60f1bf47-f833-4a7a-a7c9-b749da7aee02": {
+    "title": "Lock the Cadence",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, hypnotic synth pulse, mechanical precision, metronomic groove",
+    "duration": "3:24",
+    "suno_bpm": 180,
+    "filename": "246_Lock_the_Cadence_v2.mp3",
+    "suno_id": "60f1bf47-f833-4a7a-a7c9-b749da7aee02",
+    "order": 246,
+    "aubio_bpm": 116.74,
+    "beat_count_bpm": 117.24,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "bb6a0788-e3c1-49b6-bc23-a37aadff5e6d": {
+    "title": "Push Through Wall",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, distorted bass drop, surging build, defiant lift",
+    "duration": "3:46",
+    "suno_bpm": 180,
+    "filename": "247_Push_Through_Wall_v1.mp3",
+    "suno_id": "bb6a0788-e3c1-49b6-bc23-a37aadff5e6d",
+    "order": 247,
+    "aubio_bpm": 116.76,
+    "beat_count_bpm": 110.66,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "c4497cac-2754-4da7-af17-530075ef543e": {
+    "title": "Push Through Wall",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, distorted bass drop, surging build, defiant lift",
+    "duration": "3:44",
+    "suno_bpm": 180,
+    "filename": "248_Push_Through_Wall_v2.mp3",
+    "suno_id": "c4497cac-2754-4da7-af17-530075ef543e",
+    "order": 248,
+    "aubio_bpm": 111.12,
+    "beat_count_bpm": 117.4,
+    "detected_bpm": 180,
+    "confidence": "DnB 偵測不準，採 Suno 180",
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "3f4c56fd-2418-49ed-a53b-0f1993534e27": {
+    "title": "Open Tab Sky",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, airy lead synth, wide stereo image, modern uplifting",
+    "duration": "4:00",
+    "suno_bpm": 126,
+    "filename": "249_Open_Tab_Sky_v1.mp3",
+    "suno_id": "3f4c56fd-2418-49ed-a53b-0f1993534e27",
+    "order": 249,
+    "aubio_bpm": 125.99,
+    "beat_count_bpm": 127.87,
+    "detected_bpm": 125.99,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "1b93f739-2ddd-4725-9440-9225103d290c": {
+    "title": "Open Tab Sky",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, airy lead synth, wide stereo image, modern uplifting",
+    "duration": "4:23",
+    "suno_bpm": 126,
+    "filename": "250_Open_Tab_Sky_v2.mp3",
+    "suno_id": "1b93f739-2ddd-4725-9440-9225103d290c",
+    "order": 250,
+    "aubio_bpm": 128.11,
+    "beat_count_bpm": 128.55,
+    "detected_bpm": 128.11,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "09fafb99-2fe9-4226-b2f3-db1cf942022e": {
+    "title": "Brick Stack",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "4:04",
+    "suno_bpm": 126,
+    "filename": "251_Brick_Stack_v1.mp3",
+    "suno_id": "09fafb99-2fe9-4226-b2f3-db1cf942022e",
+    "order": 251,
+    "aubio_bpm": 125.43,
+    "beat_count_bpm": 127.76,
+    "detected_bpm": 125.43,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
+  },
+  "2c946c8d-03f6-45ed-9f8d-942fbe8c83b8": {
+    "title": "Brick Stack",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:32",
+    "suno_bpm": 126,
+    "filename": "252_Brick_Stack_v2.mp3",
+    "suno_id": "2c946c8d-03f6-45ed-9f8d-942fbe8c83b8",
+    "order": 252,
+    "aubio_bpm": 127.43,
+    "beat_count_bpm": 127.74,
+    "detected_bpm": 127.43,
+    "confidence": "✓ matches Suno",
+    "playlists": [
+      "工作"
+    ]
   }
 }

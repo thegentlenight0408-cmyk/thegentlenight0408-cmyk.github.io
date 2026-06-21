@@ -3944,5 +3944,175 @@
     "playlists": [
       "工作"
     ]
+  },
+  "de7ff445-f62d-4ace-8dbb-da85b86ea7ce": {
+    "title": "SUNRISE SPRINT",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:27",
+    "suno_bpm": 180,
+    "filename": "253_Sunrise_Sprint_v1.mp3",
+    "suno_id": "de7ff445-f62d-4ace-8dbb-da85b86ea7ce",
+    "order": 253,
+    "aubio_bpm": 109.8,
+    "beat_count_bpm": 118.5,
+    "detected_bpm": 118.5,
+    "confidence": "⚠ DnB/hardstyle detection unreliable, trust Suno 180",
+    "aubiotrack_median_bpm": 118.5,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "f1da01b7-4e00-4f11-9901-241dbb2b4d11": {
+    "title": "SUNRISE SPRINT",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:57",
+    "suno_bpm": 180,
+    "filename": "254_Sunrise_Sprint_v2.mp3",
+    "suno_id": "f1da01b7-4e00-4f11-9901-241dbb2b4d11",
+    "order": 254,
+    "aubio_bpm": 109.56,
+    "beat_count_bpm": 117.03,
+    "detected_bpm": 117.03,
+    "confidence": "⚠ DnB/hardstyle detection unreliable, trust Suno 180",
+    "aubiotrack_median_bpm": 117.03,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "fb314911-15a1-4e8d-b8d5-d4b1d03ac8d8": {
+    "title": "HAMMER DOWN",
+    "tags": "hardstyle, 180 BPM, hard kick on every single beat, stomping four-on-the-floor drum pattern, relentless driving rhythm throughout, no break, no silence, heavy distorted kick, euphoric synth, powerful drop, anthemic female vocal, motivational, intense energy, running workout",
+    "duration": "3:30",
+    "suno_bpm": 180,
+    "filename": "255_Hammer_Down_v1.mp3",
+    "suno_id": "fb314911-15a1-4e8d-b8d5-d4b1d03ac8d8",
+    "order": 255,
+    "aubio_bpm": 155.56,
+    "beat_count_bpm": 163.0,
+    "detected_bpm": 163.0,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 163.0,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "85225b29-3560-4af0-b16a-df2999b2f557": {
+    "title": "HAMMER DOWN",
+    "tags": "hardstyle, 180 BPM, hard kick on every single beat, stomping four-on-the-floor drum pattern, relentless driving rhythm throughout, no break, no silence, heavy distorted kick, euphoric synth, powerful drop, anthemic female vocal, motivational, intense energy, running workout",
+    "duration": "3:21",
+    "suno_bpm": 180,
+    "filename": "256_Hammer_Down_v2.mp3",
+    "suno_id": "85225b29-3560-4af0-b16a-df2999b2f557",
+    "order": 256,
+    "aubio_bpm": 157.67,
+    "beat_count_bpm": 166.7,
+    "detected_bpm": 166.7,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 166.7,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "a4264056-123e-4175-840d-afa30d935285": {
+    "title": "WIND IN THE LUNGS",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "4:05",
+    "suno_bpm": 180,
+    "filename": "257_Wind_in_the_Lungs_v1.mp3",
+    "suno_id": "a4264056-123e-4175-840d-afa30d935285",
+    "order": 257,
+    "aubio_bpm": 128.87,
+    "beat_count_bpm": 116.35,
+    "detected_bpm": 116.35,
+    "confidence": "⚠ DnB/hardstyle detection unreliable, trust Suno 180",
+    "aubiotrack_median_bpm": 116.35,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "bbdae62f-fd7a-4682-a2e3-5612542b89ab": {
+    "title": "WIND IN THE LUNGS",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "4:10",
+    "suno_bpm": 180,
+    "filename": "258_Wind_in_the_Lungs_v2.mp3",
+    "suno_id": "bbdae62f-fd7a-4682-a2e3-5612542b89ab",
+    "order": 258,
+    "aubio_bpm": 133.17,
+    "beat_count_bpm": 118.07,
+    "detected_bpm": 118.07,
+    "confidence": "⚠ DnB/hardstyle detection unreliable, trust Suno 180",
+    "aubiotrack_median_bpm": 118.07,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "e9fd22ec-f232-4a26-824d-22d241f636e1": {
+    "title": "IRON CADENCE",
+    "tags": "hardstyle, 180 BPM, hard kick on every single beat, stomping four-on-the-floor drum pattern, relentless driving rhythm throughout, no break, no silence, heavy distorted kick, euphoric synth, powerful drop, anthemic female vocal, motivational, intense energy, running workout",
+    "duration": "2:47",
+    "suno_bpm": 180,
+    "filename": "259_Iron_Cadence_v1.mp3",
+    "suno_id": "e9fd22ec-f232-4a26-824d-22d241f636e1",
+    "order": 259,
+    "aubio_bpm": 167.6,
+    "beat_count_bpm": 168.37,
+    "detected_bpm": 168.37,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 168.37,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "2f282afa-bf22-4226-9e18-6cf64a34a155": {
+    "title": "IRON CADENCE",
+    "tags": "hardstyle, 180 BPM, hard kick on every single beat, stomping four-on-the-floor drum pattern, relentless driving rhythm throughout, no break, no silence, heavy distorted kick, euphoric synth, powerful drop, anthemic female vocal, motivational, intense energy, running workout",
+    "duration": "3:43",
+    "suno_bpm": 180,
+    "filename": "260_Iron_Cadence_v2.mp3",
+    "suno_id": "2f282afa-bf22-4226-9e18-6cf64a34a155",
+    "order": 260,
+    "aubio_bpm": 151.07,
+    "beat_count_bpm": 157.25,
+    "detected_bpm": 157.25,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 157.25,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "6188ba76-d644-4cd7-af6a-f19ce1accaeb": {
+    "title": "FINAL MILE GLOW",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:44",
+    "suno_bpm": 180,
+    "filename": "261_Final_Mile_Glow_v1.mp3",
+    "suno_id": "6188ba76-d644-4cd7-af6a-f19ce1accaeb",
+    "order": 261,
+    "aubio_bpm": 119.64,
+    "beat_count_bpm": 117.36,
+    "detected_bpm": 117.36,
+    "confidence": "⚠ DnB/hardstyle detection unreliable, trust Suno 180",
+    "aubiotrack_median_bpm": 117.36,
+    "playlists": [
+      "慢跑"
+    ]
+  },
+  "75fad0cb-a3c2-4066-bfc3-75d5c9cb7557": {
+    "title": "FINAL MILE GLOW",
+    "tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout",
+    "duration": "3:43",
+    "suno_bpm": 180,
+    "filename": "262_Final_Mile_Glow_v2.mp3",
+    "suno_id": "75fad0cb-a3c2-4066-bfc3-75d5c9cb7557",
+    "order": 262,
+    "aubio_bpm": 108.04,
+    "beat_count_bpm": 110.63,
+    "detected_bpm": 110.63,
+    "confidence": "⚠ DnB/hardstyle detection unreliable, trust Suno 180",
+    "aubiotrack_median_bpm": 110.63,
+    "playlists": [
+      "慢跑"
+    ]
   }
 }

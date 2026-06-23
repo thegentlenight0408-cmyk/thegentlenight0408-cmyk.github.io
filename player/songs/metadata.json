@@ -4114,5 +4114,175 @@
     "playlists": [
       "慢跑"
     ]
+  },
+  "dfa16598-f0d6-4a2f-8e4f-ffcdbb839d57": {
+    "title": "SLOW BURN CODE",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:56",
+    "suno_bpm": 126,
+    "filename": "263_Slow_Burn_Code_v1.mp3",
+    "suno_id": "dfa16598-f0d6-4a2f-8e4f-ffcdbb839d57",
+    "order": 263,
+    "aubio_bpm": 132.83,
+    "beat_count_bpm": 128.79,
+    "detected_bpm": 128.79,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 128.79,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "3c878995-6d42-425a-b199-8a495ef40a27": {
+    "title": "SLOW BURN CODE",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:19",
+    "suno_bpm": 126,
+    "filename": "264_Slow_Burn_Code_v2.mp3",
+    "suno_id": "3c878995-6d42-425a-b199-8a495ef40a27",
+    "order": 264,
+    "aubio_bpm": 127.88,
+    "beat_count_bpm": 128.51,
+    "detected_bpm": 128.51,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 128.51,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "4732afd9-741d-4603-a414-5215902b3bda": {
+    "title": "WINDOW LIGHT LOOP",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "4:38",
+    "suno_bpm": 126,
+    "filename": "265_Window_Light_Loop_v1.mp3",
+    "suno_id": "4732afd9-741d-4603-a414-5215902b3bda",
+    "order": 265,
+    "aubio_bpm": 126.35,
+    "beat_count_bpm": 127.76,
+    "detected_bpm": 127.76,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 127.76,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "d6a63f9a-2d60-4132-9e95-ff7f2418ad6e": {
+    "title": "WINDOW LIGHT LOOP",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:44",
+    "suno_bpm": 126,
+    "filename": "266_Window_Light_Loop_v2.mp3",
+    "suno_id": "d6a63f9a-2d60-4132-9e95-ff7f2418ad6e",
+    "order": 266,
+    "aubio_bpm": 131.96,
+    "beat_count_bpm": 128.2,
+    "detected_bpm": 128.2,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 128.2,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "425337b7-1196-4ae1-b6d9-ee4ff0345b74": {
+    "title": "TEA GOES COLD",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:17",
+    "suno_bpm": 126,
+    "filename": "267_Tea_Goes_Cold_v1.mp3",
+    "suno_id": "425337b7-1196-4ae1-b6d9-ee4ff0345b74",
+    "order": 267,
+    "aubio_bpm": 127.45,
+    "beat_count_bpm": 127.91,
+    "detected_bpm": 127.91,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 127.91,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "1ffeba84-bbc2-42a6-a4cd-c314b849b9c2": {
+    "title": "TEA GOES COLD",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:23",
+    "suno_bpm": 126,
+    "filename": "268_Tea_Goes_Cold_v2.mp3",
+    "suno_id": "1ffeba84-bbc2-42a6-a4cd-c314b849b9c2",
+    "order": 268,
+    "aubio_bpm": 126.02,
+    "beat_count_bpm": 127.74,
+    "detected_bpm": 127.74,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 127.74,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "97c7870b-28b2-48c0-a964-f0e97b6f7aa3": {
+    "title": "PULL REQUEST SKY",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "4:01",
+    "suno_bpm": 126,
+    "filename": "269_Pull_Request_Sky_v1.mp3",
+    "suno_id": "97c7870b-28b2-48c0-a964-f0e97b6f7aa3",
+    "order": 269,
+    "aubio_bpm": 126.5,
+    "beat_count_bpm": 128.59,
+    "detected_bpm": 128.59,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 128.59,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "b789a299-4689-42a0-85a5-a6affe59bb91": {
+    "title": "PULL REQUEST SKY",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:25",
+    "suno_bpm": 126,
+    "filename": "270_Pull_Request_Sky_v2.mp3",
+    "suno_id": "b789a299-4689-42a0-85a5-a6affe59bb91",
+    "order": 270,
+    "aubio_bpm": 129.36,
+    "beat_count_bpm": 127.94,
+    "detected_bpm": 127.94,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 127.94,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "525c48f0-7ecb-4ecb-9ef4-df1877719a9c": {
+    "title": "QUIET ENGINE HUM",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:52",
+    "suno_bpm": 126,
+    "filename": "271_Quiet_Engine_Hum_v1.mp3",
+    "suno_id": "525c48f0-7ecb-4ecb-9ef4-df1877719a9c",
+    "order": 271,
+    "aubio_bpm": 132.95,
+    "beat_count_bpm": 129.98,
+    "detected_bpm": 129.98,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 129.98,
+    "playlists": [
+      "工作"
+    ]
+  },
+  "8cad9e2d-7ba7-46d8-8169-0db626657818": {
+    "title": "QUIET ENGINE HUM",
+    "tags": "progressive house, 126 BPM, euphoric uplifting, smooth four-on-the-floor kick, rolling bassline, atmospheric pads, sparkling synth arpeggios, warm melodic build-ups, clean female vocal, focus flow productivity, modern Anjunabeats sound, no break, no silent section, steady pluck pattern, accumulating layers, building progression",
+    "duration": "3:50",
+    "suno_bpm": 126,
+    "filename": "272_Quiet_Engine_Hum_v2.mp3",
+    "suno_id": "8cad9e2d-7ba7-46d8-8169-0db626657818",
+    "order": 272,
+    "aubio_bpm": 127.52,
+    "beat_count_bpm": 128.74,
+    "detected_bpm": 128.74,
+    "confidence": "✓ matches Suno",
+    "aubiotrack_median_bpm": 128.74,
+    "playlists": [
+      "工作"
+    ]
   }
 }

@@ -4484,5 +4484,155 @@
     "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, pounding sub bass, max-intensity snare rush, anthemic uplift",
     "detected_bpm": 116.61,
     "duration": 225.88
+  },
+  "3b6804e8-292a-4cc7-8211-d3b784b97a60": {
+    "order": 293,
+    "title": "HEADWIND HAMMER",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, howling wind pad, defiant lead synth, hammering kick pattern",
+    "lyrics_excerpt": "Wall of air against my face",
+    "suno_bpm": 180,
+    "aubio_bpm": 146.84,
+    "beat_count_bpm": 122.27,
+    "duration": 252.96,
+    "filename": "293_Headwind_Hammer_v1.mp3",
+    "scene": "running straight into a hard wind / defiance"
+  },
+  "6289eacf-ef1e-4d31-87ec-ac919ee36e84": {
+    "order": 294,
+    "title": "HEADWIND HAMMER",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, howling wind pad, defiant lead synth, hammering kick pattern",
+    "lyrics_excerpt": "Wall of air against my face",
+    "suno_bpm": 180,
+    "aubio_bpm": 159.07,
+    "beat_count_bpm": 175.46,
+    "duration": 198.2,
+    "filename": "294_Headwind_Hammer_v2.mp3",
+    "scene": "running straight into a hard wind / defiance"
+  },
+  "6baabbe3-de6f-4ff4-b034-35b2ba31c2ce": {
+    "order": 295,
+    "title": "IRON LUNG STRIDE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, deep breathing pad sweep, sustained rolling bassline, measured anthemic lift",
+    "lyrics_excerpt": "In and out, lungs are wide",
+    "suno_bpm": 180,
+    "aubio_bpm": 113.14,
+    "beat_count_bpm": 117.45,
+    "duration": 260.0,
+    "filename": "295_Iron_Lung_Stride_v1.mp3",
+    "scene": "long-distance breath control / endurance"
+  },
+  "437936ce-7be1-4935-bcb6-18d94794b817": {
+    "order": 296,
+    "title": "IRON LUNG STRIDE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, deep breathing pad sweep, sustained rolling bassline, measured anthemic lift",
+    "lyrics_excerpt": "In and out, lungs are wide",
+    "suno_bpm": 180,
+    "aubio_bpm": 111.33,
+    "beat_count_bpm": 117.7,
+    "duration": 249.96,
+    "filename": "296_Iron_Lung_Stride_v2.mp3",
+    "scene": "long-distance breath control / endurance"
+  },
+  "373c3d13-2d62-45f7-a686-dfacba7ae1d2": {
+    "order": 297,
+    "title": "CONCRETE HEARTBEAT",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, urban concrete reverb, traffic-light synth stabs, pavement-pounding kick",
+    "lyrics_excerpt": "City breathing under sole",
+    "suno_bpm": 180,
+    "aubio_bpm": 122.03,
+    "beat_count_bpm": 118.15,
+    "duration": 286.2,
+    "filename": "297_Concrete_Heartbeat_v1.mp3",
+    "scene": "urban street run / city pavement pulse"
+  },
+  "b23c266f-9be2-4794-a66e-2d9560267e8d": {
+    "order": 298,
+    "title": "CONCRETE HEARTBEAT",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, urban concrete reverb, traffic-light synth stabs, pavement-pounding kick",
+    "lyrics_excerpt": "City breathing under sole",
+    "suno_bpm": 180,
+    "aubio_bpm": 120.75,
+    "beat_count_bpm": 117.51,
+    "duration": 249.04,
+    "filename": "298_Concrete_Heartbeat_v2.mp3",
+    "scene": "urban street run / city pavement pulse"
+  },
+  "3bd23acf-2ffe-46b1-89aa-bba419e4e1ce": {
+    "order": 299,
+    "title": "COASTLINE VELOCITY",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, ocean spray pad, soaring coastal synth, salt-sharp rolling bassline",
+    "lyrics_excerpt": "Salt is sharp inside the breath",
+    "suno_bpm": 180,
+    "aubio_bpm": 130.38,
+    "beat_count_bpm": 117.66,
+    "duration": 214.8,
+    "filename": "299_Coastline_Velocity_v1.mp3",
+    "scene": "sea cliff highway / salt air sprint"
+  },
+  "1b5366ba-c882-46df-b0fe-f6e103bf9876": {
+    "order": 300,
+    "title": "COASTLINE VELOCITY",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, ocean spray pad, soaring coastal synth, salt-sharp rolling bassline",
+    "lyrics_excerpt": "Salt is sharp inside the breath",
+    "suno_bpm": 180,
+    "aubio_bpm": 119.88,
+    "beat_count_bpm": 117.55,
+    "duration": 240.0,
+    "filename": "300_Coastline_Velocity_v2.mp3",
+    "scene": "sea cliff highway / salt air sprint"
+  },
+  "312aab81-2e47-468f-9651-4e3ce2629b06": {
+    "order": 301,
+    "title": "ECHO DRUM LANE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, echoing snare reverb, looping melodic motif, hypnotic rolling drum drive",
+    "lyrics_excerpt": "Loop again, loop again",
+    "suno_bpm": 180,
+    "aubio_bpm": 119.27,
+    "beat_count_bpm": 118.18,
+    "duration": 209.0,
+    "filename": "301_Echo_Drum_Lane_v1.mp3",
+    "scene": "park loop repetition / rhythmic lap meditation"
+  },
+  "f3202650-f8bd-47d8-9bd5-1d230f06f03d": {
+    "order": 302,
+    "title": "ECHO DRUM LANE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, echoing snare reverb, looping melodic motif, hypnotic rolling drum drive",
+    "lyrics_excerpt": "Loop again, loop again",
+    "suno_bpm": 180,
+    "aubio_bpm": 105.9,
+    "beat_count_bpm": 117.87,
+    "duration": 212.76,
+    "filename": "302_Echo_Drum_Lane_v2.mp3",
+    "scene": "park loop repetition / rhythmic lap meditation"
   }
 }

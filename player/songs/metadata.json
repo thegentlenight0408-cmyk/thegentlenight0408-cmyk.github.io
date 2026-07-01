@@ -4634,5 +4634,155 @@
     "duration": 212.76,
     "filename": "302_Echo_Drum_Lane_v2.mp3",
     "scene": "park loop repetition / rhythmic lap meditation"
+  },
+  "80573625-d46e-44f5-890d-42df4f955807": {
+    "order": 303,
+    "title": "NEON MILE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, neon glow synth, night city ambience, glossy retro pads",
+    "lyrics_excerpt": "Neon mile, neon mile",
+    "suno_bpm": 180,
+    "aubio_bpm": 117.72,
+    "beat_count_bpm": 113.85,
+    "duration": 238.2,
+    "filename": "303_Neon_Mile_v1.mp3",
+    "scene": "night urban run under neon lights"
+  },
+  "ba91cc2a-cbc8-4fa1-b907-9686f5a8d646": {
+    "order": 304,
+    "title": "NEON MILE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, neon glow synth, night city ambience, glossy retro pads",
+    "lyrics_excerpt": "Neon mile, neon mile",
+    "suno_bpm": 180,
+    "aubio_bpm": 117.99,
+    "beat_count_bpm": 112.71,
+    "duration": 260.32,
+    "filename": "304_Neon_Mile_v2.mp3",
+    "scene": "night urban run under neon lights"
+  },
+  "84a7df4b-c0fe-4c7f-97bc-608daba4b985": {
+    "order": 305,
+    "title": "FOREST FLOOR SPRINT",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, earthy woodwind pad, dappled forest reverb, sprinting drum drive",
+    "lyrics_excerpt": "Forest floor sprint, forest floor sprint",
+    "suno_bpm": 180,
+    "aubio_bpm": 126.05,
+    "beat_count_bpm": 118.64,
+    "duration": 243.76,
+    "filename": "305_Forest_Floor_Sprint_v1.mp3",
+    "scene": "dense forest trail sprint / green shade"
+  },
+  "0d35bb5b-882a-49dc-a0b8-de938d4c1932": {
+    "order": 306,
+    "title": "FOREST FLOOR SPRINT",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, earthy woodwind pad, dappled forest reverb, sprinting drum drive",
+    "lyrics_excerpt": "Forest floor sprint, forest floor sprint",
+    "suno_bpm": 180,
+    "aubio_bpm": 116.1,
+    "beat_count_bpm": 109.71,
+    "duration": 233.52,
+    "filename": "306_Forest_Floor_Sprint_v2.mp3",
+    "scene": "dense forest trail sprint / green shade"
+  },
+  "38219d75-41b5-4f7c-afce-684044f7e50b": {
+    "order": 307,
+    "title": "IRON BRIDGE CROSS",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, metallic bridge resonance, river ambience below, girder-hammering drum drive",
+    "lyrics_excerpt": "Iron bridge cross, iron bridge cross",
+    "suno_bpm": 180,
+    "aubio_bpm": 117.95,
+    "beat_count_bpm": 113.95,
+    "duration": 202.72,
+    "filename": "307_Iron_Bridge_Cross_v1.mp3",
+    "scene": "running across a long iron bridge over water"
+  },
+  "704d6a6d-a7d2-48e7-a394-8f4ceddf74f3": {
+    "order": 308,
+    "title": "IRON BRIDGE CROSS",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, metallic bridge resonance, river ambience below, girder-hammering drum drive",
+    "lyrics_excerpt": "Iron bridge cross, iron bridge cross",
+    "suno_bpm": 180,
+    "aubio_bpm": 116.49,
+    "beat_count_bpm": 113.29,
+    "duration": 257.4,
+    "filename": "308_Iron_Bridge_Cross_v2.mp3",
+    "scene": "running across a long iron bridge over water"
+  },
+  "2bcf8c0f-03a7-4aa7-842d-7bf15835d860": {
+    "order": 309,
+    "title": "DESERT DAWN PUSH",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, warm desert wind pad, sunrise horn stab, sand-drum shuffle underlay",
+    "lyrics_excerpt": "Desert dawn push, desert dawn push",
+    "suno_bpm": 180,
+    "aubio_bpm": 150.99,
+    "beat_count_bpm": 141.76,
+    "duration": 274.68,
+    "filename": "309_Desert_Dawn_Push_v1.mp3",
+    "scene": "desert sunrise / heat / endurance"
+  },
+  "1f6fe707-af89-409e-a181-ea2f7df29381": {
+    "order": 310,
+    "title": "DESERT DAWN PUSH",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, warm desert wind pad, sunrise horn stab, sand-drum shuffle underlay",
+    "lyrics_excerpt": "Desert dawn push, desert dawn push",
+    "suno_bpm": 180,
+    "aubio_bpm": 111.36,
+    "beat_count_bpm": 107.5,
+    "duration": 231.08,
+    "filename": "310_Desert_Dawn_Push_v2.mp3",
+    "scene": "desert sunrise / heat / endurance"
+  },
+  "afa6bad6-35c3-4893-9658-2e299f10c8f8": {
+    "order": 311,
+    "title": "SNOWLINE CADENCE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, crystalline chime pad, cold-air synth sparkle, crisp snowpack drum crunch",
+    "lyrics_excerpt": "Snowline cadence, snowline cadence",
+    "suno_bpm": 180,
+    "aubio_bpm": 116.01,
+    "beat_count_bpm": 113.09,
+    "duration": 249.36,
+    "filename": "311_Snowline_Cadence_v1.mp3",
+    "scene": "cold winter high-altitude run / crisp air"
+  },
+  "77d32dbb-018c-4570-923f-b1dda57ec142": {
+    "order": 312,
+    "title": "SNOWLINE CADENCE",
+    "playlists": [
+      "慢跑"
+    ],
+    "style_tags": "drum and bass, 180 BPM, constant kick drum on every beat, relentless snare hits, non-stop rolling drum loop throughout entire song, no drum break, no silent section, driving breakbeat, heavy bass, energetic, uplifting EDM, anthemic female vocal, motivational, running workout, crystalline chime pad, cold-air synth sparkle, crisp snowpack drum crunch",
+    "lyrics_excerpt": "Snowline cadence, snowline cadence",
+    "suno_bpm": 180,
+    "aubio_bpm": 118.32,
+    "beat_count_bpm": 111.92,
+    "duration": 198.36,
+    "filename": "312_Snowline_Cadence_v2.mp3",
+    "scene": "cold winter high-altitude run / crisp air"
   }
 }

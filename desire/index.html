@@ -17,9 +17,11 @@
   gtag('config', 'G-VZ3HKXPKN4');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkaiscreen.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="js/i18n.js" defer></script>
 <style>
 :root {
   --bg: #0D0A08;
@@ -466,9 +468,73 @@ body::before {
 .mt-4 { margin-top: 16px; }
 .text-center { text-align: center; }
 .italic { font-style: italic; }
+
+/* ---- i18n: per-locale fonts & layout fixes ---- */
+html[lang="ja"] body { font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif; }
+html[lang="ja"] .title-main,
+html[lang="ja"] .section-title,
+html[lang="ja"] .q-text,
+html[lang="ja"] .result-type,
+html[lang="ja"] .chapter-title,
+html[lang="ja"] .btn-primary,
+html[lang="ja"] .result-actions button {
+  font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+}
+
+html[lang="en"] body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: normal;
+}
+html[lang="en"] .title-main,
+html[lang="en"] .section-title,
+html[lang="en"] .q-text,
+html[lang="en"] .result-type,
+html[lang="en"] .chapter-title,
+html[lang="en"] .btn-primary,
+html[lang="en"] .result-actions button {
+  font-family: 'Cormorant Garant', Georgia, serif;
+}
+html[lang="en"] .result-type,
+html[lang="en"] .sub-type-name,
+html[lang="en"] .compat-name {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  word-break: normal;
+}
+html[lang="en"] .result-tagline,
+html[lang="en"] .tagline-item {
+  text-wrap: balance;
+}
+html[lang="ja"] .q-text,
+html[lang="ja"] .result-para,
+html[lang="ja"] .chapter-desc {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+/* ---- Language switcher ---- */
+#lang-switcher {
+  position: fixed; top: 10px; right: 16px; z-index: 101;
+  font-family: 'Cormorant Garant', serif;
+  font-size: 11px; letter-spacing: 0.2em; color: var(--fog);
+  user-select: none;
+}
+#lang-switcher button {
+  background: none; border: 0; padding: 2px 4px;
+  font: inherit; color: inherit; cursor: pointer;
+  transition: color 0.3s;
+}
+#lang-switcher button:hover { color: var(--text); }
+#lang-switcher button.active { color: var(--gold); }
+#lang-switcher .sep { color: var(--panel-deep); margin: 0 2px; }
 </style>
 </head>
 <body>
+
+<nav id="lang-switcher" aria-label="Language">
+  <button data-lang="zh-TW">繁</button><span class="sep">·</span><button data-lang="ja">日</button><span class="sep">·</span><button data-lang="en">EN</button>
+</nav>
 
 <div id="progress-bar" style="width:0%"></div>
 <div id="chapter-label"></div>
@@ -476,137 +542,137 @@ body::before {
 <!-- COUNTER -->
 <div id="screen-counter" class="screen hidden">
   <div style="text-align:center;padding:0 24px">
-    <p class="title-sub" style="margin-bottom:36px;letter-spacing:0.35em">DESIRE ARCHETYPE</p>
-    <p style="font-family:'LXGW WenKai Screen',serif;font-size:clamp(15px,4vw,19px);color:var(--text-muted);letter-spacing:0.08em;line-height:1.5">妳是第</p>
+    <p class="title-sub" data-i18n="ui.brand.wordmark" style="margin-bottom:36px;letter-spacing:0.35em">DESIRE ARCHETYPE</p>
+    <p data-i18n="ui.counter.beforeNumber" style="font-family:'LXGW WenKai Screen',serif;font-size:clamp(15px,4vw,19px);color:var(--text-muted);letter-spacing:0.08em;line-height:1.5">妳是第</p>
     <p id="visitor-count" style="font-family:'Cormorant Garant',serif;font-size:clamp(64px,18vw,96px);font-weight:300;color:var(--gold);letter-spacing:0.05em;line-height:1.1;margin:6px 0">···</p>
-    <p style="font-family:'LXGW WenKai Screen',serif;font-size:clamp(15px,4vw,19px);color:var(--text-muted);letter-spacing:0.08em;line-height:1.5">位來探索慾望的人</p>
+    <p data-i18n="ui.counter.afterNumber" style="font-family:'LXGW WenKai Screen',serif;font-size:clamp(15px,4vw,19px);color:var(--text-muted);letter-spacing:0.08em;line-height:1.5">位來探索慾望的人</p>
     <div class="gold-line" style="margin:32px auto"></div>
-    <p style="font-family:'LXGW WenKai Screen',serif;font-size:clamp(20px,5.5vw,28px);color:var(--text);letter-spacing:0.12em;margin-bottom:40px">妳準備好了嗎？</p>
-    <button class="btn-primary" onclick="goTo('landing')" id="counter-btn" style="opacity:0;transition:opacity 0.6s ease">進入</button>
+    <p data-i18n="ui.counter.readyPrompt" style="font-family:'LXGW WenKai Screen',serif;font-size:clamp(20px,5.5vw,28px);color:var(--text);letter-spacing:0.12em;margin-bottom:40px">妳準備好了嗎？</p>
+    <button class="btn-primary" data-i18n="ui.counter.enterButton" onclick="goTo('landing')" id="counter-btn" style="opacity:0;transition:opacity 0.6s ease">進入</button>
   </div>
 </div>
 
 <!-- LANDING -->
 <div id="screen-landing" class="screen visible">
-  <p class="title-sub" style="margin-bottom:16px">DESIRE ARCHETYPE</p>
-  <h1 class="title-main">慾望原型</h1>
+  <p class="title-sub" data-i18n="ui.brand.wordmark" style="margin-bottom:16px">DESIRE ARCHETYPE</p>
+  <h1 class="title-main" data-i18n="ui.landing.heading">慾望原型</h1>
   <div class="gold-line"></div>
-  <div class="taglines">
+  <div class="taglines" id="landing-taglines">
     <p class="tagline-item">點燃。</p>
     <p class="tagline-item">流動。</p>
     <p class="tagline-item">牽引。</p>
   </div>
-  <p style="font-size:12px;letter-spacing:0.2em;color:var(--fog);margin-top:20px;">36 題・約 10 分鐘</p>
-  <button class="btn-primary" onclick="startFresh()">進入測驗</button>
+  <p data-i18n="ui.landing.meta" style="font-size:12px;letter-spacing:0.2em;color:var(--fog);margin-top:20px;">36 題・約 10 分鐘</p>
+  <button class="btn-primary" data-i18n="ui.landing.startButton" onclick="startFresh()">進入測驗</button>
   <div id="resume-section" style="display:none;margin-top:16px;">
-    <button class="btn-secondary" onclick="resumeQuiz()" style="font-size:13px;padding:10px 24px;letter-spacing:0.15em;">繼續上次測驗</button>
+    <button class="btn-secondary" data-i18n="ui.landing.resumeButton" onclick="resumeQuiz()" style="font-size:13px;padding:10px 24px;letter-spacing:0.15em;">繼續上次測驗</button>
   </div>
 </div>
 
 <!-- INTRO -->
 <div id="screen-intro" class="screen hidden">
   <div style="max-width:480px;text-align:center">
-    <p class="title-sub" style="margin-bottom:24px">BEFORE YOU BEGIN</p>
-    <h2 class="section-title" style="margin-bottom:24px">測驗開始前</h2>
+    <p class="title-sub" data-i18n="ui.intro.label" style="margin-bottom:24px">BEFORE YOU BEGIN</p>
+    <h2 class="section-title" data-i18n="ui.intro.heading" style="margin-bottom:24px">測驗開始前</h2>
     <div class="gold-line"></div>
-    <p class="prose" style="margin-top:20px">
+    <p class="prose" data-i18n-html="ui.intro.body" style="margin-top:20px">
       這份測驗問的不是你想成為的樣子。<br><br>
       而是探討你最原始的慾望來源——<br>
       當慾望真的升起時，你會往哪裡去？<br><br>
       請憑直覺選擇<br>
       選那個讀完覺得最像你的
     </p>
-    <button class="btn-primary" onclick="goTo('safety')">開始</button>
+    <button class="btn-primary" data-i18n="ui.intro.startButton" onclick="goTo('safety')">開始</button>
   </div>
 </div>
 
 <!-- SAFETY -->
 <div id="screen-safety" class="screen hidden">
   <div style="max-width:480px;text-align:center">
-    <p class="title-sub" style="margin-bottom:24px">NOTICE</p>
-    <h2 class="section-title" style="margin-bottom:24px">重要聲明</h2>
+    <p class="title-sub" data-i18n="ui.safety.label" style="margin-bottom:24px">NOTICE</p>
+    <h2 class="section-title" data-i18n="ui.safety.heading" style="margin-bottom:24px">重要聲明</h2>
     <div class="gold-line"></div>
-    <p class="prose" style="margin-top:20px">
+    <p class="prose" data-i18n-html="ui.safety.body" style="margin-top:20px">
       這份測驗的「越界」只成立在幾個前提裡。<br><br>
       清楚合意。事前溝通。有安全詞。可以撤回。可以立刻停止。結束後有 aftercare。<br><br>
       少了任何一個，那都不是越界。<br>
       是侵犯。<br><br>
       這份結果描述的是情慾、身體反應與 BDSM 情境裡的<em>原型傾向</em>。僅此而已。
     </p>
-    <button class="btn-primary" onclick="goTo('gender')">我已閱讀</button>
+    <button class="btn-primary" data-i18n="ui.safety.confirmButton" onclick="goTo('gender')">我已閱讀</button>
   </div>
 </div>
 
 <!-- GENDER (self) -->
 <div id="screen-gender" class="screen hidden">
   <div style="text-align:center">
-    <p class="title-sub" style="margin-bottom:24px">IMAGE PREFERENCE — STEP 1 / 2</p>
-    <h2 class="section-title" style="margin-bottom:8px">選擇結果頁想看見的角色圖像</h2>
-    <p class="body-text" style="margin-top:8px;font-size:13px">只影響圖像呈現，不影響結果。</p>
+    <p class="title-sub" data-i18n="ui.genderSelf.stepLabel" style="margin-bottom:24px">IMAGE PREFERENCE — STEP 1 / 2</p>
+    <h2 class="section-title" data-i18n="ui.genderSelf.heading" style="margin-bottom:8px">選擇結果頁想看見的角色圖像</h2>
+    <p class="body-text" data-i18n="ui.genderSelf.helper" style="margin-top:8px;font-size:13px">只影響圖像呈現，不影響結果。</p>
     <div class="gender-cards">
       <div class="gender-card" id="card-female" onclick="selectGender('female')">
-        <span class="gender-symbol">♀</span><span>女性圖像</span>
+        <span class="gender-symbol">♀</span><span data-i18n="ui.genderSelf.optionFemale">女性圖像</span>
       </div>
       <div class="gender-card" id="card-male" onclick="selectGender('male')">
-        <span class="gender-symbol">♂</span><span>男性圖像</span>
+        <span class="gender-symbol">♂</span><span data-i18n="ui.genderSelf.optionMale">男性圖像</span>
       </div>
     </div>
-    <button class="btn-primary" id="gender-confirm" onclick="goTo('compat-gender')" style="display:none">下一步</button>
+    <button class="btn-primary" id="gender-confirm" data-i18n="ui.genderSelf.nextButton" onclick="goTo('compat-gender')" style="display:none">下一步</button>
   </div>
 </div>
 
 <!-- GENDER (compat) -->
 <div id="screen-compat-gender" class="screen hidden">
   <div style="text-align:center">
-    <p class="title-sub" style="margin-bottom:24px">IMAGE PREFERENCE — STEP 2 / 2</p>
-    <h2 class="section-title" style="margin-bottom:8px">選擇核心契合者的圖像</h2>
-    <p class="body-text" style="margin-top:8px;font-size:13px">結果頁中「核心契合」那位人物的圖像性別。</p>
+    <p class="title-sub" data-i18n="ui.genderCompat.stepLabel" style="margin-bottom:24px">IMAGE PREFERENCE — STEP 2 / 2</p>
+    <h2 class="section-title" data-i18n="ui.genderCompat.heading" style="margin-bottom:8px">選擇核心契合者的圖像</h2>
+    <p class="body-text" data-i18n="ui.genderCompat.helper" style="margin-top:8px;font-size:13px">結果頁中「核心契合」那位人物的圖像性別。</p>
     <div class="gender-cards">
       <div class="gender-card" id="card-compat-female" onclick="selectCompatGender('female')">
-        <span class="gender-symbol">♀</span><span>女性圖像</span>
+        <span class="gender-symbol">♀</span><span data-i18n="ui.genderCompat.optionFemale">女性圖像</span>
       </div>
       <div class="gender-card" id="card-compat-male" onclick="selectCompatGender('male')">
-        <span class="gender-symbol">♂</span><span>男性圖像</span>
+        <span class="gender-symbol">♂</span><span data-i18n="ui.genderCompat.optionMale">男性圖像</span>
       </div>
     </div>
-    <button class="btn-primary" id="compat-gender-confirm" onclick="startQuiz()" style="display:none">確認，開始測驗</button>
+    <button class="btn-primary" id="compat-gender-confirm" data-i18n="ui.genderCompat.confirmButton" onclick="startQuiz()" style="display:none">確認，開始測驗</button>
   </div>
 </div>
 
 <!-- CHAPTER TRANSITIONS -->
 <div id="screen-chapter1" class="screen hidden">
   <div class="chapter-screen">
-    <p class="chapter-num">CHAPTER ONE</p>
-    <h2 class="chapter-title">慾火怎麼升起</h2>
+    <p class="chapter-num" data-i18n="ui.chapterTransitions.ch1.label">CHAPTER ONE</p>
+    <h2 class="chapter-title" data-i18n="ui.chapterTransitions.ch1.title">慾火怎麼升起</h2>
     <div class="gold-line"></div>
-    <p class="chapter-desc" style="margin-top:16px">有些人的慾望向來旺盛——它早就在身體裡燒著，只是在找地方發洩。<br><br>其他人不是沒有想法。只是要等對的人靠近，等那令人著迷的氣味、聲音、命令、眼神，或某個不能假裝若無其事的距離，把身體真的點燃。</p>
-    <button class="btn-primary" onclick="startChapter(1)">繼續</button>
+    <p class="chapter-desc" data-i18n-html="ui.chapterTransitions.ch1.body" style="margin-top:16px">有些人的慾望向來旺盛——它早就在身體裡燒著，只是在找地方發洩。<br><br>其他人不是沒有想法。只是要等對的人靠近，等那令人著迷的氣味、聲音、命令、眼神，或某個不能假裝若無其事的距離，把身體真的點燃。</p>
+    <button class="btn-primary" data-i18n="ui.chapterTransitions.ch1.continueButton" onclick="startChapter(1)">繼續</button>
   </div>
 </div>
 
 <div id="screen-chapter2" class="screen hidden">
   <div class="chapter-screen">
-    <p class="chapter-num">CHAPTER TWO</p>
-    <h2 class="chapter-title">權力怎麼流動</h2>
+    <p class="chapter-num" data-i18n="ui.chapterTransitions.ch2.label">CHAPTER TWO</p>
+    <h2 class="chapter-title" data-i18n="ui.chapterTransitions.ch2.title">權力怎麼流動</h2>
     <div class="gold-line"></div>
-    <p class="chapter-desc" style="margin-top:16px">D/s 不是單純一個人看似高高在上，另一個人跪地趴低。<br><br>真正讓人上癮的，是控制權在兩個人之間被試探、拿起、交出、接住。<br><br>有人習慣主動拿取。有人習慣被動承接。也有人一旦位置被固定，就覺得整段實踐失去意義。</p>
-    <button class="btn-primary" onclick="startChapter(2)">繼續</button>
+    <p class="chapter-desc" data-i18n-html="ui.chapterTransitions.ch2.body" style="margin-top:16px">D/s 不是單純一個人看似高高在上，另一個人跪地趴低。<br><br>真正讓人上癮的，是控制權在兩個人之間被試探、拿起、交出、接住。<br><br>有人習慣主動拿取。有人習慣被動承接。也有人一旦位置被固定，就覺得整段實踐失去意義。</p>
+    <button class="btn-primary" data-i18n="ui.chapterTransitions.ch2.continueButton" onclick="startChapter(2)">繼續</button>
   </div>
 </div>
 
 <div id="screen-chapter3" class="screen hidden">
   <div class="chapter-screen">
-    <p class="chapter-num">CHAPTER THREE</p>
-    <h2 class="chapter-title">你的慾望究竟來自何處？</h2>
+    <p class="chapter-num" data-i18n="ui.chapterTransitions.ch3.label">CHAPTER THREE</p>
+    <h2 class="chapter-title" data-i18n="ui.chapterTransitions.ch3.title">你的慾望究竟來自何處？</h2>
     <div class="gold-line"></div>
-    <p class="chapter-desc" style="margin-top:16px">有人著迷於感官。氣味、體溫、皮膚、聲音，一碰就進入狀況。<br><br>有人喜歡劍拔弩張的氛圍。等待、忍耐、懸吊著，明明快到了卻不被允許釋放——那段時間本身就是折磨，也是快感。<br><br>有人是儀式的殉道者。稱呼、規則、姿勢、流程，一旦開始，就知道自己該在哪個位置。<br><br>有人就喜歡探索禁忌。在清楚合意後，被帶到平常不敢碰、不能說、不想承認的地方。</p>
+    <p class="chapter-desc" data-i18n-html="ui.chapterTransitions.ch3.body" style="margin-top:16px">有人著迷於感官。氣味、體溫、皮膚、聲音，一碰就進入狀況。<br><br>有人喜歡劍拔弩張的氛圍。等待、忍耐、懸吊著，明明快到了卻不被允許釋放——那段時間本身就是折磨，也是快感。<br><br>有人是儀式的殉道者。稱呼、規則、姿勢、流程，一旦開始，就知道自己該在哪個位置。<br><br>有人就喜歡探索禁忌。在清楚合意後，被帶到平常不敢碰、不能說、不想承認的地方。</p>
     <div style="margin-top:28px;padding:20px;border:1px solid rgba(110,31,47,0.4);background:rgba(110,31,47,0.05);">
-      <p style="font-size:13px;line-height:1.9;color:var(--text-muted);">
+      <p data-i18n-html="ui.chapterTransitions.ch3.xNotice" style="font-size:13px;line-height:1.9;color:var(--text-muted);">
         接下來的「越界」，只指清楚合意、能撤回、可以立即停止，並且結束後能被照護的心理、身體或情境探索。<br><br>
         不舒服就停下來。喊安全詞，不需要解釋。承受不了，不代表失敗。
       </p>
     </div>
-    <button class="btn-primary" onclick="startChapter(3)" style="margin-top:24px">繼續</button>
+    <button class="btn-primary" data-i18n="ui.chapterTransitions.ch3.continueButton" onclick="startChapter(3)" style="margin-top:24px">繼續</button>
   </div>
 </div>
 
@@ -617,7 +683,7 @@ body::before {
     <p class="q-text" id="q-text"></p>
     <div class="options" id="q-options"></div>
     <div class="nav-row">
-      <button class="btn-back" id="btn-back" onclick="prevQuestion()">← 上一題</button>
+      <button class="btn-back" id="btn-back" data-i18n="ui.quiz.backButton" onclick="prevQuestion()">← 上一題</button>
     </div>
   </div>
 </div>
@@ -625,8 +691,8 @@ body::before {
 <!-- CALCULATING -->
 <div id="screen-calculating" class="screen hidden">
   <div class="calc-ring"></div>
-  <p class="section-title" style="margin-bottom:12px">正在讓你的原型浮現</p>
-  <p class="body-text" style="font-size:13px">——</p>
+  <p class="section-title" data-i18n="ui.calculating.heading" style="margin-bottom:12px">正在讓你的原型浮現</p>
+  <p class="body-text" data-i18n="ui.calculating.body" style="font-size:13px">——</p>
 </div>
 
 <!-- RESULT -->
@@ -639,7 +705,7 @@ body::before {
 // DATA
 // ============================================================
 
-const QUESTIONS = [
+let QUESTIONS = [
   // Q1–Q8: 啟動方式 A/R
   {chapter:1, text:'活動場上注意到某個人，體內好像有些什麼反應。接下來比較可能怎麼做？',
    opts:[
@@ -897,7 +963,7 @@ const QUESTIONS = [
   ]},
 ];
 
-const TYPES = {
+let TYPES = {
   'A-G-N': {
     name: '獵手',
     tagline: '看見獵物就靠近，身體比想法更早做出選擇',
@@ -1167,7 +1233,7 @@ const IMAGES = {
   'RSX':{female:'RSX-遊蕩者-女性-羽落廢墟中的孤獨旅者.png',male:'RSX-遊蕩者-男性-迷霧中的孤獨旅者.png'},
 };
 
-const AXIS_INFO = {
+let AXIS_INFO = {
   'A':{en:'INITIATIVE',zh:'主動',desc:'你傾向主動發起邀請。感官的火苗通常先從你這邊點燃，等待對你而言是一種選擇，不是預設。'},
   'R':{en:'RESPONSIVE',zh:'回應',desc:'你從對方的狀態變化中獲得動力。對方的反應、停頓、細小的動作，是你進入情境的主要方式。'},
   'G':{en:'GIVING',zh:'給予',desc:'你的慾望以輸出為主。感受對方因你而改變、被你影響的那一刻，讓你真正進入狀態。'},
@@ -1256,8 +1322,12 @@ function updateProgress() {
   const pct = (state.currentQ / QUESTIONS.length) * 100;
   document.getElementById('progress-bar').style.width = pct + '%';
   const q = QUESTIONS[state.currentQ];
-  const chLabels = {1:'第一章｜火如何升起',2:'第二章｜關係如何牽動',3:'第三章｜深處如何召喚'};
-  document.getElementById('chapter-label').textContent = chLabels[q.chapter] || '';
+  const chLabels = (window.i18n && window.i18n.t('ui.quiz.chapterLabels'))
+    || {1:'第一章｜火如何升起',2:'第二章｜關係如何牽動',3:'第三章｜深處如何召喚'};
+  const labelMap = (typeof chLabels === 'object' && chLabels['1'])
+    ? chLabels
+    : {1:'第一章｜火如何升起',2:'第二章｜關係如何牽動',3:'第三章｜深處如何召喚'};
+  document.getElementById('chapter-label').textContent = labelMap[q.chapter] || '';
 }
 
 function renderQuestion(idx) {
@@ -1391,7 +1461,8 @@ function finishQuiz() {
         axis_activation: pAct,
         axis_energy: pEn,
         axis_drive: result.drive,
-        gender: state.gender || 'unknown'
+        gender: state.gender || 'unknown',
+        language: (window.i18n && window.i18n.getLang && window.i18n.getLang()) || 'zh-TW'
       });
     }
   }, 2000);
@@ -1491,7 +1562,9 @@ function renderResult(r) {
           subHTML += `<p class="result-para">${p}</p>`;
         });
       } else {
-        subHTML += `<p class="result-para">如果你的副人格是<span class="result-highlight">${sub.name}</span>，代表你有另一種傾向共存在你的慾望結構裡。</p>`;
+        const fb = (window.i18n && window.i18n.t('ui.result.subTypeFallback1', {name: sub.name}))
+          || `如果你的副人格是${sub.name}，代表你有另一種傾向共存在你的慾望結構裡。`;
+        subHTML += `<p class="result-para">${fb}</p>`;
       }
     }
   }
@@ -1510,11 +1583,16 @@ function renderResult(r) {
       if (sub2.subDesc) {
         subHTML += `<p class="result-para">${sub2.subDesc}</p>`;
       } else {
-        subHTML += `<p class="result-para">如果你的副人格是<span class="result-highlight">${sub2.name}</span>，代表你的核心驅動有另一個相近的入口，兩者共存在你的慾望結構裡。</p>`;
+        const fb = (window.i18n && window.i18n.t('ui.result.subTypeFallback2', {name: sub2.name}))
+          || `如果你的副人格是${sub2.name}，代表你的核心驅動有另一個相近的入口，兩者共存在你的慾望結構裡。`;
+        subHTML += `<p class="result-para">${fb}</p>`;
       }
     }
   }
-  if (!subHTML) subHTML = '<p class="result-para">你的各軸分數相對集中，主型傾向清楚。</p>';
+  if (!subHTML) {
+    const tightNote = (window.i18n && window.i18n.t('ui.result.tightScoresNote')) || '你的各軸分數相對集中，主型傾向清楚。';
+    subHTML = `<p class="result-para">${tightNote}</p>`;
+  }
 
   function axisBreakdown(code) {
     return code.split('-').map(letter => {
@@ -1532,10 +1610,34 @@ function renderResult(r) {
   }
 
   // X-axis note
+  const xNoteText = (window.i18n && window.i18n.t('ui.result.xNote'))
+    || '這裡的「越界」不是侵犯拒絕，而是在明確合意、可撤回、安全詞與事後照護存在的前提下，探索心理或情境邊界。';
   const xNote = r.drive === 'X' ? `
     <div style="margin-top:16px;padding:14px 16px;border:1px solid rgba(110,31,47,0.35);background:rgba(110,31,47,0.06);">
-      <p style="font-size:12px;line-height:1.9;color:var(--text-muted);">這裡的「越界」不是侵犯拒絕，而是在明確合意、可撤回、安全詞與事後照護存在的前提下，探索心理或情境邊界。</p>
+      <p style="font-size:12px;line-height:1.9;color:var(--text-muted);">${xNoteText}</p>
     </div>` : '';
+
+  // i18n helpers for the result template (fallbacks to current zh baselines)
+  const _t = (k, fb) => (window.i18n && window.i18n.t(k)) || fb;
+  const lbl = {
+    codeBreakdown: _t('ui.result.sectionLabels.codeBreakdown', 'CODE BREAKDOWN'),
+    axisProfile: _t('ui.result.sectionLabels.axisProfile', 'AXIS PROFILE'),
+    yourArchetype: _t('ui.result.sectionLabels.yourArchetype', 'YOUR ARCHETYPE'),
+    shadowSide: _t('ui.result.sectionLabels.shadowSide', 'SHADOW SIDE'),
+    secondaryTendency: _t('ui.result.sectionLabels.secondaryTendency', 'SECONDARY TENDENCY'),
+    coreCompatibility: _t('ui.result.sectionLabels.coreCompatibility', 'CORE COMPATIBILITY'),
+    share: _t('ui.result.sectionLabels.share', 'SHARE'),
+    primaryPrefix: _t('ui.result.sectionTitles.primaryPrefix', '主型：'),
+    shadowTitle: _t('ui.result.sectionTitles.shadow', '陰影面'),
+    shadowIntro: _t('ui.result.sectionTitles.shadowIntro', '當這個原型失衡時：'),
+    secondaryTitle: _t('ui.result.sectionTitles.secondary', '副型傾向'),
+    compatTitle: _t('ui.result.sectionTitles.compatibility', '核心契合者'),
+    compatDisclaimer: _t('ui.result.compatDisclaimer', '契合不等於保證適合。真實關係仍取決於成熟度、溝通、界線與照護能力。'),
+    disclaimer: _t('ui.result.disclaimer', '本結果描述的是你在親密與慾望情境中的原型傾向，\n不等同於完整人格、道德評價或心理診斷。'),
+    retake: _t('ui.result.retakeButton', '重新測驗'),
+    download: _t('ui.result.downloadButton', '儲存結果圖'),
+  };
+  const disclaimerHTML = lbl.disclaimer.replace(/\n/g, '<br>');
 
   document.getElementById('result-inner').innerHTML = `
     <div class="result-inner ${driveClass}" id="result-inner-styled">
@@ -1549,7 +1651,7 @@ function renderResult(r) {
 
       <!-- Block 1.5: Axis code breakdown -->
       <div class="result-section">
-        <p class="result-section-label">CODE BREAKDOWN</p>
+        <p class="result-section-label">${lbl.codeBreakdown}</p>
         ${r.primaryCode.split('-').map(letter => {
           const ax = AXIS_INFO[letter];
           if (!ax) return '';
@@ -1566,36 +1668,36 @@ function renderResult(r) {
 
       <!-- Block 2: Axis visualization -->
       <div class="result-section axis-section">
-        <p class="result-section-label">AXIS PROFILE</p>
+        <p class="result-section-label">${lbl.axisProfile}</p>
         ${buildRadarChart(r)}
       </div>
 
       <!-- Block 3: Main description -->
       <div class="result-section">
-        <p class="result-section-label">YOUR ARCHETYPE</p>
-        <h2 class="result-section-title">主型：${type.name}</h2>
+        <p class="result-section-label">${lbl.yourArchetype}</p>
+        <h2 class="result-section-title">${lbl.primaryPrefix}${type.name}</h2>
         <p class="result-para">${type.desc}</p>
       </div>
 
       <!-- Block 4: Shadow -->
       <div class="result-section">
-        <p class="result-section-label">SHADOW SIDE</p>
-        <h2 class="result-section-title">陰影面</h2>
-        <p class="result-para">當這個原型失衡時：</p>
+        <p class="result-section-label">${lbl.shadowSide}</p>
+        <h2 class="result-section-title">${lbl.shadowTitle}</h2>
+        <p class="result-para">${lbl.shadowIntro}</p>
         <p class="result-para">${type.shadow}</p>
       </div>
 
       <!-- Block 5: Sub-type -->
       <div class="result-section">
-        <p class="result-section-label">SECONDARY TENDENCY</p>
-        <h2 class="result-section-title">副型傾向</h2>
+        <p class="result-section-label">${lbl.secondaryTendency}</p>
+        <h2 class="result-section-title">${lbl.secondaryTitle}</h2>
         ${subHTML}
       </div>
 
       <!-- Block 6: Compatibility -->
       <div class="result-section">
-        <p class="result-section-label">CORE COMPATIBILITY</p>
-        <h2 class="result-section-title">核心契合者</h2>
+        <p class="result-section-label">${lbl.coreCompatibility}</p>
+        <h2 class="result-section-title">${lbl.compatTitle}</h2>
         ${compatImgSrc ? `<div class="result-card" style="margin-bottom:16px"><img src="${compatImgSrc}" alt="${compatName}" style="width:100%;max-width:320px;aspect-ratio:1;object-fit:cover;display:block;margin:0 auto 0" onerror="this.parentElement.style.display='none'"></div>` : ''}
         <div class="compat-box">
           <p class="compat-label">${compatCode}</p>
@@ -1603,22 +1705,22 @@ function renderResult(r) {
           ${compatCode && TYPES[compatCode] && TYPES[compatCode].tagline ? `<p class="result-tagline" style="text-align:center;margin-bottom:10px">${TYPES[compatCode].tagline}</p>` : ''}
           <div style="margin:10px 0 4px">${compatCode ? axisBreakdown(compatCode) : ''}</div>
           <p class="result-para">${compatText}</p>
-          <p class="compat-note">契合不等於保證適合。真實關係仍取決於成熟度、溝通、界線與照護能力。</p>
+          <p class="compat-note">${lbl.compatDisclaimer}</p>
         </div>
         ${xNote}
       </div>
 
       <!-- Disclaimer -->
       <p style="font-size:12px;color:var(--fog);margin-top:0;padding:16px 0;text-align:center;line-height:1.8;border-top:1px solid var(--panel-deep);">
-        本結果描述的是你在親密與慾望情境中的原型傾向，<br>不等同於完整人格、道德評價或心理診斷。
+        ${disclaimerHTML}
       </p>
 
       <!-- Block 7: Actions -->
       <div class="result-section" id="result-share-section">
-        <p class="result-section-label">SHARE</p>
+        <p class="result-section-label">${lbl.share}</p>
         <div class="result-actions">
-          <button onclick="restartQuiz()">重新測驗</button>
-          <button onclick="downloadResult(this)">儲存結果圖</button>
+          <button onclick="restartQuiz()">${lbl.retake}</button>
+          <button onclick="downloadResult(this)">${lbl.download}</button>
         </div>
       </div>
     </div>
@@ -1631,16 +1733,26 @@ function renderResult(r) {
 
 function buildRadarChart(r) {
   const cx=160, cy=160, maxR=100;
-  const axes=[
-    {label:'主動',val:r.axA},{label:'回應',val:r.axR},
-    {label:'給予',val:r.axG},{label:'承接',val:r.axT},{label:'交替',val:r.axS},
-    {label:'感官',val:r.axN},{label:'張力',val:r.axP},{label:'儀式',val:r.axC},{label:'越界',val:r.axX},
-  ];
+  // Axis labels pull from AXIS_INFO.zh (which is swapped by applyLocaleData for each locale).
+  const axisKeys = ['A','R','G','T','S','N','P','C','X'];
+  const axisVals = {A:r.axA,R:r.axR,G:r.axG,T:r.axT,S:r.axS,N:r.axN,P:r.axP,C:r.axC,X:r.axX};
+  const curLang = (window.i18n && window.i18n.getLang && window.i18n.getLang()) || 'zh-TW';
+  const axes = axisKeys.map(k => ({
+    key: k,
+    label: (AXIS_INFO[k] && AXIS_INFO[k].zh) || k,
+    val: axisVals[k],
+  }));
   const n=axes.length;
   const ang=i=>i/n*Math.PI*2-Math.PI/2;
   const pt=(i,rad)=>{const a=ang(i);return[cx+rad*Math.cos(a),cy+rad*Math.sin(a)];};
   const pAct=r.primaryCode.split('-')[0], pEn=r.primaryCode.split('-')[1], pDr=r.drive;
-  const keyOf={主動:'A',回應:'R',給予:'G',承接:'T',交替:'S',感官:'N',張力:'P',儀式:'C',越界:'X'};
+  // Locale-aware label font-size: English words are longer, shrink to prevent overlap.
+  const labelFontSize = curLang === 'en' ? 8.5 : 10.5;
+  const labelFontFamily = curLang === 'ja'
+    ? "'Noto Serif JP','Hiragino Mincho ProN',serif"
+    : curLang === 'en'
+      ? "'Cormorant Garant',serif"
+      : "'LXGW WenKai Screen',serif";
 
   const grids=[25,50,75,100].map(lv=>{
     const pts=axes.map((_,i)=>{const[x,y]=pt(i,maxR*lv/100);return`${x.toFixed(1)},${y.toFixed(1)}`;}).join(' ');
@@ -1663,15 +1775,15 @@ function buildRadarChart(r) {
     const cosA=Math.cos(ang(i)), sinA=Math.sin(ang(i));
     const anchor=cosA>0.2?'start':cosA<-0.2?'end':'middle';
     const dy=sinA<-0.35?-7:sinA>0.35?5:2;
-    const key=keyOf[ax.label];
+    const key=ax.key;
     const isPrimary=(['A','R'].includes(key)&&key===pAct)||
                     (['G','T','S'].includes(key)&&key===pEn)||
                     (['N','P','C','X'].includes(key)&&key===pDr);
     const col=isPrimary?'#B8965A':'#787276';
     const pct=Math.round(ax.val);
     return `<text x="${lx.toFixed(1)}" y="${(ly+dy).toFixed(1)}" text-anchor="${anchor}"
-      font-family="'LXGW WenKai Screen',serif" font-size="10.5" fill="${col}">${ax.label
-    }<tspan font-family="Cormorant Garant,serif" font-size="9" dx="2" fill="${isPrimary?'#B8965A':'#555'}">${pct}%</tspan></text>`;
+      font-family="${labelFontFamily}" font-size="${labelFontSize}" fill="${col}">${ax.label
+    }<tspan font-family="Cormorant Garant,serif" font-size="${labelFontSize-1.5}" dx="2" fill="${isPrimary?'#B8965A':'#555'}">${pct}%</tspan></text>`;
   }).join('');
 
   return `<div style="margin:0 auto 4px;max-width:320px;padding:0 8px;box-sizing:border-box"><svg viewBox="-30 -20 380 360" overflow="visible" style="width:100%;display:block">
@@ -1809,6 +1921,80 @@ function checkResume() {
 }
 
 // Check for saved progress on load
+// ---- i18n: swap TYPES / QUESTIONS / AXIS_INFO with locale JSON data ----
+function applyLocaleData() {
+  if (!window.i18n) return;
+  const dict = window.i18n.getDict && window.i18n.getDict();
+  if (!dict) return;
+
+  // Replace TYPES: map JSON field names (description/subDescription/compatCode) → hardcoded aliases (desc/subDesc/compat)
+  if (dict.types) {
+    const newTypes = {};
+    for (const code in dict.types) {
+      const t = dict.types[code];
+      newTypes[code] = {
+        name: t.name,
+        tagline: t.tagline,
+        desc: t.description,
+        shadow: t.shadow,
+        subDesc: t.subDescription,
+        compat: t.compatCode,
+        compatName: t.compatName,
+        compatText: t.compatText,
+      };
+    }
+    TYPES = newTypes;
+  }
+
+  // Replace QUESTIONS: map JSON (text/options[].text/options[].scores) → hardcoded (text/opts[].t/opts[].s)
+  if (Array.isArray(dict.questions)) {
+    QUESTIONS = dict.questions.map(q => ({
+      chapter: q.chapter,
+      text: q.text,
+      opts: (q.options || []).map(o => ({ t: o.text, s: o.scores })),
+    }));
+  }
+
+  // Replace AXIS_INFO
+  if (dict.axisInfo) {
+    const newAxis = {};
+    for (const k in dict.axisInfo) {
+      const a = dict.axisInfo[k];
+      newAxis[k] = { en: a.en, zh: a.label, desc: a.description };
+    }
+    AXIS_INFO = newAxis;
+  }
+
+  // Fill landing taglines (array)
+  const tagsEl = document.getElementById('landing-taglines');
+  if (tagsEl && dict.ui && Array.isArray(dict.ui.landing && dict.ui.landing.taglines)) {
+    tagsEl.innerHTML = dict.ui.landing.taglines
+      .map(tag => `<p class="tagline-item">${tag.replace(/</g,'&lt;')}</p>`).join('');
+  }
+}
+
+// Expose rerenderCurrent for i18n.setLang callback
+window.rerenderCurrent = function () {
+  applyLocaleData();
+  if (state.screen === 'quiz' && typeof renderQuestion === 'function') {
+    renderQuestion(state.currentQ);
+  } else if (state.screen === 'result' && state.result && typeof renderResult === 'function') {
+    renderResult(state.result);
+  }
+  // Static screens re-bind via applyStaticBindings (already called by i18n.js setLang path)
+  if (window.i18n && typeof window.i18n.applyStaticBindings === 'function') {
+    window.i18n.applyStaticBindings();
+  }
+};
+
+// When i18n is ready (initial load), swap data and re-bind.
+window.addEventListener('i18n:ready', () => {
+  applyLocaleData();
+  if (window.i18n && typeof window.i18n.applyStaticBindings === 'function') {
+    window.i18n.applyStaticBindings();
+  }
+});
+
 window.addEventListener('DOMContentLoaded', () => {
   checkResume();
   initCounterPage();

@@ -1,0 +1,2059 @@
+{
+  "_meta": {
+    "locale": "en",
+    "baseline": false,
+    "source": "zh-TW.json (2026-10-01)",
+    "note": "English localization of the Desire Archetypes quiz. Preserve newline markers (\\n = <br>, \\n\\n = paragraph). Non-translatable: option scores, type code, compat map."
+  },
+  "_translator_notes": {
+    "note": "Not part of app schema. Flags for Michael's review.",
+    "typeNames": {
+      "A-G-N Hunter": "Matches brief's first candidate; cleanest community-register noun.",
+      "R-T-N Listener": "Brief suggests 'Listener' or 'The Attuned'; chose 'Listener' because the archetype opens when truly heard, not just read.",
+      "A-T-N Hedonist": "Brief candidate.",
+      "R-G-N Reader": "Chose 'Reader' over brief's 'Attuned Giver'. Single-word noun, keeps the 'reads before being asked' quality without buzzwording 'empath'.",
+      "A-S-N Chaser": "Brief candidate.",
+      "R-S-N Dancer": "Brief candidate.",
+      "A-G-P Dom": "Chose community-native 'Dom' over 'Commander'. The archetype IS the Dom in BDSM community vocabulary.",
+      "R-T-P Submissive": "Brief candidate; standard pair with 'Dom'.",
+      "A-T-P Faller": "Brief candidate; intransitive -er noun matches the archetype's self-chosen plunge.",
+      "R-G-P Catcher": "Brief candidate; pairs cleanly with Faller.",
+      "A-S-P Switch": "Brief candidate; community-native BDSM term.",
+      "R-S-P Mist": "Brief candidate.",
+      "A-G-C Weaver": "Chose 'Weaver' over 'Ritualist' for poetic register (brief listed both).",
+      "R-T-C Devotee": "Brief candidate; captures the 'enters when the frame is set' devotion.",
+      "A-T-C Pilgrim": "Brief candidate; sacred-quest energy matches the Chinese 求道.",
+      "R-G-C Keeper": "Brief candidate; cleaner than 'Officiant'.",
+      "A-S-C Shapeshifter": "Chose 'Shapeshifter' over brief's 'Avatar'. More vivid, less tech-adjacent.",
+      "R-S-C Vessel": "Brief candidate; captures 'takes the shape of the scene'.",
+      "A-G-X Guide": "Brief candidate; the compatText already uses the lamp-holding imagery.",
+      "R-T-X Melter": "Departure from brief's 'Dissolving' (adjective, awkward as a name). 'Melt' is community-used in BDSM talk ('I melt for her'); 'Melter' reads as intransitive like 'Faller'. May want to spot-check this one.",
+      "A-T-X Crosser": "Brief candidate; shorter than 'Pilgrim-to-the-Edge'.",
+      "R-G-X Gatekeeper": "Brief candidate; direct match.",
+      "A-S-X Transgressor": "Brief candidate; Bataille-adjacent.",
+      "R-S-X Wanderer": "Brief candidate."
+    },
+    "wordmarkFlag": "zh-TW.json has singular 'DESIRE ARCHETYPE'. Brief states brand is plural 'Desire Archetypes'. Used plural for English wordmark; swap to singular if visual branding should be preserved verbatim.",
+    "spotCheckRegister": [
+      "ui.counter.beforeNumber / afterNumber: used 'You are visitor N seeking desire' format to avoid English ordinal suffix problem (1st/2nd/3rd/etc.). Alternative: 'Explorer #N'.",
+      "ui.calculating.body / ui.counter.numberFallback: replaced '——' em-dash placeholder with '···' per no-em-dash rule.",
+      "ui.quiz.chapterLabels: used '|' separator; zh used full-width '｜'.",
+      "types.R-T-X Melter: see typeNames note above.",
+      "types.R-G-N Reader: standalone 'Reader' is unusual as an archetype name; consider 'The Reader' if a 'The ' prefix is desired on all names.",
+      "radarLabels.X: 'Edge' chosen for compact radar label; axisInfo.X.en remains 'BOUNDARY' from source. Semantically consistent."
+    ],
+    "baselineQuirksWorkedAround": [
+      "zh-TW ui.counter.numberFallback and ui.calculating.body both use literal '——'. Translated to '···' to honor the no-em-dash rule even in placeholder glyphs.",
+      "zh-TW ui.safety.body uses the two-sentence form '少了任何一個，那都不是越界。是侵犯。' which looks like the forbidden '不是...而是' pattern but is intentionally split for ethical weight. Preserved the two-sentence weight in English: 'Miss any one, and it is not transgression. It is violation.'",
+      "zh-TW ui.genderSelf/genderCompat stepLabel has em-dash in English ('IMAGE PREFERENCE — STEP 1 / 2'). Replaced with middle-dot '·' in English localization."
+    ]
+  },
+  "ui": {
+    "meta": {
+      "title": "Desire Archetypes",
+      "description": "An archetype quiz about the structure of desire. 24 archetypes, 36 questions. Find your real orientation in intimacy.",
+      "ogTitle": "Desire Archetypes",
+      "ogDescription": "An archetype quiz about the structure of desire. 24 archetypes, 36 questions. Find your real orientation in intimacy.",
+      "htmlLang": "en"
+    },
+    "brand": {
+      "wordmark": "DESIRE ARCHETYPES"
+    },
+    "counter": {
+      "beforeNumber": "You are visitor ",
+      "afterNumber": " seeking desire",
+      "numberFallback": "···",
+      "readyPrompt": "Ready?",
+      "enterButton": "Enter"
+    },
+    "landing": {
+      "heading": "Desire Archetypes",
+      "taglines": [
+        "Ignite.",
+        "Flow.",
+        "Pull."
+      ],
+      "meta": "36 questions · about 10 minutes",
+      "startButton": "Begin the quiz",
+      "resumeButton": "Resume"
+    },
+    "intro": {
+      "label": "BEFORE YOU BEGIN",
+      "heading": "Before we begin",
+      "body": "Where does your raw desire begin? When it rises, where do you go?\n\nAnswer by instinct.\nPick the option that reads most like you.",
+      "startButton": "Start"
+    },
+    "safety": {
+      "label": "NOTICE",
+      "heading": "Important notice",
+      "body": "The \"transgression\" in this quiz holds only under specific conditions.\n\nClear consent. Talk first. A safeword. The right to withdraw. The right to stop at once. Aftercare at the end.\n\nMiss one, and what is happening is a violation.\n\nWhat follows describes *archetypal tendencies* in eroticism, bodily response, and BDSM scenes. Nothing more.",
+      "emphasisWord": "archetypal tendencies",
+      "confirmButton": "I understand"
+    },
+    "genderSelf": {
+      "stepLabel": "IMAGE PREFERENCE · STEP 1 / 2",
+      "heading": "Choose the figure style for your result",
+      "helper": "Visual only. Does not affect your result.",
+      "optionFemale": "Female imagery",
+      "optionMale": "Male imagery",
+      "nextButton": "Next"
+    },
+    "genderCompat": {
+      "stepLabel": "IMAGE PREFERENCE · STEP 2 / 2",
+      "heading": "Choose the figure style for your core match",
+      "helper": "The imagery gender of the \"core match\" figure in your result.",
+      "optionFemale": "Female imagery",
+      "optionMale": "Male imagery",
+      "confirmButton": "Confirm and begin"
+    },
+    "chapterTransitions": {
+      "ch1": {
+        "label": "CHAPTER ONE",
+        "title": "How the Fire Rises",
+        "body": "Some bodies run hot by default. The fire is already there, looking for somewhere to spend itself.\n\nOthers wait. They need the right person to come close. A scent. A voice. A command. A gaze. A distance too charged to let go of casually. Something that actually lights the body.",
+        "continueButton": "Continue"
+      },
+      "ch2": {
+        "label": "CHAPTER TWO",
+        "title": "How Power Moves",
+        "body": "In D/s, control moves between two people. Tested. Taken up. Handed over. Caught.\n\nSome take by habit. Some receive by habit. For some, pinning the role down kills the whole point.",
+        "continueButton": "Continue"
+      },
+      "ch3": {
+        "label": "CHAPTER THREE",
+        "title": "Where Your Desire Really Comes From",
+        "body": "Some are caught by the senses. Scent, warmth, skin, voice. One touch and they are already inside.\n\nSome love the charged air. Waiting, holding, suspended. Close to release and not yet permitted. The time itself is torment, and pleasure.\n\nSome are devotees of ritual. The name, the rule, the posture, the sequence. Once it begins, they know exactly where they stand.\n\nSome are drawn to the forbidden. With clear consent, taken to a place they would not usually touch, would not say aloud, would not admit wanting.",
+        "xNotice": "The \"transgression\" ahead refers only to psychological, bodily, or situational exploration under clear consent, with the right to withdraw, to stop at once, and with aftercare at the end.\n\nStop when it stops feeling right. The safeword needs no explanation. Reaching your limit is reason to stop. Full stop.",
+        "continueButton": "Continue"
+      }
+    },
+    "quiz": {
+      "chapterLabels": {
+        "1": "Chapter One | How the Fire Rises",
+        "2": "Chapter Two | How Connection Pulls",
+        "3": "Chapter Three | How the Depth Calls"
+      },
+      "backButton": "← Previous",
+      "counterFormat": "{current} / {total}"
+    },
+    "calculating": {
+      "heading": "Your archetype is rising",
+      "body": "···"
+    },
+    "result": {
+      "sectionLabels": {
+        "codeBreakdown": "CODE BREAKDOWN",
+        "axisProfile": "AXIS PROFILE",
+        "yourArchetype": "YOUR ARCHETYPE",
+        "shadowSide": "SHADOW SIDE",
+        "secondaryTendency": "SECONDARY TENDENCY",
+        "coreCompatibility": "CORE COMPATIBILITY",
+        "share": "SHARE"
+      },
+      "sectionTitles": {
+        "primaryPrefix": "Primary: ",
+        "shadow": "Shadow Side",
+        "shadowIntro": "When this archetype goes off-balance:",
+        "secondary": "Secondary Tendency",
+        "compatibility": "Core Match"
+      },
+      "subTypeFallback1": "If your secondary is {name}, another tendency lives alongside your primary in the structure of your desire.",
+      "subTypeFallback2": "If your secondary is {name}, your core drive has another nearby doorway. The two coexist in the structure of your desire.",
+      "tightScoresNote": "Your axis scores cluster closely. The primary archetype reads clearly.",
+      "xNote": "\"Transgression\" here refers to consensual exploration of psychological or situational edges, with clear consent, the right to withdraw, a safeword, and aftercare. Forcing past refusal or violating consent falls outside this definition.",
+      "compatDisclaimer": "A match opens a door. What happens after takes maturity, honest talk, held limits, and care that shows up.",
+      "disclaimer": "This result describes your archetypal tendencies in intimacy and desire.\nIt does not stand in for a personality profile, moral judgment, or clinical diagnosis.",
+      "retakeButton": "Retake",
+      "downloadButton": "Save result"
+    },
+    "radarLabels": {
+      "A": "Initiate",
+      "R": "Respond",
+      "G": "Give",
+      "T": "Receive",
+      "S": "Switch",
+      "N": "Sensory",
+      "P": "Tension",
+      "C": "Ritual",
+      "X": "Edge"
+    },
+    "download": {
+      "notLoadedAlert": "Feature still loading. Please try again shortly.",
+      "generatingLabel": "Generating high-resolution image...",
+      "shareTitle": "My Desire Archetype result",
+      "longPressHint": "Long-press the image to save it to your photos.",
+      "printButton": "Print / Save as PDF",
+      "failureAlert": "Could not generate the high-resolution image. Please take a screenshot instead."
+    }
+  },
+  "axisInfo": {
+    "A": {
+      "en": "INITIATIVE",
+      "label": "Initiate",
+      "description": "You tend to open the invitation. The spark usually catches on your side first. Waiting is a choice, not a default."
+    },
+    "R": {
+      "en": "RESPONSIVE",
+      "label": "Respond",
+      "description": "You draw energy from the other person's shifts. Their reactions, pauses, and small movements are your main doorway in."
+    },
+    "G": {
+      "en": "GIVING",
+      "label": "Give",
+      "description": "Your desire moves outward. The moment someone changes under your influence is the moment you truly enter the scene."
+    },
+    "T": {
+      "en": "RECEPTIVE",
+      "label": "Receive",
+      "description": "Your desire moves inward. Being approached, enveloped, taken away. The feeling of being fully held is what pulls you deep."
+    },
+    "S": {
+      "en": "FLUID",
+      "label": "Switch",
+      "description": "You do not settle into one position. You move freely between giving and receiving, following the rhythm and the scene. No prior decision needed."
+    },
+    "N": {
+      "en": "SENSORY",
+      "label": "Sensory",
+      "description": "Bodily perception is your main doorway into intimacy. Temperature of a touch, density of a scent, the resonance of a voice. These details hold a very real power for you."
+    },
+    "P": {
+      "en": "TENSION",
+      "label": "Tension",
+      "description": "Psychological pressure and waiting hook you. The pull of pacing, the suspended moment, carries you further than direct touch."
+    },
+    "C": {
+      "en": "RITUAL",
+      "label": "Ritual",
+      "description": "Rules, names, fixed procedures bring safety. Ritual draws the frame. The frame lets you actually let go."
+    },
+    "X": {
+      "en": "BOUNDARY",
+      "label": "Edge",
+      "description": "The forbidden pulls you hard. You want to approach that line, feel it, and sometimes know what lies on the other side."
+    }
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "chapter": 1,
+      "text": "You notice someone across the room, and something in your body reacts. What are you more likely to do next?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The body moves first. Circling closer, finding a reason to pause, making sure they cannot help but notice you.",
+          "scores": {
+            "A": 3,
+            "G": 1,
+            "N": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Wanting to approach, but holding still. Waiting for them to throw out a signal first, then letting yourself step forward.",
+          "scores": {
+            "R": 3,
+            "T": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Not thinking much, until one of their gestures suddenly makes you want physical contact with them.",
+          "scores": {
+            "R": 2,
+            "S": 1,
+            "N": 2
+          }
+        },
+        {
+          "key": "D",
+          "text": "There is an impulse, but no rush. Checking first whether this person is worth lowering both your body and your guard for.",
+          "scores": {
+            "R": 2,
+            "T": 1,
+            "C": 1,
+            "X": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "chapter": 1,
+      "text": "Sparks have started with someone, but no one has said it out loud. Which is more like you?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dropping more signals. Letting the air thicken, drawing their body a little closer.",
+          "scores": {
+            "A": 3,
+            "G": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Waiting for them to come closer. Only when sure they actually want you do you open the door, slowly.",
+          "scores": {
+            "R": 3,
+            "T": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Testing a few times to see if they catch. If they do, the distance closes a little more.",
+          "scores": {
+            "A": 1,
+            "R": 2,
+            "S": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "Talking and talking, until one day realizing you are already caught. Even starting to imagine how their hands would touch you.",
+          "scores": {
+            "R": 3,
+            "N": 1,
+            "P": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "chapter": 1,
+      "text": "Alone with someone, which situation most easily lights your desire?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Images already running in your head, body heating up. Wanting to erase the distance now.",
+          "scores": {
+            "A": 3,
+            "N": 2
+          }
+        },
+        {
+          "key": "B",
+          "text": "One of their moves makes you feel targeted. Skin prickling, body reactions you cannot hide.",
+          "scores": {
+            "R": 3,
+            "N": 2
+          }
+        },
+        {
+          "key": "C",
+          "text": "The charge builds and builds. By the time you come back to yourself, that tension has you pinned.",
+          "scores": {
+            "R": 2,
+            "T": 1,
+            "P": 2
+          }
+        },
+        {
+          "key": "D",
+          "text": "The mind agrees to this person first. Only then does the body move toward them, even welcome their touch.",
+          "scores": {
+            "A": 2,
+            "R": 1,
+            "T": 1,
+            "C": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "chapter": 1,
+      "text": "You throw out a hint, but the other person does not clearly catch it. What is more likely to happen?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pushing one more step. Giving them a beat to react. Finding out if they are slow, or genuinely not interested.",
+          "scores": {
+            "A": 3,
+            "G": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Pausing. Waiting for a clearer signal. If none comes, the hand pulls back.",
+          "scores": {
+            "R": 3,
+            "P": 1,
+            "C": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Not retreating right away. Trying again in a different way, to see if they missed it, or are only holding back.",
+          "scores": {
+            "A": 1,
+            "R": 2,
+            "G": 1,
+            "S": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "The whole thing goes cold. Without a response from them, there is no interest in continuing.",
+          "scores": {
+            "R": 3,
+            "T": 1,
+            "P": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q05",
+      "chapter": 1,
+      "text": "With someone you did not originally feel much for, which situation is most likely to surface sudden desire?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The fire was already there. They just finally give it somewhere to spill.",
+          "scores": {
+            "A": 3,
+            "G": 1,
+            "N": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "They stay close. Close enough that the body starts to care, wanting them to lean in, press a little nearer.",
+          "scores": {
+            "R": 3,
+            "N": 2
+          }
+        },
+        {
+          "key": "C",
+          "text": "Their scent, the warmth of their skin, the grain of their voice. The body reacts before the mind catches up.",
+          "scores": {
+            "R": 2,
+            "N": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "There is an urge to move closer, but only after they catch your heart first. Only then does the body want to hand itself over.",
+          "scores": {
+            "R": 2,
+            "T": 2,
+            "C": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q06",
+      "chapter": 1,
+      "text": "After spending time with someone, what pulls you in deeper the most?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Growing clearer about wanting them. Arranging more contact, more time alone, a space that belongs only to the two of you.",
+          "scores": {
+            "A": 3,
+            "G": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "They naturally appear in your life, and you become easier to move, even beginning to hope they will tease you, touch you.",
+          "scores": {
+            "R": 3,
+            "T": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "A fixed rhythm, a name, a shared code builds between you. Once that private switch is flipped, there is no stopping.",
+          "scores": {
+            "R": 2,
+            "S": 1,
+            "C": 2
+          }
+        },
+        {
+          "key": "D",
+          "text": "Once sure they are the one you want, you move much more actively. No longer willing to just wait.",
+          "scores": {
+            "A": 3,
+            "R": 1,
+            "C": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "chapter": 1,
+      "text": "How does your desire usually appear?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Always there. Just looking for someone to release it on, somewhere to let it loose.",
+          "scores": {
+            "A": 3,
+            "N": 2
+          }
+        },
+        {
+          "key": "B",
+          "text": "Nothing much most days. Then someone comes close, your heartbeat quickens, your skin heats, and the body stops listening.",
+          "scores": {
+            "R": 3,
+            "N": 2
+          }
+        },
+        {
+          "key": "C",
+          "text": "Hard to say who moved first. One moment you want to touch them, and want them to press you down, touch every inch of you.",
+          "scores": {
+            "R": 2,
+            "S": 2,
+            "N": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "Once you lock on someone, desire piles up. Pressure fills until it is hard to keep pretending.",
+          "scores": {
+            "A": 2,
+            "R": 1,
+            "P": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "chapter": 1,
+      "text": "After a long dry spell with no intimacy or play, what usually happens?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Desire builds, looking for an outlet. Likely to go find someone who can get you to let go, come undone.",
+          "scores": {
+            "A": 3,
+            "T": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Not thinking about it much, until someone comes close. Then suddenly wanting to be touched, held, made to react.",
+          "scores": {
+            "R": 3,
+            "N": 2
+          }
+        },
+        {
+          "key": "C",
+          "text": "Not likely to chase. But once close and feeling safe, the body softens, slowly, into response.",
+          "scores": {
+            "R": 3,
+            "T": 1,
+            "N": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "Approaching openly, but whether the state actually arrives depends on whether they can hold you.",
+          "scores": {
+            "A": 2,
+            "R": 1,
+            "T": 1,
+            "P": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "chapter": 2,
+      "text": "When erotic tension begins to rise, what is your most common response?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Setting the stage. Letting them walk, step by step, into the scene you have laid out. Playing to your rhythm.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Slowing down. Letting them lead you through, even handing over the controls.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "P": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Following the body. Who pins first, who gets hooked first, either works.",
+          "scores": {
+            "R": 1,
+            "S": 3,
+            "N": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "Deliberately swapping positions. Keeping them guessing whether, next second, you will press in, bite back, or step away.",
+          "scores": {
+            "A": 1,
+            "G": 1,
+            "S": 3,
+            "P": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "chapter": 2,
+      "text": "In desire or play, which moment is most likely to make you think \"yes, this is it\"?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A line, a look, a gesture from you, and their body tightens instantly.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "N": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Being enclosed by their rhythm. No more holding yourself up, no more deciding for yourself.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "P": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Finding a natural bodily cadence together, between push and pull, pin and release.",
+          "scores": {
+            "S": 3,
+            "P": 2
+          }
+        },
+        {
+          "key": "D",
+          "text": "Showing a different self in a different scene. Even a version no one usually sees.",
+          "scores": {
+            "A": 1,
+            "S": 2,
+            "C": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "chapter": 2,
+      "text": "They say, \"you decide.\" What are you more likely to do?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately sorting the order of play, arranging the pieces, making sure they know exactly how they will be treated.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Stalling a little. More used to following their lead, waiting for them to command.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Taking it, but keeping the option open to hand it right back and let them decide.",
+          "scores": {
+            "G": 1,
+            "S": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "First seeing how they actually want to be treated, then arranging accordingly.",
+          "scores": {
+            "A": 1,
+            "G": 2,
+            "T": 1,
+            "S": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "chapter": 2,
+      "text": "They suddenly turn forceful, with real pressure in it. What is more likely?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reactive and alive. Testing whether you can take control back, maybe even pin them in return.",
+          "scores": {
+            "A": 1,
+            "G": 2,
+            "S": 1,
+            "P": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Easier to go quiet. Letting yourself follow their command, their hand, their pace.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "First confirming they are worth the trust. Only then deciding whether to let go, let them in deeper, body and mind both.",
+          "scores": {
+            "R": 1,
+            "T": 2,
+            "C": 1,
+            "X": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "Switching back and forth between following and teasing them, to see who breaks first.",
+          "scores": {
+            "G": 1,
+            "S": 3,
+            "P": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "chapter": 2,
+      "text": "Which kind of interaction pulls you in most easily?",
+      "options": [
+        {
+          "key": "A",
+          "text": "You set the scene. You watch them slowly enter the place you set for them, reacting on cue.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "They prepare everything, and you sink, layer by layer, into their arrangement.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Both of you testing each other. Neither pinned to one position, ready to trade at any moment.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "S": 3,
+            "P": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "Appearing to go along, while quietly steering with small moves, bending the scene toward what you want.",
+          "scores": {
+            "A": 1,
+            "G": 2,
+            "S": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "chapter": 2,
+      "text": "When you really want someone, what are you more likely to do?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Beginning to arrange, to look after. Wanting a grip on their state, their reactions, their capacity.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Wanting to be closer. Easier and easier to be moved by one of their words, one of their gestures.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "N": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Wanting to build private names, signals, codes, and a shared rhythm of entry.",
+          "scores": {
+            "R": 1,
+            "S": 2,
+            "C": 2
+          }
+        },
+        {
+          "key": "D",
+          "text": "Sometimes wanting to hold them in check. Other times wanting to be held, pinned, and played with in return.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "S": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q15",
+      "chapter": 2,
+      "text": "In an erotic dynamic, which image most strongly carries the sense of power?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They react instantly to one of your words or gestures, body visibly moved by you.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "N": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Finally able to drop the guard with them. Letting yourself be carried, caught, even fully taken over.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "X": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "No need to lock into any one role. Positions can switch at any moment. No fixed top or bottom.",
+          "scores": {
+            "S": 3,
+            "P": 1,
+            "C": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "No need to think it through. You naturally know when to approach, when to pull back, when to trade.",
+          "scores": {
+            "A": 1,
+            "G": 1,
+            "S": 2,
+            "N": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q16",
+      "chapter": 2,
+      "text": "A \"who decides\" moment arrives in the relationship. What are you more likely to do?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Taking it directly. Then checking whether they can keep up with your arrangement, whether they can take what you plan.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Handing the choice over. Provided they can really be trusted, provided they know how to handle you.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Not needing anyone pinned as the decider. Whoever feels more in the moment, decides.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "S": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "The fun part is that the deciding power can trade hands at any second. The next moment, everything flips.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "S": 2,
+            "P": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q17",
+      "chapter": 2,
+      "text": "When a relationship starts to feel unstable, which reaction shows up most often?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Wanting to lay it out clearly, put things in order, pull the lead back into your own hands.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Immediately needing to know whether they will still come close, still catch you, still engage.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "P": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Retreating to a position that is harder to define. Observing. Not rushing to hand yourself over.",
+          "scores": {
+            "R": 2,
+            "S": 2,
+            "P": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "Floating a test, watching their reaction, then deciding whether to soften, press in, or come down hard.",
+          "scores": {
+            "R": 1,
+            "G": 1,
+            "T": 1,
+            "S": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q18",
+      "chapter": 2,
+      "text": "Which kind of interaction makes you lose interest fastest?",
+      "options": [
+        {
+          "key": "A",
+          "text": "No matter how you arrange it, they do not react. Will not enter the scene. Flat, like still water.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "They have no sense of direction, so you have no sense of where to hand yourself, or whether trust is even possible.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Stuck in the same position from start to finish. No variation. No chance to flip.",
+          "scores": {
+            "S": 3,
+            "P": 1,
+            "C": 1
+          }
+        },
+        {
+          "key": "D",
+          "text": "They want you to play one role forever. No flipping, no other kinds of desire allowed to surface.",
+          "scores": {
+            "S": 3,
+            "P": 1,
+            "C": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q19",
+      "chapter": 2,
+      "text": "In erotic interaction, what do you notice most?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Whether they shift with your movement, your tone, your command, your rhythm. Whether they are being played.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Whether you can really follow the scene they offer. Sink into it. Stop watching from outside, stop holding yourself up.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Whether desire flows both ways between you. Not one person always giving, the other always receiving.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "S": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Whether a different role, a different mode of play, can suddenly appear and shift the whole air.",
+          "scores": {
+            "A": 1,
+            "S": 2,
+            "C": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q20",
+      "chapter": 2,
+      "text": "They say, with full weight, \"I want to hand everything over to you.\" What reaction is more likely?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately starting to plan how to receive it, arrange it, hold the responsibility. Not letting the gift drop.",
+          "scores": {
+            "A": 1,
+            "G": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "That sentence hits. Even imagining yourself handing over the same way, letting them deal with you.",
+          "scores": {
+            "R": 1,
+            "T": 3,
+            "P": 1
+          }
+        },
+        {
+          "key": "C",
+          "text": "Wanting to know whether, after this handing-over, there is still room for the current to reverse. Whether one day you will be taken over.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "S": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Can catch them, but do not want to be pinned forever as the sole holder. Want room to flip too.",
+          "scores": {
+            "A": 1,
+            "G": 2,
+            "S": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q21",
+      "chapter": 3,
+      "text": "Alone with someone, the air gone quiet. Which kind of detail pulls you in fastest?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Starting to notice their breath, their warmth, their scent. Even the sound of cloth brushing skin becomes very clear.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "Both of you knowing something is close. Neither saying it. Holding that moment, suspended.",
+          "scores": {
+            "R": 1,
+            "S": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "No words needed. Sliding naturally into the sequence, the names, the postures, the positions only the two of you know.",
+          "scores": {
+            "G": 1,
+            "S": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Feeling permission to approach a private zone no one usually touches, no one usually asks about.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q22",
+      "chapter": 3,
+      "text": "In erotic interaction, which detail stays with you the longest?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The warmth of their skin, the grain of their voice, the scent in their hair, or the second a body gives up a reaction it cannot hide.",
+          "scores": {
+            "T": 1,
+            "N": 3,
+            "P": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "They clearly want to come closer, but keep holding, keep restraining, on the edge of breaking yet refusing to move first.",
+          "scores": {
+            "A": 1,
+            "R": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "A specific name, a fixed posture, a precise instruction, or a private opening sequence. Once it appears, you both know it has begun.",
+          "scores": {
+            "G": 1,
+            "S": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "That feeling of being allowed one more step inward, of being permitted to touch somewhere more private.",
+          "scores": {
+            "T": 1,
+            "C": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q23",
+      "chapter": 3,
+      "text": "An erotic connection you cannot forget. Usually, it is because of what?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The body's reactions seemed to stay in the skin. The texture and heat remembered long after.",
+          "scores": {
+            "A": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "The long pull, the deep hold, finally allowed to release.",
+          "scores": {
+            "T": 1,
+            "C": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "The positions, the rules, the names, the sequences that belonged only to that relationship. A state you entered and could not leave.",
+          "scores": {
+            "T": 1,
+            "S": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Having taken them to a place almost no one gets to go.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q24",
+      "chapter": 3,
+      "text": "Which kind of erotic encounter most easily leaves you with the feeling \"something was missing\"?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Every move was made, but the body did not react. Like going through motions. Desire not actually caught.",
+          "scores": {
+            "T": 1,
+            "N": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Too fast, too direct. No waiting, no holding, no torment of being close to release and not permitted.",
+          "scores": {
+            "A": 1,
+            "G": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "No clear positions, no rules, no names, none of that switch that tells the body it is time to obey the sequence.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Everything on the surface. No forbidden place that needed permission, needed confirmation, before daring to touch.",
+          "scores": {
+            "R": 1,
+            "S": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q25",
+      "chapter": 3,
+      "text": "If one encounter makes you want to build a relationship, which image is most likely behind it?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They come close, and you register them first through scent, warmth, the sense of nearness. The body recognizes them before the mind does.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "There is always a distance between you that has not been broken. It keeps you wanting one more step closer, then closer.",
+          "scores": {
+            "A": 1,
+            "R": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "Slowly, you build fixed names, a rhythm, positions, a ritual of practice that belongs only to the two of you.",
+          "scores": {
+            "G": 1,
+            "S": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Sensing they can take you somewhere you normally would not let anyone touch, would not even admit wanting.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q26",
+      "chapter": 3,
+      "text": "There is a charge between you, but neither has crossed. Which kind of \"waiting\" is the most addictive?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Their hand hovers just short of touching you. You notice your breath slowing. The body tightens first.",
+          "scores": {
+            "T": 1,
+            "N": 2,
+            "P": 2
+          }
+        },
+        {
+          "key": "B",
+          "text": "Both of you know the next move is almost here, and they deliberately hold it longer, past the point of bearable.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "The sequence stays unfinished. All you can do is wait by the rules until given permission. No moving on your own.",
+          "scores": {
+            "T": 1,
+            "P": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Standing at that line you are not supposed to cross casually. Waiting for them to signal whether you can enter, whether you can touch.",
+          "scores": {
+            "T": 1,
+            "C": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q27",
+      "chapter": 3,
+      "text": "If an erotic relationship were captured in a single photograph, which image would hold you longest?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Two bodies very close. Close enough that breath lands on skin. Body heat impossible to hide.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "One figure stopped just short of nearing. The other neither retreats nor welcomes. The fire burns across the gap.",
+          "scores": {
+            "T": 1,
+            "S": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "Two figures in symmetrical positions, as if completing a rite only they know, with no steps allowed to be skipped.",
+          "scores": {
+            "G": 1,
+            "S": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "A figure standing before a half-open door, knowing that once permitted to walk in, they will meet what they never dared admit wanting.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q28",
+      "chapter": 3,
+      "text": "You and this person are finally moving into more private, more intimate contact. Which arrangement most lets you fully give in?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They lead not with words, but with distance, touch, breath, bodily response. Taking you straight into the state.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "They are in no hurry to reveal the next move. Leaving you suspended in guessing, in waiting, in almost-being-touched.",
+          "scores": {
+            "T": 1,
+            "N": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "Rules, names, positions, sequence set beforehand. You know from the start where you stand and what to do.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Every step confirmed before taken. Then being brought near something you would not usually let in, would not usually say.",
+          "scores": {
+            "T": 1,
+            "C": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q29",
+      "chapter": 3,
+      "text": "The day after an intense scene, which fragment do you replay the most?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The second one of their touches landed, and the body first shivered, first lost control.",
+          "scores": {
+            "T": 1,
+            "N": 3,
+            "P": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "Suspended in midair. Near the peak and not allowed release. Edged, held in it.",
+          "scores": {
+            "T": 1,
+            "N": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "A particular name, a particular posture, a ritual-like step performed. The body knew instantly where to go.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Crossing a psychological threshold. Suddenly realizing this was always wanted, just never admitted.",
+          "scores": {
+            "A": 1,
+            "R": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q30",
+      "chapter": 3,
+      "text": "Some scenes make you come back again and again. Most likely because:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Every time, it starts from the familiar touch, scent, bodily response. The state arrives fast.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "Every time, played to the edge and held. The waiting and the edging deepening the hunger each round.",
+          "scores": {
+            "T": 1,
+            "N": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "Every time, following the same sequence. Repetition becoming a shared territory. The body obeys the order automatically.",
+          "scores": {
+            "T": 1,
+            "S": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Every time, walking the same line. They know how to take you to the edge of coming apart, without actually letting you fall.",
+          "scores": {
+            "T": 1,
+            "P": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q31",
+      "chapter": 3,
+      "text": "After agreeing on certain rules with someone, how do you usually react?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Not focused on the rules themselves. What actually moves you is how the body responds in the moment.",
+          "scores": {
+            "A": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "Rules make you more aware of the \"not yet, not allowed to release\" parts. The hold becomes harder to bear.",
+          "scores": {
+            "T": 1,
+            "P": 2,
+            "C": 2
+          }
+        },
+        {
+          "key": "C",
+          "text": "Once rules are clear, you know exactly how to enter, which part to hand over.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Rules read like a drawn line. You start noticing when, and how, you are allowed to cross, and touch the edge.",
+          "scores": {
+            "T": 1,
+            "C": 2,
+            "X": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q32",
+      "chapter": 3,
+      "text": "In a conversation, which way of speaking most easily raises desire?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They describe in detail. Breath, distance, skin reactions, every bodily shift. Nothing missed.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "They speak slowly, with wide silences. Making you wait for the next sentence, body tightening past the edge of bearable.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "They state the rules, the order, the positions, as if opening a door for you, showing you how to walk through.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Their voice brings you near the forbidden zone. One more step and this is no ordinary dynamic. You are truly going to touch the core.",
+          "scores": {
+            "T": 1,
+            "P": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q33",
+      "chapter": 3,
+      "text": "Body and mind are already deep with this person, and you want to go even further. Usually, you want:",
+      "options": [
+        {
+          "key": "A",
+          "text": "To speak the feeling more clearly. Closer bodies, finer touch, more honest responses.",
+          "scores": {
+            "A": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "To stretch the waiting, the pull. No rush to the peak. Let the pleasure pile until it cannot be borne, until the last second.",
+          "scores": {
+            "A": 1,
+            "T": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "To turn positions, names, rules, or promises into something closer to contract. Not improvisation. A real binding together.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "To be led across the deepest line, with every step still open to confirmation and to stopping.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q34",
+      "chapter": 3,
+      "text": "When a sense of \"losing control\" appears in a dynamic, which kind draws you most?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The body reacts first, the mind catches up later. By the time you notice, you are already hot.",
+          "scores": {
+            "A": 1,
+            "R": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "You are holding hard, and they stop you at the worst place, closest to release. Nothing to do but wait there, suffering.",
+          "scores": {
+            "T": 1,
+            "N": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "Not falling apart. Inside a clear frame, by the sequence, slowly letting self-control go, walking into the rite.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "You cross into a place you normally would not. They let you know you can stop any moment, so you dare to go deeper.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q35",
+      "chapter": 3,
+      "text": "After a scene ends and feels \"not deep enough,\" which element was most likely missing?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The reactions that should land in the body. Just something performed. No lingering touch, warmth, breath.",
+          "scores": {
+            "T": 1,
+            "N": 3,
+            "C": 1
+          }
+        },
+        {
+          "key": "B",
+          "text": "The waiting, the pull, the torment. Finished too fast. No time suspended at the edge of unbearable.",
+          "scores": {
+            "T": 1,
+            "N": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "Clear positions, specific rules. The whole interaction loose. No sense of being enveloped, carried into order.",
+          "scores": {
+            "G": 1,
+            "T": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "The thrill of approaching an unknown edge. Everything too predictable. No real forbidden place touched.",
+          "scores": {
+            "T": 1,
+            "P": 1,
+            "X": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q36",
+      "chapter": 3,
+      "text": "If only one core erotic mode could remain with this person, which would you choose?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Not many words needed. The body remembers scent, warmth, the way of touching, the way of responding.",
+          "scores": {
+            "R": 1,
+            "T": 1,
+            "N": 3
+          }
+        },
+        {
+          "key": "B",
+          "text": "Always a subtle distance kept. The want strung up and held. Even when close to release, no rush to end.",
+          "scores": {
+            "T": 1,
+            "S": 1,
+            "P": 3
+          }
+        },
+        {
+          "key": "C",
+          "text": "A private set of rules, names, and ways of entering. Every ignition like reaffirming the bond.",
+          "scores": {
+            "G": 1,
+            "S": 1,
+            "C": 3
+          }
+        },
+        {
+          "key": "D",
+          "text": "Under clear consent, taking each other to a place you would not let anyone close to, would not easily admit.",
+          "scores": {
+            "T": 1,
+            "S": 1,
+            "X": 3
+          }
+        }
+      ]
+    }
+  ],
+  "types": {
+    "A-G-N": {
+      "name": "Hunter",
+      "tagline": "Spots the prey and closes the distance. The body moves before thought catches up.",
+      "description": "The Hunter's desire rarely waits politely in place.\nSomeone appears in the room, and the body reacts first.\nNo elaborate thought. The gaze has already locked on.\nThe feet are already moving that way.\n\nDistance. Scent. The line of a shoulder. The vibration of a throat mid-sentence.\nA reaction that slips through on accident. The Hunter catches it.\nSense works as doorway. Sense is the doorway.\n\nWhen a Hunter wants someone, there is very little passive about it.\nTesting. Approaching.\nLetting their presence land on the other person.\nSometimes a line. Sometimes just standing a little too close.\nSometimes, slowly pulling the other's attention back onto them.\n\nIt does not have to be rough. It does not have to be dominant every time.\nWhat the Hunter is truly hooked on is the second the other person is moved by them.\n\nA flicker in the eyes. A caught breath.\nStanding firm one moment, then suddenly unable to look away.\nThat reaction only makes the Hunter want to step closer.\n\nNo wish to conquer everyone drives this. The body has recognized prey.\nAnd it wants to know, with one more step closer,\nwhether the other will come willingly undone.",
+      "shadow": "The Hunter's shadow often shows up in trusting instinct too fully.\nA reaction appears. One more step forward feels justified.\nNo refusal is read as permission to continue.\n\nBut a body reacting does not mean a person is ready.\nFast desire needs to learn how to stop.\nNot every approach has to resolve into something.\nNot every caught reaction means the scene can be pushed further.\n\nA mature Hunter knows the most beautiful hunt leaves the other feeling: I still have a choice.\n\nCan pursue. Can also wait.\nCan draw a response, and can also stop the second a safeword comes.\nThat Hunter is more than intense. That Hunter has real control.",
+      "subDescription": "A Hunter stirs underneath, moving before most of you does.\nMost days this stays hidden. On the surface, warm, accommodating.\nBut when a certain prey appears, something sharpens quickly.\n\nWanting to approach. Wanting to test. Wanting to see the other person moved by you.\nThis part of you is less an order to turn aggressive, more a reminder that you are something more than someone waiting to be lit.\nSometimes, the flint is yours.\n\nAs this part matures, you will know when to move,\nand how to move without turning pressure into pressing.",
+      "compatCode": "R-T-N",
+      "compatName": "Listener",
+      "compatText": "The Listener never gets dragged. The Listener is the one who really reacts when approached.\nThe Hunter steps forward, and the Listener's breath quickens.\nThe Hunter stops, and the Listener registers, more clearly, the fact of being seen.\n\nThe fit here lives in one person daring to move,\nand the other needing nearness to wake.\n\nThe Hunter does not have to guess for long. The Listener's body speaks.\nShoulders easing, eyes staying or fleeing, voice dropping.\nThe cues are clear. They just need reading with care.\nIf the Hunter only chases, the Listener closes the door.\nThe best dynamic never corners. It leaves the other room to be lit, and room to call stop at any moment."
+    },
+    "R-T-N": {
+      "name": "Listener",
+      "tagline": "Something wanted is finally heard. The inner door opens slowly, and closeness follows.",
+      "description": "The Listener's door of desire stays closed much of the time.\nMuch of the time the body is like a quiet room.\nThe door is unlocked, but no one gets to simply walk in.\n\nThen someone comes close. The voice drops. The scent sharpens.\nA hand hovers at the edge of being felt.\nThe air slows down, and the Listener begins to respond from these details.\n\nNot sudden abandon.\nThe body is woken layer by layer.\n\nTheir pacing matters. Rush, and the door stays shut. Roughness, and it goes cold.\nPressing too hard for a reaction leads to nothing at all.\n\nWhat the Listener needs is to be heard, carefully.\nNot only touched. Read.\nAre the shoulders tight. Is the breath uneven.\nAre the eyes still drifting. Is the body leaning in, or holding back the urge to flee.\n\nWhen someone reads them truly, the Listener lets the guard down slowly.\nOnce the state arrives, the senses open wide.\n\nSkin remembers. Voice remembers. Even a pause\nis caught by the body.",
+      "shadow": "The Listener often misreads their own slow kindling.\nMistaking slow for \"not really wanting.\" Mistaking the need to be lit for a lack of desire.\n\nNeither is true. The body simply has conditions to start.\nThe right person. The right rhythm. The sense of not being shoved into the moment.\n\nStill, the Listener should be careful not to put everything on the other person.\n\nNo one has telepathy. Even a sharp partner needs cues.\nWhere feels right. Where is too fast. Which style of play excites.\nWhich sentence will go cold.\nUnspoken, the other can only guess.\n\nA mature Listener does not have to turn proactive.\nThey just learn to show responses the other can read.\nQuiet is fine. Honesty is the one thing not to skip.",
+      "subDescription": "A Listener lives in you, and she needs real care to wake.\nIn daily life you may be very assertive, very much in charge of a lot.\nBut in certain intimate moments, the body wants slowness.\nNo rush to answer. No pushing to decide.\nWanting the other to use scent, voice, touch, and waiting\nto release you from the usual armor.\n\nThis part reminds you that softness carries its own strength.\nNeeding to be woken still counts as desire.\nThe door simply needs the right key.",
+      "compatCode": "A-G-N",
+      "compatName": "Hunter",
+      "compatText": "The Hunter can light the fire the Listener holds.\nNot by crashing in. By seeing the door.\nKnowing how to open it. Knowing how to bring the body awake.\n\nThe Listener needs to be understood. The Hunter is naturally good at reading reactions.\nAn uneven gaze, a held breath,\na distance that does not retreat, the Hunter sees these.\n\nThe pull of this pairing is that the Listener does not have to speak first.\nThe Hunter comes close, tests, places scent, distance, and touch\nin exactly the right place.\n\nBut the Hunter cannot let acuity turn into overconfidence.\nThe Listener's slowness withholds permission in its own quiet way.\nIf the lines are stated clearly, this pairing fits beautifully.\nOne approaches, the other opens.\nThe fire does not catch all at once. It is gradually brought to life."
+    },
+    "A-T-N": {
+      "name": "Hedonist",
+      "tagline": "Wants it fully. Wants to be filled until hunger gives way to excess. No appetite hidden.",
+      "description": "The Hedonist's desire is very direct.\nThey do not necessarily want to run the whole room.\nThey do not always want to design the scene.\nMore often, it shows up as a very clear feeling.\nWant to be close. Want to be touched. Want to be enveloped.\nWant the body filled, drop by drop.\n\nThe Hedonist stays active.\nOn the contrary, they know what they want. Rarely the straightforward \"I want to top you.\"\nMore often, something like:\nI want you here. I want your hands. I want your scent close.\nI want you to turn my body on.\n\nThe wish is simple. No posing. No modesty theater.\nThe Hedonist loves a full sensory room.\nTemperature high. Distance near. Touch with weight. The body actually reacting.\nFor them, intimacy does not live only in the head.\n\nIt has to be touchable, smellable, felt. The other has to really be here.\n\nThe more they are caught by the right person, the more openly the Hedonist asks for what they want.\nThat carries active choice. That is actively choosing to receive.",
+      "shadow": "The Hedonist's shadow is confusing \"being satisfied\" for \"being loved.\"\n\nAs long as the giving is thick enough, the body-response strong enough,\nit is easy to miss whether anything else is being cared for.\nWhether limits are being respected. Whether the \"stop\" is heard.\nWhether there is aftercare, warmth together. Whether they are actually enjoying your reactions, or just using them.\nThe Hedonist has to be careful.\nDo not treat every strong jolt of pleasure as proof of fit.\nIntensity carries no safety on its own. Being filled lives apart from being treasured.\n\nA mature Hedonist admits hunger, but does not hand it to just anyone.\nThe want can be stated plain.\nBut who gets to touch, how, and when to stop\nis never a thing to concede.",
+      "subDescription": "Hedonist runs beneath you, very direct, very carnal.\n\nNot every reaction asks to be read as a psychological need.\nSometimes the want is simply the want.\nTo be held. To be close. To feel their presence press into you a little.\nTo let the body be more honest within safe limits.\n\nWhen Hedonist surfaces as the second voice,\nit usually means you need bodily affirmation more than you admit.\nNothing shallow about that. The body also deserves to be fed.",
+      "compatCode": "R-G-N",
+      "compatName": "Reader",
+      "compatText": "The Reader fits the Hedonist well\nbecause the Hedonist's desire is usually clear.\nWanting to be touched, filled,\nenveloped into true release.\n\nAnd the Reader reads the Hedonist.\nSees where there is a need, where the tension still sits,\nwhere a response is already quietly being waited for.\nThe Hedonist dares to ask. The Reader knows how to give.\nThis pair runs at ease, without suspicion.\nThe Hedonist's reactions sharpen the Reader's instinct.\nThe Reader's feedback encourages the Hedonist to hand the body over more.\n\nStill, the Hedonist cannot stay lying inside being satisfied, and the Reader has limits too.\nA good fit stays clear of one person needing endlessly while the other supplies forever.\nAsk openly. And see the one giving too."
+    },
+    "R-G-N": {
+      "name": "Reader",
+      "tagline": "Reads what has yet to be said. The next touch is already waiting in the answer.",
+      "description": "The Reader's desire often rises from the other person.\nNot necessarily hot at the start. Not just anyone will do.\nIt is a specific presence that wakes the Reader up.\nTheir breath. Their waiting. The way they come close and then stop.\nClearly wanting, but not yet saying.\n\nThe Reader feels it.\nThat reaches beyond pure service. That holds its own center.\nIt is quite proactive. The source of the move lives in \"I know you want.\"\nIt is \"I know you want.\"\n\nThe Reader uses body-memory to read people.\nWhere to go slow. Where to press firmer. Where to stop.\nWhere a word is needed. Where it is enough to just place a hand.\n\nThe clearer the other person's need,\nthe more easily the Reader enters the state.\nWhat they enjoy reaches beyond pure giving.\nIt is seeing their response actually land on the other.\nThe other calmed. Lit. Carried through.\nTaken somewhere even they could not quite name.\n\nIn that moment, the Reader is satisfied.\nGiving flows as desire, carrying no sacrifice. It is their most natural language of desire.",
+      "shadow": "The Reader's shadow is becoming, too fast, the shape the other needs.\n\nWhatever they want, give it.\nWhatever they lack, fill it.\nIn time, the Reader forgets they also have needs, desires,\nand places they do not want touched.\n\nThe most dangerous thing is acuity.\nReading a gap too early, reaching to fill it too quickly.\nAnd their own line gets filled in along with it.\n\nA mature Reader learns to ask:\nam I actually wanting to give here, or just reaching by habit?\nTheir needing something does not mean you must provide it.\nReading others requires reading yourself.",
+      "subDescription": "In front of a specific person, a Reader comes alive in you.\n\nIn daily life, perhaps not like this.\nIndependent, with your own pace.\nBut around a certain someone, the autoscan starts.\nReading tone, silence, bodily signal.\nReading how exactly this person wants to be served.\n\nThis part carries a very fine capacity to give.\nGiving with a mind of your own, with your own center still intact.\nWhen mature, it makes the other person feel fully seen.\nWhen immature, it makes you forget you also need to be seen.",
+      "compatCode": "A-T-N",
+      "compatName": "Hedonist",
+      "compatText": "The Hedonist lets the Reader stop guessing.\n\nThat clear hunger matters to the Reader,\nwho reads others too easily, and leaves their own need last in line.\nThe Hedonist's body gives answers.\nWant is want. Yes is yes.\nReactions clear. Needs clear.\n\nWith this person, the Reader's body drops into state more easily.\nNo endless self-interrogation. No slow wearing-down inside unspoken signals.\n\nWhat works here is simple. One dares to ask. One knows how to catch what is asked.\n\nStill, the Reader has to remember. Reading is a gift, not a duty. Care should not cost the self.\n\nIf the Hedonist only sinks into being satisfied, the Reader slowly empties out.\nTo last, the Hedonist must also turn around and see\nthe one quietly giving, and answer that giving in return."
+    },
+    "A-S-N": {
+      "name": "Chaser",
+      "tagline": "One sensation wakes the hunger for another. The next one is already calling.",
+      "description": "The Chaser rarely stays obedient to one rhythm.\n\nIt may start with something small. A hand on a shoulder, a fingertip across skin.\nThe air sharpens, the body wakes.\n\nAwake, it will not stay put.\nAngle. Position. Posture. The way of being seen. All of it wants to change.\n\nThe Chaser's desire is rarely planned.\nThe body finds something first. The mind catches up later.\n\nToday, wanting to move first. Tomorrow, wanting to step back, let the other chase.\nOne second running the rhythm, the next wanting to see what happens when caught.\n\nFixed roles get boring fast. Not for lack of care.\nThe body is wired for change. An expression shifts, a tone shifts,\ndistance narrows, their breath catches once,\nand the Chaser wants to follow it further.\n\nOne destination is never enough.\nEach turn needs to still hand back a new reaction to taste.",
+      "shadow": "The Chaser easily mistakes freshness for depth.\nHot at the start. Fast into the state. Fast to find excitement. Fast to want the next.\nNew position, new tone, new play, new scene that lights the body harder.\n\nSome things do not show on the first try.\nSome reactions arrive the second time, the third,\neven when things have gone familiar, almost dull.\n\nA Chaser who only lives for the first-time thrill misses what comes after.\nAnd risks making the other feel like a toy.\n\nA mature Chaser keeps exploring. And knows when to stay.\nThe same body, the same rhythm, the same name\nsometimes has to be walked through many times before the deeper layer opens.\n\nSome paths, once known, lead to a hidden room inside.",
+      "subDescription": "A Chaser lives in you who refuses to settle.\n\nIn daily life you may follow the rules of your relationship, match the other's pace.\nBut sometimes the body suddenly wants something else.\nA simple kiss turns into wanting to be pinned to a table. Holding a hand turns into wanting to bite back.\nAn interaction already running well, and still, wanting to try one more position, to see if it goes better.\n\nThis part usually surfaces only in a safe-enough relationship.\nBecause the body dares to run free only when it knows the other can catch it.\nRead it as sensory radar rather than instability.\nSaying: still unexplored here, still deeper there.\nMaybe, next time, we try another way in.",
+      "compatCode": "R-S-N",
+      "compatName": "Dancer",
+      "compatText": "The Dancer moves with the Chaser's shifting steps.\n\nThe Chaser moves forward, the Dancer follows forward.\nThe Chaser suddenly pulls back, the Dancer does not panic.\nThe Chaser changes the game, and the Dancer's body usually understands faster than language.\n\nThe point of this pair lives beyond who leads.\nBoth are at home in flow.\nOne looking for new sensory doors.\nOne spinning in step with them.\nThe rhythm changes, the position changes, the body still keeps up.\nThis gives the Chaser courage to explore,\nand lets the Dancer slip into that wordless shared understanding.\n\nStill, the freer you are, the more you need anchors.\nSafeword. Limits. Aftercare.\nAnd that very simple check-in:\n\"Was that okay just now?\""
+    },
+    "R-S-N": {
+      "name": "Dancer",
+      "tagline": "When the rhythm lands, the body falls into step. From there, it follows on its own.",
+      "description": "The Dancer does not always know, at the start, what they want.\nBefore the air arrives, they may just be standing to the side, watching, waiting.\nFeeling for the distance.\n\nBut once the right rhythm begins, the body reacts faster than thought.\nThe other comes close, pause. The other stops, breath slowing.\nA line thrown, caught naturally, thrown back.\n\nThe Dancer thrives on exchange.\n\nTotally one-way is numb. Totally monotonous is dull.\nBeing led the whole time, over time, loses the self.\nBeing required to lead the whole time starts to feel unnatural.\n\nThe best state is two people genuinely present.\nA glance arrives, the other catches it, a hand reaches up, no immediate retreat.\nTempo quickens, they match. Tempo slows, they slow together.\n\nNo need to pin things down.\nWho is on top, who is underneath, who moves first, who breaks first.\nNone of that is absolute during the scene.\n\nThe Dancer's sharpness is in sensing the other's changes.\nNot by guessing. The body knows: this second, closer. Next second, back.\nStronger now. Softer now.\n\nA good dynamic feels, to the Dancer, like a waltz in three.\nBeat lands, body keeps dancing.",
+      "shadow": "The Dancer feels plenty. The problem is trusting every pull too fast.\nIf the other turns strong today, follow fully. If the other softens tomorrow, catch all of it.\nFast if they want fast, slow if they want slow. In time, what the Dancer actually wants blurs.\n\nIn a dynamic, the Dancer easily reads as \"easy to be with.\"\nAccommodating, open to negotiate, agreeable, anything goes.\nBut \"anything goes\" can mean limits have not been spoken clearly.\n\nThe hard conversation still has to happen. Where today's touch should land, where not to continue.\nWhich kinds of play keep the body moving, which jokes actually turn things cold.\nWithout saying these, the other can only guess.\n\nThe Dancer needs flow, and cannot be only flow.\nSteps can change, positions can change, roles can change. The limits must stay.\n\nFlow without a safeword slides easily into losing control.\nShared rhythm without conversation can mean one person is simply enduring.",
+      "subDescription": "In certain situations, a Dancer takes you over very naturally.\n\nIn daily life you may have strong preferences, may usually lead, may usually receive.\nBut with the right person, that fixed position swaps on its own.\n\nFew words needed. One of their gestures, and the body knows how to answer.\nSometimes going with it. Sometimes pushing back.\nSometimes just letting them know you are still here, keeping up, responsive.\n\nAs a second voice, Dancer means you are very sensitive to sensory resonance.\nWhat moves you lives below any specific technique.\nBeyond strict roles, beyond strict scripts.\nIt is both of you being on the same frequency.",
+      "compatCode": "A-S-N",
+      "compatName": "Chaser",
+      "compatText": "The Chaser keeps bringing new sensations in.\n\nThe Dancer does not need a direction at the start. Once the rhythm begins, the body follows.\nThe Chaser moves closer, the Dancer catches.\nThe Chaser swaps positions, the Dancer stays with it.\nThe Chaser suddenly wants a different mode, and the Dancer usually goes with it.\n\nThis pair runs on strong energy. Rarely the same script. No need to lock roles down.\n\nThe Dancer's softness gives the Chaser courage to explore both bodies more.\nThe Chaser's initiative frees the Dancer from waiting for the slow build.\n\nStill, trusting the moment too much makes it easy to skip saying things out loud.\nFlow is good. Limits must stay.\nWhere limits go unspoken,\nthe most beautiful shared understanding can turn out to be one person enduring."
+    },
+    "A-G-P": {
+      "name": "Dom",
+      "tagline": "Knows how to make waiting tighten into anticipation. Even the pause belongs in their hands.",
+      "description": "The Dom rarely waits on the air.\nMuch of the time, the room has only just gone quiet, and the Dom already knows where to apply pressure.\nA line. A pause. A look that forbids coming closer right now.\nThe other wants to move, and gets suspended there.\nIn that second, the Dom begins to feel it. Obedience alone leaves them hungry.\n\nObedience is easy. Commands are easy.\nWhat hooks the Dom is the moment before full surrender,\nwhen the body seems to find a home, already a little loosened.\n\nBreath slows. Eyes begin to flinch away.\nMouth still answering, body not pulling back.\nThat is the doorway.\n\nThe Dom lives for tension.\nToo fast is flat. Finished too soon is flat.\nMake them wait. Let the want pile. Let the near-approach be stopped,\nagain and again.\n\nCan be \"come here.\" Can be \"not yet.\"\nSometimes doing nothing, only refusing to let the moment move forward, is enough torment.\n\nThe Dom's sharpest edge lives in knowing when to pull back, when to release,\nwhen to hold three more seconds.\n\nThose three seconds, sometimes, weigh more than any action.",
+      "shadow": "The Dom's trouble point is trusting their own read too much.\nThe other has not pulled back. The other's eyes still fixed on me.\nTheir voice went soft. Their body is already reacting.\nAll of this makes it easy to think:\nokay, close enough. Push a little further, no problem.\n\nBut close enough stays shy of real yes. Body response can run ahead of psychological readiness.\nTension stretched too tight makes you forget to check.\n\nStill okay? Want a pause? That one just now, okay?\nWater? A hug now, or should I not touch you yet?\n\nThese questions do not sound dominant enough.\nBut a mature Dom knows: checking does not weaken control.\nIt completes it. Able to make them wait, able to let them leave safely.\nAble to take them to the edge of coming apart, and able to bring them back whole.",
+      "subDescription": "A Dom in you quietly picks up the whip.\n\nNot out every day. Not out for everyone.\nMost of the time you may be easygoing, let others decide.\nBut once a certain someone appears, the air changes.\n\nYou begin to notice their reactions. You want to know how to make their nerves tighten.\nYou want to design a scene they walk into, step by step.\n\nThis part asks for more than control. It asks for a feel for touch.\nSee a flicker of hesitation, know you can slow more.\nSee them nearing their limit, know this is a place to hold back, carefully.",
+      "compatCode": "R-T-P",
+      "compatName": "Submissive",
+      "compatText": "The Submissive finds presence inside tension.\nThe Dom knows how to pull that tension to exactly the right length.\n\nOne turns waiting into anticipation. One ripens inside anticipation into satisfaction.\nOne converts pressure into bodily response. One treats the other's response as food.\n\nThe Dom does not have to keep pushing.\nSometimes just stopping, holding that second open,\nleaves the Submissive strung there, waiting harder.\n\nThe fit here is clean, and it most needs clear-stated rules.\nCommand carried out. Reward and consequence spelled.\nEdging. Delay.\nAll of this runs powerful. All of this needs lines.\n\nSafeword must really work. Stop means stop.\nAt the end, no leaving the person hanging in midair.\n\nSurrender like this should not be squandered. Dominance like this is more than release.\nA real fit leaves warmth behind to savor. Not scars."
+    },
+    "R-T-P": {
+      "name": "Submissive",
+      "tagline": "Anticipation builds, and the grip loosens. Letting go begins to feel sweeter.",
+      "description": "The Submissive's desire does not rush out at the start.\nIt needs to be pressed a little. Seen a little.\nAllowed to be handed over slowly.\n\nThe Submissive answers to a specific kind of top.\nStrong presence alone does not open the state.\n\nWhat lights the Submissive is someone with a mind, a direction, and measure.\n\nKnows how to turn waiting into anticipation. Knows when the command has been accepted.\nKnows when to stop. Knows what the body wants,\nand does not hand it over immediately.\n\nThe hook is the back and forth. Tension stretched tight, then loosened.\nWanting to come closer, told to wait.\nAbout to speak, called back by a single line.\nAlready wet through, still having to endure the other's teasing.\n\nThat delayed arrival pulls the Submissive deeper and deeper.\nThe hook is the release, once finally permitted. Pain is just the setup.\nSomeone can turn submission into more than kneeling. Into landing in a place that holds safely.\nWhat the Submissive wants is to finally stop holding themselves up. Disappearance was never the point.",
+      "shadow": "The Submissive's shadow is confusing \"being taken over\" with \"being loved.\"\nSomeone commands, so I must be needed. Someone arranges, so I have a place.\nSomeone makes me wait, so this must be care.\n\nBut not every form of control deserves surrender.\nSome people only want to see a fun reaction, with no intention of being responsible.\nSome use rank to press down, without reading state.\nSome enjoy the released version of you without any plan to bring you back.\n\nThe Submissive remembers: hand over, and keep judgment.\nSafeword and limits spoken beforehand. Uncomfortable, stop.\nAftercare at the end. Not a bother. A given duty of care.\n\nA mature Submissive stays clear of becoming the one who endures the most.\nIt is the one who knows better who to hand over to.",
+      "subDescription": "A Submissive lives in you, and part of your desire wants to be taken.\n\nIn daily life you may be very disciplined, very exacting, used to handling everything personally.\nBut in some intimate moments, you want to put that control-urge down.\n\nTo be ruled. To have someone decide the next step.\nTo be held in the torment, stretched to the peak, then let gently go.\n\nThis part has nothing to do with weakness.\nIt means you need a place where you do not have to keep bracing yourself.\nSo you can really release.\nProvided the person can actually catch you.",
+      "compatCode": "A-G-P",
+      "compatName": "Dom",
+      "compatText": "The Dom stretches the tension open for the Submissive.\nThe Submissive wants more than being worked over. They want someone who knows\nwhen to come close, when to stay away,\nwhen to issue the no.\n\nThe Dom gives direction. The Submissive moves toward it.\nThat suspended time is more than waiting. It is the body being slowly opened.\n\nStill, this pair cannot run on instinct alone.\nWhere okay. Where not. Torment to what degree.\nWhere the line sits between command and punishment.\nThe clearer this gets beforehand, the easier it is to enter state.\nA good Dom catches the Submissive.\nBeing played to collapse is only half of what the Submissive needs. The other half is knowing that after handing over, they get brought back whole."
+    },
+    "A-T-P": {
+      "name": "Faller",
+      "tagline": "Walks to the edge by choice. Leans into the fall to find out whose arms are waiting below.",
+      "description": "The Faller's desire is contradictory.\nOne side, very active.\nOther side, deeply wanting someone else to be active toward them.\nNo one has to drag them. They walk to the edge themselves.\nTo find out: if one more step is taken, will the other catch.\nTo find out how deep the drop goes, once control starts to slip.\n\nThe Faller is hooked on tension.\nEspecially the tension they chose to sink into.\n\nNot passive endurance.\nKnowing they will be held, suspended, and going anyway.\nKnowing the other will make them wait, forbid them,\nstop them at the hardest place, and still handing the body over.\n\nThe Faller often opens the door, then wishes the other would close it.\nThis desire resists being put into words.\nBecause it looks like submission, and inside is a strong, deliberate choice.\nI choose to come close. I choose to let you take over.\nI choose to place myself in the position you will govern.\n\nThe Faller reaches past being shattered. What they want is someone watching, on the way down.",
+      "shadow": "The Faller easily falls in love with the edge-feeling. The more dangerous, the more wanted.\nThe harder to have right away, the more wanted.\nThe closer to losing control, the more the body lights up.\n\nThis puts the Faller in deep quickly, and gets them hurt quickly.\nBecause not everyone standing below is actually ready to catch.\nSome only enjoy watching the drop. They do not enjoy carrying you back.\n\nThe Faller has to watch: do not turn \"I want to hand over\" into \"you may do anything with me.\"\nActive surrender still needs limits.\nCan be suspended, must have a safeword.\nCan be taken very deep, must be able to come back after.\n\nA mature Faller keeps falling. They know that after a leap of faith,\nsomeone can hold them steadily.",
+      "subDescription": "A Faller walks in you, actively seeking the feeling of being led.\nIn daily life you may be very clearheaded, very judgment-sound, allergic to loss of control.\nBut with someone trusted enough, the body wants to test how much it can set down.\n\nActively nearing. Actively provoking tension.\nActively placing yourself in a position that needs catching.\nThis part reminds you:\nwanting to be taken over can be deeply active.\nSometimes, handing over is itself a very deliberate choice.",
+      "compatCode": "R-G-P",
+      "compatName": "Catcher",
+      "compatText": "The Faller walks to the edge on purpose.\nThe Catcher knows exactly when to reach a hand.\nThe edge is the desire itself.\nThe Catcher will not catch too early. Too early, the tension breaks.\nNor too late. Too late, the fall stops being a game.\n\nThe pull of this pair lives in timing.\nThe Faller loves to sink. The Catcher watches them sink, and reaches in at exactly the right place.\nIn the moment of being caught, the Faller dares to admit they wanted to fall all along.\nStill, falling must not become a love-test. Catching must not become control.\nIf one keeps using loss of control to look for proof, and the other keeps enjoying the near-fall, both end up hurt.\nA real fit: someone dares to near the edge, and someone can really catch them."
+    },
+    "R-G-P": {
+      "name": "Catcher",
+      "tagline": "Waits until the tension is ripe. Then steps in and takes the whole scene.",
+      "description": "The Catcher waits before stepping forward.\n\nThey watch. They wait.\nThey feel where the air starts to loosen.\nThe other's gaze pauses. The tone shifts.\nBody comes close, but has not actually said it.\nThe Catcher remembers that second.\nThen waits for the moment to ripen.\n\nNot without desire. The desire needs its entry point.\nToo early, no flavor.\nToo late, the fire dies.\nThe Catcher is hooked on the exact right point.\nThe other has almost cracked, but has not fully given over.\n\nThe air has heated. It has not yet broken.\nA line here, a nearness here, a look that forbids retreat, and the whole room shifts.\nThe Catcher's lead often stays inward.\nSometimes it is quiet. A hand out, just in time, to someone about to drop.\nAfter the catch, the rhythm changes.\nThey begin to arrange, to apply pressure, to shape waiting into form.\n\nThe Catcher waits for the right time to take control.\nWhen the time is right, they take it.",
+      "shadow": "The Catcher's shadow is overloving the timing, slipping into endless observation.\nWaiting. Watching. Checking whether the other is ready.\nAnd by the end, the air may have already passed.\nOr, from being so good at reading, they start to believe their read is the truth.\n\nBut no observation, however sharp, replaces checking.\nLooks like wanting lives apart from actual wanting.\nAbsence of refusal falls short of consent.\nA mature Catcher learns: timing cannot be grabbed by the eyes alone.\nSometimes you have to ask. Sometimes you have to say.\nSometimes the ambiguous moment must be made into clear consent.\nThis does not break the tension. It steadies the reach.",
+      "subDescription": "Something in you leads by waiting. The Catcher.\nIn daily life you may hold back from showing control.\nMay even look rather responsive.\nBut once you feel the other has reached a certain point, that part wakes.\nKnowing what to say, how to come close,\nhow to pull the other out from the hesitation.\n\nAs a second voice, Catcher is a quiet form of leading.\nRarely loud. But precise.",
+      "compatCode": "A-T-P",
+      "compatName": "Faller",
+      "compatText": "The Faller hands the timing right to the Catcher.\nThis one does not sit quietly in the safe zone.\nThey come to the edge. They let the body sink first.\nThey see, just before the drop, whether you reach.\n\nThe Catcher's desire often ignites in that exact second.\nCatch too early, no tension.\nCatch too late, it becomes harm.\nThe Catcher runs on precision rather than control.\nThis pair carries strong trust.\nThe Faller willing to walk the edge, the Catcher willing to take responsibility for that edge.\nStill, the Catcher must be careful not to turn waiting into cold watching.\nThe near-drop looks beautiful. Permission to let them actually fall belongs elsewhere.\nAble to catch earns the right to make someone wait."
+    },
+    "A-S-P": {
+      "name": "Switch",
+      "tagline": "Waiting one moment. Making someone else wait the next.",
+      "description": "The Switch loves tension that runs more than one way.\nPressing on the other the whole time, boring.\nBeing pressed on the whole time, also boring.\nThe interesting part is that roles can flip.\n\nA line stops the other. The next second, deliberately handing them the controls.\nJust closing in, then suddenly retreating, letting them chase.\nAppearing to be led, then reclaiming the rhythm in a single move.\nThe Switch lives on tension in motion.\nMore than a simple role-swap. The other cannot guess what the next second holds.\nPausing before contact. Taunting when about to submit.\nAbout to dominate fully, then placing themselves in the other's hands.\nThis flipping keeps the air strung up.\n\nThe Switch usually reads people well.\nIf the other is too stable, wants to disturb them.\nIf the other is scattered, wants to catch them.\nIf they think they have grabbed the beat, the Switch stalls it on purpose.\nThe point is living tension. That back-and-forth where neither can fully settle.",
+      "shadow": "The Switch's shadow is loving the trick too much.\nLeaving the other without a floor.\nJust said this, now says that.\nJust said yes, now taunting.\nJust about to hand over, now claiming the lead back.\nWithout real understanding between you, this exhausts.\nMakes the other unsure whether you are playing or fleeing.\n\nThe Switch has to watch: do not package every unease as a game.\nSometimes the constant shifting runs on fear of being seen through, far from play.\nA mature Switch can still shift. But leaves cues before shifting.\nSo the other knows this is play, not emotional unraveling.\nFlipping belongs to the ones who know the rules.",
+      "subDescription": "A Switch moves in you, refusing to be pinned.\nIn daily life you may lean toward leading, or lean toward receiving.\nBut in certain situations, you want to swap positions.\nFlip back. Test. See how the other reacts when thrown off.\nHold this as sensitivity to the flow of power, nothing less steady.\nTension lives beyond pressing down. It comes from exchange, from pause, from biting back.\nMature, it brings a dynamic to life.\nImmature, it leaves people unable to read you.",
+      "compatCode": "R-S-P",
+      "compatName": "Mist",
+      "compatText": "The Mist can take the changes the Switch brings.\nThe Switch nears, and the field stops sitting still.\nMoving in just now, next second maybe pulling back.\nSeeming to hand over, then taking the controls back.\n\nThe Mist is in no rush to pin anything down. No rush to ask what this is. No rush to nail positions.\nThis gives the Switch more room.\nOne responsible for the flips. One responsible for keeping the fog from thinning too fast.\nTension thickens inside the uncertain.\n\nStill, this pair slips into misreadings easily.\nAmbiguity, provocation, test, retreat. Without a clarifying beat at the end,\nby the end you cannot tell who was still in the game.\nFlip, hold back, both fine. After it ends, realign.\nWhen the fog clears without that beat, it stops being play. The bruises show up everywhere."
+    },
+    "R-S-P": {
+      "name": "Mist",
+      "tagline": "Leave something unnamed. The less the fog reveals, the closer the body wants to drift.",
+      "description": "The Mist's desire usually rises inside the ambiguous.\nToo clear, and some of the flavor goes.\nHaving to define it right now.\nHaving to state who wants what immediately.\nHaving to decide the next step on the spot.\nAll of this cools the Mist.\nThe time they love is the time before anything is spoken.\nClose, and not fully pressed in.\nFeeling something, not yet admitting it.\nThe other looks like they are waiting. You look like you are waiting.\nBoth know something is there. Neither rushes to pin it.\n\nThe Mist carries plenty of desire.\nIt grows out slowly.\nA little guess. A little waiting. A little back and forth.\nWho leads, who receives, no need to settle at the start.\nSometimes going with the other, sometimes throwing it back, sometimes deliberately leaving the answer unfinished.\nThat uncertainty keeps tension in the air.\n\nThe Mist slows desire deliberately.\nMakes the other want to come a little closer, want to know what the fog holds.",
+      "shadow": "The Mist's shadow is depending on the blur. Not saying it clearly is seductive,\nbut never saying it hurts people.\nThe other does not know if you really want them, or if you are playing.\nDoes not know if you are shy, or avoiding.\nDoes not know if you are leaving space, or refusing to take responsibility.\n\nThe Mist also needs to speak. Tension cannot forever be held up by guessing.\nSome things dragged too long stop being erotic and become attrition.\nA mature Mist keeps the mystery.\nBut does not leave the other without direction.\n\nCan not speak it right away, but what should be confirmed, still must be confirmed.\nCan go slow, but cannot leave the other hanging, unsure of their own worth here.",
+      "subDescription": "Mist drifts in you, part of your desire living on ambiguous tension.\nAble to state it clearly, choosing to go slower.\nLetting the other guess. Letting yourself guess.\nLetting that unnamed state linger one more beat.\nThis part makes relationships misty.\nAt its best, mesmerizing.\nOff-balance, unsettling.\nIt reminds you: blur can be play, but should stay away from dodging responsibility.",
+      "compatCode": "A-S-P",
+      "compatName": "Switch",
+      "compatText": "The Switch keeps the Mist from being defined too quickly.\nThe Mist loves the yet-unspoken air.\nNot fully close, not fully away, a layer of fog, drawing the eye deeper.\nThe Switch stirs that fog.\nMoment press in, moment pull far away, moment seeming to catch, moment seeming to bite back.\n\nThe tension in this pair pulls. No rush to arrive. No rush to lock down shape.\nMuch happens in glances, in pauses, in sentences left unfinished.\n\nBut fog cannot stay forever.\nWithout a point of confirmation, both start to guess.\nGuess whether the other really wants it, guess whether that last step counted as crossing,\nguess whether this game is even still on.\nA good Switch gives the ambiguous a shape.\nA good Mist, when the time comes, must be willing to speak."
+    },
+    "A-G-C": {
+      "name": "Weaver",
+      "tagline": "Sets the order. Sets the hour. When every sign falls into place, desire opens its door.",
+      "description": "The Weaver turns desire into a field one can enter.\nAn opening. A position. A name. An order. Rules only the two of you know.\nThese are the entrance of desire.\n\nThe Weaver designs the shape of the relationship actively.\nHow to begin. Who speaks first. Where to stand.\nWhich sentence, once said, formally starts the scene.\nThese details matter to the Weaver.\nOnce the other walks into that set of rules, the body follows into state.\n\nThe pleasure lives in the transformation the form carries. The pleasure is the transformation the form carries.\nThe everyday person, inside the title, becomes someone else.\nThe ordinary room, through a sequence, becomes a place where surrender, command, waiting, acceptance all have shape.\n\nThe Weaver leads the way a careful host does.\nOpening the door well. Dimming the light. Laying out the rules. Then watching the other step into desire, one step at a time.",
+      "shadow": "The Weaver's shadow is trusting the ritual too much.\nSequence right, name right, position right, so the person must be in.\nBut a person's state does not always run on the chart.\nSometimes the other is tired today.\nSometimes the title suddenly does not fit.\nSometimes a sequence that always worked, this time will not open the body.\n\nThe Weaver has to watch: do not let the ritual press down on the person.\nRules exist to help someone enter. Not to prove the rules themselves are right.\nA mature Weaver keeps structure, and reads the room.\nKnows when to follow sequence.\nKnows when to stop and ask.\nKnows when to put the ritual away and tend to the person in front of them.",
+      "subDescription": "The Weaver in you wants to build order around desire.\nIn daily life you may not love rules particularly, or come off as improvisational.\nBut in some relationships, you want to design the switches.\nA name, a position,\na fixed way to begin, a sequence only the two of you understand.\nThis part has nothing to do with being a control freak.\nIt means you know certain desires need a frame to be safer, and deeper.\nMature, you become excellent at building a field two people can enter with trust.",
+      "compatCode": "R-T-C",
+      "compatName": "Devotee",
+      "compatText": "The Devotee actually enters the field the Weaver sets.\nThe Weaver does not need a mere go-along partner.\nThey need someone who, once inside the sequence,\ncan make the whole ritual come alive.\n\nName lands, position fixed, rules in motion.\nThe Devotee's body slowly puts the daily self down,\nmoving into the arranged position.\nThe Weaver feels this. Not because the other obeys.\nBecause the field they designed actually caught a person.\n\nThis pair is well-suited to building private sequences.\nFixed names, ways to enter, closures at the end.\nStill, the rules cannot matter more than the person.\nIf the Devotee's state is off, the ritual should stop.\nThe real Weaver does not guard the sequence. The real Weaver guards the person."
+    },
+    "R-T-C": {
+      "name": "Devotee",
+      "tagline": "The ritual lights up, and hesitation falls away. There is already a place to surrender into.",
+      "description": "The Devotee does not necessarily love chaos.\nToo improvised, too ambiguous, too much unknown ahead makes releasing hard.\nThey need an entry.\nA title.\nA sequence.\nA fixed position.\nA line that signals the beginning.\nOnce that switch is flipped, the body slowly enters state.\nThe Devotee's desire rarely lights from sudden stimulus. It is enveloped by frame.\nKnowing where I am.\nKnowing where the other is.\nKnowing what comes next, and knowing how to stop if it becomes too much.\nThese certainties let the Devotee hand over more.\n\nInside a good ritual, the Devotee can slowly peel the daily identity off.\nNo more constant judging, no more constant deciding, no more constant guessing at the other's wants.\nFollowing the sequence,\nstep by step, deeper and deeper.\n\nThe Devotee does not love being trapped. They love being safely enveloped.\nTaken, by a set of agreed rules, into a place not usually reachable.",
+      "shadow": "The Devotee's shadow is leaning on frame too hard.\nNo title, cannot enter.\nNo sequence, cannot enter.\nThe other scrambles, and you scramble too.\nOver time, you may forget desire can also have elasticity.\nRules protect, and rules can also become a new cage.\nIf the whole thing cools the moment the sequence is off script, ask yourself:\nam I really needing this ritual,\nor afraid of facing the person directly without it?\nA mature Devotee treasures rules.\nAnd still feels caught when the rules shift a little.\n\nDevotion lives apart from escape. It is knowing what you are entering, and knowing you can return.",
+      "subDescription": "In certain intimate moments, the Devotee in you needs a clear doorway.\nIn daily life you may be free, improvisational, even averse to being told.\nBut some desires only open inside clear rules.\n\nThe other calls out that name.\nYou take that position, the sequence begins.\nThe body knows: now, it is time to put it down.\nThis part reminds you that feeling does not have to rely on shock.\nSometimes, order itself is the deepest shock.",
+      "compatCode": "A-G-C",
+      "compatName": "Weaver",
+      "compatText": "The Weaver opens the door for the Devotee.\nThe Devotee needs a clear structure.\nNot from lack of desire.\nThe body needs to know where to go, where to stand, which part to hand over.\nThe Weaver provides exactly these.\nName, rule, order, posture, way of beginning and ending.\nWith these clear, the Devotee can actually relax.\nNo holding the shape up alone, no constantly thinking about what comes next.\nAs long as they can walk in, this pair fits beautifully.\nWell-suited to slowly building a ritual only the two of you understand.\nStill, the sequence must breathe.\nThe same rules, each time, require reconfirming whether the person is still in state.\nRituals can repeat. Consent, too, repeats."
+    },
+    "A-T-C": {
+      "name": "Pilgrim",
+      "tagline": "Wants to be led because the path itself is irresistible. Every step deeper is part of the wanting.",
+      "description": "The Pilgrim actively seeks an order they can enter.\nNo passive waiting for someone to arrange.\nThe knowing is simple:\nI need to be guided.\n\nI need rules. I need a title. I need a position.\nI need a sequence that lets the body slowly put itself down.\n\nThe Pilgrim's initiative shows up in choosing the person, and choosing the frame.\nThe lead has to come from someone steady, someone who knows what they are doing.\nThe order has to be more than performance. It has to actually carry a person.\nOnce confirmed, the Pilgrim walks in.\nFollowing the rules, the steps, the direction given.\nThis is an active choice to let structure carry them.\n\nThe Pilgrim is hooked on the feeling of being led into something.\nLike stepping back from the daily world, into a place deeper, quieter, heavier.\nIn there, every move has meaning.\nEvery name has a place.\nEvery wait feels like completing a rite.",
+      "shadow": "The Pilgrim's shadow is idealizing the one who provides the frame.\nThey have rules. They state things clearly.\nThey look steady, so they must be trustworthy.\nBut writing rules does not mean caring for people.\nGuiding does not mean knowing when to stop.\n\nThe Pilgrim has to be careful.\nDo not hand over judgment too fast just because being led is wanted.\nReal good guiding\nmakes a person more oriented, not more lost.\n\nA mature Pilgrim asks: is this ruleset for my safety, or merely for their convenience in controlling me?\nAble to ask that is the right to walk further in.",
+      "subDescription": "A Pilgrim in you actively seeks structure.\nIn daily life you may not want to be told, may have strong views.\nBut sometimes, you want to meet someone who paves the road.\nSomeone who does not live your life for you, but gives you an order you can walk into.\nThis part means your interest in ritual runs beyond curiosity.\nYou are genuinely opened by rules, positions, sequences.\nAs long as the structure is clean enough, the body is willing to walk in.",
+      "compatCode": "R-G-C",
+      "compatName": "Keeper",
+      "compatText": "The Keeper answers the Pilgrim's hunger for frame.\nThe Pilgrim reaches past being ruled.\nMore like actively seeking an order that lets them set themselves down.\nWith rules, the body knows how to enter.\nThe Keeper sees this hunger.\nDoes not rush to press frame down. Confirms, and slowly stands the ritual up.\nThe beauty of this pair\nlives in one actively seeking the way, one responsible for the gate.\nNames can carry weight.\nRules can take on the quality of covenant.\nEach entry becomes a reconfirming of positions.\nStill, rules cannot be sanctified past the point of discussion.\n\nThe Pilgrim remembers: wanting to enter order does not mean giving up your voice.\nThe Keeper remembers\nto keep the ritual, not to trap the person inside it."
+    },
+    "R-G-C": {
+      "name": "Keeper",
+      "tagline": "Someone comes close, and the scene takes shape. The rules rise one by one around them.",
+      "description": "The Keeper's leadership often stays quiet at the start.\nIn daily life they may read as gentle, slow to define, slow to grab control.\nBut when the other truly comes close, needs to be placed, needs guiding,\nneeds a frame to enter state, the Keeper steps forward slowly.\nDominance for its own sake leaves them cold.\nThey sense: this place needs rules.\nNeeds a name. Needs a beginning.\nNeeds a limit. Needs someone remembering the safeword, the sequence, the aftercare.\n\nThe Keeper's desire grows out of answering.\nThe other's trust makes them want to guard the ritual well.\nThe other's willingness to come close makes them clearer on how to arrange.\nThis leading is quiet and steady.\nThe rules become a place, not a pressure.\nThe other can enter. Can put the self down.\nCan know they will not be casually discarded.\n\nWhat gives the Keeper weight is knowing ritual is more than beautiful.\nRitual is a long commitment.\nOnce begun, the responsibility runs through to the end.",
+      "shadow": "The Keeper tends to carry responsibility too heavy.\nThe other gives a little trust, they want to catch all of it.\nThe other needs frame, they want to arrange every detail.\nIn time this tires. The ritual may become too tight.\nThe Keeper has to watch\nnot to let \"I will keep watch\" become \"I cannot fail.\"\n\nIn intimacy no one can fully control every reaction.\nEven with the clearest rules,\npeople get tired, states shift.\n\nA mature Keeper knows\nkeeping the ritual does not mean the ritual cannot be adjusted.\nThe truly stable frame carries flex. It can take change.",
+      "subDescription": "A Keeper lives in you, naturally building order in a relationship.\nThis part does not have to show up first.\nBut when you feel the other needs holding, it steps forward.\nWanting to confirm the rules, wanting to speak the sequence clearly.\nWanting the other to know where they can stop.\nWanting this practice to be more than thrill.\nTo be actually, truly held.\n\nThis part means you are sharply alert to responsibility.\nPlay alone will not satisfy you. You catch, well.",
+      "compatCode": "A-T-C",
+      "compatName": "Pilgrim",
+      "compatText": "The Pilgrim brings their need right to the Keeper.\nThey are not casually playing with rules.\nThey are looking for a frame that lets the body release, lets the relationship clarify.\nThe Keeper feels this.\nBecause the need does not sit waiting. It approaches clearly.\nThe Pilgrim wants to enter, the Keeper handles how the door opens.\nHow the rule stands, and how to be looked after inside.\n\nThis pair suits building a long relationship.\nNames slowly gain weight.\nSequences slowly become body memory.\nRules become more than rules. They become a shared language.\n\nStill, the Keeper cannot turn protection into judgment.\nThe Pilgrim cannot, after handing over longing, stop being responsible for communication.\nA good frame does not silence a person.\nA good frame lets them enter more safely."
+    },
+    "A-S-C": {
+      "name": "Shapeshifter",
+      "tagline": "Step into the role and desire takes form. Voice, posture, skin all follow.",
+      "description": "The Shapeshifter loves entering different shapes.\nThis goes past acting.\nWhen a certain title, a certain outfit, a certain posture, a certain way of speaking appears,\nthe body actually changes.\n\nThe daily self steps back, and another version walks out.\nMaybe more aggressive. Maybe softer.\nMaybe meaner. Maybe more willing to be seen.\nThe Shapeshifter's desire needs scene. Needs flow. Needs more than one fixed role.\nToday the hunter, tomorrow the sacrifice.\nThis moment giving command.\nNext moment wanting to see what happens when the rules close around them.\n\nFor the Shapeshifter, role is how the real gets touched.\nSome desires cannot be spoken plainly.\nPlaced inside a role, they can be admitted.\nSome stances cannot be worn in daily life.\nStepping into a scene, the body knows that stance is part of itself.\nThe Shapeshifter is hooked on the second of identity-change.\nName changes, position changes, voice changes.\nDesire puts on another face.",
+      "shadow": "The Shapeshifter's shadow is leaning on roles too much.\nAnd then not daring to speak in the own voice.\nInside the role, can ask. Inside the role, can refuse.\nInside the role, can cry, can taunt, can submit, can dominate.\nOutside the role, silence.\n\nThis puts the relationship at risk.\nThe other may know only your character, not the you behind the character.\nThe Shapeshifter has to watch, do not hide all the truth inside performance.\nA mature Shapeshifter knows roles can amplify desire, but cannot replace communication.\n\nBefore the scene, speak clearly in your own voice.\nAfter the scene, come back in your own voice.",
+      "subDescription": "Shapeshifter wakes under role, and lives in you.\nIn daily life you may be very fixed, not loving change.\nBut when certain setups, titles, outfits, positions appear,\nyou suddenly feel another self.\n\nThat self may dare to ask more, play more.\nMay admit reactions daily you would never claim.\nNothing fake about it.\nIt means certain truths\narrive only through transformation.",
+      "compatCode": "R-S-C",
+      "compatName": "Vessel",
+      "compatText": "The Vessel reads the field the Shapeshifter creates.\nThe Shapeshifter actively shapes.\nRole, title, rule.\nA self different from the daily.\n\nFor the scene to hold, one person cannot act alone.\nThe Vessel's gift is slipping naturally into that shape.\nNo need to explain much.\nA title lands and the body knows where to go.\nThis pair suits role play, suits practice with strong ritual weight.\nOne building the field, one entering it.\nOne changing shape, one answering shape.\n\nStill, the more roles, the harder to forget the person outside the role.\nAfter the scene, someone has to close the door.\nAsk the question: are you back?\nThat role from earlier, can it be set down now?"
+    },
+    "R-S-C": {
+      "name": "Vessel",
+      "tagline": "Set the scene, and the vessel finds its shape. The role settles into the body from within.",
+      "description": "The Vessel does not necessarily design the scene actively.\nBut enters scenes very well.\nThe other gives a title, a position, a rule,\neven just a shift in the air of the room,\nand the Vessel's body begins to adjust.\nKnows to soften now.\nKnows now biting back is permitted.\nKnows now to go quiet.\nKnows now to put the daily self to one side.\n\nThe Vessel does not run on a fixed role.\nThey read the scene, then grow the right shape from it.\nIf the other gives a tender frame, slowly sinking in.\nIf the other brings a taunting air, returning taunt for taunt.\nIf the other sets the position clearly, the Vessel finds a way to live in it.\nThere is a self in there. It is just very good at taking form.\n\nWater in a cup is still water.\nDifferent container. Different shape. Same source.\n\nThe Vessel brings the scene to life. Does not stiffly perform the script.\nOnce in the scene, lets the script find its blood.",
+      "shadow": "The Vessel's shadow is becoming, too easily, the shape the other expects.\nThey want to see sweetness, so be sweet.\nThey want a bad kid, so be bad.\nThey want softness, so dissolve.\nThey want resistance, so resist fiercely.\nIn time, hard to tell which parts are what you actually want,\nand which are just skill at adapting to the scene.\n\nThe Vessel has to watch, do not treat adaptability as limitless.\nAble to shift does not mean every shift is okay.\nA mature Vessel confirms their own limits before entering a scene.\nThat way, inside the role, the self stays held.",
+      "subDescription": "You have the Vessel in you, able to enter scene very well.\nNot much explaining needed.\nNot every step planned.\nOnce the atmosphere lands, the body finds its place.\n\nThis part makes rapport easy with the other.\nThey give a little form, you bring it alive.\nAnd it also reminds you,\nbefore turning into any shape,\nknow first the shapes you will refuse.",
+      "compatCode": "A-S-C",
+      "compatName": "Shapeshifter",
+      "compatText": "The Shapeshifter creates shapes for the Vessel to enter.\nThe Vessel keeps a self.\nSome scenes, once standing, the body knows how to shift.\nThe Shapeshifter gives role, gives name, gives the entrance.\nThe Vessel catches the entrance, then slips through.\n\nThis pair's interactions carry drama.\nNot the same person each time.\nToday this position, tomorrow another identity.\nInside one relationship, many faces can grow.\nStill, roles cannot become avoidance. Needs never spoken out cannot be stuffed into the script.\nThe Shapeshifter must state the scene's limits.\nThe Vessel must state which role can enter, which role would be too much.\nThe more fun it gets, the less aftercare can be skipped.\nThe person must come back, so the relationship stays."
+    },
+    "A-G-X": {
+      "name": "Ferryman",
+      "tagline": "Knows where the door is, how it opens, and who gets passage to the other side.",
+      "description": "The Ferryman is sharply alert to boundaries.\nNot from a hunger for trespass. From knowing some desires live in places not usually touched.\nA line that cannot be said.\nA fantasy that cannot be admitted.\nA scenario that frightens and still pulls.\nThe Ferryman sees those doorways and wants to come close.\nA mature Ferryman never kicks the door open.\nThey confirm first, test, feel their way.\nMake sure the other knows: this door does not have to open.\nIf it really can, then one step forward.\n\nThe Ferryman leads with a lantern.\nNo one gets pushed into the dark.\nThe light held forward, with a question: do you want to walk this together.\nThey are hooked on the moment just before crossing.\nUnder clear consent, two people stepping together into a place not normally touched.\nShame can be there. Fear can be there. Longing can be there.\nThings hidden a long time can be there.\n\nReal crossing never breaks a refusal. It lets the other, in safety, dare to admit they also want to come near.",
+      "shadow": "The Ferryman's shadow is trusting their own sense of direction too much.\nSeeing a door makes you think you know what is behind it.\nEach person's forbidden zone is different.\nSome places are play for you, wound for someone else.\nSome shames can be played with. Some cannot be touched.\n\nThe Ferryman must guard against making exploration sound so beautiful the other feels shy about refusing.\nA mature Ferryman reconfirms, over and over.\nNot one check and done.\nEvery step forward, the other can still stop.\nAble to lead in means being able to lead out at once.\nThe closer to the forbidden, the less aftercare can be skipped.",
+      "subDescription": "A Ferryman lives in your leading side, pulled toward boundaries.\nIn daily life you may not read as dangerous.\nBut in a trusted enough relationship, you start wanting to know:\ncan we go further in here?\nCan this place no one dares speak of be touched a little?\nThis part never greenlights violation.\nIt means you can turn the forbidden into a road that can be walked.\nProvided the road has light, and an exit.",
+      "compatCode": "R-T-X",
+      "compatName": "Undone",
+      "compatText": "Undone softens the boundary slowly, inside trust.\nThe Ferryman sees that boundary and knows not to force it.\nThis fit rests on permission and confirmation.\nOn the other truly willing to let you near a place that normally stays private.\n\nOnce Undone trusts, resistance slowly releases.\nThe Ferryman's job is to lead, not push to the bottom.\nThis pair reaches very deep psychological places.\nShame, forbidden zones, hungers that cannot be admitted.\nThe moment body and mind both release at once.\n\nStill, the deeper, the slower.\nThe forbidden is no place to prove courage.\nOnly once permitted does anyone earn the right to approach."
+    },
+    "R-T-X": {
+      "name": "Undone",
+      "tagline": "Come close enough and the edges begin to dissolve. Soon even the outline of the self grows soft.",
+      "description": "Undone never crosses in a single leap.\nIt happens by slow melting.\nAt first there is a lot of confirming. Needing to feel the other is reliable.\nNeeding to know they can really stop.\nNeeding to know that if real panic comes, the other brings them back.\nUntil all of that is in place, Undone opens with difficulty.\nBut once trust is deep enough, the border thins.\nThings unsayable become a little more sayable.\nPlaces untouchable become a little more touchable.\nScenarios only imagined before, maybe tried once in the other's hands.\nThe hook was never danger. The hook is that, with someone beside them, they could walk this far at all.\nThat depth often arrives very quiet. Sometimes very quiet.\nGuard dropping layer by layer.\nThe shell held up for protection finally allowed to rest.\nUndone's surrender often carries very deep trust.\nIt is letting someone, briefly, into a place no one usually gets to enter.",
+      "shadow": "Undone's shadow is melting too fast.\nMeeting someone who feels safe, wanting to open everything.\nThe more they catch you, the deeper you want to go.\nBut deep and fast walk different roads. Some borders need time.\nSome reactions only land the next day.\nSome things you thought were okay\nturn out to have given too much.\n\nUndone has to learn: not every time has to go all the way in.\nCan open a little. Can stop at the door. Can walk away today.\nA mature Undone treasures their own opening.\nSaves it for someone whose care has been proven.\nCan melt, and can also gather again.",
+      "subDescription": "Inside deep trust, the Undone layer releases boundaries slowly.\nIn daily life you may be well-guarded, with clear limits.\nMay even dislike having your core touched too quickly.\nBut in some relationships, that line begins to soften.\n\nJudgment stays intact. The other's steadiness\nmakes you willing to try going further in.\nThis part reminds you that being able to open is precious.\nDo not rush to prove you can bear it.",
+      "compatCode": "A-G-X",
+      "compatName": "Ferryman",
+      "compatText": "The Ferryman leads the way for Undone.\nUndone does not let the border vanish casually.\nReal melting lives inside deep trust.\nSomeone sees that door. Someone knows not to touch it carelessly.\nSomeone willing to ask first, then come close.\nA mature Ferryman leaves Undone feeling walked in with, never pushed down.\nThis pair can reach very deep layers.\nDesires that cannot be spoken, hungers that cannot be admitted,\nthe side usually hidden well.\nStill, silence stays apart from consent. Freezing stays apart from submission. The absence of resistance withholds permission.\nThe Ferryman's instinct does not stand in for a safeword.\nBefore the full dissolving, Undone also practices saying what is okay and what lies out of bounds."
+    },
+    "A-T-X": {
+      "name": "Crosser",
+      "tagline": "Sees the depth ahead and walks toward it anyway. The edge only makes the crossing more tempting.",
+      "description": "The Crosser approaches the boundary on purpose.\nNo one drags them. They know exactly what they are doing.\nThey know something lives there.\nMaybe shame. Maybe the forbidden.\nMaybe a longing never admitted.\nMaybe a place that, once touched, cannot be pretended away.\n\nThe Crosser is drawn to it.\nBut they will not always run the whole process themselves.\nMore often, they walk to the door, then put their hand in another's.\nTake me in. Do not leave me there.\nThat is the Crosser's core desire.\nActively longing to be led in. Actively longing to be allowed.\nActively longing for someone who knows how to handle the deeper self.\n\nThe Crosser is clear-eyed. Recklessness stays off the table.\nKnowing they want to go very deep makes them more exacting about who gets to lead.\nThe draw is choosing to cross a line, with the other knowing how to bring them back. Loss of control on its own would never be enough.",
+      "shadow": "The Crosser's shadow is weighing \"daring\" too heavily.\nDaring does not mean fitting. Daring does not mean safe.\nDaring to reach the edge does not mean having to cross every time.\nSometimes the Crosser wants to prove they can take more, go deeper, be hit harder.\nBe seen in the place they least dare admit.\n\nDesire runs on something other than endurance.\nFailing to take it carries no shame.\nCalling stop leaves the mood intact.\nA mature Crosser keeps their courage, and keeps the right to retreat.\nReal good crossing lives apart from pushing through to the end.\nIt is knowing every step can be chosen to stop.",
+      "subDescription": "A Crosser in you is actively drawn to forbidden zones.\nIn daily life you may be very rational, very measured.\nVery clear on what should not be touched.\nBut before someone trusted enough, that part wants to walk a little closer.\nWanting to be led. Wanting to be allowed.\nWanting to see the desire you normally dare not admit, if touched, what it becomes.\nThis part never orders you toward risk.\nIt just says, you carry something willing to cross.\nWhat that something needs is less maxed-out thrill, more maxed-out safety.",
+      "compatCode": "R-G-X",
+      "compatName": "Gatekeeper",
+      "compatText": "The Gatekeeper knows when the door can open.\nThe Crosser walks right up to the boundary.\nNo one dragged them. They saw the door; the body wanted forward.\nStill, wanting to enter and actually entering now live in different rooms.\nThe Gatekeeper's presence keeps the Crosser's bravery from crashing in.\nThey read state, read timing, read whether today can be borne.\nTrust runs strong here.\nOne willing to say: I want to go there.\nOne able to answer: yes, or not today.\nThe Crosser sometimes gets too brave.\nThe nearer the forbidden, the more they want to prove they can.\nThe Gatekeeper must dare to hold the line.\nThis refuses no desire. It keeps desire from turning into scar."
+    },
+    "R-G-X": {
+      "name": "Gatekeeper",
+      "tagline": "The door can open. First comes the question of who enters, what they seek, and whether the way back stays clear.",
+      "description": "The Gatekeeper is sharply alert to boundaries.\nThey do not lead people across right from the start.\nThey do not want to touch every forbidden thing either.\nThe Gatekeeper looks first.\nLooks whether the other truly knows what they want.\nLooks whether the other is only momentarily inflamed.\nLooks whether the other can bear it.\nLooks whether they themselves can bring the person back.\n\nFor the Gatekeeper, crossing goes past simple thrill.\nIt is a door. Can open. Not for casual use.\nThe other's longing wakes the Gatekeeper's lead.\nWhen someone comes close with trust, saying they want to go further in,\nthe Gatekeeper begins to act.\nHere okay, there not.\nToday only this far. One more step, ask first.\nThe Gatekeeper's strength has nothing to do with pushing people over the line.\nIt lies in knowing where the line sits, and knowing how to let it be approached inside consent.\nBreaking boundaries carries no hook here. Being the one entrusted to open the door is.",
+      "shadow": "The Gatekeeper's shadow is slipping too easily into the seat of judgment.\nI decide. I rule.\nI know what is allowed, what stays off limits.\nIf this sense of responsibility goes out of balance, it becomes a lofty form of control.\nThe other's desire reads as more than an exam question.\nIt does not have to pass your review to earn the right to be touched.\nThe Gatekeeper remembers: keeping the gate differs from owning the door.\nBeyond the door is the other's body, the other's psychological border.\nA truly mature Gatekeeper holds judgment and respect together.\nConsiders what is viable,\nbut does not make the other feel their longing itself is wrong.",
+      "subDescription": "A Gatekeeper lives in you, stepping into responsibility inside crossing scenarios.\nIn daily life you may not usually lead.\nBut once forbidden things, shame, or psychological border appear, that part runs forward.\nWanting to confirm, wanting to protect.\nWanting to decide how far today.\nWanting this to stay a cared-for exploration, far from a loss-of-control event.\nThis part means you take boundaries seriously.\nSome doors should stay closed.\nSome doors, today, a glance is enough.",
+      "compatCode": "A-T-X",
+      "compatName": "Crosser",
+      "compatText": "The Crosser steps right up to the door.\nThat is magnetic to the Gatekeeper.\nBecause the Gatekeeper does not open the door for just anyone.\nThey need to see the other genuinely wanting in, genuinely knowing what they are nearing.\nThe Crosser's longing is clear. They want to touch the forbidden.\nTo cross a line they do not usually cross.\nTo know what they become once over there.\nThe Gatekeeper judges whether now, how far, when to stop, how to come back after.\n\nThis pair runs with deep attachment.\nStill, the Gatekeeper cannot turn protection into judgment.\nCannot forget, because they hold the door, that a person stands on the other side.\nThe Crosser cannot turn bravery into force.\nDoors are opened with. Not broken through."
+    },
+    "A-S-X": {
+      "name": "Transgressor",
+      "tagline": "Finds the line and tests every distance from it. Approach, retreat, cross. Each move deserves to be felt firsthand.",
+      "description": "The Transgressor has a very direct curiosity about lines.\nNot necessarily wanting to destroy them, not necessarily wanting to go only to the edge.\nSeeing a line, wanting to know what both sides look like.\nWhat closer feels like, what retreating feels like, what trading places looks like.\nIf the usually active one suddenly hands over, if the usually passive one takes the lead,\nwill the line become more interesting?\n\nThe Transgressor's desire shifts around.\nThe forbidden shifts, never fixed in one spot.\nCan be inside a sentence.\nCan be at a role change.\nCan be in a sudden lead-swap.\nCan be in the place where both of you laughed, and both knew the joke had already crossed into something else.\n\nThe Transgressor usually does not love dead-rigid rules.\nAnd cannot do without rules either.\nBecause they love testing what is forbidden.\nThey probe. They want to know if closer is still possible.\nA good Transgressor treats the border as something to enjoy.\nNo forced leap. Just a slow approach.\nFeeling it personally, then deciding whether to cross.\n\nTheir real pull is making the forbidden feel inviting.",
+      "shadow": "The Transgressor's shadow is trusting their own power to hold things too much.\nOnly a test, only a bit of play, feels like it can be walked back.\nBut not everything, once touched, returns to its original shape instantly.\n\nSome lines, once touched, take time to digest.\nYou may need time to digest too.\n\nThe Transgressor has to watch, do not read someone else's unease as not fun enough.\nSome people need time, some need triple confirmation.\nSome are not refusing. That line matters to them deeper than you know.\n\nA mature Transgressor still dares to explore.\nAnd makes checking part of the rhythm.\nChecking stays apart from spoiling. It is the condition that lets crossing continue to exist.",
+      "subDescription": "You carry a Transgressor pulled by the forbidden and by variation at once.\n\nIn daily life you may hold yourself with measure.\nNot necessarily into intense things.\nBut in some relationships, you want to try practices you usually do not consider.\nAnd across many ways.\nWanting to swap positions.\nWanting to put things usually unspeakable, inside safe range, on the table.\nThis part reminds you, exploration itself stays clean.\nThe freer, the more clearly you need the stop-point.",
+      "compatCode": "R-S-X",
+      "compatName": "Libertine",
+      "compatText": "The Wanderer keeps flow near the border.\nThe Transgressor approaches the places not casually touched.\nBut does not always want to enter in a fixed way.\nMaybe testing carefully. Maybe striding forward like a joke.\nMaybe suddenly close, then suddenly far.\n\nThe Wanderer understands this instability. No rush to pin the border down.\nNo rush to define every move.\n\nThis pair carries a dangerous beauty.\nNot unsafe.\nBoth know the line. Both react to crossing the forbidden.\nStill, the more danger, the more a clear safeword is needed.\nPre-set limits, after-review.\nWhere was game, where truly must not be touched.\nThe Transgressor can walk the Wanderer close to a door in the fog.\nHow the door opens cannot be left to mood alone."
+    },
+    "R-S-X": {
+      "name": "Libertine",
+      "tagline": "Lingers along the edge with no hurry to cross. The pleasure lives in staying close enough to feel it.",
+      "description": "The Libertine never crosses in a straight line.\nThey do not announce entry.\nAnd they do not rush to define the forbidden. Much of the time, they wander near the border.\nA sentence half-said. A glance held too long. A joke carrying something past the joke.\nSuddenly nearing, then quickly pulling back. The Libertine feeds on that imperceptible approach.\n\nThe line has not been crossed. The body already knows it is at the edge.\nBeing defined too fast kills the pull.\nDo you want this? Are you hinting at that? Yes or no?\nAsked too plainly, the ambiguity scatters.\n\nStill, a skilled Libertine is never evasive.\nThey approach with care.\nMaking the border slowly sharpen.\nGiving the other time to feel.\nLetting both of you know something is here.\nWithout needing to puncture it immediately.\n\nThe Libertine's desire dissolves borders inside flow.\nCloser today, back tomorrow.\nNext time, longer in the same spot.\nOne day the thing never sayable becomes openly discussable.",
+      "shadow": "The Libertine's shadow is loving to circle the border without ever saying where they stand.\nThe other may feel toyed with.\nUnsure if you are inviting, or hiding.\nUnsure if you want closeness, or just the taste of their confusion.\n\nThe Libertine has to watch for turning blur into the only safety.\nSome borders can be approached slowly.\nAfter a certain point, a clear sentence is needed.\nOkay. Not okay.\nUp to here today. Next time, we talk.\n\nA mature Libertine still keeps ambiguity.\nAnd does not leave the other lost in the fog.",
+      "subDescription": "A Libertine drifts in you, drawn to borders without any hurry to cross.\n\nWanting to linger nearby.\nFeel the line.\nFeel the other's reaction.\nFeel whether you actually want to come closer.\nThis part says you are sensitive to subtle psychological borders.\nReaching the deepest place at once stays unnecessary.\nSometimes, pausing at the door is enough.",
+      "compatCode": "A-S-X",
+      "compatName": "Transgressor",
+      "compatText": "The Transgressor brings the Libertine close to the border.\nThe Libertine rarely wants in from the start.\nMore often, slowly feeling around in the fog.\nA little testing. A little curiosity.\nA little flutter not meant to be admitted.\n\nThe Transgressor's initiative thins that fog.\nNo one gets dragged across. The Libertine simply notices they have been circling that border all along.\nThis pair pulls.\nBoth love testing the forbidden. Neither likes being typed too soon.\n\nStill, silence stays apart from consent. Ambiguity withholds confirmation. The absence of 'no' never means 'yes'. Smiling and dodging never counts as invitation.\n\nThe Transgressor must speak clearly. The Libertine must practice naming the blur.\nOnly then can both actually approach the border, and come back safely."
+    }
+  },
+  "compat": {
+    "A-G-N": "R-T-N",
+    "R-T-N": "A-G-N",
+    "A-T-N": "R-G-N",
+    "R-G-N": "A-T-N",
+    "A-S-N": "R-S-N",
+    "R-S-N": "A-S-N",
+    "A-G-P": "R-T-P",
+    "R-T-P": "A-G-P",
+    "A-T-P": "R-G-P",
+    "R-G-P": "A-T-P",
+    "A-S-P": "R-S-P",
+    "R-S-P": "A-S-P",
+    "A-G-C": "R-T-C",
+    "R-T-C": "A-G-C",
+    "A-T-C": "R-G-C",
+    "R-G-C": "A-T-C",
+    "A-S-C": "R-S-C",
+    "R-S-C": "A-S-C",
+    "A-G-X": "R-T-X",
+    "R-T-X": "A-G-X",
+    "A-T-X": "R-G-X",
+    "R-G-X": "A-T-X",
+    "A-S-X": "R-S-X",
+    "R-S-X": "A-S-X"
+  }
+}
